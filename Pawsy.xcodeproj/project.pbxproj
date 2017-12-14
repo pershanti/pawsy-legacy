@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F79A06A6E27DF54E18C328D /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC29920E53CAE10A6D4C9DBA /* Pods_Pawsy.framework */; };
 		564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CA1FE25E9A00D292FA /* AppDelegate.swift */; };
 		564872CD1FE25E9A00D292FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CC1FE25E9A00D292FA /* ViewController.swift */; };
-		564872D01FE25E9A00D292FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564872CE1FE25E9A00D292FA /* Main.storyboard */; };
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
-		564872D51FE25E9A00D292FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564872D31FE25E9A00D292FA /* LaunchScreen.storyboard */; };
+		564CB2AB1FE26D5000BC0706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */; };
+		5656B16F1FE25EF600C3240A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16C1FE25EF500C3240A /* StartViewController.swift */; };
+		5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16D1FE25EF600C3240A /* HomeViewController.swift */; };
+		5656B1711FE25EF600C3240A /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */; };
+		5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1721FE25F4C00C3240A /* Main.storyboard */; };
+		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
 		564872C71FE25E9A00D292FA /* Pawsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564872CA1FE25E9A00D292FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564872CC1FE25E9A00D292FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		564872CF1FE25E9A00D292FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		564872D11FE25E9A00D292FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		564872D41FE25E9A00D292FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		564872D61FE25E9A00D292FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5656B16C1FE25EF500C3240A /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		5656B16D1FE25EF600C3240A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		5656B1721FE25F4C00C3240A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC29920E53CAE10A6D4C9DBA /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F79A06A6E27DF54E18C328D /* Pods_Pawsy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				564872C91FE25E9A00D292FA /* Pawsy */,
 				564872C81FE25E9A00D292FA /* Products */,
+				DBBE86A2E67D015D1220FFD1 /* Pods */,
+				DBB876FC65ABF2F5E0292D7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +70,34 @@
 			isa = PBXGroup;
 			children = (
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
+				564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */,
 				564872CC1FE25E9A00D292FA /* ViewController.swift */,
-				564872CE1FE25E9A00D292FA /* Main.storyboard */,
+				5656B16D1FE25EF600C3240A /* HomeViewController.swift */,
+				5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */,
+				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
+				5656B1721FE25F4C00C3240A /* Main.storyboard */,
+				5656B16C1FE25EF500C3240A /* StartViewController.swift */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
-				564872D31FE25E9A00D292FA /* LaunchScreen.storyboard */,
 				564872D61FE25E9A00D292FA /* Info.plist */,
 			);
 			path = Pawsy;
+			sourceTree = "<group>";
+		};
+		DBB876FC65ABF2F5E0292D7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC29920E53CAE10A6D4C9DBA /* Pods_Pawsy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBBE86A2E67D015D1220FFD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */,
+				36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 564872D91FE25E9A00D292FA /* Build configuration list for PBXNativeTarget "Pawsy" */;
 			buildPhases = (
+				32B0A8ED8C2B09944CC076AD /* [CP] Check Pods Manifest.lock */,
 				564872C31FE25E9A00D292FA /* Sources */,
 				564872C41FE25E9A00D292FA /* Frameworks */,
 				564872C51FE25E9A00D292FA /* Resources */,
+				A5C2E476C5BA2CCBDB3AB927 /* [CP] Embed Pods Frameworks */,
+				16D6227BC184A62F53A2A60F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,13 +162,106 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				564872D51FE25E9A00D292FA /* LaunchScreen.storyboard in Resources */,
 				564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */,
-				564872D01FE25E9A00D292FA /* Main.storyboard in Resources */,
+				564CB2AB1FE26D5000BC0706 /* GoogleService-Info.plist in Resources */,
+				5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */,
+				5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16D6227BC184A62F53A2A60F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle,
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32B0A8ED8C2B09944CC076AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pawsy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5C2E476C5BA2CCBDB3AB927 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		564872C31FE25E9A00D292FA /* Sources */ = {
@@ -138,29 +270,13 @@
 			files = (
 				564872CD1FE25E9A00D292FA /* ViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
+				5656B1711FE25EF600C3240A /* OnboardingPageViewController.swift in Sources */,
+				5656B16F1FE25EF600C3240A /* StartViewController.swift in Sources */,
+				5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		564872CE1FE25E9A00D292FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				564872CF1FE25E9A00D292FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		564872D31FE25E9A00D292FA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				564872D41FE25E9A00D292FA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		564872D71FE25E9A00D292FA /* Debug */ = {
@@ -272,6 +388,7 @@
 		};
 		564872DA1FE25E9A00D292FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +404,7 @@
 		};
 		564872DB1FE25E9A00D292FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

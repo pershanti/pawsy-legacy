@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FZf-GR-w3Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normal" translatesAutoresizingMaskIntoConstraints="NO" id="Gbt-ZA-xrW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gbt-ZA-xrW" firstAttribute="top" secondItem="FZf-GR-w3Y" secondAttribute="top" id="5FF-zK-3aB"/>
+                            <constraint firstItem="Gbt-ZA-xrW" firstAttribute="top" secondItem="FZf-GR-w3Y" secondAttribute="top" id="HAJ-7Q-tg1"/>
+                            <constraint firstItem="Gbt-ZA-xrW" firstAttribute="trailing" secondItem="zXr-A6-t2Y" secondAttribute="trailing" id="Pxq-wk-m5w"/>
+                            <constraint firstItem="zXr-A6-t2Y" firstAttribute="bottom" secondItem="Gbt-ZA-xrW" secondAttribute="bottom" id="YBu-pd-qRx"/>
+                            <constraint firstItem="Gbt-ZA-xrW" firstAttribute="leading" secondItem="zXr-A6-t2Y" secondAttribute="leading" id="cFw-O0-lUp"/>
+                            <constraint firstItem="Gbt-ZA-xrW" firstAttribute="bottom" secondItem="zXr-A6-t2Y" secondAttribute="bottom" id="gsn-zx-1DW"/>
+                            <constraint firstItem="zXr-A6-t2Y" firstAttribute="trailing" secondItem="Gbt-ZA-xrW" secondAttribute="trailing" id="ibt-LS-aq4"/>
+                            <constraint firstItem="Gbt-ZA-xrW" firstAttribute="leading" secondItem="zXr-A6-t2Y" secondAttribute="leading" id="r79-IM-vZk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zXr-A6-t2Y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="normal" width="375" height="667"/>
+    </resources>
+</document>
