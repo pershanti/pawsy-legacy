@@ -18,33 +18,42 @@ class HomeViewController: UIViewController {
     
     var user: User?
     
+    @IBOutlet weak var addNewButton: UIButton!
+    @IBAction func addNewPup(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToOnboarding", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.user = Auth.auth().currentUser
         self.profileName?.text = user?.displayName
+        self.checkIfOnboarded()
+    }
+    
+    
+    func showOnboardButton(){
+        self.addNewButton.isHidden = false
+    }
+    
+    func showCurrentDogs(){
+        
+    }
+    
+    func checkIfOnboarded() {
+        
         let db = Firestore.firestore()
         let uid = self.user?.uid
         let docRef = db.collection("users").document(uid!)
-        
         docRef.getDocument { (document, error) in
-            if let document = document {
-                let onboarded = docRef.value(forKey: "onboarded") as! Bool
-                if onboarded == false{
-                    
-                }
-                else{
-                    
-                }
-                print("Document data: \(document.data())")
-            } else {
-                db.collection("users").addDocument(data: [
-                    "uid": uid!,
+            if document?.exists == false {
+                docRef.setData([
+                    "name": self.user?.displayName,
                     "onboarded": false
                 ])
-                print("new user created")
             }
+            
         }
     }
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
