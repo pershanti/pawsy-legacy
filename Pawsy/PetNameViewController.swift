@@ -23,6 +23,8 @@ class PetNameViewController: UIViewController {
         self.performSegue(withIdentifier: "goToPhotoUpload", sender: nil)
     }
     
+  
+    
     
     
     override func viewDidLoad() {

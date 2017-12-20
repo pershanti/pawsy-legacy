@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CA1FE25E9A00D292FA /* AppDelegate.swift */; };
-		564872CD1FE25E9A00D292FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CC1FE25E9A00D292FA /* ViewController.swift */; };
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
 		564CB2AB1FE26D5000BC0706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */; };
-		5656B16F1FE25EF600C3240A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16C1FE25EF500C3240A /* StartViewController.swift */; };
 		5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16D1FE25EF600C3240A /* HomeViewController.swift */; };
 		5656B1711FE25EF600C3240A /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */; };
 		5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1721FE25F4C00C3240A /* Main.storyboard */; };
@@ -25,11 +23,9 @@
 		36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
 		564872C71FE25E9A00D292FA /* Pawsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564872CA1FE25E9A00D292FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		564872CC1FE25E9A00D292FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		564872D11FE25E9A00D292FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		564872D61FE25E9A00D292FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5656B16C1FE25EF500C3240A /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		5656B16D1FE25EF600C3240A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		5656B1721FE25F4C00C3240A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -75,14 +71,12 @@
 			children = (
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
 				564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */,
-				564872CC1FE25E9A00D292FA /* ViewController.swift */,
 				5656B16D1FE25EF600C3240A /* HomeViewController.swift */,
+				56BF7D791FE4CEF2005E5FE1 /* ImageUploadViewController.swift */,
 				56BF7D751FE39F72005E5FE1 /* PetNameViewController.swift */,
 				5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */,
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				5656B1721FE25F4C00C3240A /* Main.storyboard */,
-				56BF7D791FE4CEF2005E5FE1 /* ImageUploadViewController.swift */,
-				5656B16C1FE25EF500C3240A /* StartViewController.swift */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
 				564872D61FE25E9A00D292FA /* Info.plist */,
 			);
@@ -185,10 +179,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -269,12 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				564872CD1FE25E9A00D292FA /* ViewController.swift in Sources */,
 				56BF7D761FE39F72005E5FE1 /* PetNameViewController.swift in Sources */,
 				56BF7D7A1FE4CEF2005E5FE1 /* ImageUploadViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
 				5656B1711FE25EF600C3240A /* OnboardingPageViewController.swift in Sources */,
-				5656B16F1FE25EF600C3240A /* StartViewController.swift in Sources */,
 				5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
