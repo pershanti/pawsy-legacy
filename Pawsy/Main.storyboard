@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="544.79999999999995" y="-2372.5637181409297"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="FVY-Kz-5qC">
             <objects>
-                <viewController id="e1q-La-bkZ" sceneMemberID="viewController">
+                <viewController id="e1q-La-bkZ" customClass="OnboardingViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UbU-2N-u6L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,27 +150,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSu-Nt-yT7">
-                                <rect key="frame" x="113" y="230" width="148" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSu-Nt-yT7">
+                                <rect key="frame" x="113" y="247" width="148" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Photo">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLq-DE-Aoo">
-                                <rect key="frame" x="113" y="282" width="146" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Statistics">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taS-H2-PcQ">
-                                <rect key="frame" x="113" y="335" width="189" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Play Style">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -179,8 +162,34 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fp3-Mi-Xek">
-                                <rect key="frame" x="113" y="391" width="168" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewS-kx-ID9">
+                                <rect key="frame" x="109" y="147" width="156" height="47"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <state key="normal" title="next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="e1q-La-bkZ" eventType="touchUpInside" id="yb8-UW-zct"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLq-DE-Aoo">
+                                <rect key="frame" x="113" y="297" width="146" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Statistics">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taS-H2-PcQ">
+                                <rect key="frame" x="113" y="350" width="189" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play Style">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fp3-Mi-Xek">
+                                <rect key="frame" x="113" y="406" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Looking for...">
@@ -191,10 +200,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ewS-kx-ID9" firstAttribute="leading" secondItem="poa-oG-Iei" secondAttribute="leading" constant="109" id="0gM-4D-rcu"/>
                             <constraint firstItem="TTM-wA-HcD" firstAttribute="leading" secondItem="poa-oG-Iei" secondAttribute="leading" constant="43" id="3Xi-5o-RhA"/>
+                            <constraint firstItem="ewS-kx-ID9" firstAttribute="top" secondItem="TTM-wA-HcD" secondAttribute="bottom" constant="19.5" id="G8K-3b-0zy"/>
+                            <constraint firstItem="eSu-Nt-yT7" firstAttribute="top" secondItem="ewS-kx-ID9" secondAttribute="bottom" constant="53" id="S3D-PS-fkx"/>
                             <constraint firstItem="TTM-wA-HcD" firstAttribute="top" secondItem="poa-oG-Iei" secondAttribute="top" constant="73" id="SBO-GV-vcZ"/>
                             <constraint firstItem="NX6-Nx-2pa" firstAttribute="top" secondItem="UbU-2N-u6L" secondAttribute="top" id="dye-oc-fxM"/>
                             <constraint firstItem="NX6-Nx-2pa" firstAttribute="bottom" secondItem="poa-oG-Iei" secondAttribute="bottom" id="eZs-GV-Gd3"/>
+                            <constraint firstItem="poa-oG-Iei" firstAttribute="trailing" secondItem="ewS-kx-ID9" secondAttribute="trailing" constant="110" id="k0P-mA-Fq0"/>
                             <constraint firstItem="poa-oG-Iei" firstAttribute="trailing" secondItem="ShI-71-SOs" secondAttribute="trailing" constant="32" id="mYt-ER-WD2"/>
                             <constraint firstItem="NX6-Nx-2pa" firstAttribute="leading" secondItem="poa-oG-Iei" secondAttribute="leading" id="q0z-Qy-1fG"/>
                             <constraint firstAttribute="trailing" secondItem="NX6-Nx-2pa" secondAttribute="trailing" id="qF4-yG-BLL"/>
@@ -203,6 +216,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="poa-oG-Iei"/>
                     </view>
+                    <connections>
+                        <outlet property="nameBox" destination="ShI-71-SOs" id="AIU-0A-ku3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gr-LI-Ew8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

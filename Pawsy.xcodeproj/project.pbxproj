@@ -14,8 +14,9 @@
 		5656B1711FE25EF600C3240A /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */; };
 		5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1721FE25F4C00C3240A /* Main.storyboard */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
-		56BF7D761FE39F72005E5FE1 /* PetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D751FE39F72005E5FE1 /* PetNameViewController.swift */; };
+		56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */; };
 		56BF7D7A1FE4CEF2005E5FE1 /* ImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D791FE4CEF2005E5FE1 /* ImageUploadViewController.swift */; };
+		56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97351FEB124D00FD7F5F /* DataModel.swift */; };
 		F4AF6CC3E5F481E715B4F0B8 /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +31,9 @@
 		5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		5656B1721FE25F4C00C3240A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		56BF7D751FE39F72005E5FE1 /* PetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetNameViewController.swift; sourceTree = "<group>"; };
+		56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		56BF7D791FE4CEF2005E5FE1 /* ImageUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadViewController.swift; sourceTree = "<group>"; };
+		56EE97351FEB124D00FD7F5F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
 		F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,12 +75,13 @@
 				564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */,
 				5656B16D1FE25EF600C3240A /* HomeViewController.swift */,
 				56BF7D791FE4CEF2005E5FE1 /* ImageUploadViewController.swift */,
-				56BF7D751FE39F72005E5FE1 /* PetNameViewController.swift */,
-				5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */,
+				56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */,
+				56EE97351FEB124D00FD7F5F /* DataModel.swift */,
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				5656B1721FE25F4C00C3240A /* Main.storyboard */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
 				564872D61FE25E9A00D292FA /* Info.plist */,
+				5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */,
 			);
 			path = Pawsy;
 			sourceTree = "<group>";
@@ -263,11 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56BF7D761FE39F72005E5FE1 /* PetNameViewController.swift in Sources */,
+				56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */,
 				56BF7D7A1FE4CEF2005E5FE1 /* ImageUploadViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
 				5656B1711FE25EF600C3240A /* OnboardingPageViewController.swift in Sources */,
 				5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */,
+				56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
