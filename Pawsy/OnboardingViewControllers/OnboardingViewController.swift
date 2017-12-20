@@ -9,29 +9,44 @@
 import UIKit
 import Firebase
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: UIViewController, ImageUploadViewControllerDelegate, PlayStylePageViewControllerDelegate, StatsViewControllerDelegate {
     
     let user = Auth.auth().currentUser!
     var newDog: DataModel?;
 
     @IBOutlet weak var nameBox: UITextField!
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        let userDoc = Firestore.firestore().collection("users").document(user.uid)
-        let dogDoc = userDoc.collection("dogs").document()
-//        dogDoc.setData()
-        self.performSegue(withIdentifier: "goToPhotoUpload", sender: nil)
+        
+        self.createNewDog()
+    }
+    
+    func didGetPhoto(_ controller: ImageUploadViewController, imagePath: URL) {
+        <#code#>
+    }
+    
+    func didGetPlayStyle(_ controller: PlayStylePageViewController, energyLevel: Int, dogFeelings: Int, humanFeelings: Int, roughness: Int, ball: Int, playScene: Int, dogSizePreference: Int, lookingFor: Int) {
+        <#code#>
+    }
+    
+    func didSubmitStats(_ controller: StatsViewController, age: Int, vaccine: Bool, breed: String) {
+        <#code#>
+    }
+    
+    
+    
+    
+    
+    func createNewDog(){
+        self.newDog = DataModel(self.nameBox.text)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     

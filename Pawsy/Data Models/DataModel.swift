@@ -11,12 +11,18 @@ import Foundation
 class DataModel {
     
     var data = [
+        //onboardingviewcontroller
         "name": "",
+        //statsviewcontroller
         "age": "",
         "vaccine": "",
-        "photoURL": "",
         "breed": "",
-        "energy": "",
+        
+        //imageuploadviewcontroller
+        "photoURL": "",
+        
+        //playstyleviewcontroller
+        "energyLevel": "",
         "dogFeelings": "",
         "humanFeelings": "",
         "roughness": "",
