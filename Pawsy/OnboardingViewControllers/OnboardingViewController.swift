@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class OnboardingViewController: UIViewController, ImageUploadViewControllerDelegate, PlayStylePageViewControllerDelegate, StatsViewControllerDelegate {
+class OnboardingViewController: UIViewController, PlayStylePageViewControllerDelegate, StatsViewControllerDelegate, UIImagePickerControllerDelegate{
     
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var basicInfoButton: UIButton!
@@ -19,10 +19,20 @@ class OnboardingViewController: UIViewController, ImageUploadViewControllerDeleg
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         self.createNewDog()
-        self.photoButton.isEnabled = true
+        self.photoButton.isHidden = false
+        sender.isHidden = true
     }
     @IBAction func showImageUploader(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "showImageUploader", sender: self)
+        self.alert.addAction(UIAlertAction(title: "Take New Photo", style: UIAlertActionStyle.default, handler: {_ in
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            self.present(self.imagePicker, animated: true)
+        }))
+        self.alert.addAction(UIAlertAction(title: "Upload from Library", style: UIAlertActionStyle.default, handler: {_ in
+            
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            self.present(self.imagePicker, animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     @IBAction func showStatsViewController(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showStatsViewController", sender: self)
@@ -39,13 +49,18 @@ class OnboardingViewController: UIViewController, ImageUploadViewControllerDeleg
     
     let user = Auth.auth().currentUser!
     var newDog: DataModel?;
+    let alert = UIAlertController(title: "Image Source", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+    var imagePicker =  UIImagePickerController()
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let imagePath = info["UIImagePickerControllerReferenceURL"] as! URL
+        self.newDog?.data["photoURL"] = imagePath.description
+        self.basicInfoButton.isHidden = false
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showImageUploader"{
-            let destination = segue.destination as! ImageUploadViewController
-            destination.delegate = self
-        }
-        else if segue.identifier == "showStatsViewController"{
+        if segue.identifier == "showStatsViewController"{
             let destination = segue.destination as! StatsViewController
             destination.delegate = self
         }
@@ -55,16 +70,14 @@ class OnboardingViewController: UIViewController, ImageUploadViewControllerDeleg
         }
     }
     
-    func didGetPhoto(_ controller: ImageUploadViewController, imagePath: URL) {
-        self.basicInfoButton.isEnabled = true
-        self.newDog?.data["photoURL"] = imagePath.description
-    }
+
     
     func didSubmitStats(_ controller: StatsViewController, age: Int, vaccine: Bool, breed: String) {
         self.playStyleButton.isEnabled = true
         self.newDog?.data["age"]  = age.description
         self.newDog?.data["vaccine"]  = vaccine.description
         self.newDog?.data["breed"]  = breed
+        self.playStyleButton.isHidden = false
     }
     
     func didGetPlayStyle(_ controller: PlayStylePageViewController, energyLevel: Int, dogFeelings: Int, humanFeelings: Int, roughness: Int, ball: Int, playScene: Int, dogSizePreference: Int, lookingFor: Int) {
@@ -76,7 +89,7 @@ class OnboardingViewController: UIViewController, ImageUploadViewControllerDeleg
         self.newDog?.data["playScene"] = playScene.description
         self.newDog?.data["dogSizePreference"] = dogSizePreference.description
         self.newDog?.data["lookingFor"] = lookingFor.description
-        self.submitButton.isEnabled = true
+        self.submitButton.isHidden = false
         
     }
     

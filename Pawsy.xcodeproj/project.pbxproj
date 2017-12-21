@@ -15,11 +15,9 @@
 		5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1721FE25F4C00C3240A /* Main.storyboard */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
 		56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */; };
-		56BF7D7A1FE4CEF2005E5FE1 /* ImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D791FE4CEF2005E5FE1 /* ImageUploadViewController.swift */; };
 		56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97351FEB124D00FD7F5F /* DataModel.swift */; };
 		56EE97381FEB16C900FD7F5F /* StatsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97371FEB16C900FD7F5F /* StatsViewControllerDelegate.swift */; };
 		56EE973A1FEB185800FD7F5F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97391FEB185800FD7F5F /* StatsViewController.swift */; };
-		56EE973C1FEB18AF00FD7F5F /* ImageUploadViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE973B1FEB18AF00FD7F5F /* ImageUploadViewControllerDelegate.swift */; };
 		56EE973E1FEB196600FD7F5F /* PlayStylePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE973D1FEB196600FD7F5F /* PlayStylePageViewController.swift */; };
 		56EE97401FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE973F1FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift */; };
 		56EE974A1FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97491FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift */; };
@@ -38,11 +36,9 @@
 		5656B1721FE25F4C00C3240A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		56BF7D791FE4CEF2005E5FE1 /* ImageUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadViewController.swift; sourceTree = "<group>"; };
 		56EE97351FEB124D00FD7F5F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		56EE97371FEB16C900FD7F5F /* StatsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewControllerDelegate.swift; sourceTree = "<group>"; };
 		56EE97391FEB185800FD7F5F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
-		56EE973B1FEB18AF00FD7F5F /* ImageUploadViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadViewControllerDelegate.swift; sourceTree = "<group>"; };
 		56EE973D1FEB196600FD7F5F /* PlayStylePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStylePageViewController.swift; sourceTree = "<group>"; };
 		56EE973F1FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStylePageViewControllerDelegate.swift; sourceTree = "<group>"; };
 		56EE97451FEB1A1300FD7F5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -100,7 +96,6 @@
 		56EE97411FEB19B800FD7F5F /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				56EE973B1FEB18AF00FD7F5F /* ImageUploadViewControllerDelegate.swift */,
 				56EE97371FEB16C900FD7F5F /* StatsViewControllerDelegate.swift */,
 				56EE973F1FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift */,
 			);
@@ -120,7 +115,6 @@
 		56EE97431FEB19D600FD7F5F /* OnboardingViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				56BF7D791FE4CEF2005E5FE1 /* ImageUploadViewController.swift */,
 				56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */,
 				56EE973D1FEB196600FD7F5F /* PlayStylePageViewController.swift */,
 				56EE97391FEB185800FD7F5F /* StatsViewController.swift */,
@@ -335,13 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */,
-				56BF7D7A1FE4CEF2005E5FE1 /* ImageUploadViewController.swift in Sources */,
 				56EE97401FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift in Sources */,
 				56EE973A1FEB185800FD7F5F /* StatsViewController.swift in Sources */,
 				56EE974A1FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift in Sources */,
 				56EE973E1FEB196600FD7F5F /* PlayStylePageViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
-				56EE973C1FEB18AF00FD7F5F /* ImageUploadViewControllerDelegate.swift in Sources */,
 				5656B1711FE25EF600C3240A /* OnboardingPageViewController.swift in Sources */,
 				56EE97381FEB16C900FD7F5F /* StatsViewControllerDelegate.swift in Sources */,
 				5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */,
