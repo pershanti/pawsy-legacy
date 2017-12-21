@@ -22,6 +22,7 @@
 		56EE973C1FEB18AF00FD7F5F /* ImageUploadViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE973B1FEB18AF00FD7F5F /* ImageUploadViewControllerDelegate.swift */; };
 		56EE973E1FEB196600FD7F5F /* PlayStylePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE973D1FEB196600FD7F5F /* PlayStylePageViewController.swift */; };
 		56EE97401FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE973F1FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift */; };
+		56EE974A1FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97491FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift */; };
 		F4AF6CC3E5F481E715B4F0B8 /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		56EE973D1FEB196600FD7F5F /* PlayStylePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStylePageViewController.swift; sourceTree = "<group>"; };
 		56EE973F1FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStylePageViewControllerDelegate.swift; sourceTree = "<group>"; };
 		56EE97451FEB1A1300FD7F5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56EE97491FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStylePageOneViewController.swift; sourceTree = "<group>"; };
 		D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
 		F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 		564872C91FE25E9A00D292FA /* Pawsy */ = {
 			isa = PBXGroup;
 			children = (
+				564872D61FE25E9A00D292FA /* Info.plist */,
 				5656B16D1FE25EF600C3240A /* HomeViewController.swift */,
 				56EE97481FEB1A4B00FD7F5F /* Code Samples */,
 				56EE97471FEB1A2D00FD7F5F /* Data Models */,
@@ -109,6 +112,7 @@
 			children = (
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				5656B1721FE25F4C00C3240A /* Main.storyboard */,
+				56EE97491FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -130,7 +134,6 @@
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
 				56EE97451FEB1A1300FD7F5F /* GoogleService-Info.plist */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
-				564872D61FE25E9A00D292FA /* Info.plist */,
 			);
 			path = "Build Assets";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				56BF7D7A1FE4CEF2005E5FE1 /* ImageUploadViewController.swift in Sources */,
 				56EE97401FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift in Sources */,
 				56EE973A1FEB185800FD7F5F /* StatsViewController.swift in Sources */,
+				56EE974A1FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift in Sources */,
 				56EE973E1FEB196600FD7F5F /* PlayStylePageViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
 				56EE973C1FEB18AF00FD7F5F /* ImageUploadViewControllerDelegate.swift in Sources */,

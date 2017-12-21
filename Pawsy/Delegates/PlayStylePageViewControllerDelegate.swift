@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-protocol PlayStylePageViewControllerDelegate: class {
+protocol PlayStylePageViewControllerDelegate: UIPageViewControllerDelegate{
     func didGetPlayStyle(_ controller: PlayStylePageViewController, energyLevel: Int, dogFeelings: Int, humanFeelings: Int, roughness: Int, ball: Int, playScene: Int, dogSizePreference: Int, lookingFor: Int)
 }
 

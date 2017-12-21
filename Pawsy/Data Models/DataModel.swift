@@ -14,22 +14,22 @@ class DataModel {
         //onboardingviewcontroller
         "name": "",
         //statsviewcontroller
-        "age": "",
-        "vaccine": "",
+        "age": nil,
+        "vaccine": nil,
         "breed": "",
         
         //imageuploadviewcontroller
         "photoURL": "",
         
         //playstyleviewcontroller
-        "energyLevel": "",
-        "dogFeelings": "",
-        "humanFeelings": "",
-        "roughness": "",
-        "ball": "",
-        "playScene": "",
-        "dogSizePreference": "",
-        "looking for": "",
+        "energyLevel": nil,
+        "dogFeelings": nil,
+        "humanFeelings": nil,
+        "roughness": nil,
+        "ball": nil,
+        "playScene": nil,
+        "dogSizePreference": nil,
+        "looking for": nil,
         ]
 
     init(name: String) {

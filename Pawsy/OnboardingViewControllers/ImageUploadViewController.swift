@@ -13,8 +13,8 @@ import Firebase
 class ImageUploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let storage = Storage.storage()
-    let currentUserID = Auth.auth().currentUser!.uid
-    let currentDog = Firestore.firestore().collection("users").document(currentUserID).collection("dogs")
+//    let currentUserID = Auth.auth().currentUser!.uid
+//    let currentDog = Firestore.firestore().collection("users").document(currentUserID).collection("dogs")
     
     var imagePicker =  UIImagePickerController()
     

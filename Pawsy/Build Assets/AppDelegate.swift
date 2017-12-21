@@ -13,7 +13,7 @@ import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINavigationControllerDelegate {
     
     
     var window: UIWindow?
@@ -24,17 +24,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         FUIFacebookAuth()
     ]
     
+    
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        print(error.debugDescription)
         self.user = Auth.auth().currentUser
-        //check if user exists
-        //decide whether to show onboarding option
-        //add dog profiles to app
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "h0")
+        let controller = storyboard.instantiateViewController(withIdentifier: "h0") as! HomeViewController
+        controller.authUI = self.authUI
         self.window?.rootViewController?.present(controller, animated: true)
     }
     
+   
+ 
+
     
     func application(_ app: UIApplication, open url: URL,
                      options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
@@ -55,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         authUI?.delegate = self
         authUI?.providers = self.providers
         let authViewController = authUI!.authViewController()
+        authViewController.delegate = self
         self.window?.rootViewController = authViewController
         print("here")
         return true

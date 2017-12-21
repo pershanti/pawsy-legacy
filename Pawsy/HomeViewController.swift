@@ -12,34 +12,36 @@ import FirebaseAuthUI
 
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var profilePic: UIImageView!
-    @IBOutlet weak var coverPic: UIImageView!
     @IBOutlet weak var profileName: UILabel!
-    
-    var user: User?
-    
     @IBOutlet weak var addNewButton: UIButton!
     @IBAction func addNewPup(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToOnboarding", sender: nil)
     }
+    @IBAction func logOutButtonPressed(_ sender: UIButton)  {
+        do{
+            try self.authUI!.signOut()
+        }
+        
+        catch {
+            print("error")
+        }
+        
+        
+    }
+    var user: User?
+    var authUI: FUIAuth?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.user = Auth.auth().currentUser
         self.profileName?.text = user?.displayName
         self.checkIfOnboarded()
     }
-    
-    
     func showOnboardButton(){
         self.addNewButton.isHidden = false
     }
-    
     func showCurrentDogs(){
-        
     }
-    
     func checkIfOnboarded() {
-        
         let db = Firestore.firestore()
         let uid = self.user?.uid
         let docRef = db.collection("users").document(uid!)
@@ -53,23 +55,7 @@ class HomeViewController: UIViewController {
             
         }
     }
-   
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
