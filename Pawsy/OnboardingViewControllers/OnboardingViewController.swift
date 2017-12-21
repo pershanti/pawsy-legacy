@@ -11,6 +11,7 @@ import Firebase
 
 class OnboardingViewController: UIViewController, PlayStylePageViewControllerDelegate, StatsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
+    
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var basicInfoButton: UIButton!
     @IBOutlet weak var playStyleButton: UIButton!
@@ -43,7 +44,7 @@ class OnboardingViewController: UIViewController, PlayStylePageViewControllerDel
         self.performSegue(withIdentifier: "showPlayStylePageViewController", sender: self)
     }
     @IBAction func onboardingComplete(_ sender: UIButton) {
-        print(self.newDog?.data)
+        self.delegate?.didFinishOnboarding(self, data: self.newDog!)
     }
     @IBAction func didPressCancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -53,20 +54,21 @@ class OnboardingViewController: UIViewController, PlayStylePageViewControllerDel
     var newDog: DataModel?;
     let alert = UIAlertController(title: "Image Source", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
     var imagePicker =  UIImagePickerController()
+    var delegate: OnboardingViewControllerDelegate?
+    var dogImage: UIImage?
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("image picked")
-        let imagePath = info["UIImagePickerControllerReferenceURL"] as! URL
         picker.dismiss(animated: true, completion: nil)
-        self.newDog?.data["photoURL"] = imagePath.path
-        print(imagePath.path)
+        self.dogImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
         self.basicInfoButton.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showStatsViewController"{
-            let destination = segue.destination as! StatsViewController
-            destination.delegate = self
+            let destination = segue.destination as! UINavigationController
+            let final = destination.childViewControllers[0] as! StatsViewController
+            final.delegate = self
         }
         else if segue.identifier == "showPlayStylePageViewController"{
             let destination = segue.destination as! PlayStylePageViewController
@@ -74,15 +76,16 @@ class OnboardingViewController: UIViewController, PlayStylePageViewControllerDel
         }
     }
     
-    func didSubmitStats(_ controller: StatsViewController, age: Int, vaccine: Bool, breed: String) {
+    func didSubmitStats(_ controller: StatsViewController, age: String, weight: String, breed: String) {
         self.playStyleButton.isEnabled = true
         self.newDog?.data["age"]  = age.description
-        self.newDog?.data["vaccine"]  = vaccine.description
+        self.newDog?.data["weight"]  = weight.description
         self.newDog?.data["breed"]  = breed
         self.playStyleButton.isHidden = false
+        print(self.newDog?.data)
     }
     
-    func didGetPlayStyle(_ controller: PlayStylePageViewController, energyLevel: Int, dogFeelings: Int, humanFeelings: Int, roughness: Int, ball: Int, playScene: Int, dogSizePreference: Int, lookingFor: Int) {
+    func didGetPlayStyle(_ controller: PlayStylePageViewController, energyLevel: String, dogFeelings: String, humanFeelings: String, roughness: String, ball: String, playScene: String, dogSizePreference: String, lookingFor: String) {
         self.newDog?.data["energyLevel"] = energyLevel.description
         self.newDog?.data["dogFeelings"] =  dogFeelings.description
         self.newDog?.data["humanFeelings"] = humanFeelings.description

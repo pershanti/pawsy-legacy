@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 protocol StatsViewControllerDelegate: class {
-    func didSubmitStats(_ controller: StatsViewController, age: Int, vaccine: Bool, breed: String )
+    func didSubmitStats(_ controller: StatsViewController, age: String, weight: String, breed: String )
 }
 

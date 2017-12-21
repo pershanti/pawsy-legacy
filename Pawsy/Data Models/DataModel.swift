@@ -15,7 +15,7 @@ class DataModel {
         "name": "",
         //statsviewcontroller
         "age": nil,
-        "vaccine": nil,
+        "weight": nil,
         "breed": "",
         
         //imageuploadviewcontroller
@@ -33,7 +33,7 @@ class DataModel {
         ]
 
     init(name: String) {
-        self.data[name] = name
+        self.data["name"] = name
     }
     
 }

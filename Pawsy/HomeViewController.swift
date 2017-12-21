@@ -11,7 +11,16 @@ import Firebase
 import FirebaseAuthUI
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
+    
+    func didPressCancel(_ controller: OnboardingViewController) {
+        print("canceled")
+    }
+    
+    func didFinishOnboarding(_ controller: OnboardingViewController, data: DataModel) {
+        print (data)
+    }
+    
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var addNewButton: UIButton!
     @IBAction func addNewPup(_ sender: UIButton) {
@@ -20,27 +29,31 @@ class HomeViewController: UIViewController {
     @IBAction func logOutButtonPressed(_ sender: UIButton)  {
         do{
             try self.authUI!.signOut()
+            self.dismiss(animated: true, completion: nil)
         }
-        
         catch {
             print("error")
         }
-        
-        
     }
+    
     var user: User?
     var authUI: FUIAuth?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.user = Auth.auth().currentUser
-        self.profileName?.text = user?.displayName
-        self.checkIfOnboarded()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToOnboarding" {
+            let destination = segue.destination as! UINavigationController
+            let final = destination.childViewControllers[0] as! OnboardingViewController
+            final.delegate = self
+        }
     }
+    
     func showOnboardButton(){
         self.addNewButton.isHidden = false
     }
+    
     func showCurrentDogs(){
     }
+    
     func checkIfOnboarded() {
         let db = Firestore.firestore()
         let uid = self.user?.uid
@@ -55,6 +68,14 @@ class HomeViewController: UIViewController {
             
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.user = Auth.auth().currentUser
+        self.profileName?.text = user?.displayName
+        self.checkIfOnboarded()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

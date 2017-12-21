@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 protocol PlayStylePageViewControllerDelegate: UIPageViewControllerDelegate{
-    func didGetPlayStyle(_ controller: PlayStylePageViewController, energyLevel: Int, dogFeelings: Int, humanFeelings: Int, roughness: Int, ball: Int, playScene: Int, dogSizePreference: Int, lookingFor: Int)
+    func didGetPlayStyle(_ controller: PlayStylePageViewController, energyLevel: String, dogFeelings: String, humanFeelings: String, roughness: String, ball: String, playScene: String, dogSizePreference: String, lookingFor: String)
 }
 

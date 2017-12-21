@@ -15,6 +15,7 @@
 		5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1721FE25F4C00C3240A /* Main.storyboard */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
 		56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */; };
+		56DB9A5E1FEBB684000CE7DD /* OnBoardingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB9A5D1FEBB684000CE7DD /* OnBoardingViewControllerDelegate.swift */; };
 		56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97351FEB124D00FD7F5F /* DataModel.swift */; };
 		56EE97381FEB16C900FD7F5F /* StatsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97371FEB16C900FD7F5F /* StatsViewControllerDelegate.swift */; };
 		56EE973A1FEB185800FD7F5F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97391FEB185800FD7F5F /* StatsViewController.swift */; };
@@ -36,6 +37,7 @@
 		5656B1721FE25F4C00C3240A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		56DB9A5D1FEBB684000CE7DD /* OnBoardingViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingViewControllerDelegate.swift; path = Pawsy/Delegates/OnBoardingViewControllerDelegate.swift; sourceTree = SOURCE_ROOT; };
 		56EE97351FEB124D00FD7F5F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		56EE97371FEB16C900FD7F5F /* StatsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewControllerDelegate.swift; sourceTree = "<group>"; };
 		56EE97391FEB185800FD7F5F /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				56EE97371FEB16C900FD7F5F /* StatsViewControllerDelegate.swift */,
+				56DB9A5D1FEBB684000CE7DD /* OnBoardingViewControllerDelegate.swift */,
 				56EE973F1FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift */,
 			);
 			path = Delegates;
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */,
+				56DB9A5E1FEBB684000CE7DD /* OnBoardingViewControllerDelegate.swift in Sources */,
 				56EE97401FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift in Sources */,
 				56EE973A1FEB185800FD7F5F /* StatsViewController.swift in Sources */,
 				56EE974A1FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift in Sources */,
@@ -459,7 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LVLYB83ZJM;
 				INFOPLIST_FILE = Pawsy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pawsy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,7 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LVLYB83ZJM;
 				INFOPLIST_FILE = Pawsy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pawsy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

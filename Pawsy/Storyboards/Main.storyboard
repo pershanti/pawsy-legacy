@@ -45,21 +45,112 @@
             </objects>
             <point key="canvasLocation" x="-140" y="-714.69265367316348"/>
         </scene>
-        <!--Stats View Controller-->
+        <!--Title-->
         <scene sceneID="Bp5-dW-wwK">
             <objects>
                 <viewController id="D06-FZ-0eZ" customClass="StatsViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2up-7n-Dui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-7H-g2h">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-Tn-EpP">
+                                <rect key="frame" x="8" y="145" width="48.5" height="35"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="meg-Kd-wxd">
+                                <rect key="frame" x="80" y="142" width="287" height="41"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight (lbs.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwU-LD-aWK">
+                                <rect key="frame" x="8" y="245" width="148" height="35"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R6q-6F-xtS">
+                                <rect key="frame" x="166" y="242" width="201" height="36"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqk-kg-yP4">
+                                <rect key="frame" x="8" y="348" width="70" height="35"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xgd-ib-itU">
+                                <rect key="frame" x="101.5" y="340" width="265.5" height="36"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NwU-LD-aWK" firstAttribute="leading" secondItem="8bx-wv-eIt" secondAttribute="leading" constant="8" id="0N0-4e-Hqe"/>
+                            <constraint firstItem="meg-Kd-wxd" firstAttribute="leading" secondItem="6pf-Tn-EpP" secondAttribute="trailing" constant="23.5" id="4Bc-fK-VDf"/>
+                            <constraint firstItem="6pf-Tn-EpP" firstAttribute="top" secondItem="8bx-wv-eIt" secondAttribute="top" constant="81" id="7Ff-t4-5Cx"/>
+                            <constraint firstItem="Xgd-ib-itU" firstAttribute="top" secondItem="R6q-6F-xtS" secondAttribute="bottom" constant="62" id="E93-DW-J71"/>
+                            <constraint firstItem="Tqk-kg-yP4" firstAttribute="leading" secondItem="8bx-wv-eIt" secondAttribute="leading" constant="8" id="HMi-Jd-TOd"/>
+                            <constraint firstItem="8bx-wv-eIt" firstAttribute="trailing" secondItem="R6q-6F-xtS" secondAttribute="trailing" constant="8" id="JcV-wN-W1I"/>
+                            <constraint firstItem="KFf-7H-g2h" firstAttribute="top" secondItem="8bx-wv-eIt" secondAttribute="top" id="LWi-gr-wUF"/>
+                            <constraint firstItem="KFf-7H-g2h" firstAttribute="leading" secondItem="8bx-wv-eIt" secondAttribute="leading" id="PaU-hw-Bcv"/>
+                            <constraint firstItem="Tqk-kg-yP4" firstAttribute="top" secondItem="NwU-LD-aWK" secondAttribute="bottom" constant="68" id="WAW-rS-SRh"/>
+                            <constraint firstItem="NwU-LD-aWK" firstAttribute="top" secondItem="6pf-Tn-EpP" secondAttribute="bottom" constant="65" id="YFa-8b-rqr"/>
+                            <constraint firstItem="KFf-7H-g2h" firstAttribute="trailing" secondItem="8bx-wv-eIt" secondAttribute="trailing" id="ZkC-lF-Wgl"/>
+                            <constraint firstItem="meg-Kd-wxd" firstAttribute="leading" secondItem="6pf-Tn-EpP" secondAttribute="trailing" constant="23.5" id="aZe-K6-cE0"/>
+                            <constraint firstItem="Xgd-ib-itU" firstAttribute="leading" secondItem="Tqk-kg-yP4" secondAttribute="trailing" constant="23.5" id="buN-bX-NjD"/>
+                            <constraint firstItem="R6q-6F-xtS" firstAttribute="leading" secondItem="NwU-LD-aWK" secondAttribute="trailing" constant="10" id="dI4-Ag-q4P"/>
+                            <constraint firstItem="R6q-6F-xtS" firstAttribute="top" secondItem="meg-Kd-wxd" secondAttribute="bottom" constant="59" id="dxY-j6-dFg"/>
+                            <constraint firstItem="meg-Kd-wxd" firstAttribute="top" secondItem="8bx-wv-eIt" secondAttribute="top" constant="78" id="fBV-NB-Ujm"/>
+                            <constraint firstItem="R6q-6F-xtS" firstAttribute="leading" secondItem="NwU-LD-aWK" secondAttribute="trailing" constant="10" id="g1u-iB-QOX"/>
+                            <constraint firstItem="NwU-LD-aWK" firstAttribute="top" secondItem="meg-Kd-wxd" secondAttribute="bottom" constant="62" id="her-tk-0ct"/>
+                            <constraint firstItem="6pf-Tn-EpP" firstAttribute="leading" secondItem="8bx-wv-eIt" secondAttribute="leading" constant="8" id="iZJ-Dm-QnK"/>
+                            <constraint firstItem="8bx-wv-eIt" firstAttribute="trailing" secondItem="meg-Kd-wxd" secondAttribute="trailing" constant="8" id="jYD-Jo-eDU"/>
+                            <constraint firstItem="Xgd-ib-itU" firstAttribute="top" secondItem="NwU-LD-aWK" secondAttribute="bottom" constant="60" id="lno-Kq-PfK"/>
+                            <constraint firstItem="Tqk-kg-yP4" firstAttribute="top" secondItem="NwU-LD-aWK" secondAttribute="bottom" constant="68" id="mSd-7u-AWm"/>
+                            <constraint firstItem="NwU-LD-aWK" firstAttribute="top" secondItem="meg-Kd-wxd" secondAttribute="bottom" constant="62" id="qfM-gZ-Ywj"/>
+                            <constraint firstItem="8bx-wv-eIt" firstAttribute="bottom" secondItem="Tqk-kg-yP4" secondAttribute="bottom" constant="284" id="rue-Uo-KNM"/>
+                            <constraint firstItem="8bx-wv-eIt" firstAttribute="trailing" secondItem="Xgd-ib-itU" secondAttribute="trailing" constant="8" id="taR-z9-bvJ"/>
+                            <constraint firstItem="Xgd-ib-itU" firstAttribute="leading" secondItem="Tqk-kg-yP4" secondAttribute="trailing" constant="23.5" id="u0q-X1-aFR"/>
+                            <constraint firstItem="KFf-7H-g2h" firstAttribute="bottom" secondItem="8bx-wv-eIt" secondAttribute="bottom" id="ySm-Gc-dvu"/>
+                            <constraint firstItem="8bx-wv-eIt" firstAttribute="bottom" secondItem="Xgd-ib-itU" secondAttribute="bottom" constant="291" id="zfS-TK-DkX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8bx-wv-eIt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2jx-yF-3Z7"/>
+                    <navigationItem key="navigationItem" title="Title" id="pmo-UQ-pUa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gEJ-rz-6mV">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="D06-FZ-0eZ" id="q8l-jd-roc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="Oxb-zE-fHn">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="D06-FZ-0eZ" id="mTt-15-bql"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ageBox" destination="meg-Kd-wxd" id="SlM-l4-1fR"/>
+                        <outlet property="breedBox" destination="Xgd-ib-itU" id="9gk-6i-LeA"/>
+                        <outlet property="saveButton" destination="Oxb-zE-fHn" id="6Jh-qx-8sc"/>
+                        <outlet property="weightBox" destination="R6q-6F-xtS" id="PFT-fe-BjA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="797-U6-Uf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="-3080"/>
+            <point key="canvasLocation" x="2980" y="-3206.4467766116945"/>
         </scene>
         <!--Play Style Page View Controller-->
         <scene sceneID="OGP-xW-DTJ">
@@ -178,7 +269,6 @@
         <!--Add a Pup-->
         <scene sceneID="FVY-Kz-5qC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Gr-LI-Ew8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="e1q-La-bkZ" customClass="OnboardingViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UbU-2N-u6L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -239,7 +329,7 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ShI-71-SOs">
                                 <rect key="frame" x="166" y="133" width="201" height="41"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" enablesReturnKeyAutomatically="YES" textContentType="name"/>
@@ -289,10 +379,11 @@
                         <outlet property="photoButton" destination="eSu-Nt-yT7" id="Azq-Yl-EcH"/>
                         <outlet property="playStyleButton" destination="taS-H2-PcQ" id="gsG-ZH-f5j"/>
                         <outlet property="submitButton" destination="le7-8a-nys" id="dmD-DU-2rd"/>
-                        <segue destination="D06-FZ-0eZ" kind="presentation" identifier="showStatsViewController" id="1hI-qi-L6S"/>
+                        <segue destination="39u-lA-8Je" kind="presentation" identifier="showStatsViewController" id="1hI-qi-L6S"/>
                         <segue destination="Oqp-AP-SkT" kind="presentation" identifier="showPlayStylePageViewController" id="NDs-IA-gqo"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Gr-LI-Ew8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1992.8" y="-2373.4632683658174"/>
         </scene>
@@ -330,6 +421,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzZ-rE-cZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1279" y="-2374"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lbl-Ef-3QP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="39u-lA-8Je" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WHG-YE-rlq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="D06-FZ-0eZ" kind="relationship" relationship="rootViewController" id="wav-yw-JQF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U32-Oa-Va9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2120" y="-3205.0974512743633"/>
         </scene>
     </scenes>
     <resources>
