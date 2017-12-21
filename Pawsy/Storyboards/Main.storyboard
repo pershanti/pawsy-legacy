@@ -277,7 +277,11 @@
                         <viewLayoutGuide key="safeArea" id="poa-oG-Iei"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Pup" id="GZN-t0-3Jc">
-                        <barButtonItem key="backBarButtonItem" id="vAS-7v-eEV"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vdf-S3-EMp">
+                            <connections>
+                                <action selector="didPressCancel:" destination="e1q-La-bkZ" id="TGR-RQ-705"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="basicInfoButton" destination="gLq-DE-Aoo" id="Tgg-Ay-rny"/>

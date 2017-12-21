@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class OnboardingViewController: UIViewController, PlayStylePageViewControllerDelegate, StatsViewControllerDelegate, UIImagePickerControllerDelegate{
+class OnboardingViewController: UIViewController, PlayStylePageViewControllerDelegate, StatsViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var basicInfoButton: UIButton!
@@ -25,11 +25,13 @@ class OnboardingViewController: UIViewController, PlayStylePageViewControllerDel
     @IBAction func showImageUploader(_ sender: UIButton) {
         self.alert.addAction(UIAlertAction(title: "Take New Photo", style: UIAlertActionStyle.default, handler: {_ in
             self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            self.imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureMode.photo
+            self.imagePicker.delegate = self
             self.present(self.imagePicker, animated: true)
         }))
         self.alert.addAction(UIAlertAction(title: "Upload from Library", style: UIAlertActionStyle.default, handler: {_ in
-            
             self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            self.imagePicker.delegate = self
             self.present(self.imagePicker, animated: true)
         }))
         self.present(alert, animated: true, completion: nil)
@@ -42,8 +44,8 @@ class OnboardingViewController: UIViewController, PlayStylePageViewControllerDel
     }
     @IBAction func onboardingComplete(_ sender: UIButton) {
         print(self.newDog?.data)
-    }    
-    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+    }
+    @IBAction func didPressCancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -52,10 +54,12 @@ class OnboardingViewController: UIViewController, PlayStylePageViewControllerDel
     let alert = UIAlertController(title: "Image Source", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
     var imagePicker =  UIImagePickerController()
     
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("image picked")
         let imagePath = info["UIImagePickerControllerReferenceURL"] as! URL
-        self.newDog?.data["photoURL"] = imagePath.description
+        picker.dismiss(animated: true, completion: nil)
+        self.newDog?.data["photoURL"] = imagePath.path
+        print(imagePath.path)
         self.basicInfoButton.isHidden = false
     }
     
@@ -69,8 +73,6 @@ class OnboardingViewController: UIViewController, PlayStylePageViewControllerDel
             destination.delegate = self
         }
     }
-    
-
     
     func didSubmitStats(_ controller: StatsViewController, age: Int, vaccine: Bool, breed: String) {
         self.playStyleButton.isEnabled = true
