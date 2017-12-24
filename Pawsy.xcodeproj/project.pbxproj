@@ -10,10 +10,14 @@
 		564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CA1FE25E9A00D292FA /* AppDelegate.swift */; };
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
 		564CB2AB1FE26D5000BC0706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */; };
+		564CD41B1FEF269700CCD80A /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CD41A1FEF269700CCD80A /* Page1ViewController.swift */; };
 		5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16D1FE25EF600C3240A /* HomeViewController.swift */; };
 		5656B1711FE25EF600C3240A /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */; };
 		5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1721FE25F4C00C3240A /* Main.storyboard */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
+		5669E2091FF044EF007F03B4 /* MyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5669E2081FF044EF007F03B4 /* MyFormViewController.swift */; };
+		56784A701FEF99F400C42FD2 /* preloader.json in Resources */ = {isa = PBXBuildFile; fileRef = 56784A6F1FEF99F400C42FD2 /* preloader.json */; };
+		56784A791FEF9D1E00C42FD2 /* bodymovin.js in Resources */ = {isa = PBXBuildFile; fileRef = 56784A781FEF9D1D00C42FD2 /* bodymovin.js */; };
 		56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */; };
 		56DB9A5E1FEBB684000CE7DD /* OnBoardingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB9A5D1FEBB684000CE7DD /* OnBoardingViewControllerDelegate.swift */; };
 		56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97351FEB124D00FD7F5F /* DataModel.swift */; };
@@ -21,7 +25,6 @@
 		56EE973A1FEB185800FD7F5F /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97391FEB185800FD7F5F /* StatsViewController.swift */; };
 		56EE973E1FEB196600FD7F5F /* PlayStylePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE973D1FEB196600FD7F5F /* PlayStylePageViewController.swift */; };
 		56EE97401FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE973F1FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift */; };
-		56EE974A1FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97491FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift */; };
 		F4AF6CC3E5F481E715B4F0B8 /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,10 +35,15 @@
 		564872D11FE25E9A00D292FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		564872D61FE25E9A00D292FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		564CD41A1FEF269700CCD80A /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
 		5656B16D1FE25EF600C3240A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5656B16E1FE25EF600C3240A /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		5656B1721FE25F4C00C3240A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5669E2081FF044EF007F03B4 /* MyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFormViewController.swift; sourceTree = "<group>"; };
+		56784A6F1FEF99F400C42FD2 /* preloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = preloader.json; sourceTree = "<group>"; };
+		56784A771FEF9D1A00C42FD2 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = data.json; path = Plus/data.json; sourceTree = "<group>"; };
+		56784A781FEF9D1D00C42FD2 /* bodymovin.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = bodymovin.js; path = Plus/bodymovin.js; sourceTree = "<group>"; };
 		56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		56DB9A5D1FEBB684000CE7DD /* OnBoardingViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnBoardingViewControllerDelegate.swift; path = Pawsy/Delegates/OnBoardingViewControllerDelegate.swift; sourceTree = SOURCE_ROOT; };
 		56EE97351FEB124D00FD7F5F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -44,7 +52,6 @@
 		56EE973D1FEB196600FD7F5F /* PlayStylePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStylePageViewController.swift; sourceTree = "<group>"; };
 		56EE973F1FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStylePageViewControllerDelegate.swift; sourceTree = "<group>"; };
 		56EE97451FEB1A1300FD7F5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		56EE97491FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStylePageOneViewController.swift; sourceTree = "<group>"; };
 		D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
 		F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +91,9 @@
 			children = (
 				564872D61FE25E9A00D292FA /* Info.plist */,
 				5656B16D1FE25EF600C3240A /* HomeViewController.swift */,
+				56784A771FEF9D1A00C42FD2 /* data.json */,
+				56784A781FEF9D1D00C42FD2 /* bodymovin.js */,
+				56784A6F1FEF99F400C42FD2 /* preloader.json */,
 				56EE97481FEB1A4B00FD7F5F /* Code Samples */,
 				56EE97471FEB1A2D00FD7F5F /* Data Models */,
 				56EE97441FEB19F400FD7F5F /* Build Assets */,
@@ -110,7 +120,6 @@
 			children = (
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				5656B1721FE25F4C00C3240A /* Main.storyboard */,
-				56EE97491FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -118,9 +127,11 @@
 		56EE97431FEB19D600FD7F5F /* OnboardingViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5669E2081FF044EF007F03B4 /* MyFormViewController.swift */,
 				56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */,
 				56EE973D1FEB196600FD7F5F /* PlayStylePageViewController.swift */,
 				56EE97391FEB185800FD7F5F /* StatsViewController.swift */,
+				564CD41A1FEF269700CCD80A /* Page1ViewController.swift */,
 			);
 			path = OnboardingViewControllers;
 			sourceTree = "<group>";
@@ -230,8 +241,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56784A791FEF9D1E00C42FD2 /* bodymovin.js in Resources */,
 				564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */,
 				564CB2AB1FE26D5000BC0706 /* GoogleService-Info.plist in Resources */,
+				56784A701FEF99F400C42FD2 /* preloader.json in Resources */,
 				5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */,
 				5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */,
 			);
@@ -247,10 +260,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -289,34 +302,44 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageRow/ImageRow.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageRow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,16 +354,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564CD41B1FEF269700CCD80A /* Page1ViewController.swift in Sources */,
 				56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */,
 				56DB9A5E1FEBB684000CE7DD /* OnBoardingViewControllerDelegate.swift in Sources */,
 				56EE97401FEB198300FD7F5F /* PlayStylePageViewControllerDelegate.swift in Sources */,
 				56EE973A1FEB185800FD7F5F /* StatsViewController.swift in Sources */,
-				56EE974A1FEB2CE300FD7F5F /* PlayStylePageOneViewController.swift in Sources */,
 				56EE973E1FEB196600FD7F5F /* PlayStylePageViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
 				5656B1711FE25EF600C3240A /* OnboardingPageViewController.swift in Sources */,
 				56EE97381FEB16C900FD7F5F /* StatsViewControllerDelegate.swift in Sources */,
 				5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */,
+				5669E2091FF044EF007F03B4 /* MyFormViewController.swift in Sources */,
 				56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,5 +18,9 @@ pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Facebook'
 pod 'FirebaseUI/Phone'
 pod 'Firebase/Storage'
+pod 'lottie-ios'
+pod 'Material', '~> 2.0'
+pod 'Eureka'
+pod 'ImageRow'
 
 end

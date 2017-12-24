@@ -1,20 +1,25 @@
 //
-//  PlayStylePageOneViewController.swift
+//  OnboardingPageOneViewController.swift
 //  Pawsy
 //
-//  Created by Shantini Vyas on 12/20/17.
+//  Created by Shantini Vyas on 12/23/17.
 //  Copyright © 2017 Pawsy.dog. All rights reserved.
 //
 
 import UIKit
 
-class PlayStylePageOneViewController: UIPageViewController {
+
+class Page1ViewController: UIViewController {
+    
+    @IBOutlet weak var myView: UIView!
     
     
+    // Do Something
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+      
     }
 
     override func didReceiveMemoryWarning() {

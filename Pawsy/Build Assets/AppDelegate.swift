@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINaviga
         FUIFacebookAuth()
     ]
     
-    
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         print(error.debugDescription)
         self.user = Auth.auth().currentUser
@@ -33,10 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINaviga
         controller.authUI = self.authUI
         self.window?.rootViewController?.present(controller, animated: true)
     }
-    
-   
- 
-
     
     func application(_ app: UIApplication, open url: URL,
                      options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
@@ -47,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINaviga
         // other URL handling goes here.
         return false
     }
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -64,9 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINaviga
         
     }
     
-    
-    
-    
+
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
