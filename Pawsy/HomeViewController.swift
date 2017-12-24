@@ -12,15 +12,6 @@ import FirebaseAuthUI
 
 
 class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
-    
-    func didPressCancel(_ controller: OnboardingViewController) {
-        print("canceled")
-    }
-    
-    func didFinishOnboarding(_ controller: OnboardingViewController, data: DataModel) {
-        print (data)
-    }
-    
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var addNewButton: UIButton!
     @IBAction func addNewPup(_ sender: UIButton) {
@@ -38,6 +29,10 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     
     var user: User?
     var authUI: FUIAuth?
+    
+    func didFinishOnboarding(_ controller: OnboardingViewController, data: DataModel) {
+        print (data)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOnboarding" {
@@ -63,7 +58,7 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
                 docRef.setData([
                     "name": self.user?.displayName,
                     "onboarded": false
-                ])
+                    ])
             }
             
         }
