@@ -8,15 +8,59 @@
 
 import UIKit
 import Firebase
+import FirebaseAuthUI
 import Eureka
 import ImageRow
 
 class OnboardingViewController: FormViewController {
     
+    var authUI: FUIAuth?
+    var downloadURL: String?
+    var user: User?
+    
     @IBAction func didPressSave(_ sender: UIBarButtonItem) {
-        print(self.dataFromForm)
-        self.delegate?.didFinishOnboarding(self, data: dataFromForm)
-        self.dismiss(animated: true, completion: nil)
+        var dataUpload = [String: Any]()
+        let dogName: String = self.dataFromForm["name"] as! String
+        let db = Firestore.firestore()
+        
+        for items in self.dataFromForm{
+            if items.value == nil{
+                dataUpload[items.key] = ""
+            }
+            else if items.key != "photo" {
+                dataUpload[items.key] = items.value
+            }
+            
+        }
+        let dogImage = self.dataFromForm["photo"] as! UIImage
+        let imagedata  = UIImagePNGRepresentation(dogImage)
+        let storage = Storage.storage()
+        let dogID = self.user!.uid + "-" + dogName
+        let newRef = storage.reference().child("images/"+dogID)
+        
+        _ = newRef.putData(imagedata!, metadata: nil) { (metadata, error) in
+            guard metadata != nil else {
+                print(error!.localizedDescription)
+                dataUpload["photo"] = ""
+                return
+            }
+            self.downloadURL = "gs://pawsy-c0063.appspot.com/images/" + dogID
+            dataUpload["photo"] = self.downloadURL
+            let newDoc = db.collection("users").document(self.user!.uid).collection("dogs").document(dogName)
+            newDoc.setData(dataUpload)
+            let imageRef = storage.reference(forURL: self.downloadURL!)
+            imageRef.getData(maxSize: 1 * 512 * 512) { data, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    // Data for "images/island.jpg" is returned
+                    let image = UIImage(data: data!)
+                    self.delegate?.didFinishOnboarding(self, photo: image!)
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+        
     }
     
     @IBAction func didPressCancel(_ sender: UIBarButtonItem) {
@@ -24,7 +68,7 @@ class OnboardingViewController: FormViewController {
     }
     
 
-    let user = Auth.auth().currentUser!
+    
     var newDog: DataModel?
     var delegate: OnboardingViewControllerDelegate?
     var dataFromForm: [String: Any?] = [
@@ -662,6 +706,7 @@ class OnboardingViewController: FormViewController {
         self.createForm()
         animateScroll = true
         rowKeyboardSpacing = 20
+        self.user = Auth.auth().currentUser!
     }
 
     override func didReceiveMemoryWarning() {

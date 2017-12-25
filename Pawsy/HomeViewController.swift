@@ -12,6 +12,8 @@ import FirebaseAuthUI
 
 
 class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
+    
+    @IBOutlet weak var dogHomeImageView: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var addNewButton: UIButton!
     @IBAction func addNewPup(_ sender: UIButton) {
@@ -31,46 +33,8 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     var authUI: FUIAuth?
     var downloadURL: String?
     
-    func didFinishOnboarding(_ controller: OnboardingViewController, data: [String: Any?]) {
-        var dataUpload = [String: Any]()
-        let dogName: String = data["name"] as! String
-        let db = Firestore.firestore()
-        
-        for items in data{
-            if items.value == nil{
-                dataUpload[items.key] = ""
-            }
-            else if items.key != "photo" {
-                dataUpload[items.key] = items.value
-            }
-            
-        }
-        let dogImage = data["photo"] as! UIImage
-        let imagedata  = UIImagePNGRepresentation(dogImage)
-        let storage = Storage.storage()
-        let dogID = self.user!.uid + "-" + dogName
-        let newRef = storage.reference().child("images/"+dogID)
-        
-        _ = newRef.putData(imagedata!, metadata: nil) { (metadata, error) in
-            guard metadata != nil else {
-                print(error!)
-                dataUpload["photo"] = ""
-                return
-            }
-            self.downloadURL = "gs://pawsy-c0063.appspot.com/images/" + dogID
-            dataUpload["photo"] = self.downloadURL
-            let newDoc = db.collection("users").document(self.user!.uid).collection("dogs").document(dogName)
-            newDoc.setData(dataUpload)
-            let imageRef = storage.reference(forURL: self.downloadURL!)
-            imageRef.getData(maxSize: 1 * 512 * 512) { data, error in
-                if let error = error {
-                    // Uh-oh, an error occurred!
-                } else {
-                    // Data for "images/island.jpg" is returned
-                    let image = UIImage(data: data!)
-                }
-            }
-        }
+    func didFinishOnboarding(_ controller: OnboardingViewController, photo: UIImage) {
+        self.dogHomeImageView.image = photo
     }
     
     

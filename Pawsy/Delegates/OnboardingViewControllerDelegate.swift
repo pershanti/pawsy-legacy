@@ -7,9 +7,9 @@
 //
 
 import Foundation
-
+import UIKit
 
 protocol OnboardingViewControllerDelegate: class {
-    func didFinishOnboarding(_ controller: OnboardingViewController, data: [String: Any?])
+    func didFinishOnboarding(_ controller: OnboardingViewController, photo: UIImage)
 }
 
