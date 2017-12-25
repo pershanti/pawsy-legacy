@@ -15,8 +15,8 @@ class OnboardingViewController: FormViewController {
     
     @IBAction func didPressSave(_ sender: UIBarButtonItem) {
         print(self.dataFromForm)
-//        self.delegate?.didFinishOnboarding(self, data: dataFromForm!)
-//        self.dismiss(animated: true, completion: nil)
+        self.delegate?.didFinishOnboarding(self, data: dataFromForm)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didPressCancel(_ sender: UIBarButtonItem) {
@@ -27,7 +27,23 @@ class OnboardingViewController: FormViewController {
     let user = Auth.auth().currentUser!
     var newDog: DataModel?
     var delegate: OnboardingViewControllerDelegate?
-    var dataFromForm: [String: Any?]?
+    var dataFromForm: [String: Any?] = [
+        "name": nil,
+        "age": nil,
+        "weight": nil,
+        "breed": nil,
+        
+        "photo": nil,
+        
+        "energyLevel": nil,
+        "dogFeelings": nil,
+        "humanFeelings": nil,
+        "roughness": nil,
+        "ball": nil,
+        "playScene": nil,
+        "dogSizePreference": nil,
+        "lookingFor": nil,
+        ]
     let breedList = [
         "Unknown",
         "Mix",
@@ -495,21 +511,21 @@ class OnboardingViewController: FormViewController {
                 row.placeholder = "name"
                 row.tag = "name"
                 }.onChange{row in
-                    self.dataFromForm = self.form.values()
+                    self.dataFromForm["name"] = row.value!
                 }
             <<< TextRow(){ row in
                 row.title = "Age"
                 row.placeholder = "years"
                 row.tag = "age"
                 }.onChange{row in
-                    self.dataFromForm = self.form.values()
+                    self.dataFromForm["age"] = row.value!
                 }
             <<< TextRow(){ row in
                 row.title = "Weight"
                 row.placeholder = "lbs"
                 row.tag = "weight"
                 }.onChange{row in
-                    self.dataFromForm = self.form.values()
+                    self.dataFromForm["weight"] = row.value!
             }
             <<< MultipleSelectorRow<String>("Dog Breed"){
                 $0.title = "Dog Breed"
@@ -517,7 +533,7 @@ class OnboardingViewController: FormViewController {
                 $0.selectorTitle = "Select one or more dog breeds"
                 $0.options = self.breedList
                 }.onChange{row in
-                    self.dataFromForm = self.form.values()
+                    self.dataFromForm["breed"] = Array(row.value!)
             }
            
             
@@ -529,7 +545,7 @@ class OnboardingViewController: FormViewController {
                     row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum, .Camera]
                     row.clearAction = .yes(style: UIAlertActionStyle.destructive)
                     }.onChange{row in
-                        self.dataFromForm = self.form.values()
+                        self.dataFromForm["photo"] = row.value!
             }
         
         
@@ -543,7 +559,7 @@ class OnboardingViewController: FormViewController {
                          "I occasionally enjoy playing, but it’s rare",
                          "My butt is glued to the couch"]
                     }.onChange{row in
-                        self.dataFromForm = self.form.values()
+                        self.dataFromForm["energyLevel"] = row.value!
             }
                 <<< PushRow<String>("dogFeelings"){
                     $0.title = "What happens when you meet other dogs?"
@@ -556,7 +572,7 @@ class OnboardingViewController: FormViewController {
                         "I really like my private space. No dogs allowed!"
                     ]
                     }.onChange{row in
-                        self.dataFromForm = self.form.values()
+                        self.dataFromForm["dogFeelings"] = row.value!
                 }
                 <<< PushRow<String>("humanFeelings"){
                     $0.title = "How much do you like humans?"
@@ -569,7 +585,7 @@ class OnboardingViewController: FormViewController {
                         "I really don’t like people"
                     ]
                     }.onChange{row in
-                        self.dataFromForm = self.form.values()
+                        self.dataFromForm["humanFeelings"] = row.value!
                 }
             <<< PushRow<String>("roughness"){
                 $0.title = "How much contact do you like?"
@@ -582,7 +598,7 @@ class OnboardingViewController: FormViewController {
                     "Don't touch me!"
                 ]
                 }.onChange{row in
-                    self.dataFromForm = self.form.values()
+                    self.dataFromForm["roughness"] = row.value!
                 }
         
             <<< PushRow<String>("ball"){
@@ -594,7 +610,7 @@ class OnboardingViewController: FormViewController {
                     "What is a ball?"
                 ]
                 }.onChange{row in
-                    self.dataFromForm = self.form.values()
+                    self.dataFromForm["ball"] = row.value!
                 }
         
             <<< PushRow<String>("playScene"){
@@ -608,7 +624,7 @@ class OnboardingViewController: FormViewController {
                     "Netflix and chew, baby. I'm an indoor pup."
                 ]
                 }.onChange{row in
-                    self.dataFromForm = self.form.values()
+                    self.dataFromForm["playScene"] = row.value!
                 }
         
             +++ Section("Sniffing for")
@@ -621,7 +637,7 @@ class OnboardingViewController: FormViewController {
                         "Bigger than me"
                     ]
                     }.onChange{row in
-                        self.dataFromForm = self.form.values()
+                        self.dataFromForm["dogSizePreference"] = Array(row.value!)
                 }
             <<< MultipleSelectorRow<String>("lookingFor"){
                 $0.title = "I’m looking for someone to: (multi-select)"
@@ -636,7 +652,7 @@ class OnboardingViewController: FormViewController {
                      "walk with me"
                 ]
                 }.onChange{row in
-                    self.dataFromForm = self.form.values()
+                    self.dataFromForm["lookingFor"] = Array(row.value!)
             }
         }
     

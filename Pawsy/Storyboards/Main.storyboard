@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rrJ-AH-R1z">
-                                <rect key="frame" x="65" y="314" width="245" height="122"/>
+                                <rect key="frame" x="0.0" y="517" width="172" height="101"/>
                                 <color key="backgroundColor" red="0.83092084390862941" green="0.40115819378659034" blue="0.78286239182908901" alpha="0.59324165239726023" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
                                 <state key="normal" title="Add a new pup!">
