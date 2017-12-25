@@ -11,12 +11,15 @@ import Firebase
 import FirebaseAuthUI
 import Eureka
 import ImageRow
+import Alamofire
+
 
 class OnboardingViewController: FormViewController {
     
     var authUI: FUIAuth?
     var downloadURL: String?
     var user: User?
+    
     
     @IBAction func didPressSave(_ sender: UIBarButtonItem) {
         var dataUpload = [String: Any]()
@@ -48,17 +51,6 @@ class OnboardingViewController: FormViewController {
             dataUpload["photo"] = self.downloadURL
             let newDoc = db.collection("users").document(self.user!.uid).collection("dogs").document(dogName)
             newDoc.setData(dataUpload)
-            let imageRef = storage.reference(forURL: self.downloadURL!)
-            imageRef.getData(maxSize: 1 * 512 * 512) { data, error in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    // Data for "images/island.jpg" is returned
-                    let image = UIImage(data: data!)
-                    self.delegate?.didFinishOnboarding(self, photo: image!)
-                    self.dismiss(animated: true, completion: nil)
-                }
-            }
         }
         
     }
@@ -66,10 +58,7 @@ class OnboardingViewController: FormViewController {
     @IBAction func didPressCancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 
-    
-    var newDog: DataModel?
     var delegate: OnboardingViewControllerDelegate?
     var dataFromForm: [String: Any?] = [
         "name": nil,
@@ -707,6 +696,7 @@ class OnboardingViewController: FormViewController {
         animateScroll = true
         rowKeyboardSpacing = 20
         self.user = Auth.auth().currentUser!
+        
     }
 
     override func didReceiveMemoryWarning() {
