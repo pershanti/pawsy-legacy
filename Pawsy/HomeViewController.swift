@@ -30,8 +30,18 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     var user: User?
     var authUI: FUIAuth?
     
-    func didFinishOnboarding(_ controller: OnboardingViewController, data: DataModel) {
-        print (data)
+    func didFinishOnboarding(_ controller: OnboardingViewController, data: [String: Any?]) {
+        var dataUpload = [String: Any]()
+        let db = Firestore.firestore()
+        for items in data{
+            if items.value != nil{
+                dataUpload[items.key] = items.value
+            }
+            else{
+                dataUpload[items.key] = ""
+            }
+        }
+    db.collection("users").document(self.user!.uid).collection("dogs").addDocument(data: dataUpload)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -10,6 +10,6 @@ import Foundation
 
 
 protocol OnboardingViewControllerDelegate: class {
-    func didFinishOnboarding(_ controller: OnboardingViewController, data: DataModel)
+    func didFinishOnboarding(_ controller: OnboardingViewController, data: [String: Any?])
 }
 

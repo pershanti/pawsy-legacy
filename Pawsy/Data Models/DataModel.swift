@@ -7,19 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 class DataModel {
     
     var data = [
         //onboardingviewcontroller
-        "name": "",
+        "name": nil,
         //statsviewcontroller
         "age": nil,
         "weight": nil,
-        "breed": "",
+        "breed": nil,
         
         //imageuploadviewcontroller
-        "photoURL": "",
+        "photo": UIImage(),
         
         //playstyleviewcontroller
         "energyLevel": nil,
@@ -29,8 +30,8 @@ class DataModel {
         "ball": nil,
         "playScene": nil,
         "dogSizePreference": nil,
-        "looking for": nil,
-        ]
+        "lookingFor": nil,
+        ] as [String : Any?]
 
     init(name: String) {
         self.data["name"] = name
