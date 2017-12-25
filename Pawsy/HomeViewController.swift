@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import Cloudinary
 
 
 class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
@@ -32,6 +33,8 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     var user: User?
     var authUI: FUIAuth?
     var downloadURL: String?
+    
+    
     
     func didFinishOnboarding(_ controller: OnboardingViewController, photo: UIImage) {
         self.dogHomeImageView.image = photo
@@ -74,6 +77,7 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
         self.user = Auth.auth().currentUser
         self.profileName?.text = user?.displayName
         self.checkIfOnboarded()
+        
     }
     
     override func didReceiveMemoryWarning() {
