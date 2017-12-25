@@ -9,9 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import Cloudinary
 
 
 class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
+    
+    @IBOutlet weak var dogHomeImageView: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var addNewButton: UIButton!
     @IBAction func addNewPup(_ sender: UIButton) {
@@ -29,10 +32,15 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     
     var user: User?
     var authUI: FUIAuth?
+    var downloadURL: String?
     
-    func didFinishOnboarding(_ controller: OnboardingViewController, data: DataModel) {
-        print (data)
+    
+    
+    func didFinishOnboarding(_ controller: OnboardingViewController, photo: UIImage) {
+        self.dogHomeImageView.image = photo
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOnboarding" {
@@ -69,6 +77,7 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
         self.user = Auth.auth().currentUser
         self.profileName?.text = user?.displayName
         self.checkIfOnboarded()
+        
     }
     
     override func didReceiveMemoryWarning() {
