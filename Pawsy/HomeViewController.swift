@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import Cloudinary
 
 
 class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
@@ -31,13 +32,12 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     
     var user: User?
     var authUI: FUIAuth?
-    var downloadURL: String?
+    var cloudinary: CLDCloudinary?
+    let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     
     func didFinishOnboarding(_ controller: OnboardingViewController, photo: UIImage) {
         self.dogHomeImageView.image = photo
     }
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOnboarding" {
@@ -69,11 +69,31 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
         }
     }
     
+    func uploadToCloudinary(_controller: OnboardingViewController, photo: UIImage, dogID: String, document: DocumentReference) {
+        let transformation = CLDTransformation().setWidth(360).setHeight(360).setCrop(.thumb).setGravity(.face)
+        
+        let uploadData = UIImageJPEGRepresentation(photo, 1)
+        let params = CLDUploadRequestParams()
+        params.setTransformation(transformation)
+        params.setPublicId(dogID)
+        let request = self.cloudinary!.createUploader().upload(data: uploadData!, uploadPreset: "", params: params, progress: nil, completionHandler: {
+            (response, error) in
+            
+            if error !== nil{
+                print(error)
+            }
+            
+            
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.user = Auth.auth().currentUser
         self.profileName?.text = user?.displayName
         self.checkIfOnboarded()
+        self.cloudinary = CLDCloudinary(configuration: self.config!)
+       
     }
     
     override func didReceiveMemoryWarning() {

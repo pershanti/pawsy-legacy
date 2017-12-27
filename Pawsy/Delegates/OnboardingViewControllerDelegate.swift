@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 protocol OnboardingViewControllerDelegate: class {
-    func didFinishOnboarding(_ controller: OnboardingViewController, photo: UIImage)
+    func uploadToCloudinary(_controller: OnboardingViewController, photo: UIImage, dogID: String, document: DocumentReference)
 }
 

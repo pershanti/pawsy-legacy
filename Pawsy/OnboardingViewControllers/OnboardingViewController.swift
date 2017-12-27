@@ -12,6 +12,7 @@ import FirebaseAuthUI
 import Eureka
 import ImageRow
 
+
 class OnboardingViewController: FormViewController {
     
     var authUI: FUIAuth?
@@ -22,46 +23,26 @@ class OnboardingViewController: FormViewController {
         var dataUpload = [String: Any]()
         let dogName: String = self.dataFromForm["name"] as! String
         let db = Firestore.firestore()
-        
+        let dogImage = self.dataFromForm["photo"] as! UIImage
+        let dogID = self.user!.uid + "-" + dogName
         for items in self.dataFromForm{
             if items.value == nil{
                 dataUpload[items.key] = ""
             }
-            else if items.key != "photo" {
+            else if items.key == "photo"{
+                dataUpload[items.key] = ""
+            }
+            else {
                 dataUpload[items.key] = items.value
             }
-            
         }
-        let dogImage = self.dataFromForm["photo"] as! UIImage
-        let imagedata  = UIImagePNGRepresentation(dogImage)
-        let storage = Storage.storage()
-        let dogID = self.user!.uid + "-" + dogName
-        let newRef = storage.reference().child("images/"+dogID)
+        let newDoc = db.collection("users").document(self.user!.uid).collection("dogs").document(dogName)
         
-        _ = newRef.putData(imagedata!, metadata: nil) { (metadata, error) in
-            guard metadata != nil else {
-                print(error!.localizedDescription)
-                dataUpload["photo"] = ""
-                return
-            }
-            self.downloadURL = "gs://pawsy-c0063.appspot.com/images/" + dogID
-            dataUpload["photo"] = self.downloadURL
-            let newDoc = db.collection("users").document(self.user!.uid).collection("dogs").document(dogName)
-            newDoc.setData(dataUpload)
-            let imageRef = storage.reference(forURL: self.downloadURL!)
-            imageRef.getData(maxSize: 1 * 512 * 512) { data, error in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    // Data for "images/island.jpg" is returned
-                    let image = UIImage(data: data!)
-                    self.delegate?.didFinishOnboarding(self, photo: image!)
-                    self.dismiss(animated: true, completion: nil)
-                }
-            }
-        }
+        newDoc.setData(dataUpload)
         
+        self.delegate!.uploadToCloudinary(_controller: self, photo: dogImage, dogID: dogID, document: newDoc)
     }
+    
     
     @IBAction func didPressCancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)

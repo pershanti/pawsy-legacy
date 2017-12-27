@@ -7,20 +7,18 @@ target 'Pawsy' do
 
   # Pods for Pawsy
 
-pod ‘Firebase’
-pod ‘Firebase/Core’
-pod ‘Firebase/Auth’
-pod ‘Firebase/Firestore’
-
+pod 'Firebase'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
 pod 'FirebaseUI/Auth'
-
 pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Facebook'
 pod 'FirebaseUI/Phone'
 pod 'Firebase/Storage'
-pod 'lottie-ios'
-pod 'Material', '~> 2.0'
 pod 'Eureka'
 pod 'ImageRow'
+pod 'Cloudinary', '2.0.4'
+
 
 end
