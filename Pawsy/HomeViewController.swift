@@ -70,20 +70,12 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     }
     
     func uploadToCloudinary(_controller: OnboardingViewController, photo: UIImage, dogID: String, document: DocumentReference) {
-        let transformation = CLDTransformation().setWidth(360).setHeight(360).setCrop(.thumb).setGravity(.face)
-        
         let uploadData = UIImageJPEGRepresentation(photo, 1)
-        let params = CLDUploadRequestParams()
-        params.setTransformation(transformation)
-        params.setPublicId(dogID)
-        let request = self.cloudinary!.createUploader().upload(data: uploadData!, uploadPreset: "", params: params, progress: nil, completionHandler: {
-            (response, error) in
-            
-            if error !== nil{
-                print(error)
-            }
-            
-            
+       
+        let upload = self.cloudinary?.createUploader().upload(data: uploadData!, uploadPreset: "pawsyDogPic").response({
+            (result, error) in
+            print (result?.tags)
+            let downloadURL = result?.publicId
         })
     }
     

@@ -16,7 +16,6 @@ import ImageRow
 class OnboardingViewController: FormViewController {
     
     var authUI: FUIAuth?
-    var downloadURL: String?
     var user: User?
     
     @IBAction func didPressSave(_ sender: UIBarButtonItem) {
@@ -39,8 +38,8 @@ class OnboardingViewController: FormViewController {
         let newDoc = db.collection("users").document(self.user!.uid).collection("dogs").document(dogName)
         
         newDoc.setData(dataUpload)
-        
         self.delegate!.uploadToCloudinary(_controller: self, photo: dogImage, dogID: dogID, document: newDoc)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
