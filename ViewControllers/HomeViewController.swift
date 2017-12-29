@@ -15,7 +15,6 @@ import Cloudinary
 class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     
     @IBOutlet weak var dogHomeImageView: UIImageView!
-    @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var addNewButton: UIButton!
     @IBAction func addNewPup(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToOnboarding", sender: nil)
@@ -82,7 +81,6 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.user = Auth.auth().currentUser
-        self.profileName?.text = user?.displayName
         self.checkIfOnboarded()
         self.cloudinary = CLDCloudinary(configuration: self.config!)
        

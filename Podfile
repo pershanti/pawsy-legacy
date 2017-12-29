@@ -18,6 +18,7 @@ pod 'FirebaseUI/Phone'
 pod 'Firebase/Storage'
 pod 'Eureka'
 pod 'ImageRow'
+pod 'lottie-ios'
 pod 'Cloudinary', '2.0.4'
 
 

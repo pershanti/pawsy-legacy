@@ -51,12 +51,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINaviga
         authUI?.delegate = self
         authUI?.providers = self.providers
         let authViewController = authUI!.authViewController()
+        authViewController.view.backgroundColor = UIColor(patternImage: UIImage(named: "goldensblur")!)
         authViewController.delegate = self
         self.window?.rootViewController = authViewController
         print("here")
         return true
         
     }
+    
+    
+    func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
+        return CustomAuthPickerViewController(authUI: self.authUI!)
+    }
+
     
 
     func applicationWillResignActive(_ application: UIApplication) {

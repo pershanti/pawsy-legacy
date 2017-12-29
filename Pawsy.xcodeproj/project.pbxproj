@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		563FB71D1FF59F2300C13D3E /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FB71C1FF59F2300C13D3E /* WaitingViewController.swift */; };
 		564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CA1FE25E9A00D292FA /* AppDelegate.swift */; };
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
 		564CB2AB1FE26D5000BC0706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */; };
 		5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16D1FE25EF600C3240A /* HomeViewController.swift */; };
 		5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1721FE25F4C00C3240A /* Main.storyboard */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
+		56634DB51FF5BE130058EF3F /* CustomRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56634DB41FF5BE130058EF3F /* CustomRoundedButton.swift */; };
+		56634DBD1FF5DA390058EF3F /* CustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56634DBC1FF5DA390058EF3F /* CustomAuthPickerViewController.swift */; };
 		5669E20D1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5669E20C1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift */; };
 		56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */; };
 		56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97351FEB124D00FD7F5F /* DataModel.swift */; };
@@ -22,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
-		563FB71C1FF59F2300C13D3E /* WaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
 		564872C71FE25E9A00D292FA /* Pawsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564872CA1FE25E9A00D292FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564872D11FE25E9A00D292FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +31,8 @@
 		5656B16D1FE25EF600C3240A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5656B1721FE25F4C00C3240A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		56634DB41FF5BE130058EF3F /* CustomRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedButton.swift; sourceTree = "<group>"; };
+		56634DBC1FF5DA390058EF3F /* CustomAuthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthPickerViewController.swift; sourceTree = "<group>"; };
 		5669E20C1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewControllerDelegate.swift; sourceTree = "<group>"; };
 		56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		56EE97351FEB124D00FD7F5F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				564872C91FE25E9A00D292FA /* Pawsy */,
+				56634DBE1FF5E0A00058EF3F /* ViewControllers */,
 				564872C81FE25E9A00D292FA /* Products */,
 				DBBE86A2E67D015D1220FFD1 /* Pods */,
 				DBB876FC65ABF2F5E0292D7A /* Frameworks */,
@@ -73,17 +76,25 @@
 			isa = PBXGroup;
 			children = (
 				564872D61FE25E9A00D292FA /* Info.plist */,
-				5656B16D1FE25EF600C3240A /* HomeViewController.swift */,
-				563FB71C1FF59F2300C13D3E /* WaitingViewController.swift */,
+				56634DB41FF5BE130058EF3F /* CustomRoundedButton.swift */,
 				56EE97481FEB1A4B00FD7F5F /* Code Samples */,
 				56EE97471FEB1A2D00FD7F5F /* Data Models */,
 				56EE97441FEB19F400FD7F5F /* Build Assets */,
-				56EE97431FEB19D600FD7F5F /* OnboardingViewControllers */,
 				56EE97421FEB19CA00FD7F5F /* Storyboards */,
 				56EE97411FEB19B800FD7F5F /* Delegates */,
 				564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */,
 			);
 			path = Pawsy;
+			sourceTree = "<group>";
+		};
+		56634DBE1FF5E0A00058EF3F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5656B16D1FE25EF600C3240A /* HomeViewController.swift */,
+				56634DBC1FF5DA390058EF3F /* CustomAuthPickerViewController.swift */,
+				56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		56EE97411FEB19B800FD7F5F /* Delegates */ = {
@@ -101,14 +112,6 @@
 				5656B1721FE25F4C00C3240A /* Main.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		56EE97431FEB19D600FD7F5F /* OnboardingViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */,
-			);
-			path = OnboardingViewControllers;
 			sourceTree = "<group>";
 		};
 		56EE97441FEB19F400FD7F5F /* Build Assets */ = {
@@ -289,6 +292,7 @@
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -310,6 +314,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,10 +331,11 @@
 			files = (
 				56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
-				563FB71D1FF59F2300C13D3E /* WaitingViewController.swift in Sources */,
 				5669E20D1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift in Sources */,
+				56634DBD1FF5DA390058EF3F /* CustomAuthPickerViewController.swift in Sources */,
 				5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */,
 				56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */,
+				56634DB51FF5BE130058EF3F /* CustomRoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
