@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,63 +53,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldensblur" translatesAutoresizingMaskIntoConstraints="NO" id="YKL-WE-rKU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-w7-P2X">
-                                <rect key="frame" x="107" y="547" width="160" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="2Sh-sE-3Rh"/>
-                                    <constraint firstAttribute="height" constant="39" id="wa6-U4-4Ag"/>
-                                </constraints>
-                                <state key="normal" title="Add a new pup!" backgroundImage="greenbuttonNoShadows">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addNewPup:" destination="eWJ-jt-SSo" eventType="touchUpInside" id="ZrZ-RI-P8T"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vVL-IO-nUZ">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWJ-vg-fEu">
-                                <rect key="frame" x="224" y="27" width="135" height="31"/>
+                                <rect key="frame" x="239" y="33" width="120" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="18P-CO-SpM"/>
-                                    <constraint firstAttribute="width" constant="135" id="PjI-ck-0DB"/>
+                                    <constraint firstAttribute="height" constant="30" id="HdF-PI-rGg"/>
+                                    <constraint firstAttribute="width" constant="120" id="Z9F-hh-aEd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                <state key="normal" title="Log Out" backgroundImage="greenbuttonNoShadows">
+                                <state key="normal" title="Log Out" backgroundImage="transparentButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="logOutButtonPressed:" destination="eWJ-jt-SSo" eventType="touchUpInside" id="XX5-6m-7St"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-w7-P2X">
+                                <rect key="frame" x="107" y="531" width="161" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="9Ia-7a-ic7"/>
+                                    <constraint firstAttribute="height" constant="40" id="xP0-aT-Tqa"/>
+                                </constraints>
+                                <state key="normal" title="Add a new pup!" backgroundImage="transparentButton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNewPup:" destination="eWJ-jt-SSo" eventType="touchUpInside" id="ZrZ-RI-P8T"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" name="BlueGray"/>
+                        <color key="backgroundColor" red="0.13346317410469055" green="0.18231484293937683" blue="0.25190103054046631" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vVL-IO-nUZ" firstAttribute="top" secondItem="DWJ-vg-fEu" secondAttribute="bottom" constant="211" id="0MG-zA-ccj"/>
-                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="OYn-w7-P2X" secondAttribute="trailing" constant="108" id="0sV-St-ZtU"/>
-                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="DWJ-vg-fEu" secondAttribute="trailing" constant="16" id="CaS-dX-Bq3"/>
-                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="vVL-IO-nUZ" secondAttribute="trailing" constant="68" id="Pjo-Qe-DLU"/>
-                            <constraint firstItem="vVL-IO-nUZ" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="67" id="RBO-XH-u75"/>
-                            <constraint firstItem="OYn-w7-P2X" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="107" id="Rgy-du-VqZ"/>
-                            <constraint firstItem="YKL-WE-rKU" firstAttribute="top" secondItem="FGh-xF-oHU" secondAttribute="top" id="UE3-LZ-wXp"/>
-                            <constraint firstAttribute="bottom" secondItem="YKL-WE-rKU" secondAttribute="bottom" id="UHK-2b-gLV"/>
-                            <constraint firstItem="YKL-WE-rKU" firstAttribute="trailing" secondItem="9v7-Fs-ySx" secondAttribute="trailing" id="d9p-Hh-Stc"/>
-                            <constraint firstItem="DWJ-vg-fEu" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="224" id="hNs-PT-6v3"/>
-                            <constraint firstItem="OYn-w7-P2X" firstAttribute="top" secondItem="vVL-IO-nUZ" secondAttribute="bottom" constant="150" id="l4I-D1-2Gw"/>
-                            <constraint firstItem="YKL-WE-rKU" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" id="x78-Up-TJk"/>
-                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="bottom" secondItem="OYn-w7-P2X" secondAttribute="bottom" constant="32" id="yCS-JY-A49"/>
-                            <constraint firstItem="DWJ-vg-fEu" firstAttribute="top" secondItem="9v7-Fs-ySx" secondAttribute="top" constant="7" id="zG4-Fq-BeB"/>
+                            <constraint firstItem="DWJ-vg-fEu" firstAttribute="top" secondItem="9v7-Fs-ySx" secondAttribute="top" constant="13" id="6ny-wt-dfK"/>
+                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="DWJ-vg-fEu" secondAttribute="trailing" constant="16" id="HvY-Nm-C4W"/>
+                            <constraint firstItem="DWJ-vg-fEu" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="239" id="MmO-q7-t2f"/>
+                            <constraint firstItem="OYn-w7-P2X" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="107" id="a0y-Zk-hrN"/>
+                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="bottom" secondItem="OYn-w7-P2X" secondAttribute="bottom" constant="47" id="mIs-1W-2eH"/>
+                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="OYn-w7-P2X" secondAttribute="trailing" constant="107" id="tdu-CZ-5LQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9v7-Fs-ySx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Dogs" id="IVx-Ob-6st"/>
                     <connections>
                         <outlet property="addNewButton" destination="OYn-w7-P2X" id="94c-kr-EzM"/>
-                        <outlet property="dogHomeImageView" destination="vVL-IO-nUZ" id="MIK-Xr-3B5"/>
                         <segue destination="Zi6-m4-XqV" kind="presentation" identifier="goToOnboarding" id="sWn-uR-8Yg"/>
                     </connections>
                 </viewController>
@@ -125,7 +109,6 @@
                     <view key="view" contentMode="scaleToFill" id="Rvw-Mr-Thf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="meA-Fb-uhX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a New Dog" id="XdN-JK-xfd">
@@ -184,9 +167,6 @@
     <resources>
         <image name="colorLogoTransparent2X" width="230" height="56"/>
         <image name="goldensblur" width="763" height="1307"/>
-        <image name="greenbuttonNoShadows" width="327" height="67"/>
-        <namedColor name="BlueGray">
-            <color red="0.47499999403953552" green="0.48600000143051147" blue="0.58399999141693115" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
+        <image name="transparentButton" width="327" height="67"/>
     </resources>
 </document>

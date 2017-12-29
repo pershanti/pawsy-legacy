@@ -13,6 +13,7 @@ class CustomRoundedButton: UIButton {
     func setUp() {
         self.layer.cornerRadius = 10
         self.backgroundColor = UIColor.purple
+        
     }
     
     override func awakeFromNib() {

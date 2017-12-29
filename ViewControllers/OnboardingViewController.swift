@@ -526,7 +526,11 @@ class OnboardingViewController: FormViewController {
         "Šarplaninac"
     ]
    
-   
+    func checkForm(row: TextRow){
+        if row.value != nil{
+            self.dataFromForm[row.tag!] = row.value!
+        }
+    }
     
     func createForm(){
         form +++ Section("Basic Info")
@@ -535,21 +539,21 @@ class OnboardingViewController: FormViewController {
                 row.placeholder = "name"
                 row.tag = "name"
                 }.onChange{row in
-                    self.dataFromForm["name"] = row.value!
+                    self.checkForm(row: row)
                 }
             <<< TextRow(){ row in
                 row.title = "Age"
                 row.placeholder = "years"
                 row.tag = "age"
                 }.onChange{row in
-                    self.dataFromForm["age"] = row.value!
+                    self.checkForm(row: row)
                 }
             <<< TextRow(){ row in
                 row.title = "Weight"
                 row.placeholder = "lbs"
                 row.tag = "weight"
                 }.onChange{row in
-                    self.dataFromForm["weight"] = row.value!
+                    self.checkForm(row: row)
             }
             <<< MultipleSelectorRow<String>("Dog Breed"){
                 $0.title = "Dog Breed"

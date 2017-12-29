@@ -20,6 +20,8 @@ pod 'Eureka'
 pod 'ImageRow'
 pod 'lottie-ios'
 pod 'Cloudinary', '2.0.4'
+pod 'SwiftyAvatar', '~> 1.1'
+pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
 
 end
