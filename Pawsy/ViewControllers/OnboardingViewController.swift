@@ -13,17 +13,25 @@ import Eureka
 import ImageRow
 
 
-class OnboardingViewController: FormViewController {
+class OnboardingViewController: FormViewController, SavingViewControllerDelegate {
+    
+    
     
     var authUI: FUIAuth?
     var user: User?
+    var dogImage: UIImage?
+    var dogID: String?
+    var dogDoc: DocumentReference?
+    var delegate: OnboardingViewControllerDelegate?
+
+    
     
     @IBAction func didPressSave(_ sender: UIBarButtonItem) {
         var dataUpload = [String: Any]()
         let dogName: String = self.dataFromForm["name"] as! String
         let db = Firestore.firestore()
-        let dogImage = self.dataFromForm["photo"] as! UIImage
-        let dogID = self.user!.uid + "-" + dogName
+        dogImage = self.dataFromForm["photo"] as! UIImage
+        dogID = self.user!.uid + "-" + dogName
         for items in self.dataFromForm{
             if items.value == nil{
                 dataUpload[items.key] = ""
@@ -35,11 +43,10 @@ class OnboardingViewController: FormViewController {
                 dataUpload[items.key] = items.value
             }
         }
-        let newDoc = db.collection("users").document(self.user!.uid).collection("dogs").document(dogName)
+        dogDoc = db.collection("users").document(self.user!.uid).collection("dogs").document(dogName)
+        dogDoc?.setData(dataUpload)
+        performSegue(withIdentifier: "saveScreen", sender: self)
         
-        newDoc.setData(dataUpload)
-        self.delegate!.uploadToCloudinary(_controller: self, photo: dogImage, dogID: dogID, document: newDoc)
-        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -47,10 +54,189 @@ class OnboardingViewController: FormViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    func allDone(_ controller: SavingViewController) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
-    var newDog: DataModel?
-    var delegate: OnboardingViewControllerDelegate?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "saveScreen"{
+            let destination = segue.destination as! SavingViewController
+            destination.delegate = self
+            destination.dogImage = self.dogImage
+            destination.dogDoc = self.dogDoc
+            destination.dogID = self.dogID
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.hidesNavigationBarHairline = true
+        self.createForm()
+        animateScroll = true
+        rowKeyboardSpacing = 20
+        self.user = Auth.auth().currentUser!
+        
+    }
+
+    func checkForm(row: TextRow){
+        if row.value != nil{
+            self.dataFromForm[row.tag!] = row.value!
+        }
+    }
+    
+    func createForm(){
+        form +++ Section("Basic Info")
+            <<< TextRow(){ row in
+                row.title = "Name"
+                row.placeholder = "name"
+                row.tag = "name"
+                }.onChange{row in
+                    self.checkForm(row: row)
+                }
+            <<< TextRow(){ row in
+                row.title = "Age"
+                row.placeholder = "years"
+                row.tag = "age"
+                }.onChange{row in
+                    self.checkForm(row: row)
+                }
+            <<< TextRow(){ row in
+                row.title = "Weight"
+                row.placeholder = "lbs"
+                row.tag = "weight"
+                }.onChange{row in
+                    self.checkForm(row: row)
+            }
+            <<< MultipleSelectorRow<String>("Dog Breed"){
+                $0.title = "Dog Breed"
+                $0.tag = "breed"
+                $0.selectorTitle = "Select one or more dog breeds"
+                $0.options = self.breedList
+                }.onChange{row in
+                    self.dataFromForm["breed"] = Array(row.value!)
+            }
+           
+            
+            +++ Section("Photo")
+                <<< ImageRow(){ row in
+                    row.title = "Puppy Paw-trait"
+                    row.selectorTitle = "Let's see those canines!"
+                    row.tag = "photo"
+                    row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum, .Camera]
+                    row.clearAction = .yes(style: UIAlertActionStyle.destructive)
+                    }.onChange{row in
+                        self.dataFromForm["photo"] = row.value!
+            }
+        
+        
+            +++ Section("Personality")
+                <<< PushRow<String>("energyLevel"){
+                    $0.title = "How active are you?"
+                    $0.selectorTitle = "Energy Level"
+                    $0.options = [ "I could rage all day and night",
+                         "With daily activity I’m calmer, but not tired out",
+                         "I get tired after an hour at the dog park",
+                         "I occasionally enjoy playing, but it’s rare",
+                         "My butt is glued to the couch"]
+                    }.onChange{row in
+                        self.dataFromForm["energyLevel"] = row.value!
+            }
+                <<< PushRow<String>("dogFeelings"){
+                    $0.title = "What happens when you meet other dogs?"
+                    $0.selectorTitle = "Dog Interaction"
+                    $0.options = [
+                        "We become bestest pawls!",
+                        "We're cool after some butt sniffing",
+                        "I can make one new friend at a time",
+                        "I only like the friends I already have",
+                        "I really like my private space. No dogs allowed!"
+                    ]
+                    }.onChange{row in
+                        self.dataFromForm["dogFeelings"] = row.value!
+                }
+                <<< PushRow<String>("humanFeelings"){
+                    $0.title = "How much do you like humans?"
+                    $0.selectorTitle = "Human Interaction"
+                    $0.options = [
+                        "OMG I LOVE YOU!!!!",
+                        "I'm friendly, but I'm more of a dog's dog",
+                        "Humans? What humans?",
+                        "I like a couple of humans",
+                        "I really don’t like people"
+                    ]
+                    }.onChange{row in
+                        self.dataFromForm["humanFeelings"] = row.value!
+                }
+            <<< PushRow<String>("roughness"){
+                $0.title = "How much contact do you like?"
+                $0.selectorTitle = "Play Fighting"
+                $0.options = [
+                    "Smackdowns are my style",
+                    "I gotta mount everyone",
+                    "I enjoy a nice tumble every once in a while",
+                    "Oh we can snuggle, but no wrestling",
+                    "Don't touch me!"
+                ]
+                }.onChange{row in
+                    self.dataFromForm["roughness"] = row.value!
+                }
+        
+            <<< PushRow<String>("ball"){
+                $0.title = "What happens when you see a ball?"
+                $0.selectorTitle = "Ball?"
+                $0.options = [
+                    "BALL!!!!!!",
+                    "Oh cool, a ball! Oh…it’s too far away.",
+                    "What is a ball?"
+                ]
+                }.onChange{row in
+                    self.dataFromForm["ball"] = row.value!
+                }
+        
+            <<< PushRow<String>("playScene"){
+                $0.title = "What's your ideal playdate?"
+                $0.selectorTitle = "My Scene"
+                $0.options = [
+                    "I’m a party animal - dog park all day, every day",
+                    "I dig backyard playdates with 1-2 other dogs",
+                    "I love exploring the outdoors",
+                    "Track star - I just love running",
+                    "Netflix and chew, baby. I'm an indoor pup."
+                ]
+                }.onChange{row in
+                    self.dataFromForm["playScene"] = row.value!
+                }
+        
+            +++ Section("Sniffing for")
+                <<< MultipleSelectorRow<String>("dogSizePreference"){
+                    $0.title = "I play with dogs who are: (multi-select)"
+                    $0.selectorTitle = "Dog Size"
+                    $0.options = [
+                        "The same size as me",
+                        "Smaller than me",
+                        "Bigger than me"
+                    ]
+                    }.onChange{row in
+                        self.dataFromForm["dogSizePreference"] = Array(row.value!)
+                }
+            <<< MultipleSelectorRow<String>("lookingFor"){
+                $0.title = "I’m looking for someone to: (multi-select)"
+                $0.selectorTitle = "Ideal Mate"
+                $0.options = [
+                     "help me learn to socialize",
+                     "play with me in the backyard",
+                     "join a playgroup with me",
+                     "hike with me",
+                     "go to the beach with me",
+                     "hang out with me at the dog park",
+                     "walk with me"
+                ]
+                }.onChange{row in
+                    self.dataFromForm["lookingFor"] = Array(row.value!)
+            }
+        }
+    
     var dataFromForm: [String: Any?] = [
         "name": nil,
         "age": nil,
@@ -525,174 +711,7 @@ class OnboardingViewController: FormViewController {
         "Yorkshire Terrier",
         "Šarplaninac"
     ]
-   
-    func checkForm(row: TextRow){
-        if row.value != nil{
-            self.dataFromForm[row.tag!] = row.value!
-        }
-    }
     
-    func createForm(){
-        form +++ Section("Basic Info")
-            <<< TextRow(){ row in
-                row.title = "Name"
-                row.placeholder = "name"
-                row.tag = "name"
-                }.onChange{row in
-                    self.checkForm(row: row)
-                }
-            <<< TextRow(){ row in
-                row.title = "Age"
-                row.placeholder = "years"
-                row.tag = "age"
-                }.onChange{row in
-                    self.checkForm(row: row)
-                }
-            <<< TextRow(){ row in
-                row.title = "Weight"
-                row.placeholder = "lbs"
-                row.tag = "weight"
-                }.onChange{row in
-                    self.checkForm(row: row)
-            }
-            <<< MultipleSelectorRow<String>("Dog Breed"){
-                $0.title = "Dog Breed"
-                $0.tag = "breed"
-                $0.selectorTitle = "Select one or more dog breeds"
-                $0.options = self.breedList
-                }.onChange{row in
-                    self.dataFromForm["breed"] = Array(row.value!)
-            }
-           
-            
-            +++ Section("Photo")
-                <<< ImageRow(){ row in
-                    row.title = "Puppy Paw-trait"
-                    row.selectorTitle = "Let's see those canines!"
-                    row.tag = "photo"
-                    row.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum, .Camera]
-                    row.clearAction = .yes(style: UIAlertActionStyle.destructive)
-                    }.onChange{row in
-                        self.dataFromForm["photo"] = row.value!
-            }
-        
-        
-            +++ Section("Personality")
-                <<< PushRow<String>("energyLevel"){
-                    $0.title = "How active are you?"
-                    $0.selectorTitle = "Energy Level"
-                    $0.options = [ "I could rage all day and night",
-                         "With daily activity I’m calmer, but not tired out",
-                         "I get tired after an hour at the dog park",
-                         "I occasionally enjoy playing, but it’s rare",
-                         "My butt is glued to the couch"]
-                    }.onChange{row in
-                        self.dataFromForm["energyLevel"] = row.value!
-            }
-                <<< PushRow<String>("dogFeelings"){
-                    $0.title = "What happens when you meet other dogs?"
-                    $0.selectorTitle = "Dog Interaction"
-                    $0.options = [
-                        "We become bestest pawls!",
-                        "We're cool after some butt sniffing",
-                        "I can make one new friend at a time",
-                        "I only like the friends I already have",
-                        "I really like my private space. No dogs allowed!"
-                    ]
-                    }.onChange{row in
-                        self.dataFromForm["dogFeelings"] = row.value!
-                }
-                <<< PushRow<String>("humanFeelings"){
-                    $0.title = "How much do you like humans?"
-                    $0.selectorTitle = "Human Interaction"
-                    $0.options = [
-                        "OMG I LOVE YOU!!!!",
-                        "I'm friendly, but I'm more of a dog's dog",
-                        "Humans? What humans?",
-                        "I like a couple of humans",
-                        "I really don’t like people"
-                    ]
-                    }.onChange{row in
-                        self.dataFromForm["humanFeelings"] = row.value!
-                }
-            <<< PushRow<String>("roughness"){
-                $0.title = "How much contact do you like?"
-                $0.selectorTitle = "Play Fighting"
-                $0.options = [
-                    "Smackdowns are my style",
-                    "I gotta mount everyone",
-                    "I enjoy a nice tumble every once in a while",
-                    "Oh we can snuggle, but no wrestling",
-                    "Don't touch me!"
-                ]
-                }.onChange{row in
-                    self.dataFromForm["roughness"] = row.value!
-                }
-        
-            <<< PushRow<String>("ball"){
-                $0.title = "What happens when you see a ball?"
-                $0.selectorTitle = "Ball?"
-                $0.options = [
-                    "BALL!!!!!!",
-                    "Oh cool, a ball! Oh…it’s too far away.",
-                    "What is a ball?"
-                ]
-                }.onChange{row in
-                    self.dataFromForm["ball"] = row.value!
-                }
-        
-            <<< PushRow<String>("playScene"){
-                $0.title = "What's your ideal playdate?"
-                $0.selectorTitle = "My Scene"
-                $0.options = [
-                    "I’m a party animal - dog park all day, every day",
-                    "I dig backyard playdates with 1-2 other dogs",
-                    "I love exploring the outdoors",
-                    "Track star - I just love running",
-                    "Netflix and chew, baby. I'm an indoor pup."
-                ]
-                }.onChange{row in
-                    self.dataFromForm["playScene"] = row.value!
-                }
-        
-            +++ Section("Sniffing for")
-                <<< MultipleSelectorRow<String>("dogSizePreference"){
-                    $0.title = "I play with dogs who are: (multi-select)"
-                    $0.selectorTitle = "Dog Size"
-                    $0.options = [
-                        "The same size as me",
-                        "Smaller than me",
-                        "Bigger than me"
-                    ]
-                    }.onChange{row in
-                        self.dataFromForm["dogSizePreference"] = Array(row.value!)
-                }
-            <<< MultipleSelectorRow<String>("lookingFor"){
-                $0.title = "I’m looking for someone to: (multi-select)"
-                $0.selectorTitle = "Ideal Mate"
-                $0.options = [
-                     "help me learn to socialize",
-                     "play with me in the backyard",
-                     "join a playgroup with me",
-                     "hike with me",
-                     "go to the beach with me",
-                     "hang out with me at the dog park",
-                     "walk with me"
-                ]
-                }.onChange{row in
-                    self.dataFromForm["lookingFor"] = Array(row.value!)
-            }
-        }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.createForm()
-        animateScroll = true
-        rowKeyboardSpacing = 20
-        self.user = Auth.auth().currentUser!
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

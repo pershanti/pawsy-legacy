@@ -4,6 +4,8 @@
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Select a photo of the dog.</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>NSCameraUsageDescription</key>
 	<string>Upload a photo of the dog.</string>
 	<key>CFBundleDisplayName</key>

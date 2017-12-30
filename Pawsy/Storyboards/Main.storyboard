@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-140" y="-714.69265367316348"/>
+            <point key="canvasLocation" x="-1550" y="-1720"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="0An-Fe-ABw">
@@ -53,20 +53,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWJ-vg-fEu">
-                                <rect key="frame" x="239" y="33" width="120" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="HdF-PI-rGg"/>
-                                    <constraint firstAttribute="width" constant="120" id="Z9F-hh-aEd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                <state key="normal" title="Log Out" backgroundImage="transparentButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logOutButtonPressed:" destination="eWJ-jt-SSo" eventType="touchUpInside" id="XX5-6m-7St"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-w7-P2X">
                                 <rect key="frame" x="107" y="531" width="161" height="40"/>
                                 <constraints>
@@ -80,19 +66,34 @@
                                     <action selector="addNewPup:" destination="eWJ-jt-SSo" eventType="touchUpInside" id="ZrZ-RI-P8T"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c09-Mk-VQ6">
+                                <rect key="frame" x="239" y="36" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cdu-LI-YGR"/>
+                                    <constraint firstAttribute="width" constant="120" id="tXu-w1-xxz"/>
+                                </constraints>
+                                <state key="normal" title="Log Out" backgroundImage="transparentButton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNewPup:" destination="eWJ-jt-SSo" eventType="touchUpInside" id="Bq8-IA-Gp8"/>
+                                    <action selector="logOutButtonPressed:" destination="eWJ-jt-SSo" eventType="touchUpInside" id="Gd5-D1-W98"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13346317410469055" green="0.18231484293937683" blue="0.25190103054046631" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="DWJ-vg-fEu" firstAttribute="top" secondItem="9v7-Fs-ySx" secondAttribute="top" constant="13" id="6ny-wt-dfK"/>
-                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="DWJ-vg-fEu" secondAttribute="trailing" constant="16" id="HvY-Nm-C4W"/>
-                            <constraint firstItem="DWJ-vg-fEu" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="239" id="MmO-q7-t2f"/>
+                            <constraint firstItem="c09-Mk-VQ6" firstAttribute="top" secondItem="9v7-Fs-ySx" secondAttribute="top" constant="16" id="EQV-bq-0Q5"/>
                             <constraint firstItem="OYn-w7-P2X" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="107" id="a0y-Zk-hrN"/>
+                            <constraint firstItem="c09-Mk-VQ6" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="239" id="hMq-ke-Tpz"/>
                             <constraint firstItem="9v7-Fs-ySx" firstAttribute="bottom" secondItem="OYn-w7-P2X" secondAttribute="bottom" constant="47" id="mIs-1W-2eH"/>
+                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="c09-Mk-VQ6" secondAttribute="trailing" constant="16" id="qN5-P1-uYv"/>
                             <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="OYn-w7-P2X" secondAttribute="trailing" constant="107" id="tdu-CZ-5LQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9v7-Fs-ySx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Dogs" id="IVx-Ob-6st"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="eaV-Jy-uAe"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addNewButton" destination="OYn-w7-P2X" id="94c-kr-EzM"/>
                         <segue destination="Zi6-m4-XqV" kind="presentation" identifier="goToOnboarding" id="sWn-uR-8Yg"/>
@@ -100,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ao4-ts-fO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544.79999999999995" y="-2372.5637181409297"/>
+            <point key="canvasLocation" x="12" y="-1720.3898050974515"/>
         </scene>
         <!--Add a New Dog-->
         <scene sceneID="Fc0-uH-HgT">
@@ -114,19 +115,45 @@
                     <navigationItem key="navigationItem" title="Add a New Dog" id="XdN-JK-xfd">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4B6-fn-XM8">
                             <connections>
-                                <action selector="didPressCancel:" destination="HRr-Mz-6ym" id="lpc-3i-iET"/>
+                                <action selector="didPressCancel:" destination="HRr-Mz-6ym" id="pcT-xm-lBa"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="6WQ-FM-fXH">
                             <connections>
-                                <action selector="didPressSave:" destination="HRr-Mz-6ym" id="rfz-v5-G0Z"/>
+                                <action selector="didPressSave:" destination="HRr-Mz-6ym" id="4Hd-2S-NMa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="vmV-8W-BGR" kind="presentation" identifier="saveScreen" id="Bha-NJ-WaL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMf-uf-4nN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2113" y="-2369"/>
+            <point key="canvasLocation" x="1740" y="-1720"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="KFa-UA-7Wd">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="28T-bC-IJb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KF2-3O-52h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1181" y="-2406"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9HJ-6n-pjq">
+            <objects>
+                <viewController id="ggb-Vy-5gv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Kb-zT-0tE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4PV-lM-I0H"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C12-SO-Q0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-516" y="-2407"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5W5-vc-ysl">
@@ -143,7 +170,37 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFc-yF-TXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-337" y="-1720"/>
+            <point key="canvasLocation" x="-810" y="-1720"/>
+        </scene>
+        <!--Saving View Controller-->
+        <scene sceneID="8H5-Qd-P2J">
+            <objects>
+                <viewController id="vmV-8W-BGR" customClass="SavingViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U1G-25-OFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkV-vH-wTa">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="chP-Md-Jqn" firstAttribute="trailing" secondItem="MkV-vH-wTa" secondAttribute="trailing" constant="88" id="46j-67-kWb"/>
+                            <constraint firstItem="chP-Md-Jqn" firstAttribute="bottom" secondItem="MkV-vH-wTa" secondAttribute="bottom" constant="234" id="Fcv-Zy-HlH"/>
+                            <constraint firstItem="MkV-vH-wTa" firstAttribute="top" secondItem="chP-Md-Jqn" secondAttribute="top" constant="213" id="eAx-tT-Rp2"/>
+                            <constraint firstItem="MkV-vH-wTa" firstAttribute="leading" secondItem="chP-Md-Jqn" secondAttribute="leading" constant="87" id="fcp-iA-3Ot"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="chP-Md-Jqn"/>
+                    </view>
+                    <connections>
+                        <outlet property="lottieView" destination="MkV-vH-wTa" id="gtg-bH-hZw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9z-kF-D0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="-2416.6416791604202"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iKP-jJ-PS4">
@@ -161,7 +218,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIc-Ia-6Wc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316.8" y="-2368.5157421289359"/>
+            <point key="canvasLocation" x="911" y="-1720"/>
         </scene>
     </scenes>
     <resources>

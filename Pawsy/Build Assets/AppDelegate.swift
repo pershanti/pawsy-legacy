@@ -6,11 +6,13 @@
 //  Copyright © 2017 Pawsy.dog. All rights reserved.
 //
 import UIKit
+import ChameleonFramework
 import CoreData
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINavigationControllerDelegate {
@@ -44,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINaviga
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         FirebaseApp.configure()
         let defaultStore = Firestore.firestore()
         authUI = FUIAuth.defaultAuthUI()

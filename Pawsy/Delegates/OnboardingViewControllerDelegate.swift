@@ -11,6 +11,6 @@ import UIKit
 import Firebase
 
 protocol OnboardingViewControllerDelegate: class {
-    func uploadToCloudinary(_controller: OnboardingViewController, photo: UIImage, dogID: String, document: DocumentReference)
+
 }
 

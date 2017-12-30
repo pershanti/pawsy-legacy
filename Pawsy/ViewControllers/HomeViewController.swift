@@ -10,11 +10,11 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 import Cloudinary
+import ChameleonFramework
 
 
 class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     
-
     @IBOutlet weak var addNewButton: UIButton!
     @IBAction func addNewPup(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToOnboarding", sender: nil)
@@ -31,10 +31,6 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     
     var user: User?
     var authUI: FUIAuth?
-    var cloudinary: CLDCloudinary?
-    let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
-    
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOnboarding" {
@@ -46,9 +42,6 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     
     func showOnboardButton(){
         self.addNewButton.isHidden = false
-    }
-    
-    func showCurrentDogs(){
     }
     
     func checkIfOnboarded() {
@@ -65,28 +58,14 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
             
         }
     }
-    
-    func uploadToCloudinary(_controller: OnboardingViewController, photo: UIImage, dogID: String, document: DocumentReference) {
-        let uploadData = UIImageJPEGRepresentation(photo, 1)
-       
-        let upload = self.cloudinary?.createUploader().upload(data: uploadData!, uploadPreset: "pawsyDogPic", params: nil, progress: {({ (progress) in
-            print(progress)
-        })}(), completionHandler: { (result, error) in
-            if error != nil{
-                print(error)
-            }
-            else{
-                document.updateData(["photo": result?.resultJson["url"]])
-            }
-        })
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.hidesNavigationBarHairline = true
         self.user = Auth.auth().currentUser
         self.checkIfOnboarded()
-        self.cloudinary = CLDCloudinary(configuration: self.config!)
-  
+        self.navigationController?.navigationBar.barTintColor = FlatMint()
+        self.navigationController?.navigationBar.tintColor = FlatWhite()
         
     }
     
