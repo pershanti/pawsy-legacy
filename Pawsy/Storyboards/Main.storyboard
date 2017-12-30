@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ao4-ts-fO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="-1720.3898050974515"/>
+            <point key="canvasLocation" x="12" y="-1587"/>
         </scene>
         <!--Add a New Dog-->
         <scene sceneID="Fc0-uH-HgT">
@@ -138,22 +138,101 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="28T-bC-IJb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KF2-3O-52h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1181" y="-2406"/>
+            <point key="canvasLocation" x="-606" y="-3149"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="9HJ-6n-pjq">
+        <scene sceneID="l3V-QX-b7C">
             <objects>
-                <viewController id="ggb-Vy-5gv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Kb-zT-0tE">
+                <viewController id="orN-nP-3Zz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IpH-85-B40">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1mo-Gg-1rt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2GC-h2-3yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="-2417"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="9HJ-6n-pjq">
+            <objects>
+                <viewController storyboardIdentifier="h1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ggb-Vy-5gv" customClass="LocationViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Kb-zT-0tE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQZ-29-RMn">
+                                <rect key="frame" x="84" y="537" width="209" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9lx-0M-Tjj"/>
+                                    <constraint firstAttribute="width" constant="209" id="e8b-AN-5BO"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="buttonEnable"/>
+                                <connections>
+                                    <action selector="getLocation:" destination="ggb-Vy-5gv" eventType="touchUpInside" id="62X-9o-sKF"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artWork" translatesAutoresizingMaskIntoConstraints="NO" id="Lzh-vI-N9z">
+                                <rect key="frame" x="26" y="75" width="325" height="235"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="oW4-hn-nzc"/>
+                                    <constraint firstAttribute="height" constant="235" id="zMl-76-65m"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP7-3b-XSV">
+                                <rect key="frame" x="138" y="627" width="100" height="20"/>
+                                <state key="normal" title="skip for now"/>
+                                <connections>
+                                    <action selector="skipLocation:" destination="ggb-Vy-5gv" eventType="touchUpInside" id="sKA-cv-M4T"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Enable Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4T-Hb-zQv">
+                                <rect key="frame" x="39" y="364" width="297" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Your location enables us to find potential pup friends near you!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W02-98-K9R">
+                                <rect key="frame" x="78" y="435" width="220" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="CDJ-Ro-80K"/>
+                                    <constraint firstAttribute="height" constant="61" id="DGW-PP-a4w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iQZ-29-RMn" firstAttribute="leading" secondItem="4PV-lM-I0H" secondAttribute="leading" constant="84" id="3Ae-P0-MGv"/>
+                            <constraint firstItem="f4T-Hb-zQv" firstAttribute="top" secondItem="Lzh-vI-N9z" secondAttribute="bottom" constant="54" id="5dM-wB-PzT"/>
+                            <constraint firstItem="4PV-lM-I0H" firstAttribute="trailing" secondItem="mP7-3b-XSV" secondAttribute="trailing" constant="137" id="Gb5-uw-Vem"/>
+                            <constraint firstItem="4PV-lM-I0H" firstAttribute="trailing" secondItem="Lzh-vI-N9z" secondAttribute="trailing" constant="24" id="R27-Yh-JIO"/>
+                            <constraint firstItem="4PV-lM-I0H" firstAttribute="trailing" secondItem="W02-98-K9R" secondAttribute="trailing" constant="77" id="Xkc-DI-yS8"/>
+                            <constraint firstItem="4PV-lM-I0H" firstAttribute="trailing" secondItem="iQZ-29-RMn" secondAttribute="trailing" constant="82" id="aix-1z-eS6"/>
+                            <constraint firstItem="W02-98-K9R" firstAttribute="top" secondItem="f4T-Hb-zQv" secondAttribute="bottom" constant="36" id="bIV-LW-iOX"/>
+                            <constraint firstItem="W02-98-K9R" firstAttribute="leading" secondItem="4PV-lM-I0H" secondAttribute="leading" constant="78" id="bYd-f8-c3M"/>
+                            <constraint firstItem="Lzh-vI-N9z" firstAttribute="leading" secondItem="4PV-lM-I0H" secondAttribute="leading" constant="26" id="fVg-ar-JMR"/>
+                            <constraint firstItem="mP7-3b-XSV" firstAttribute="leading" secondItem="4PV-lM-I0H" secondAttribute="leading" constant="138" id="gLq-CD-8xf"/>
+                            <constraint firstItem="4PV-lM-I0H" firstAttribute="bottom" secondItem="mP7-3b-XSV" secondAttribute="bottom" constant="20" id="hHI-EB-AXj"/>
+                            <constraint firstItem="Lzh-vI-N9z" firstAttribute="top" secondItem="4PV-lM-I0H" secondAttribute="top" constant="55" id="inv-Jb-NFe"/>
+                            <constraint firstItem="4PV-lM-I0H" firstAttribute="trailing" secondItem="f4T-Hb-zQv" secondAttribute="trailing" constant="39" id="tR5-nU-kd4"/>
+                            <constraint firstItem="mP7-3b-XSV" firstAttribute="top" secondItem="iQZ-29-RMn" secondAttribute="bottom" constant="50" id="tgM-bD-Usu"/>
+                            <constraint firstItem="iQZ-29-RMn" firstAttribute="top" secondItem="W02-98-K9R" secondAttribute="bottom" constant="41" id="voL-IK-UlX"/>
+                            <constraint firstItem="f4T-Hb-zQv" firstAttribute="leading" secondItem="4PV-lM-I0H" secondAttribute="leading" constant="39" id="xdU-ei-3aY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4PV-lM-I0H"/>
                     </view>
+                    <connections>
+                        <segue destination="eWJ-jt-SSo" kind="presentation" identifier="goToHome" id="9Wa-1I-Gxh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C12-SO-Q0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-516" y="-2407"/>
+            <point key="canvasLocation" x="12" y="-2408"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5W5-vc-ysl">
@@ -222,8 +301,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="artWork" width="325" height="235"/>
+        <image name="buttonEnable" width="209" height="40"/>
         <image name="colorLogoTransparent2X" width="230" height="56"/>
         <image name="goldensblur" width="763" height="1307"/>
         <image name="transparentButton" width="327" height="67"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9Wa-1I-Gxh"/>
+    </inferredMetricsTieBreakers>
 </document>

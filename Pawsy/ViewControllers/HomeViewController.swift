@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuthUI
+import CoreLocation
 import Cloudinary
 import ChameleonFramework
 
@@ -30,7 +31,9 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     }
     
     var user: User?
+    var userDoc: DocumentReference?
     var authUI: FUIAuth?
+    var currentLocation: CLLocation?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOnboarding" {
@@ -40,33 +43,24 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
         }
     }
     
+    func addLocationToUserDoc(){
+        self.user = Auth.auth().currentUser
+        self.userDoc = Firestore.firestore().collection("users").document(self.user!.uid)
+        if currentLocation != nil{
+            userDoc?.updateData(["latitude": currentLocation?.coordinate.latitude])
+            userDoc?.updateData(["longitude": currentLocation?.coordinate.longitude])
+        }
+        
+    }
+    
     func showOnboardButton(){
         self.addNewButton.isHidden = false
     }
     
-    func checkIfOnboarded() {
-        let db = Firestore.firestore()
-        let uid = self.user?.uid
-        let docRef = db.collection("users").document(uid!)
-        docRef.getDocument { (document, error) in
-            if document?.exists == false {
-                docRef.setData([
-                    "name": self.user?.displayName,
-                    "onboarded": false
-                    ])
-            }
-            
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.hidesNavigationBarHairline = true
-        self.user = Auth.auth().currentUser
-        self.checkIfOnboarded()
-        self.navigationController?.navigationBar.barTintColor = FlatMint()
-        self.navigationController?.navigationBar.tintColor = FlatWhite()
-        
+        self.addLocationToUserDoc()
     }
     
     override func didReceiveMemoryWarning() {

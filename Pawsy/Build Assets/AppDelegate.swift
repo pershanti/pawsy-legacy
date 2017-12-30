@@ -25,10 +25,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINaviga
         FUIGoogleAuth(),
         FUIFacebookAuth()
     ]
+    var userDoc: DocumentReference?
+    
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         print(error.debugDescription)
         self.user = Auth.auth().currentUser
+        self.checkIfOnboarded()
+    }
+    
+    func checkIfOnboarded() {
+        let db = Firestore.firestore()
+        let uid = self.user?.uid
+        self.userDoc = db.collection("users").document(uid!)
+        self.userDoc!.getDocument { (document, error) in
+            if document?.exists == false {
+                self.userDoc!.setData([
+                    "name": self.user?.displayName,
+                    "onboarded": false
+                    ])
+                self.goToOnboarding()
+            }
+            else {
+                self.goToHome()
+            }
+        }
+    }
+    
+    func goToOnboarding(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "h1") as! LocationViewController
+        controller.authUI = self.authUI
+        self.window?.rootViewController?.present(controller, animated: true)
+    }
+    
+    func goToHome(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "h0") as! HomeViewController
         controller.authUI = self.authUI
@@ -59,6 +90,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINaviga
         return true
         
     }
+    
+    
     
     
     func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
