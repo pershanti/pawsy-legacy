@@ -15,91 +15,19 @@ import FirebaseFacebookAuthUI
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate, UINavigationControllerDelegate {
-    
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var authUI: FUIAuth?
-    var user: User?
-    let providers: [FUIAuthProvider] = [
-        FUIGoogleAuth(),
-        FUIFacebookAuth()
-    ]
-    var userDoc: DocumentReference?
-    
-    
-    func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
-        print(error.debugDescription)
-        self.user = Auth.auth().currentUser
-        self.checkIfOnboarded()
-    }
-    
-    func checkIfOnboarded() {
-        let db = Firestore.firestore()
-        let uid = self.user?.uid
-        self.userDoc = db.collection("users").document(uid!)
-        self.userDoc!.getDocument { (document, error) in
-            if document?.exists == false {
-                self.userDoc!.setData([
-                    "name": self.user?.displayName,
-                    "onboarded": false
-                    ])
-                self.goToOnboarding()
-            }
-            else {
-                self.goToHome()
-            }
-        }
-    }
-    
-    func goToOnboarding(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "h1") as! LocationViewController
-        controller.authUI = self.authUI
-        self.window?.rootViewController?.present(controller, animated: true)
-    }
-    
-    func goToHome(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "h0") as! HomeViewController
-        controller.authUI = self.authUI
-        self.window?.rootViewController?.present(controller, animated: true)
-    }
-    
-    func application(_ app: UIApplication, open url: URL,
-                     options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?
-        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
-            return true
-        }
-        // other URL handling goes here.
-        return false
-    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         let defaultStore = Firestore.firestore()
-        authUI = FUIAuth.defaultAuthUI()
-        authUI?.delegate = self
-        authUI?.providers = self.providers
-        let authViewController = authUI!.authViewController()
-        authViewController.view.backgroundColor = UIColor(patternImage: UIImage(named: "goldensblur")!)
-        authViewController.delegate = self
-        self.window?.rootViewController = authViewController
-        print("here")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "m0") as! LaunchViewController
+        self.window?.rootViewController = controller
         return true
-        
     }
     
-    
-    
-    
-    func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
-        return CustomAuthPickerViewController(authUI: self.authUI!)
-    }
-
-    
-
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

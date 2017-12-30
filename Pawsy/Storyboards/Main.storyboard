@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Launch View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="m0" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LaunchViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,10 +20,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotAndFriendsFull" translatesAutoresizingMaskIntoConstraints="NO" id="PYh-IS-4qa">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zb5-SG-t1S">
+                                <rect key="frame" x="83" y="539" width="209" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gIy-Uz-1xe"/>
+                                    <constraint firstAttribute="width" constant="160" id="jPv-mB-ufl"/>
+                                </constraints>
+                                <state key="normal" title="Log In/Sign Up" backgroundImage="transparentButton">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="neX-m5-MkB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zb5-SG-t1S" secondAttribute="bottom" constant="88" id="Au5-oe-XMK"/>
                             <constraint firstItem="PYh-IS-4qa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Df5-nQ-1b7"/>
+                            <constraint firstItem="Zb5-SG-t1S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="FOb-Rs-eqY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zb5-SG-t1S" secondAttribute="trailing" constant="83" id="PHx-lh-DaD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PYh-IS-4qa" secondAttribute="trailing" id="qtl-nh-SkL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PYh-IS-4qa" secondAttribute="bottom" id="rYx-zj-LOG"/>
                             <constraint firstItem="PYh-IS-4qa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sjW-0R-aHh"/>
@@ -31,12 +47,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="kID-fd-mZQ" kind="show" identifier="home" id="WLX-OT-9pS"/>
+                        <segue destination="kID-fd-mZQ" kind="show" identifier="goToHome" id="WLX-OT-9pS"/>
+                        <segue destination="ggb-Vy-5gv" kind="presentation" identifier="goToLocation" id="1X9-qq-x2Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1550" y="-1720"/>
+            <point key="canvasLocation" x="-1551.2" y="-1720.3898050974515"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="0An-Fe-ABw">
@@ -76,12 +93,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.34509803921568627" green="0.63137254901960782" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="c09-Mk-VQ6" firstAttribute="top" secondItem="9v7-Fs-ySx" secondAttribute="top" constant="16" id="EQV-bq-0Q5"/>
-                            <constraint firstItem="OYn-w7-P2X" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="107" id="a0y-Zk-hrN"/>
-                            <constraint firstItem="c09-Mk-VQ6" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="239" id="hMq-ke-Tpz"/>
-                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="bottom" secondItem="OYn-w7-P2X" secondAttribute="bottom" constant="47" id="mIs-1W-2eH"/>
-                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="c09-Mk-VQ6" secondAttribute="trailing" constant="16" id="qN5-P1-uYv"/>
-                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="OYn-w7-P2X" secondAttribute="trailing" constant="107" id="tdu-CZ-5LQ"/>
+                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="bottom" secondItem="OYn-w7-P2X" secondAttribute="bottom" constant="47" id="64y-WR-aZH"/>
+                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="c09-Mk-VQ6" secondAttribute="trailing" constant="16" id="9tK-DY-SMX"/>
+                            <constraint firstItem="OYn-w7-P2X" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="107" id="KSP-fh-w1H"/>
+                            <constraint firstItem="c09-Mk-VQ6" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="239" id="iz8-c9-xoM"/>
+                            <constraint firstItem="c09-Mk-VQ6" firstAttribute="top" secondItem="9v7-Fs-ySx" secondAttribute="top" constant="16" id="kQ4-Gd-8OL"/>
+                            <constraint firstItem="9v7-Fs-ySx" firstAttribute="trailing" secondItem="OYn-w7-P2X" secondAttribute="trailing" constant="107" id="zgx-sU-PRk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9v7-Fs-ySx"/>
                     </view>
@@ -94,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ao4-ts-fO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="-1587"/>
+            <point key="canvasLocation" x="12" y="-1379"/>
         </scene>
         <!--Add a New Dog-->
         <scene sceneID="Fc0-uH-HgT">
@@ -124,29 +141,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMf-uf-4nN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1740" y="-1720"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="KFa-UA-7Wd">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="28T-bC-IJb" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KF2-3O-52h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-606" y="-3149"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="l3V-QX-b7C">
-            <objects>
-                <viewController id="orN-nP-3Zz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IpH-85-B40">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1mo-Gg-1rt"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2GC-h2-3yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="758" y="-2417"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="9HJ-6n-pjq">
@@ -225,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C12-SO-Q0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="-2408"/>
+            <point key="canvasLocation" x="12" y="-2085"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5W5-vc-ysl">

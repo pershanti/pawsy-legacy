@@ -30,7 +30,7 @@ class OnboardingViewController: FormViewController, SavingViewControllerDelegate
         var dataUpload = [String: Any]()
         let dogName: String = self.dataFromForm["name"] as! String
         let db = Firestore.firestore()
-        dogImage = self.dataFromForm["photo"] as! UIImage
+        dogImage = self.dataFromForm["photo"] as? UIImage
         dogID = self.user!.uid + "-" + dogName
         for items in self.dataFromForm{
             if items.value == nil{

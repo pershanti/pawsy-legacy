@@ -47,8 +47,8 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
         self.user = Auth.auth().currentUser
         self.userDoc = Firestore.firestore().collection("users").document(self.user!.uid)
         if currentLocation != nil{
-            userDoc?.updateData(["latitude": currentLocation?.coordinate.latitude])
-            userDoc?.updateData(["longitude": currentLocation?.coordinate.longitude])
+            userDoc?.updateData(["latitude": currentLocation?.coordinate.latitude as Any])
+            userDoc?.updateData(["longitude": currentLocation?.coordinate.longitude as Any])
         }
         
     }

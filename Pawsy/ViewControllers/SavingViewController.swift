@@ -39,7 +39,7 @@ class SavingViewController: UIViewController {
                 print(error!)
             }
             else{
-                document.updateData(["photo": result?.resultJson["url"]])
+                document.updateData(["photo": result?.resultJson["url"] as Any])
                 self.delegate!.allDone(self)
                 self.dismiss(animated: true, completion: nil)
             }
