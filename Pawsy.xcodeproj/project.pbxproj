@@ -83,15 +83,16 @@
 		564872C91FE25E9A00D292FA /* Pawsy */ = {
 			isa = PBXGroup;
 			children = (
-				56634DBE1FF5E0A00058EF3F /* ViewControllers */,
+				5624E2421FF7096A002975E0 /* materialLoading.json */,
 				564872D61FE25E9A00D292FA /* Info.plist */,
+				564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */,
 				56634DB41FF5BE130058EF3F /* CustomRoundedButton.swift */,
+				56634DBE1FF5E0A00058EF3F /* ViewControllers */,
 				56EE97481FEB1A4B00FD7F5F /* Code Samples */,
 				56EE97471FEB1A2D00FD7F5F /* Data Models */,
 				56EE97441FEB19F400FD7F5F /* Build Assets */,
 				56EE97421FEB19CA00FD7F5F /* Storyboards */,
 				56EE97411FEB19B800FD7F5F /* Delegates */,
-				564CB2AA1FE26D5000BC0706 /* GoogleService-Info.plist */,
 			);
 			path = Pawsy;
 			sourceTree = "<group>";
@@ -130,7 +131,6 @@
 		56EE97441FEB19F400FD7F5F /* Build Assets */ = {
 			isa = PBXGroup;
 			children = (
-				5624E2421FF7096A002975E0 /* materialLoading.json */,
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
 				56EE97451FEB1A1300FD7F5F /* GoogleService-Info.plist */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,

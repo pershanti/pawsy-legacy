@@ -40,11 +40,8 @@ class SavingViewController: UIViewController {
             }
             else{
                 document.updateData(["photo": result?.resultJson["url"]])
-                let finish = result?.done
-                if finish == true{
-                    self.delegate!.allDone(self)
-                    self.dismiss(animated: true, completion: nil)
-                }
+                self.delegate!.allDone(self)
+                self.dismiss(animated: true, completion: nil)
             }
         })
     }

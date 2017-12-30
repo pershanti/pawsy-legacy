@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuthUI
 import CoreLocation
 
-class LocationViewController: UIViewController {
+class LocationViewController: UIViewController, CLLocationManagerDelegate {
     
     var authUI: FUIAuth?
     var manager = CLLocationManager()
@@ -22,7 +22,11 @@ class LocationViewController: UIViewController {
     }
     
     @IBAction func getLocation(_ sender: UIButton) {
+        manager.requestWhenInUseAuthorization()
         self.manager.startUpdatingLocation()
+        currentLocation = self.manager.location
+        print(currentLocation!.coordinate.latitude)
+        performSegue(withIdentifier: "goToHome", sender: self)
     }
     
     override func viewDidLoad() {
@@ -33,16 +37,9 @@ class LocationViewController: UIViewController {
         if segue.identifier == "goToHome"{
             if currentLocation != nil{
                 let destination = segue.destination as! HomeViewController
-                destination.delegate = self
                 destination.currentLocation = self.currentLocation!
             }
         }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        currentLocation = locations[0]
-        print(currentLocation!)
-        performSegue(withIdentifier: "goToHome", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,23 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldensblur" translatesAutoresizingMaskIntoConstraints="NO" id="8T8-ox-st3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotAndFriendsFull" translatesAutoresizingMaskIntoConstraints="NO" id="2z2-SL-iJY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_logo_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="7MG-5d-XPN">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zXr-A6-t2Y" firstAttribute="trailing" secondItem="7MG-5d-XPN" secondAttribute="trailing" constant="68" id="3Wy-Iv-KOj"/>
-                            <constraint firstItem="8T8-ox-st3" firstAttribute="trailing" secondItem="zXr-A6-t2Y" secondAttribute="trailing" id="5Xg-NA-LW2"/>
-                            <constraint firstItem="zXr-A6-t2Y" firstAttribute="bottom" secondItem="7MG-5d-XPN" secondAttribute="bottom" constant="270" id="AmT-Xh-z78"/>
-                            <constraint firstItem="8T8-ox-st3" firstAttribute="top" secondItem="FZf-GR-w3Y" secondAttribute="top" id="FL0-bk-hSh"/>
-                            <constraint firstItem="7MG-5d-XPN" firstAttribute="leading" secondItem="zXr-A6-t2Y" secondAttribute="leading" constant="67" id="SRo-v3-0fo"/>
-                            <constraint firstItem="7MG-5d-XPN" firstAttribute="top" secondItem="zXr-A6-t2Y" secondAttribute="top" constant="249" id="SsG-vA-EDE"/>
-                            <constraint firstItem="8T8-ox-st3" firstAttribute="leading" secondItem="zXr-A6-t2Y" secondAttribute="leading" id="bQ1-xv-IaV"/>
-                            <constraint firstItem="8T8-ox-st3" firstAttribute="bottom" secondItem="zXr-A6-t2Y" secondAttribute="bottom" id="buc-Uu-T8h"/>
+                            <constraint firstItem="2z2-SL-iJY" firstAttribute="leading" secondItem="zXr-A6-t2Y" secondAttribute="leading" id="SwR-Qe-cmb"/>
+                            <constraint firstItem="2z2-SL-iJY" firstAttribute="bottom" secondItem="zXr-A6-t2Y" secondAttribute="bottom" id="jQJ-yD-FqW"/>
+                            <constraint firstItem="2z2-SL-iJY" firstAttribute="top" secondItem="FZf-GR-w3Y" secondAttribute="top" id="sVQ-0Q-ko9"/>
+                            <constraint firstItem="2z2-SL-iJY" firstAttribute="trailing" secondItem="zXr-A6-t2Y" secondAttribute="trailing" id="wsP-T0-jkT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zXr-A6-t2Y"/>
                     </view>
@@ -44,7 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="color_logo_transparent" width="1586" height="447"/>
-        <image name="goldensblur" width="763" height="1307"/>
+        <image name="spotAndFriendsFull" width="414" height="736"/>
     </resources>
 </document>

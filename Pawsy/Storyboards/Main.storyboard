@@ -17,23 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldensblur" translatesAutoresizingMaskIntoConstraints="NO" id="cCN-KW-y9E">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorLogoTransparent2X" translatesAutoresizingMaskIntoConstraints="NO" id="emk-CW-xpK">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotAndFriendsFull" translatesAutoresizingMaskIntoConstraints="NO" id="PYh-IS-4qa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cCN-KW-y9E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0oR-19-M7V"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="emk-CW-xpK" secondAttribute="trailing" constant="68" id="67a-u8-RcN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="emk-CW-xpK" secondAttribute="bottom" constant="270" id="9Ds-Gk-dej"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cCN-KW-y9E" secondAttribute="bottom" id="A1z-8S-ITp"/>
-                            <constraint firstItem="emk-CW-xpK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="249" id="A6S-fd-0gd"/>
-                            <constraint firstItem="emk-CW-xpK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Zd6-6q-zMN"/>
-                            <constraint firstItem="cCN-KW-y9E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="azm-6h-2do"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cCN-KW-y9E" secondAttribute="trailing" id="tGA-Qw-t7S"/>
+                            <constraint firstItem="PYh-IS-4qa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Df5-nQ-1b7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PYh-IS-4qa" secondAttribute="trailing" id="qtl-nh-SkL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PYh-IS-4qa" secondAttribute="bottom" id="rYx-zj-LOG"/>
+                            <constraint firstItem="PYh-IS-4qa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sjW-0R-aHh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -81,7 +74,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.13346317410469055" green="0.18231484293937683" blue="0.25190103054046631" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.34509803921568627" green="0.63137254901960782" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="c09-Mk-VQ6" firstAttribute="top" secondItem="9v7-Fs-ySx" secondAttribute="top" constant="16" id="EQV-bq-0Q5"/>
                             <constraint firstItem="OYn-w7-P2X" firstAttribute="leading" secondItem="9v7-Fs-ySx" secondAttribute="leading" constant="107" id="a0y-Zk-hrN"/>
@@ -303,8 +296,7 @@
     <resources>
         <image name="artWork" width="325" height="235"/>
         <image name="buttonEnable" width="209" height="40"/>
-        <image name="colorLogoTransparent2X" width="230" height="56"/>
-        <image name="goldensblur" width="763" height="1307"/>
+        <image name="spotAndFriendsFull" width="414" height="736"/>
         <image name="transparentButton" width="327" height="67"/>
     </resources>
     <inferredMetricsTieBreakers>
