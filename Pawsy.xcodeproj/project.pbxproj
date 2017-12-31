@@ -10,6 +10,7 @@
 		5624E23D1FF70228002975E0 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E23C1FF70228002975E0 /* LogoutViewController.swift */; };
 		5624E23F1FF70546002975E0 /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E23E1FF70546002975E0 /* SavingViewController.swift */; };
 		5624E2441FF70A1E002975E0 /* SavingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E2431FF70A1E002975E0 /* SavingViewControllerDelegate.swift */; };
+		563D7BCB1FF990BB00BD8984 /* checked_done_.json in Resources */ = {isa = PBXBuildFile; fileRef = 563D7BCA1FF990BB00BD8984 /* checked_done_.json */; };
 		564431441FF7298E00F5CDEB /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564431431FF7298E00F5CDEB /* LocationViewController.swift */; };
 		564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CA1FE25E9A00D292FA /* AppDelegate.swift */; };
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		56634DBD1FF5DA390058EF3F /* CustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56634DBC1FF5DA390058EF3F /* CustomAuthPickerViewController.swift */; };
 		5669E20D1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5669E20C1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift */; };
 		566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 566A86511FF801FF0020B6BA /* GoogleService-Info.plist */; };
+		56BA486D1FF9997D00E4EADE /* favourite_app_icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 56BA486C1FF9997D00E4EADE /* favourite_app_icon.json */; };
 		56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */; };
 		56DF3FE01FF8053D00008181 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF3FDF1FF8053D00008181 /* LaunchViewController.swift */; };
 		56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97351FEB124D00FD7F5F /* DataModel.swift */; };
@@ -32,6 +34,7 @@
 		5624E23E1FF70546002975E0 /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
 		5624E2421FF7096A002975E0 /* materialLoading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = materialLoading.json; sourceTree = "<group>"; };
 		5624E2431FF70A1E002975E0 /* SavingViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewControllerDelegate.swift; sourceTree = "<group>"; };
+		563D7BCA1FF990BB00BD8984 /* checked_done_.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checked_done_.json; sourceTree = "<group>"; };
 		564431431FF7298E00F5CDEB /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		564872C71FE25E9A00D292FA /* Pawsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564872CA1FE25E9A00D292FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		56634DBC1FF5DA390058EF3F /* CustomAuthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthPickerViewController.swift; sourceTree = "<group>"; };
 		5669E20C1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewControllerDelegate.swift; sourceTree = "<group>"; };
 		566A86511FF801FF0020B6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56BA486C1FF9997D00E4EADE /* favourite_app_icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favourite_app_icon.json; sourceTree = "<group>"; };
 		56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		56DF3FDF1FF8053D00008181 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = Pawsy/ViewControllers/LaunchViewController.swift; sourceTree = SOURCE_ROOT; };
 		56EE97351FEB124D00FD7F5F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				5624E2421FF7096A002975E0 /* materialLoading.json */,
+				563D7BCA1FF990BB00BD8984 /* checked_done_.json */,
+				56BA486C1FF9997D00E4EADE /* favourite_app_icon.json */,
 				564872D61FE25E9A00D292FA /* Info.plist */,
 				56634DB41FF5BE130058EF3F /* CustomRoundedButton.swift */,
 				566A86511FF801FF0020B6BA /* GoogleService-Info.plist */,
@@ -235,7 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				563D7BCB1FF990BB00BD8984 /* checked_done_.json in Resources */,
 				564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */,
+				56BA486D1FF9997D00E4EADE /* favourite_app_icon.json in Resources */,
 				5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */,
 				5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */,
 				566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */,

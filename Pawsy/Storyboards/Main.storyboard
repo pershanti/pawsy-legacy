@@ -268,7 +268,7 @@
                         <viewLayoutGuide key="safeArea" id="chP-Md-Jqn"/>
                     </view>
                     <connections>
-                        <outlet property="lottieView" destination="MkV-vH-wTa" id="gtg-bH-hZw"/>
+                        <outlet property="imageView" destination="MkV-vH-wTa" id="Gh4-6O-RQD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9z-kF-D0F" userLabel="First Responder" sceneMemberID="firstResponder"/>

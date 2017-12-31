@@ -20,17 +20,12 @@ class SavingViewController: UIViewController {
     var dogDoc: DocumentReference?
     var animationView: LOTAnimationView?
     
-    @IBOutlet weak var lottieView: UIView!
+    @IBOutlet weak var imageView: UIView!
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
 
 
     func uploadToCloudinary(photo: UIImage, dogID: String, document: DocumentReference) {
-        self.animationView = LOTAnimationView(name: "materialLoading")
-        self.animationView!.loopAnimation = true
-        self.lottieView.addSubview(self.animationView!)
-        self.animationView!.play { (finished) in
-            
-        }
+        
         let uploadData = UIImageJPEGRepresentation(photo, 1)
         _ = self.cloudinary?.createUploader().upload(data: uploadData!, uploadPreset: "pawsyDogPic", params: nil, progress: {({ (progress) in
             print(progress)
@@ -40,8 +35,7 @@ class SavingViewController: UIViewController {
             }
             else{
                 document.updateData(["photo": result?.resultJson["url"] as Any])
-                self.delegate!.allDone(self)
-                self.dismiss(animated: true, completion: nil)
+                self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
             }
         })
     }
@@ -49,8 +43,15 @@ class SavingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.animationView = LOTAnimationView(name: "favourite_app_icon")
+        self.animationView!.loopAnimation = true
+        self.imageView.contentMode = .scaleAspectFill
+        self.imageView.layer.masksToBounds = true
+        self.imageView.addSubview(self.animationView!)
+        self.animationView!.play()
         self.cloudinary = CLDCloudinary(configuration: self.config!)
         self.uploadToCloudinary(photo: self.dogImage!, dogID: self.dogID!, document: self.dogDoc!)
+        
     }
 
     override func didReceiveMemoryWarning() {
