@@ -61,7 +61,8 @@ class OnboardingViewController: FormViewController, SavingViewControllerDelegate
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "saveScreen"{
-            let destination = segue.destination as! SavingViewController
+            let nav = segue.destination as! UINavigationController
+            let destination = nav.childViewControllers[0] as! SavingViewController
             destination.delegate = self
             destination.dogImage = self.dogImage
             destination.dogDoc = self.dogDoc

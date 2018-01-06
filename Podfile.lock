@@ -119,6 +119,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NVActivityIndicatorView (4.1.1):
+    - NVActivityIndicatorView/Presenter (= 4.1.1)
+  - NVActivityIndicatorView/Presenter (4.1.1)
   - Protobuf (3.5.0)
   - SwiftyAvatar (1.1.3)
 
@@ -137,6 +140,7 @@ DEPENDENCIES:
   - FirebaseUI/Phone
   - ImageRow
   - lottie-ios
+  - NVActivityIndicatorView
   - SwiftyAvatar (~> 1.1)
 
 EXTERNAL SOURCES:
@@ -177,9 +181,10 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   lottie-ios: 836cdbba92f62f3c6a00e37a4ce485321fe317cf
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SwiftyAvatar: 33aecda825c91851cac2aabd06b33f3698b2414c
 
-PODFILE CHECKSUM: 3a15f12235e9d72876e61e58e9ce9aaec3844db4
+PODFILE CHECKSUM: ce2bff3a46681daa595ffe04d7ea663c96229d06
 
 COCOAPODS: 1.3.1

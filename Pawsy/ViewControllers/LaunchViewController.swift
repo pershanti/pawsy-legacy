@@ -32,7 +32,7 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
         let authViewController = authUI!.authViewController()
         authViewController.view.backgroundColor = UIColor(patternImage: UIImage(named: "spotLaunchScreen")!)
         authViewController.delegate = self
-        present(authViewController, animated: true, completion: nil)
+        present(authViewController, animated: false, completion: nil)
         print("here")
     }
     

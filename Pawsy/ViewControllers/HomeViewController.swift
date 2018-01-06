@@ -12,11 +12,22 @@ import FirebaseAuthUI
 import CoreLocation
 import Cloudinary
 import ChameleonFramework
+import Lottie
+import NVActivityIndicatorView
 
 
 class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     
+    var animationView: LOTAnimationView?
+    
     @IBOutlet weak var addNewButton: UIButton!
+    
+    var user: User?
+    var userDoc: DocumentReference?
+    var authUI: FUIAuth?
+    var currentLocation: CLLocation?
+    
+    
     @IBAction func addNewPup(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToOnboarding", sender: nil)
     }
@@ -29,11 +40,6 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
             print("error")
         }
     }
-    
-    var user: User?
-    var userDoc: DocumentReference?
-    var authUI: FUIAuth?
-    var currentLocation: CLLocation?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOnboarding" {
@@ -61,6 +67,7 @@ class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addLocationToUserDoc()
+        
     }
     
     override func didReceiveMemoryWarning() {

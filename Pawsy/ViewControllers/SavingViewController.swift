@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import Lottie
 import Cloudinary
 import Firebase
+import ChameleonFramework
+import NVActivityIndicatorView
 
 class SavingViewController: UIViewController {
     
@@ -18,10 +19,8 @@ class SavingViewController: UIViewController {
     var dogImage: UIImage?
     var dogID: String?
     var dogDoc: DocumentReference?
-    var animationView: LOTAnimationView?
-    
-    @IBOutlet weak var imageView: UIView!
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
+    
 
 
     func uploadToCloudinary(photo: UIImage, dogID: String, document: DocumentReference) {
@@ -43,15 +42,13 @@ class SavingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.animationView = LOTAnimationView(name: "favourite_app_icon")
-        self.animationView!.loopAnimation = true
-        self.imageView.contentMode = .scaleAspectFill
-        self.imageView.layer.masksToBounds = true
-        self.imageView.addSubview(self.animationView!)
-        self.animationView!.play()
+        view.backgroundColor = UIColor(named: "Turquoise")
+        let frame = CGRect(x: (view.frame.width-200)/2, y: (view.frame.height-200)/2, width: 200, height: 200)
+        let animationView = NVActivityIndicatorView(frame: frame, type: NVActivityIndicatorType.ballSpinFadeLoader, color: FlatWhite(), padding: nil)
+        self.view.addSubview(animationView)
+        animationView.startAnimating()
         self.cloudinary = CLDCloudinary(configuration: self.config!)
         self.uploadToCloudinary(photo: self.dogImage!, dogID: self.dogID!, document: self.dogDoc!)
-        
     }
 
     override func didReceiveMemoryWarning() {
