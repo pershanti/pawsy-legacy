@@ -7,24 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5624E23D1FF70228002975E0 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E23C1FF70228002975E0 /* LogoutViewController.swift */; };
-		5624E23F1FF70546002975E0 /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E23E1FF70546002975E0 /* SavingViewController.swift */; };
-		5624E2441FF70A1E002975E0 /* SavingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5624E2431FF70A1E002975E0 /* SavingViewControllerDelegate.swift */; };
-		563D7BCB1FF990BB00BD8984 /* checked_done_.json in Resources */ = {isa = PBXBuildFile; fileRef = 563D7BCA1FF990BB00BD8984 /* checked_done_.json */; };
-		564431441FF7298E00F5CDEB /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564431431FF7298E00F5CDEB /* LocationViewController.swift */; };
 		564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CA1FE25E9A00D292FA /* AppDelegate.swift */; };
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
-		5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656B16D1FE25EF600C3240A /* HomeViewController.swift */; };
-		5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1721FE25F4C00C3240A /* Main.storyboard */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
-		56634DB51FF5BE130058EF3F /* CustomRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56634DB41FF5BE130058EF3F /* CustomRoundedButton.swift */; };
-		56634DBD1FF5DA390058EF3F /* CustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56634DBC1FF5DA390058EF3F /* CustomAuthPickerViewController.swift */; };
-		5669E20D1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5669E20C1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift */; };
 		566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 566A86511FF801FF0020B6BA /* GoogleService-Info.plist */; };
-		569A71E52000AF4700B74517 /* XD Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* XD Storyboard.storyboard */; };
-		56BA486D1FF9997D00E4EADE /* favourite_app_icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 56BA486C1FF9997D00E4EADE /* favourite_app_icon.json */; };
-		56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */; };
-		56D929B21FFB0F3E008A06A8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D929B11FFB0F3E008A06A8 /* ProfileViewController.swift */; };
+		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
+		56A99BFE20042B2F004B9712 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */; };
+		56B19D9C20031B5600B2AF20 /* CustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B19D9B20031B5600B2AF20 /* CustomAuthPickerViewController.swift */; };
 		56DF3FE01FF8053D00008181 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF3FDF1FF8053D00008181 /* LaunchViewController.swift */; };
 		56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97351FEB124D00FD7F5F /* DataModel.swift */; };
 		F4AF6CC3E5F481E715B4F0B8 /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */; };
@@ -32,30 +21,17 @@
 
 /* Begin PBXFileReference section */
 		36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
-		5624E23C1FF70228002975E0 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
-		5624E23E1FF70546002975E0 /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
-		5624E2421FF7096A002975E0 /* materialLoading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = materialLoading.json; sourceTree = "<group>"; };
-		5624E2431FF70A1E002975E0 /* SavingViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewControllerDelegate.swift; sourceTree = "<group>"; };
-		563D7BCA1FF990BB00BD8984 /* checked_done_.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checked_done_.json; sourceTree = "<group>"; };
-		564431431FF7298E00F5CDEB /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		564872C71FE25E9A00D292FA /* Pawsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564872CA1FE25E9A00D292FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564872D11FE25E9A00D292FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		564872D61FE25E9A00D292FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5656B16D1FE25EF600C3240A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		5656B1721FE25F4C00C3240A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		56634DB41FF5BE130058EF3F /* CustomRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedButton.swift; sourceTree = "<group>"; };
-		56634DBC1FF5DA390058EF3F /* CustomAuthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthPickerViewController.swift; sourceTree = "<group>"; };
-		5669E20C1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewControllerDelegate.swift; sourceTree = "<group>"; };
 		566A86511FF801FF0020B6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		569A71E42000AF4700B74517 /* XD Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "XD Storyboard.storyboard"; sourceTree = "<group>"; };
-		56BA486C1FF9997D00E4EADE /* favourite_app_icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favourite_app_icon.json; sourceTree = "<group>"; };
-		56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		56D929B11FFB0F3E008A06A8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		569A71E42000AF4700B74517 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalkthroughPageViewController.swift; path = Pawsy/ViewControllers/WalkthroughPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		56B19D9B20031B5600B2AF20 /* CustomAuthPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAuthPickerViewController.swift; path = "Old View Controllers/CustomAuthPickerViewController.swift"; sourceTree = SOURCE_ROOT; };
 		56DF3FDF1FF8053D00008181 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = Pawsy/ViewControllers/LaunchViewController.swift; sourceTree = SOURCE_ROOT; };
 		56EE97351FEB124D00FD7F5F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		56EE97451FEB1A1300FD7F5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
 		F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,14 +69,9 @@
 		564872C91FE25E9A00D292FA /* Pawsy */ = {
 			isa = PBXGroup;
 			children = (
-				5624E2421FF7096A002975E0 /* materialLoading.json */,
-				563D7BCA1FF990BB00BD8984 /* checked_done_.json */,
-				56BA486C1FF9997D00E4EADE /* favourite_app_icon.json */,
 				564872D61FE25E9A00D292FA /* Info.plist */,
-				56634DB41FF5BE130058EF3F /* CustomRoundedButton.swift */,
 				566A86511FF801FF0020B6BA /* GoogleService-Info.plist */,
 				56634DBE1FF5E0A00058EF3F /* ViewControllers */,
-				56EE97481FEB1A4B00FD7F5F /* Code Samples */,
 				56EE97471FEB1A2D00FD7F5F /* Data Models */,
 				56EE97441FEB19F400FD7F5F /* Build Assets */,
 				56EE97421FEB19CA00FD7F5F /* Storyboards */,
@@ -112,14 +83,9 @@
 		56634DBE1FF5E0A00058EF3F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				56634DBC1FF5DA390058EF3F /* CustomAuthPickerViewController.swift */,
-				5656B16D1FE25EF600C3240A /* HomeViewController.swift */,
+				56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */,
+				56B19D9B20031B5600B2AF20 /* CustomAuthPickerViewController.swift */,
 				56DF3FDF1FF8053D00008181 /* LaunchViewController.swift */,
-				564431431FF7298E00F5CDEB /* LocationViewController.swift */,
-				5624E23C1FF70228002975E0 /* LogoutViewController.swift */,
-				56BF7D751FE39F72005E5FE1 /* OnboardingViewController.swift */,
-				56D929B11FFB0F3E008A06A8 /* ProfileViewController.swift */,
-				5624E23E1FF70546002975E0 /* SavingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,8 +93,6 @@
 		56EE97411FEB19B800FD7F5F /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				5624E2431FF70A1E002975E0 /* SavingViewControllerDelegate.swift */,
-				5669E20C1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -137,8 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
-				569A71E42000AF4700B74517 /* XD Storyboard.storyboard */,
-				5656B1721FE25F4C00C3240A /* Main.storyboard */,
+				569A71E42000AF4700B74517 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -147,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
-				56EE97451FEB1A1300FD7F5F /* GoogleService-Info.plist */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
 			);
 			path = "Build Assets";
@@ -159,13 +121,6 @@
 				56EE97351FEB124D00FD7F5F /* DataModel.swift */,
 			);
 			path = "Data Models";
-			sourceTree = "<group>";
-		};
-		56EE97481FEB1A4B00FD7F5F /* Code Samples */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Code Samples";
 			sourceTree = "<group>";
 		};
 		DBB876FC65ABF2F5E0292D7A /* Frameworks */ = {
@@ -247,12 +202,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				563D7BCB1FF990BB00BD8984 /* checked_done_.json in Resources */,
 				564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */,
-				56BA486D1FF9997D00E4EADE /* favourite_app_icon.json in Resources */,
 				5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */,
-				569A71E52000AF4700B74517 /* XD Storyboard.storyboard in Resources */,
-				5656B1741FE25F4D00C3240A /* Main.storyboard in Resources */,
+				569A71E52000AF4700B74517 /* Main.storyboard in Resources */,
 				566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,19 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56BF7D761FE39F72005E5FE1 /* OnboardingViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
-				5669E20D1FF04A7A007F03B4 /* OnboardingViewControllerDelegate.swift in Sources */,
-				56634DBD1FF5DA390058EF3F /* CustomAuthPickerViewController.swift in Sources */,
-				5656B1701FE25EF600C3240A /* HomeViewController.swift in Sources */,
-				564431441FF7298E00F5CDEB /* LocationViewController.swift in Sources */,
+				56A99BFE20042B2F004B9712 /* WalkthroughPageViewController.swift in Sources */,
 				56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */,
 				56DF3FE01FF8053D00008181 /* LaunchViewController.swift in Sources */,
-				5624E23D1FF70228002975E0 /* LogoutViewController.swift in Sources */,
-				56634DB51FF5BE130058EF3F /* CustomRoundedButton.swift in Sources */,
-				56D929B21FFB0F3E008A06A8 /* ProfileViewController.swift in Sources */,
-				5624E23F1FF70546002975E0 /* SavingViewController.swift in Sources */,
-				5624E2441FF70A1E002975E0 /* SavingViewControllerDelegate.swift in Sources */,
+				56B19D9C20031B5600B2AF20 /* CustomAuthPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

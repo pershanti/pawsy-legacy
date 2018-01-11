@@ -13,6 +13,7 @@ import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
 
 
+
 class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationControllerDelegate {
     
     var window: UIWindow?
@@ -24,13 +25,15 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     ]
     var userDoc: DocumentReference?
 
+    @IBAction func signUpButton(_ sender: UIButton) {
+    }
+    
     @IBAction func logIn(_ sender: UIButton) {
         authUI = FUIAuth.defaultAuthUI()
         authUI?.delegate = self
         authUI?.providers = self.providers
         
         let authViewController = authUI!.authViewController()
-        authViewController.view.backgroundColor = UIColor(patternImage: UIImage(named: "spotLaunchScreen")!)
         authViewController.delegate = self
         present(authViewController, animated: false, completion: nil)
         print("here")
@@ -74,25 +77,13 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     }
     
     func goToOnboarding(){
-        performSegue(withIdentifier: "goToLocation", sender: self)
+        performSegue(withIdentifier: "goToWalkthrough", sender: self)
     }
     
     func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
         return CustomAuthPickerViewController(authUI: self.authUI!)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToHome"{
-            let nav = segue.destination as! UITabBarController
-            let destination = nav.viewControllers![0] as! HomeViewController
-            destination.authUI = self.authUI
-        }
-        else if segue.identifier == "goToLocation"{
-            let destination = segue.destination as! LocationViewController
-            destination.authUI = self.authUI
-        }
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
