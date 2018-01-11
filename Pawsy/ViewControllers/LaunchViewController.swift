@@ -26,6 +26,7 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     var userDoc: DocumentReference?
 
     @IBAction func signUpButton(_ sender: UIButton) {
+        self.goToOnboarding()
     }
     
     @IBAction func logIn(_ sender: UIButton) {
