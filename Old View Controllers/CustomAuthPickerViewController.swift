@@ -18,12 +18,11 @@ class CustomAuthPickerViewController: FUIAuthPickerViewController{
     
     init(authUI: FUIAuth){
         super.init(nibName: nil, bundle: nil, authUI: authUI)
-        let greenView = UIView()
-        greenView.clipsToBounds = true
-        greenView.backgroundColor = UIColor(named: "NewMint")
-        greenView.frame = CGRect(origin: view.frame.origin, size: view.frame.size)
-        view.addSubview(greenView)
-        view.sendSubview(toBack: greenView)
+        let backView = UIImageView(image: UIImage(named: "iPhone 6-7-8 Plus – 7"))
+        backView.frame.size = view.frame.size
+        backView.clipsToBounds = true
+        view.addSubview(backView)
+        view.sendSubview(toBack: backView)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -36,12 +36,13 @@ class NewDogPageViewController: UIPageViewController, UIPageViewControllerDataSo
     }
     
     
-    fileprivate lazy var pages: [UIViewController] = {
+    lazy var pages: [UIViewController] = {
         return [
             self.getViewController(withIdentifier: "nd0"),
             self.getViewController(withIdentifier: "nd1"),
             self.getViewController(withIdentifier: "nd2"),
-            self.getViewController(withIdentifier: "nd3")
+            self.getViewController(withIdentifier: "nd3"),
+            self.getViewController(withIdentifier: "nd4")
         ]
     }()
     

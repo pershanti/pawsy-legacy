@@ -1,20 +1,22 @@
 //
-//  MultipleChoiceViewController.swift
+//  HomeViewController.swift
 //  Pawsy
 //
-//  Created by Shantini Vyas on 1/10/18.
+//  Created by Shantini Vyas on 1/11/18.
 //  Copyright © 2018 Pawsy.dog. All rights reserved.
 //
 
 import UIKit
 
-class MultipleChoiceViewController: UIViewController {
-    
-    var questions: [String]?
-    var multipleSelectAllowed: Bool?
+class HomeViewController: UIViewController {
+
+    @IBAction func addNewDog(_ sender: UIButton) {
+        performSegue(withIdentifier: "addNewDog", sender: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +24,4 @@ class MultipleChoiceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
 }
