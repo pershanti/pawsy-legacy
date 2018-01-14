@@ -14,7 +14,7 @@ class WeightViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func nextButton(_ sender: UIButton) {
         let parent = self.parent as! NewDogPageViewController
         parent.weight = self.weight
-             self.presentingViewController?.dismiss(animated: true, completion: nil)
+             self.dismiss(animated: true, completion: nil)
     }
     
     var pickerData = [String]()

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class NameViewController: UIViewController {
+class NameViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameBox: UITextField!
     @IBAction func nextButton(_ sender: UIButton) {
@@ -20,11 +20,18 @@ class NameViewController: UIViewController {
         parent.setViewControllers([parent.pages[1]], direction: .forward, animated: true, completion: nil)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.nameBox.resignFirstResponder()
+        return true
+    }
+    
+    
     let user = Auth.auth().currentUser!
     var name: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboard()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,3 +39,16 @@ class NameViewController: UIViewController {
     }
 
 }
+
+extension UIViewController
+{
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
+}
+

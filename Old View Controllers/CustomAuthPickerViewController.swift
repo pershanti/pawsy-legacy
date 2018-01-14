@@ -18,7 +18,7 @@ class CustomAuthPickerViewController: FUIAuthPickerViewController{
     
     init(authUI: FUIAuth){
         super.init(nibName: nil, bundle: nil, authUI: authUI)
-        let backView = UIImageView(image: UIImage(named: "iPhone 6-7-8 Plus – 7"))
+        let backView = UIImageView(image: UIImage(named: "blue gradient"))
         backView.frame.size = view.frame.size
         backView.clipsToBounds = true
         view.addSubview(backView)

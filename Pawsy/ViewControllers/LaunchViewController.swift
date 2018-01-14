@@ -26,7 +26,13 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     var userDoc: DocumentReference?
 
     @IBAction func signUpButton(_ sender: UIButton) {
-        self.goToOnboarding()
+        authUI = FUIAuth.defaultAuthUI()
+        authUI?.delegate = self
+        authUI?.providers = self.providers
+        
+        let authViewController = authUI!.authViewController()
+        authViewController.delegate = self
+        present(authViewController, animated: false, completion: nil)
     }
     
     @IBAction func logIn(_ sender: UIButton) {
