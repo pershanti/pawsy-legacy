@@ -11,8 +11,8 @@ import UIKit
 class PhotoViewController: UIViewController {
 
     @IBAction func doneButton(_ sender: UIButton) {
-        
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    let parent = self.parent as! NewDogPageViewController
+    parent.setViewControllers([parent.pages[3]], direction: .forward, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

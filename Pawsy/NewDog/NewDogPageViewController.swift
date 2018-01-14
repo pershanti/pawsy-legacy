@@ -10,6 +10,12 @@ import UIKit
 
 class NewDogPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
+    var name: String?
+    var gender: String?
+    var birthday: Date?
+    var weight: String?
+    var photo: UIImage?
+    var breed: String?
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = pages.index(of: viewController) else { return nil }
@@ -39,10 +45,12 @@ class NewDogPageViewController: UIPageViewController, UIPageViewControllerDataSo
     lazy var pages: [UIViewController] = {
         return [
             self.getViewController(withIdentifier: "nd0"),
+            self.getViewController(withIdentifier: "nd4"),
+            self.getViewController(withIdentifier: "nd5"),
+            self.getViewController(withIdentifier: "nd6"),
             self.getViewController(withIdentifier: "nd1"),
             self.getViewController(withIdentifier: "nd2"),
-            self.getViewController(withIdentifier: "nd3"),
-            self.getViewController(withIdentifier: "nd4")
+            self.getViewController(withIdentifier: "nd3")
         ]
     }()
     

@@ -13,10 +13,12 @@ class WeightViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var weightPicker: UIPickerView!
     @IBAction func nextButton(_ sender: UIButton) {
         let parent = self.parent as! NewDogPageViewController
-        parent.setViewControllers([parent.pages[3]], direction: .forward, animated: true, completion: nil)
+        parent.weight = self.weight
+             self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     var pickerData = [String]()
+    var weight: String?
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -30,13 +32,17 @@ class WeightViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return pickerData[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.weight = pickerData[row]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         for i in 1..<101{
             pickerData.append(String(i))
         }
         self.weightPicker.dataSource = self
-         self.weightPicker.delegate = self
+        self.weightPicker.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
