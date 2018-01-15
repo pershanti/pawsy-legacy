@@ -27,6 +27,7 @@ class SavingViewController: UIViewController {
     var dogID: String?
     var dogDoc: DocumentReference?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
+    var animationView: LOTAnimationView?
     
 
     func uploadToCloudinary(photo: UIImage, dogID: String, document: DocumentReference) {
@@ -39,8 +40,13 @@ class SavingViewController: UIViewController {
                 print(error!)
             }
             else{
-                document.updateData(["photo": result?.resultJson["url"] as Any])
-                self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                self.animationView!.stop()
+                let sceneModel = LOTComposition(name: "favourite_app_icon")
+                self.animationView!.sceneModel = sceneModel
+                self.animationView!.play(completion: { (bool) in
+                    document.updateData(["photo": result?.resultJson["url"] as Any])
+                    self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                })
             }
         })
     }
@@ -48,11 +54,12 @@ class SavingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let frame = CGRect(x: (view.frame.width-200)/2, y: (view.frame.height-200)/2, width: 200, height: 200)
-        let animationView = LOTAnimationView(name: "dogrun")
-        animationView.loopAnimation = true
-        animationView.frame = frame
-        self.view.addSubview(animationView)
-        animationView.play()
+        let scenemodel = LOTComposition(name: "dogrun")
+        animationView = LOTAnimationView(model: scenemodel, in: nil)
+        animationView!.loopAnimation = true
+        animationView!.frame = frame
+        self.view.addSubview(animationView!)
+        animationView!.play()
     }
     
     override func viewDidLoad() {

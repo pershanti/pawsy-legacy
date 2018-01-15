@@ -29,7 +29,7 @@ class PhotoViewController: UIViewController {
         let parent = self.parent as! NewDogPageViewController
         self.image = parent.photo
         self.imageView.image = self.image
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
         imageView.layer.cornerRadius = imageView.frame.height/2
         imageView.center = view.center
         imageView.clipsToBounds = true
