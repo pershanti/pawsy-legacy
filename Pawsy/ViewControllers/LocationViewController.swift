@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import Firebase
 
-class LocationViewController: UIViewController {
+class LocationViewController: UIViewController, CLLocationManagerDelegate {
     
     var manager = CLLocationManager()
     var currentLocation: CLLocation?
@@ -18,9 +18,32 @@ class LocationViewController: UIViewController {
     @IBAction func locationCheck(_ sender: UIButton) {
         
         manager.requestWhenInUseAuthorization()
-        self.manager.startUpdatingLocation()
-        performSegue(withIdentifier: "walkthroughDone", sender: self)
-        
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            self.currentLocation = locations[0]
+            performSegue(withIdentifier: "walkthroughDone", sender: self)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse{
+            self.manager.startUpdatingLocation()
+        }
+            
+        else if status == CLAuthorizationStatus.denied{
+            manager.requestWhenInUseAuthorization()
+            performSegue(withIdentifier: "walkthroughDoneWithNoLocation", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "walkthroughDone"{
+            let destination = segue.destination as! LaunchViewController
+            destination.location = self.currentLocation
+        }
+        else if segue.identifier == "walkthroughDoneWithNoLocation"{
+            let destination = segue.destination as! LaunchViewController
+            destination.locationDenied = true
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

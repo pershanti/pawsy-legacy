@@ -15,6 +15,7 @@
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
 		566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 566A86511FF801FF0020B6BA /* GoogleService-Info.plist */; };
 		56719E8620072E8500833EF0 /* NewDogPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56719E8520072E8500833EF0 /* NewDogPageViewController.swift */; };
+		5690023A200BCF7A003DAC06 /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56900239200BCF79003DAC06 /* SavingViewController.swift */; };
 		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
 		56A99BFE20042B2F004B9712 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */; };
 		56B19D9C20031B5600B2AF20 /* CustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B19D9B20031B5600B2AF20 /* CustomAuthPickerViewController.swift */; };
@@ -42,6 +43,7 @@
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		566A86511FF801FF0020B6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56719E8520072E8500833EF0 /* NewDogPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogPageViewController.swift; sourceTree = "<group>"; };
+		56900239200BCF79003DAC06 /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
 		569A71E42000AF4700B74517 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalkthroughPageViewController.swift; path = Pawsy/ViewControllers/WalkthroughPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		56B19D9B20031B5600B2AF20 /* CustomAuthPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAuthPickerViewController.swift; path = "Old View Controllers/CustomAuthPickerViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -127,6 +129,7 @@
 				56D74C182009C4D900AD8CEE /* UploadPhotoViewController.swift */,
 				56D74C0C2007EE5900AD8CEE /* PhotoViewController.swift */,
 				5625E9C1200B0E33006B13CC /* GenderViewController.swift */,
+				56900239200BCF79003DAC06 /* SavingViewController.swift */,
 			);
 			path = NewDog;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
+				5690023A200BCF7A003DAC06 /* SavingViewController.swift in Sources */,
 				56719E8620072E8500833EF0 /* NewDogPageViewController.swift in Sources */,
 				56D74C132009C45F00AD8CEE /* AgeViewController.swift in Sources */,
 				56A99BFE20042B2F004B9712 /* WalkthroughPageViewController.swift in Sources */,

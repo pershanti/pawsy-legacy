@@ -31,6 +31,7 @@ class PhotoViewController: UIViewController {
         self.imageView.image = self.image
         imageView.contentMode = UIViewContentMode.scaleAspectFit
         imageView.layer.cornerRadius = imageView.frame.height/2
+        imageView.center = view.center
         imageView.clipsToBounds = true
     }
 

@@ -361,13 +361,13 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="4" translatesAutoresizingMaskIntoConstraints="NO" id="QoX-Qq-Hix">
                                 <rect key="frame" x="168" y="610" width="39" height="37"/>
                             </pageControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x2c-Pg-YsK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2c-Pg-YsK">
                                 <rect key="frame" x="55" y="203" width="264" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7yD-iV-IYz" firstAttribute="top" secondItem="x2c-Pg-YsK" secondAttribute="bottom" constant="40" id="0sr-9v-UfE"/>
                             <constraint firstItem="xlu-uz-gHc" firstAttribute="trailing" secondItem="QoX-Qq-Hix" secondAttribute="trailing" constant="168" id="15D-8s-Uxf"/>
                             <constraint firstItem="QoX-Qq-Hix" firstAttribute="leading" secondItem="xlu-uz-gHc" secondAttribute="leading" constant="168" id="4Bz-mM-u5w"/>
                             <constraint firstItem="7yD-iV-IYz" firstAttribute="leading" secondItem="xlu-uz-gHc" secondAttribute="leading" constant="154" id="9VI-2b-TUd"/>
@@ -375,14 +375,11 @@
                             <constraint firstItem="QoX-Qq-Hix" firstAttribute="top" secondItem="7yD-iV-IYz" secondAttribute="bottom" constant="42" id="AOT-Mm-faR"/>
                             <constraint firstItem="KC3-EA-D2C" firstAttribute="top" secondItem="xHX-l5-sgV" secondAttribute="top" id="BvZ-Gi-0B5"/>
                             <constraint firstItem="xlu-uz-gHc" firstAttribute="trailing" secondItem="KC3-EA-D2C" secondAttribute="trailing" id="HiP-fM-4aW"/>
-                            <constraint firstItem="xlu-uz-gHc" firstAttribute="trailing" secondItem="x2c-Pg-YsK" secondAttribute="trailing" constant="56" id="Inn-aL-1zD"/>
-                            <constraint firstItem="x2c-Pg-YsK" firstAttribute="top" secondItem="xlu-uz-gHc" secondAttribute="top" constant="183" id="TRO-37-6Zz"/>
                             <constraint firstItem="7yD-iV-IYz" firstAttribute="top" secondItem="xlu-uz-gHc" secondAttribute="top" constant="483" id="W0f-e7-0FB"/>
                             <constraint firstItem="xlu-uz-gHc" firstAttribute="trailing" secondItem="7yD-iV-IYz" secondAttribute="trailing" constant="155" id="XSI-H7-AEl"/>
                             <constraint firstItem="xlu-uz-gHc" firstAttribute="bottom" secondItem="QoX-Qq-Hix" secondAttribute="bottom" constant="20" id="YTB-Ze-cQZ"/>
                             <constraint firstItem="KC3-EA-D2C" firstAttribute="leading" secondItem="xlu-uz-gHc" secondAttribute="leading" id="iij-cr-0lV"/>
                             <constraint firstItem="xlu-uz-gHc" firstAttribute="bottom" secondItem="7yD-iV-IYz" secondAttribute="bottom" constant="99" id="oyE-2v-woN"/>
-                            <constraint firstItem="x2c-Pg-YsK" firstAttribute="leading" secondItem="xlu-uz-gHc" secondAttribute="leading" constant="55" id="phU-BM-867"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xlu-uz-gHc"/>
                     </view>
@@ -447,6 +444,7 @@
                     </view>
                     <connections>
                         <segue destination="1ta-6o-Q45" kind="presentation" identifier="walkthroughDone" id="Lo5-Zy-ruj"/>
+                        <segue destination="1ta-6o-Q45" kind="show" identifier="walkthroughDoneWithNoLocation" id="6DJ-9C-obY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQD-4X-MSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -479,6 +477,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ke6-C9-VI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="457" y="944"/>
+        </scene>
+        <!--Saving View Controller-->
+        <scene sceneID="Y9q-9Z-0Q0">
+            <objects>
+                <viewController id="gxE-GP-zpw" customClass="SavingViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xya-I4-JUo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="b0O-xo-AiZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZu-OY-si2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3372" y="931"/>
         </scene>
         <!--Age View Controller-->
         <scene sceneID="HeS-sJ-T1d">
@@ -671,6 +684,7 @@
                     </view>
                     <connections>
                         <outlet property="weightPicker" destination="yGS-KK-dEa" id="ObB-7A-ppp"/>
+                        <segue destination="gxE-GP-zpw" kind="show" identifier="saveNewDog" id="njN-0y-dF3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngj-UW-zmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -693,6 +707,6 @@
         <image name="weight" width="1440" height="2560"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lo5-Zy-ruj"/>
+        <segue reference="6DJ-9C-obY"/>
     </inferredMetricsTieBreakers>
 </document>

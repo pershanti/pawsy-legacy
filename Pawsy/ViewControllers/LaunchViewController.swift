@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
@@ -24,6 +25,8 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
         FUIFacebookAuth()
     ]
     var userDoc: DocumentReference?
+    var location: CLLocation?
+    var locationDenied: Bool?
 
     @IBAction func signUpButton(_ sender: UIButton) {
         authUI = FUIAuth.defaultAuthUI()

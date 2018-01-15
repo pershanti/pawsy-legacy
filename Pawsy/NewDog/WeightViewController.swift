@@ -14,7 +14,20 @@ class WeightViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func nextButton(_ sender: UIButton) {
         let parent = self.parent as! NewDogPageViewController
         parent.weight = self.weight
-             self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "saveNewDog", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "saveNewDog"{
+            let destination = segue.destination as! SavingViewController
+            let parent = self.parent as! NewDogPageViewController
+            destination.birthday = parent.birthday
+            destination.breed = parent.breed
+            destination.gender = parent.gender
+            destination.photo = parent.photo
+            destination.name = parent.name
+            destination.weight = parent.weight
+        }
     }
     
     var pickerData = [String]()
