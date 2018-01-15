@@ -14,7 +14,15 @@ class BreedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBAction func nextButton(_ sender: Any) {
         let parent = self.parent as! NewDogPageViewController
-        parent.breed = self.breed
+        if  breed != nil{
+            parent.breed = breed
+        }
+        else{
+            breed = breedlist![breedPicker.selectedRow(inComponent: 0)]
+            parent.breed = self.breed
+        }
+        
+        
         parent.setViewControllers([parent.pages[4]], direction: .forward, animated: true, completion: nil)
     }
     

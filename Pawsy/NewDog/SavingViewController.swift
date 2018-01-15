@@ -11,7 +11,6 @@ import Cloudinary
 import Firebase
 import FirebaseAuthUI
 import ChameleonFramework
-import NVActivityIndicatorView
 import Lottie
 
 class SavingViewController: UIViewController {
@@ -49,7 +48,8 @@ class SavingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let frame = CGRect(x: (view.frame.width-200)/2, y: (view.frame.height-200)/2, width: 200, height: 200)
-        let animationView = LOTAnimationView(name: "")
+        let animationView = LOTAnimationView(name: "dogrun")
+        animationView.loopAnimation = true
         animationView.frame = frame
         self.view.addSubview(animationView)
         animationView.play()
@@ -59,16 +59,19 @@ class SavingViewController: UIViewController {
         super.viewDidLoad()
         self.user = Auth.auth().currentUser!
         let db = Firestore.firestore()
-        dogDoc = db.collection("users").document(self.user!.uid).collection("dogs").document(name)
-        dogID = self.user!.uid + "-" + name
-        dogDoc?.updateData([
-            "name": name,
-            "gender": gender,
-            "birthday": birthday,
-            "weight": weight,
-            "breed": breed
-            ])
-        
+        dogDoc = db.collection("users").document(self.user!.uid).collection("dogs").addDocument(data: ["name": self.name!,
+            "gender": self.gender!,
+            "birthday": self.birthday!,
+            "weight": self.weight!,
+            "breed": self.breed!], completion: { (error) in
+                if error != nil{
+                    print (error)
+                }
+                else {
+                    print("upload Okay!!!!!!!")
+                }
+        })
+        dogID = self.user!.uid + "-" + name!
         self.cloudinary = CLDCloudinary(configuration: self.config!)
         self.uploadToCloudinary(photo: self.photo!, dogID: self.dogID!, document: self.dogDoc!)
     }

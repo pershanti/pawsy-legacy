@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         user = Auth.auth().currentUser
-        
+        checkForDogs()
     }
     
     override func didReceiveMemoryWarning() {

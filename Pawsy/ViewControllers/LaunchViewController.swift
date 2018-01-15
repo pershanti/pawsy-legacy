@@ -45,7 +45,7 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
         
         let authViewController = authUI!.authViewController()
         authViewController.delegate = self
-        present(authViewController, animated: false, completion: nil)
+        present(authViewController, animated: true, completion: nil)
         print("here")
     }
     

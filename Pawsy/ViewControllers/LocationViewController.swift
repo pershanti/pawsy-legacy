@@ -27,6 +27,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.authorizedWhenInUse{
             self.manager.startUpdatingLocation()
+            performSegue(withIdentifier: "walkthroughDone", sender: self)
         }
             
         else if status == CLAuthorizationStatus.denied{

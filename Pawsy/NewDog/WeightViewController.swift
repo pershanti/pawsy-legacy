@@ -13,7 +13,16 @@ class WeightViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var weightPicker: UIPickerView!
     @IBAction func nextButton(_ sender: UIButton) {
         let parent = self.parent as! NewDogPageViewController
-        parent.weight = self.weight
+        
+        if self.weight != nil{
+            parent.weight = self.weight
+        }
+        else{
+            weight = pickerData[weightPicker.selectedRow(inComponent: 0)]
+            parent.weight = self.weight
+        }
+        
+        
         performSegue(withIdentifier: "saveNewDog", sender: self)
     }
     

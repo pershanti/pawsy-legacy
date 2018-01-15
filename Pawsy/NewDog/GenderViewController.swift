@@ -16,7 +16,13 @@ class GenderViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBAction func nextButton(_ sender: UIButton) {
         let parent = self.parent as! NewDogPageViewController
-        parent.gender = selectedGender
+        if selectedGender != nil{
+            parent.gender = selectedGender
+        }
+        else{
+            selectedGender = gender[genderPicker.selectedRow(inComponent: 0)]
+            parent.gender = selectedGender
+        }
         parent.setViewControllers([parent.pages[5]], direction: .forward, animated: true, completion: nil)
     }
     
@@ -36,6 +42,7 @@ class GenderViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.selectedGender = gender[row]
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
