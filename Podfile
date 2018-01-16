@@ -18,7 +18,8 @@ pod 'FirebaseUI/Phone'
 pod 'Firebase/Storage'
 pod 'lottie-ios'
 pod 'Cloudinary'
+pod 'SendBirdSDK'
 pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-
+pod "Koloda"
 
 end

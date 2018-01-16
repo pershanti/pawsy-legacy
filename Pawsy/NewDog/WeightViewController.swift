@@ -61,7 +61,7 @@ class WeightViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         for i in 1..<101{
-            pickerData.append(String(i))
+            pickerData.append(String(i)+" lbs.")
         }
         self.weightPicker.dataSource = self
         self.weightPicker.delegate = self
