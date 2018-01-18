@@ -92,12 +92,13 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Vhx-1F-8es" secondAttribute="bottom" id="3X3-qJ-V8z"/>
                             <constraint firstItem="Vhx-1F-8es" firstAttribute="leading" secondItem="rZw-dQ-LQB" secondAttribute="leading" id="BQs-wv-0ev"/>
-                            <constraint firstItem="rZw-dQ-LQB" firstAttribute="bottom" secondItem="9OI-gg-Wdk" secondAttribute="bottom" constant="239" id="CuM-h1-3Ki"/>
-                            <constraint firstItem="9OI-gg-Wdk" firstAttribute="leading" secondItem="rZw-dQ-LQB" secondAttribute="leading" constant="138" id="fVq-mB-dRy"/>
+                            <constraint firstItem="rZw-dQ-LQB" firstAttribute="trailing" secondItem="9OI-gg-Wdk" secondAttribute="trailing" constant="138" id="KOj-sK-Rdp"/>
+                            <constraint firstItem="9OI-gg-Wdk" firstAttribute="top" secondItem="rZw-dQ-LQB" secondAttribute="top" constant="267" id="LWY-qu-ZlW"/>
+                            <constraint firstItem="9OI-gg-Wdk" firstAttribute="leading" secondItem="rZw-dQ-LQB" secondAttribute="leading" constant="138" id="Xkl-ic-K6x"/>
+                            <constraint firstItem="rZw-dQ-LQB" firstAttribute="bottom" secondItem="9OI-gg-Wdk" secondAttribute="bottom" constant="239" id="aCz-Qq-hKx"/>
+                            <constraint firstItem="rZw-dQ-LQB" firstAttribute="trailing" secondItem="9OI-gg-Wdk" secondAttribute="trailing" constant="138" id="dic-yE-iIT"/>
                             <constraint firstItem="Vhx-1F-8es" firstAttribute="top" secondItem="U7I-Hf-T1D" secondAttribute="top" id="ied-7I-aZT"/>
                             <constraint firstItem="Vhx-1F-8es" firstAttribute="trailing" secondItem="rZw-dQ-LQB" secondAttribute="trailing" id="mpK-nz-eFN"/>
-                            <constraint firstItem="9OI-gg-Wdk" firstAttribute="top" secondItem="rZw-dQ-LQB" secondAttribute="top" constant="267" id="oxw-pG-xo6"/>
-                            <constraint firstItem="rZw-dQ-LQB" firstAttribute="trailing" secondItem="9OI-gg-Wdk" secondAttribute="trailing" constant="138" id="zK8-ZN-ND4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rZw-dQ-LQB"/>
                     </view>

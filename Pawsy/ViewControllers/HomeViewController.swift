@@ -14,8 +14,8 @@ import Firebase
 class HomeViewController: UIViewController {
     
     var user: User?
-    var dogs: [DocumentReference] = [DocumentReference]()
-    
+    var dogs: [DocumentSnapshot] = [DocumentSnapshot]()
+  
     
     @IBAction func addNewDog(_ sender: UIButton) {
         performSegue(withIdentifier: "addNewDog", sender: nil)
@@ -26,18 +26,28 @@ class HomeViewController: UIViewController {
         let userDoc = db.collection("users").document(user!.uid)
         let dogList = userDoc.collection("dogs")
         dogList.getDocuments { (querySnapshot, error) in
-            if querySnapshot!.isEmpty {
+            if querySnapshot!.documents.isEmpty  {
                 print("no dog-uments found")
             }
             else{
+                print(querySnapshot!.count)
                 for document in (querySnapshot?.documents)! {
-                    self.dogs.append(document.reference)
+                    self.dogs.append(document)
+                    print(document.documentID)
                 }
-                print(self.dogs)
             }
         }
     }
-
+    
+    func displayDogs(){
+        for i in 0..<dogs.count{
+            var ref = self.dogs[i]
+            
+            
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         user = Auth.auth().currentUser

@@ -50,7 +50,9 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
-        print(error.debugDescription)
+        if error != nil{
+            print(error.debugDescription)
+        }
         self.user = Auth.auth().currentUser
         self.checkIfOnboarded()
     }

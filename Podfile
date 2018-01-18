@@ -21,5 +21,6 @@ pod 'Cloudinary'
 pod 'SendBirdSDK'
 pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 pod "Koloda"
+pod 'AWSMobileClient', '~> 2.6.6'
 
 end
