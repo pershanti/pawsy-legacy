@@ -72,7 +72,7 @@ class SavingViewController: UIViewController {
             "weight": self.weight!,
             "breed": self.breed!], completion: { (error) in
                 if error != nil{
-                    print (error)
+                    print (error!)
                 }
                 else {
                     print("upload Okay!!!!!!!")

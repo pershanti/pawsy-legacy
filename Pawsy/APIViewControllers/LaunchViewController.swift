@@ -12,6 +12,8 @@ import CoreLocation
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
+import AWSMobileClient
+
 
 
 

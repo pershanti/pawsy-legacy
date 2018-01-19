@@ -1,5 +1,48 @@
 PODS:
   - Alamofire (4.5.1)
+  - AWSAuthCore (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSAutoScaling (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSCloudWatch (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSCognito (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSCognitoIdentityProvider (2.6.10):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.6.10)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.6.10)
+  - AWSDynamoDB (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSEC2 (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSElasticLoadBalancing (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSIoT (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSKinesis (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSLambda (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSMachineLearning (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSMobileAnalytics (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSMobileClient (2.6.10):
+    - AWSAuthCore (= 2.6.10)
+  - AWSPinpoint (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSS3 (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSSES (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSSimpleDB (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSSNS (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSSQS (2.6.10):
+    - AWSCore (= 2.6.10)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -20,6 +63,8 @@ PODS:
   - FBSDKCoreKit (4.29.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.29.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.29.0):
     - FBSDKCoreKit
   - Firebase (4.8.0):
     - Firebase/Core (= 4.8.0)
@@ -123,8 +168,30 @@ PODS:
   - SendBirdSDK (3.0.79)
 
 DEPENDENCIES:
+  - AWSAutoScaling
+  - AWSCloudWatch
+  - AWSCognito
+  - AWSCognitoIdentityProvider
+  - AWSDynamoDB
+  - AWSEC2
+  - AWSElasticLoadBalancing
+  - AWSIoT
+  - AWSKinesis
+  - AWSLambda
+  - AWSMachineLearning
+  - AWSMobileAnalytics
+  - AWSMobileClient (~> 2.6.6)
+  - AWSPinpoint (~> 2.6.6)
+  - AWSS3
+  - AWSSES
+  - AWSSimpleDB
+  - AWSSNS
+  - AWSSQS
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Cloudinary
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - Firebase
   - Firebase/Auth
   - Firebase/Core
@@ -149,12 +216,35 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AWSAuthCore: d5e52ee671c815bee92c8fc1077fb6bd526f026a
+  AWSAutoScaling: d62730456be0371c0a5af24c96b420345a6ce375
+  AWSCloudWatch: 5461833268c13acc6d1c746d5ba9a44b4127cbd3
+  AWSCognito: 94d97a52c51310dfd20f2db5dc4fce7ebce0e8dc
+  AWSCognitoIdentityProvider: f88d27fef26b131191da06c0a9a398e3c686945c
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: 5bb072a6b5b185f43ddbd239d6554d2f8a285ad2
+  AWSDynamoDB: 46c7d83862a8375fb824796dc60b04f9273c5d3f
+  AWSEC2: f4a8d15385450cf077f582379853dd378a71482c
+  AWSElasticLoadBalancing: 78f98f2c82fe7743c3685479437d1b0d6fb2cbd7
+  AWSIoT: 671f66774ea45d9d114d599878744bb974d06e05
+  AWSKinesis: e6e9a17ba43a19d9874412542c6b9cc3faa137ba
+  AWSLambda: 2f3e873db574ea3096d55cbab2b15c08d1a70b2c
+  AWSMachineLearning: 0ea5b6b77d8c5b8f2acbc0afac9e540ae864b43e
+  AWSMobileAnalytics: db5e87cb7c17f5dd10ccbc5b81eaef182e15034a
+  AWSMobileClient: 6bdf1228aa064a9f2ee9db1486f09bfc6bc64c1e
+  AWSPinpoint: 92ec19e8fa844ff2330ca08695c326520d7d08aa
+  AWSS3: 1124570c2c2dba6be7e6e67d123cc5181073c53d
+  AWSSES: 66850c2bbbaa8a9d8f1f3b3f4b976db0fb446aae
+  AWSSimpleDB: 0390a46fcc5de60920564944d3b1b434bae043be
+  AWSSNS: 9966123ab0a02af1c3c19cafe4045c67b0e6883e
+  AWSSQS: 6bcf0f7ebe6e314116017a4d0f379373a5c7b996
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   BoringSSL: 84318770d120503ab1a6aaf1df777c5ca053697e
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Cloudinary: b104153aa69a73cf87a32a3e26758eaec7fcd05f
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
+  FBSDKShareKit: 18a2cd118aef11dd657fe7e8b64bae5c719088b2
   Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
   FirebaseAuth: dc0dd403beca5b2b016aac89c2d0b8dad1c81926
@@ -179,6 +269,6 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SendBirdSDK: c705ec8ac49b6fe4dcb8ad5ca68f39ea0c27ba6b
 
-PODFILE CHECKSUM: 1346a267e4eb83f65188e30279c53096fcd465b9
+PODFILE CHECKSUM: ac25363ecd42d2d861442f1002581b3a607ec751
 
 COCOAPODS: 1.3.1

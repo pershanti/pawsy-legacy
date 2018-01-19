@@ -41,7 +41,11 @@
 		56719E8620072E8500833EF0 /* NewDogPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56719E8520072E8500833EF0 /* NewDogPageViewController.swift */; };
 		5690023A200BCF7A003DAC06 /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56900239200BCF79003DAC06 /* SavingViewController.swift */; };
 		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
+		56A5B8BD2011CADF00329EEE /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 56A5B8BC2011CADF00329EEE /* awsconfiguration.json */; };
+		56A5B8C02011CB5000329EEE /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5B8BE2011CB5000329EEE /* Users.swift */; };
+		56A5B8C12011CB5000329EEE /* Dogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5B8BF2011CB5000329EEE /* Dogs.swift */; };
 		56A99BFE20042B2F004B9712 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */; };
+		56AB95022010621D0066E507 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AB95012010621D0066E507 /* LaunchViewController.swift */; };
 		56B19D9C20031B5600B2AF20 /* CustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B19D9B20031B5600B2AF20 /* CustomAuthPickerViewController.swift */; };
 		56D74C0D2007EE5900AD8CEE /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74C0C2007EE5900AD8CEE /* PhotoViewController.swift */; };
 		56D74C0F2007EEA600AD8CEE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74C0E2007EEA600AD8CEE /* HomeViewController.swift */; };
@@ -50,13 +54,13 @@
 		56D74C152009C46800AD8CEE /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74C142009C46800AD8CEE /* WeightViewController.swift */; };
 		56D74C172009C49E00AD8CEE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74C162009C49E00AD8CEE /* NameViewController.swift */; };
 		56D74C192009C4D900AD8CEE /* UploadPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D74C182009C4D900AD8CEE /* UploadPhotoViewController.swift */; };
-		56DF3FE01FF8053D00008181 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF3FDF1FF8053D00008181 /* LaunchViewController.swift */; };
 		56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE97351FEB124D00FD7F5F /* DataModel.swift */; };
-		F4AF6CC3E5F481E715B4F0B8 /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */; };
+		B45BA25DF38BC47052AC29B7 /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494CD50397CCDBE45292AFB7 /* Pods_Pawsy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
+		36F7B3D1D41CA4E6E4D87EA7 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
+		494CD50397CCDBE45292AFB7 /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5625E9C1200B0E33006B13CC /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		5625E9C3200B1523006B13CC /* BreedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreedViewController.swift; path = Pawsy/NewDog/BreedViewController.swift; sourceTree = SOURCE_ROOT; };
 		5625E9C5200B15AB006B13CC /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Breeds.swift; path = Pawsy/NewDog/Breeds.swift; sourceTree = SOURCE_ROOT; };
@@ -93,19 +97,21 @@
 		56719E8520072E8500833EF0 /* NewDogPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogPageViewController.swift; sourceTree = "<group>"; };
 		56900239200BCF79003DAC06 /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
 		569A71E42000AF4700B74517 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalkthroughPageViewController.swift; path = Pawsy/ViewControllers/WalkthroughPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		56A5B8BC2011CADF00329EEE /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		56A5B8BE2011CB5000329EEE /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		56A5B8BF2011CB5000329EEE /* Dogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dogs.swift; sourceTree = "<group>"; };
+		56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalkthroughPageViewController.swift; path = Pawsy/NewDog/WalkthroughPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		56AB95012010621D0066E507 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		56B19D9B20031B5600B2AF20 /* CustomAuthPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAuthPickerViewController.swift; path = "Old View Controllers/CustomAuthPickerViewController.swift"; sourceTree = SOURCE_ROOT; };
 		56D74C0C2007EE5900AD8CEE /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoViewController.swift; path = Pawsy/NewDog/PhotoViewController.swift; sourceTree = SOURCE_ROOT; };
-		56D74C0E2007EEA600AD8CEE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Pawsy/ViewControllers/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
-		56D74C102007F24000AD8CEE /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = Pawsy/ViewControllers/LocationViewController.swift; sourceTree = SOURCE_ROOT; };
+		56D74C0E2007EEA600AD8CEE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Pawsy/APIViewControllers/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		56D74C102007F24000AD8CEE /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = Pawsy/APIViewControllers/LocationViewController.swift; sourceTree = SOURCE_ROOT; };
 		56D74C122009C45F00AD8CEE /* AgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
 		56D74C142009C46800AD8CEE /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		56D74C162009C49E00AD8CEE /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		56D74C182009C4D900AD8CEE /* UploadPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UploadPhotoViewController.swift; path = Pawsy/NewDog/UploadPhotoViewController.swift; sourceTree = SOURCE_ROOT; };
-		56DF3FDF1FF8053D00008181 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = Pawsy/ViewControllers/LaunchViewController.swift; sourceTree = SOURCE_ROOT; };
 		56EE97351FEB124D00FD7F5F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
-		F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC42BF27884042149CDFF3BB /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4AF6CC3E5F481E715B4F0B8 /* Pods_Pawsy.framework in Frameworks */,
+				B45BA25DF38BC47052AC29B7 /* Pods_Pawsy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +131,8 @@
 			children = (
 				564872C91FE25E9A00D292FA /* Pawsy */,
 				564872C81FE25E9A00D292FA /* Products */,
-				DBBE86A2E67D015D1220FFD1 /* Pods */,
-				DBB876FC65ABF2F5E0292D7A /* Frameworks */,
+				C5558559EA34C100A613A840 /* Pods */,
+				BA428C79765E20A93CB3513B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,8 +151,9 @@
 				567074D6200C86D800992DB4 /* Dogrun */,
 				56719E8920072F1700833EF0 /* NewDog */,
 				564872D61FE25E9A00D292FA /* Info.plist */,
+				56A5B8BC2011CADF00329EEE /* awsconfiguration.json */,
 				566A86511FF801FF0020B6BA /* GoogleService-Info.plist */,
-				56634DBE1FF5E0A00058EF3F /* ViewControllers */,
+				56634DBE1FF5E0A00058EF3F /* APIViewControllers */,
 				56EE97471FEB1A2D00FD7F5F /* Data Models */,
 				56EE97441FEB19F400FD7F5F /* Build Assets */,
 				56EE97421FEB19CA00FD7F5F /* Storyboards */,
@@ -155,16 +162,16 @@
 			path = Pawsy;
 			sourceTree = "<group>";
 		};
-		56634DBE1FF5E0A00058EF3F /* ViewControllers */ = {
+		56634DBE1FF5E0A00058EF3F /* APIViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				56AB95012010621D0066E507 /* LaunchViewController.swift */,
 				56D74C102007F24000AD8CEE /* LocationViewController.swift */,
 				56D74C0E2007EEA600AD8CEE /* HomeViewController.swift */,
 				56B19D9B20031B5600B2AF20 /* CustomAuthPickerViewController.swift */,
-				56DF3FDF1FF8053D00008181 /* LaunchViewController.swift */,
-				56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */,
+				56900239200BCF79003DAC06 /* SavingViewController.swift */,
 			);
-			path = ViewControllers;
+			path = APIViewControllers;
 			sourceTree = "<group>";
 		};
 		567074D6200C86D800992DB4 /* Dogrun */ = {
@@ -217,7 +224,7 @@
 				56D74C182009C4D900AD8CEE /* UploadPhotoViewController.swift */,
 				56D74C0C2007EE5900AD8CEE /* PhotoViewController.swift */,
 				56D74C142009C46800AD8CEE /* WeightViewController.swift */,
-				56900239200BCF79003DAC06 /* SavingViewController.swift */,
+				56A99BFD20042B2F004B9712 /* WalkthroughPageViewController.swift */,
 			);
 			path = NewDog;
 			sourceTree = "<group>";
@@ -250,24 +257,26 @@
 		56EE97471FEB1A2D00FD7F5F /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				56A5B8BF2011CB5000329EEE /* Dogs.swift */,
+				56A5B8BE2011CB5000329EEE /* Users.swift */,
 				56EE97351FEB124D00FD7F5F /* DataModel.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
 		};
-		DBB876FC65ABF2F5E0292D7A /* Frameworks */ = {
+		BA428C79765E20A93CB3513B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */,
+				494CD50397CCDBE45292AFB7 /* Pods_Pawsy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DBBE86A2E67D015D1220FFD1 /* Pods */ = {
+		C5558559EA34C100A613A840 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */,
-				36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */,
+				BC42BF27884042149CDFF3BB /* Pods-Pawsy.debug.xcconfig */,
+				36F7B3D1D41CA4E6E4D87EA7 /* Pods-Pawsy.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -359,6 +368,7 @@
 				567074F0200C86D900992DB4 /* dogrun.json in Resources */,
 				567074FB200C86D900992DB4 /* img_18.png in Resources */,
 				567074F2200C86D900992DB4 /* img_1.png in Resources */,
+				56A5B8BD2011CADF00329EEE /* awsconfiguration.json in Resources */,
 				56707505200C86D900992DB4 /* img_9.png in Resources */,
 				56707502200C86D900992DB4 /* img_6.png in Resources */,
 				567074FF200C86D900992DB4 /* img_3.png in Resources */,
@@ -415,6 +425,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSAutoScaling/AWSAutoScaling.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCloudWatch/AWSCloudWatch.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSDynamoDB/AWSDynamoDB.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSEC2/AWSEC2.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSElasticLoadBalancing/AWSElasticLoadBalancing.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSIoT/AWSIoT.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSKinesis/AWSKinesis.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSLambda/AWSLambda.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMachineLearning/AWSMachineLearning.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMobileAnalytics/AWSMobileAnalytics.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSSES/AWSSES.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSSNS/AWSSNS.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSSQS/AWSSQS.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSSimpleDB/AWSSimpleDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
@@ -422,6 +454,7 @@
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -440,6 +473,28 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAutoScaling.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCloudWatch.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDynamoDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSEC2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSElasticLoadBalancing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSIoT.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSKinesis.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSLambda.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMachineLearning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileAnalytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSSES.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSSNS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSSQS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSSimpleDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
@@ -447,6 +502,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -476,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
+				56AB95022010621D0066E507 /* LaunchViewController.swift in Sources */,
 				5690023A200BCF7A003DAC06 /* SavingViewController.swift in Sources */,
 				56719E8620072E8500833EF0 /* NewDogPageViewController.swift in Sources */,
 				56D74C132009C45F00AD8CEE /* AgeViewController.swift in Sources */,
@@ -484,12 +541,13 @@
 				56EE97361FEB124D00FD7F5F /* DataModel.swift in Sources */,
 				56D74C0D2007EE5900AD8CEE /* PhotoViewController.swift in Sources */,
 				56D74C152009C46800AD8CEE /* WeightViewController.swift in Sources */,
+				56A5B8C02011CB5000329EEE /* Users.swift in Sources */,
 				5625E9C4200B1523006B13CC /* BreedViewController.swift in Sources */,
 				56D74C112007F24000AD8CEE /* LocationViewController.swift in Sources */,
-				56DF3FE01FF8053D00008181 /* LaunchViewController.swift in Sources */,
 				56B19D9C20031B5600B2AF20 /* CustomAuthPickerViewController.swift in Sources */,
 				5625E9C6200B15AB006B13CC /* Breeds.swift in Sources */,
 				56D74C172009C49E00AD8CEE /* NameViewController.swift in Sources */,
+				56A5B8C12011CB5000329EEE /* Dogs.swift in Sources */,
 				56D74C192009C4D900AD8CEE /* UploadPhotoViewController.swift in Sources */,
 				5625E9C2200B0E33006B13CC /* GenderViewController.swift in Sources */,
 			);
@@ -498,7 +556,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		564872D71FE25E9A00D292FA /* Debug */ = {
+		56B50AC82011D0AF00AC2871 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -529,17 +587,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -547,15 +599,31 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
-		564872D81FE25E9A00D292FA /* Release */ = {
+		56B50AC92011D0AF00AC2871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC42BF27884042149CDFF3BB /* Pods-Pawsy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LVLYB83ZJM;
+				INFOPLIST_FILE = Pawsy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pawsy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		56B50ACA2011D0C500AC2871 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -605,26 +673,9 @@
 			};
 			name = Release;
 		};
-		564872DA1FE25E9A00D292FA /* Debug */ = {
+		56B50ACB2011D0C500AC2871 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LVLYB83ZJM;
-				INFOPLIST_FILE = Pawsy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Pawsy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		564872DB1FE25E9A00D292FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */;
+			baseConfigurationReference = 36F7B3D1D41CA4E6E4D87EA7 /* Pods-Pawsy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -645,20 +696,20 @@
 		564872C21FE25E9A00D292FA /* Build configuration list for PBXProject "Pawsy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				564872D71FE25E9A00D292FA /* Debug */,
-				564872D81FE25E9A00D292FA /* Release */,
+				56B50AC82011D0AF00AC2871 /* Debug */,
+				56B50ACA2011D0C500AC2871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		564872D91FE25E9A00D292FA /* Build configuration list for PBXNativeTarget "Pawsy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				564872DA1FE25E9A00D292FA /* Debug */,
-				564872DB1FE25E9A00D292FA /* Release */,
+				56B50AC92011D0AF00AC2871 /* Debug */,
+				56B50ACB2011D0C500AC2871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

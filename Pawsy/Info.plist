@@ -18,22 +18,8 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.347255944900-mcnrv68o42j10jtilgu0jusolengke23</string>
-				<string>fb185112482070863</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>FacebookAppID</key>
-	<string>185112482070863</string>
-	<key>FacebookDisplayName</key>
-	<string>Pawsy</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -75,5 +61,18 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb185112482070863</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>185112482070863</string>
+    <key>FacebookDisplayName</key>
+    <string>Pawsy</string>
 </dict>
 </plist>
