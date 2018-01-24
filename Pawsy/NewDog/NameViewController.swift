@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class NameViewController: UIViewController, UITextFieldDelegate {
 
@@ -26,7 +25,6 @@ class NameViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    let user = Auth.auth().currentUser!
     var name: String?
     
     override func viewDidLoad() {

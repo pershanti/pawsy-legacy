@@ -7,82 +7,32 @@
 //
 
 import UIKit
-import Firebase
 import CoreLocation
-import FirebaseAuthUI
-import FirebaseGoogleAuthUI
-import FirebaseFacebookAuthUI
+import FacebookLogin
 import AWSMobileClient
+import AWSAuthCore
+import AWSAuthUI
 
 
-
-
-class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationControllerDelegate {
+class LaunchViewController: UIViewController, UINavigationControllerDelegate {
     
     var window: UIWindow?
-    var authUI: FUIAuth?
-    var user: User?
-    let providers: [FUIAuthProvider] = [
-        FUIGoogleAuth(),
-        FUIFacebookAuth()
-    ]
-    var userDoc: DocumentReference?
     var location: CLLocation?
     var locationDenied: Bool?
 
     @IBAction func signUpButton(_ sender: UIButton) {
-        authUI = FUIAuth.defaultAuthUI()
-        authUI?.delegate = self
-        authUI?.providers = self.providers
         
-        let authViewController = authUI!.authViewController()
-        authViewController.delegate = self
-        present(authViewController, animated: false, completion: nil)
     }
     
     @IBAction func logIn(_ sender: UIButton) {
-        authUI = FUIAuth.defaultAuthUI()
-        authUI?.delegate = self
-        authUI?.providers = self.providers
-        
-        let authViewController = authUI!.authViewController()
-        authViewController.delegate = self
-        present(authViewController, animated: true, completion: nil)
-        print("here")
-    }
-    
-    func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
-        print(error.debugDescription)
-        self.user = Auth.auth().currentUser
-        self.checkIfOnboarded()
-    }
-    
-    func application(_ app: UIApplication, open url: URL,
-                     options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?
-        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
-            return true
-        }
-        // other URL handling goes here.
-        return false
-    }
-    
-    func checkIfOnboarded() {
-        let db = Firestore.firestore()
-        let uid = self.user?.uid
-        self.userDoc = db.collection("users").document(uid!)
-        self.userDoc!.getDocument { (document, error) in
-            if document?.exists == false {
-                self.userDoc!.setData([
-                    "name": self.user?.displayName as Any,
-                    ])
-                self.goToOnboarding()
-            }
-            else {
-                self.goToHome()
-            }
+        func viewDidLoad() {
+            let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+            loginButton.center = view.center
+            
+            view.addSubview(loginButton)
         }
     }
+
     
     func goToHome(){
         performSegue(withIdentifier: "goToHome", sender: self)
@@ -92,10 +42,6 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
         performSegue(withIdentifier: "goToWalkthrough", sender: self)
     }
     
-    func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
-        return CustomAuthPickerViewController(authUI: self.authUI!)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

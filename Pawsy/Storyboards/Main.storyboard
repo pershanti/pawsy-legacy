@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="goz-2q-0hu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nWv-8S-KoN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -57,6 +57,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uRD-IT-3kw"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FE2-KU-LIu"/>
                     <connections>
                         <segue destination="1ta-6o-Q45" kind="presentation" identifier="goToHome" id="VXt-m2-bVh"/>
                         <segue destination="y1a-oo-gDM" kind="show" identifier="goToWalkthrough" id="bK2-Nx-OUP"/>
@@ -64,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OL-dV-LS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-754" y="-1269"/>
+            <point key="canvasLocation" x="-415.19999999999999" y="-1269.7151424287856"/>
         </scene>
         <!--Home-->
         <scene sceneID="A98-7O-CMU">
@@ -90,14 +91,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Vhx-1F-8es" secondAttribute="bottom" id="3X3-qJ-V8z"/>
-                            <constraint firstItem="Vhx-1F-8es" firstAttribute="leading" secondItem="rZw-dQ-LQB" secondAttribute="leading" id="BQs-wv-0ev"/>
-                            <constraint firstItem="rZw-dQ-LQB" firstAttribute="bottom" secondItem="9OI-gg-Wdk" secondAttribute="bottom" constant="239" id="CuM-h1-3Ki"/>
-                            <constraint firstItem="9OI-gg-Wdk" firstAttribute="leading" secondItem="rZw-dQ-LQB" secondAttribute="leading" constant="138" id="fVq-mB-dRy"/>
-                            <constraint firstItem="Vhx-1F-8es" firstAttribute="top" secondItem="U7I-Hf-T1D" secondAttribute="top" id="ied-7I-aZT"/>
-                            <constraint firstItem="Vhx-1F-8es" firstAttribute="trailing" secondItem="rZw-dQ-LQB" secondAttribute="trailing" id="mpK-nz-eFN"/>
-                            <constraint firstItem="9OI-gg-Wdk" firstAttribute="top" secondItem="rZw-dQ-LQB" secondAttribute="top" constant="267" id="oxw-pG-xo6"/>
-                            <constraint firstItem="rZw-dQ-LQB" firstAttribute="trailing" secondItem="9OI-gg-Wdk" secondAttribute="trailing" constant="138" id="zK8-ZN-ND4"/>
+                            <constraint firstItem="9OI-gg-Wdk" firstAttribute="leading" secondItem="rZw-dQ-LQB" secondAttribute="leading" constant="138" id="2X6-Jz-P5c"/>
+                            <constraint firstItem="Vhx-1F-8es" firstAttribute="leading" secondItem="rZw-dQ-LQB" secondAttribute="leading" id="QcI-Mq-j2Q"/>
+                            <constraint firstItem="Vhx-1F-8es" firstAttribute="top" secondItem="U7I-Hf-T1D" secondAttribute="top" id="X5a-lR-XLk"/>
+                            <constraint firstAttribute="bottom" secondItem="Vhx-1F-8es" secondAttribute="bottom" id="YF1-mW-ayO"/>
+                            <constraint firstItem="Vhx-1F-8es" firstAttribute="trailing" secondItem="rZw-dQ-LQB" secondAttribute="trailing" id="hcW-sk-sJZ"/>
+                            <constraint firstItem="rZw-dQ-LQB" firstAttribute="bottom" secondItem="9OI-gg-Wdk" secondAttribute="bottom" constant="239" id="nVU-Al-KBF"/>
+                            <constraint firstItem="9OI-gg-Wdk" firstAttribute="top" secondItem="rZw-dQ-LQB" secondAttribute="top" constant="267" id="o9R-ZO-gDE"/>
+                            <constraint firstItem="rZw-dQ-LQB" firstAttribute="trailing" secondItem="9OI-gg-Wdk" secondAttribute="trailing" constant="138" id="rE0-8I-IjI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rZw-dQ-LQB"/>
                     </view>
@@ -333,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQD-4X-MSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="317.60000000000002" y="-1270.6146926536733"/>
+            <point key="canvasLocation" x="656.79999999999995" y="-1270.6146926536733"/>
         </scene>
         <!--In-Barks-->
         <scene sceneID="IGe-fQ-n97">
@@ -574,6 +575,21 @@
             </objects>
             <point key="canvasLocation" x="3174" y="1733"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UXr-Le-eTC">
+            <objects>
+                <navigationController storyboardIdentifier="nav0" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nWv-8S-KoN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="quI-Zn-Wde">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BRl-kl-Rx6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="-1996"/>
+        </scene>
     </scenes>
     <resources>
         <image name="birthday" width="1440" height="2560"/>
@@ -588,6 +604,6 @@
         <image name="weight" width="1440" height="2560"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6DJ-9C-obY"/>
+        <segue reference="VXt-m2-bVh"/>
     </inferredMetricsTieBreakers>
 </document>

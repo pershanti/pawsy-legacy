@@ -1,0 +1,22 @@
+{
+	"ProjectName": "Pawsy",
+	"ProjectPath": "/Users/shantini/Pawsy/Pawsy",
+	"SourceDir": "src",
+	"DistributionDir": "build",
+	"BuildCommand": "npm run-script build",
+	"StartCommand": "npm run-script start",
+	"InitializationTime": "2018-01-17-21-07-48",
+	"LastConfigurationTime": "2018-01-17-21-07-57",
+	"LastNPMInstallTime": "",
+	"FrontendLastBuildTime": "",
+	"LastPublishTime": "",
+	"BackendFormat": "yml",
+	"BackendLastBuildTime": "",
+	"BackendLastUpdateTime": "",
+	"BackendLastUpdateSuccessful": false,
+	"BackendProjectID": "a4ead88b-2875-40a3-862d-8409ffe9e011",
+	"BackendProjectName": "Pawsy-2018-01-17-21-07-57",
+	"BackendProjectConsoleUrl": "https://console.aws.amazon.com/mobilehub/home#/a4ead88b-2875-40a3-862d-8409ffe9e011/build",
+	"BackendProjectCreationTime": "2018-01-18T05:07:57.629Z",
+	"BackendProjectLastUpdatedTime": "2018-01-18T05:07:57.629Z"
+}
