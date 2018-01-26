@@ -21,6 +21,9 @@ pod 'AWSAuthUI', '~> 2.6.6'
 pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
+pod 'StitchCore', '~> 2.0.4'
+pod 'MongoDBService', '~> 2.0.0'
+pod 'ExtendedJson', '~> 2.0.0'
 
 
 end

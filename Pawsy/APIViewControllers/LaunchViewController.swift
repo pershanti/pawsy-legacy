@@ -14,25 +14,24 @@ import AWSAuthCore
 import AWSAuthUI
 
 
-class LaunchViewController: UIViewController, UINavigationControllerDelegate {
+class LaunchViewController: UIViewController, UINavigationControllerDelegate, LoginButtonDelegate {
+    
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        self.goToHome()
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        
+    }
+    
     
     var window: UIWindow?
     var location: CLLocation?
     var locationDenied: Bool?
-
-    @IBAction func signUpButton(_ sender: UIButton) {
-        
-    }
     
-    @IBAction func logIn(_ sender: UIButton) {
-        func viewDidLoad() {
-            let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-            loginButton.center = view.center
-            
-            view.addSubview(loginButton)
-        }
+    @IBAction func skipLogin(_ sender: UIButton) {
+        self.goToOnboarding()
     }
-
     
     func goToHome(){
         performSegue(withIdentifier: "goToHome", sender: self)
@@ -44,7 +43,12 @@ class LaunchViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+//        loginButton.delegate = self
+//        loginButton.center.x = view.center.x
+//        loginButton.center.y = view.center.y + 300
+//        view.addSubview(loginButton)
     }
 
     override func didReceiveMemoryWarning() {

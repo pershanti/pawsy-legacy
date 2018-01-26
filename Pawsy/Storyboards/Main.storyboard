@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nWv-8S-KoN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="goz-2q-0hu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,43 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawsy-login" translatesAutoresizingMaskIntoConstraints="NO" id="Ry1-vs-tsu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="Ry1-vs-tsu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-pO-yqF">
-                                <rect key="frame" x="268" y="607" width="91" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="8Se-Ns-wrQ"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="zlS-8A-UND"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vT-gI-RnX">
+                                <rect key="frame" x="89" y="0.0" width="196" height="128"/>
+                                <state key="normal" title="Skip login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="signUpButton:" destination="goz-2q-0hu" eventType="touchUpInside" id="bIq-fU-ycS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFl-EH-GsR">
-                                <rect key="frame" x="16" y="607" width="91" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="61b-pX-7bJ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="KDU-be-OUb"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="logIn:" destination="goz-2q-0hu" eventType="touchUpInside" id="8Gj-ZQ-xPY"/>
+                                    <action selector="skipLogin:" destination="goz-2q-0hu" eventType="touchUpInside" id="gic-2W-Yhu"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ry1-vs-tsu" firstAttribute="trailing" secondItem="uRD-IT-3kw" secondAttribute="trailing" id="4Vj-pc-wif"/>
-                            <constraint firstItem="uRD-IT-3kw" firstAttribute="trailing" secondItem="hf8-pO-yqF" secondAttribute="trailing" constant="16" id="6m5-Aj-SXq"/>
-                            <constraint firstItem="uRD-IT-3kw" firstAttribute="bottom" secondItem="hf8-pO-yqF" secondAttribute="bottom" constant="20" id="7yd-hX-VUh"/>
+                            <constraint firstItem="3vT-gI-RnX" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" constant="89" id="5dY-z8-2k2"/>
+                            <constraint firstItem="3vT-gI-RnX" firstAttribute="top" secondItem="QDM-aS-tE9" secondAttribute="top" id="AY3-2O-zLJ"/>
                             <constraint firstItem="Ry1-vs-tsu" firstAttribute="top" secondItem="QDM-aS-tE9" secondAttribute="top" id="LXR-cT-pjd"/>
-                            <constraint firstItem="hf8-pO-yqF" firstAttribute="top" secondItem="uRD-IT-3kw" secondAttribute="top" constant="587" id="TFR-kO-fDQ"/>
-                            <constraint firstItem="wFl-EH-GsR" firstAttribute="top" secondItem="uRD-IT-3kw" secondAttribute="top" constant="587" id="ZfD-qc-iad"/>
-                            <constraint firstItem="wFl-EH-GsR" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" constant="16" id="djb-oX-lgJ"/>
+                            <constraint firstItem="uRD-IT-3kw" firstAttribute="bottom" secondItem="3vT-gI-RnX" secondAttribute="bottom" constant="539" id="MTJ-27-NAP"/>
+                            <constraint firstItem="uRD-IT-3kw" firstAttribute="trailing" secondItem="3vT-gI-RnX" secondAttribute="trailing" constant="90" id="ivC-h1-daa"/>
                             <constraint firstItem="Ry1-vs-tsu" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" id="lp7-kh-L44"/>
-                            <constraint firstItem="hf8-pO-yqF" firstAttribute="leading" secondItem="wFl-EH-GsR" secondAttribute="trailing" constant="161" id="o7r-TM-Hbr"/>
                             <constraint firstItem="Ry1-vs-tsu" firstAttribute="bottom" secondItem="uRD-IT-3kw" secondAttribute="bottom" id="we5-bR-NXN"/>
-                            <constraint firstItem="uRD-IT-3kw" firstAttribute="bottom" secondItem="wFl-EH-GsR" secondAttribute="bottom" constant="20" id="wpX-nT-sSN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uRD-IT-3kw"/>
                     </view>
@@ -575,30 +561,15 @@
             </objects>
             <point key="canvasLocation" x="3174" y="1733"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="UXr-Le-eTC">
-            <objects>
-                <navigationController storyboardIdentifier="nav0" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nWv-8S-KoN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="quI-Zn-Wde">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BRl-kl-Rx6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="450" y="-1996"/>
-        </scene>
     </scenes>
     <resources>
         <image name="birthday" width="1440" height="2560"/>
         <image name="breed" width="1440" height="2560"/>
         <image name="gender" width="1440" height="2560"/>
         <image name="homeDogs" width="1440" height="2560"/>
+        <image name="launch" width="1440" height="2560"/>
         <image name="location" width="1440" height="2560"/>
         <image name="name" width="1440" height="2560"/>
-        <image name="pawsy-login" width="1440" height="2560"/>
         <image name="photoDone" width="1440" height="2560"/>
         <image name="take picture" width="1440" height="2560"/>
         <image name="weight" width="1440" height="2560"/>
