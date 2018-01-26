@@ -7,22 +7,23 @@ target 'Pawsy' do
 
   # Pods for Pawsy
 
-pod 'Firebase'
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
-pod 'FirebaseUI/Auth'
-pod 'FirebaseUI/Google'
-pod 'FirebaseUI/Facebook'
-pod 'FirebaseUI/Phone'
-pod 'Firebase/Storage'
-pod 'Eureka'
-pod 'ImageRow'
 pod 'lottie-ios'
-pod 'Cloudinary', '2.0.4'
-pod 'SwiftyAvatar', '~> 1.1'
-pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-pod 'NVActivityIndicatorView'
+pod 'Cloudinary'
+pod 'AWSCognito'
+pod 'AWSCognitoIdentityProvider'
+pod 'AWSDynamoDB'
+pod 'AWSLambda'
+pod 'AWSMobileAnalytics'
+pod 'AWSFacebookSignIn', '~> 2.6.6'
+pod 'AWSMobileClient', '~> 2.6.6'
+pod 'AWSPinpoint', '~> 2.6.6'
+pod 'AWSAuthUI', '~> 2.6.6'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+pod 'StitchCore', '~> 2.0.4'
+pod 'MongoDBService', '~> 2.0.0'
+pod 'ExtendedJson', '~> 2.0.0'
 
 
 end

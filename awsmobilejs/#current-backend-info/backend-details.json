@@ -1,0 +1,72 @@
+{
+	"name": "Pawsy",
+	"projectId": "9061872b-e199-4ebb-8e36-c4fb3bf13273",
+	"region": "us-east-1",
+	"state": "NORMAL",
+	"createdDate": "2018-01-18T01:06:03.626Z",
+	"lastUpdatedDate": "2018-01-18T01:06:10.108Z",
+	"consoleUrl": "https://console.aws.amazon.com/mobilehub/home#/9061872b-e199-4ebb-8e36-c4fb3bf13273/build",
+	"resources": [
+		{
+			"type": "AWS::Pinpoint::AnalyticsApplication",
+			"name": "pawsy_MobileHub",
+			"arn": "57f1a5f871fb444ab4fa99266a503649",
+			"feature": "analytics",
+			"attributes": {
+				"lastUpdateRequestID": "c13f0afc-fbeb-11e7-97c4-e978254f6dad"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "pawsy_mobileanalytics_MOBILEHUB_1849707752",
+			"arn": null,
+			"feature": "analytics",
+			"attributes": {
+				"authType": "unauthenticated",
+				"lastUpdateRequestID": "c13f0afc-fbeb-11e7-97c4-e978254f6dad",
+				"role": "pawsy_unauth_MOBILEHUB_1849707752"
+			}
+		},
+		{
+			"type": "AWS::Cognito::IdentityPool",
+			"name": "pawsy_MOBILEHUB_1849707752",
+			"arn": "us-east-1:055ef770-bdd2-4011-8641-3f07cbcebfb0",
+			"feature": "user-signin",
+			"attributes": {
+				"lastUpdateRequestID": "c13f0afc-fbeb-11e7-97c4-e978254f6dad",
+				"poolid": "us-east-1:055ef770-bdd2-4011-8641-3f07cbcebfb0",
+				"roleARNs": "arn:aws:iam::967873101084:role/pawsy_unauth_MOBILEHUB_1849707752"
+			}
+		},
+		{
+			"type": "AWS::IAM::Role",
+			"name": "pawsy_unauth_MOBILEHUB_1849707752",
+			"arn": "arn:aws:iam::967873101084:role/pawsy_unauth_MOBILEHUB_1849707752",
+			"feature": "user-signin",
+			"attributes": {
+				"authType": "unauthenticated",
+				"lastUpdateRequestID": "c13f0afc-fbeb-11e7-97c4-e978254f6dad"
+			}
+		},
+		{
+			"type": "AWS::S3::Bucket",
+			"name": "pawsy-deployments-mobilehub-1849707752",
+			"arn": null,
+			"feature": "common",
+			"attributes": {
+				"region": "us-east-1"
+			}
+		},
+		{
+			"type": "AWS::CloudFormation::Stack",
+			"name": "Development",
+			"arn": null,
+			"feature": "cloud-api",
+			"attributes": {
+				"primary": "true",
+				"region": "us-east-1",
+				"stateSummary": "NOT_YET_DEPLOYED"
+			}
+		}
+	]
+}

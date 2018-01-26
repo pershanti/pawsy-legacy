@@ -1,190 +1,100 @@
 PODS:
   - Alamofire (4.5.1)
+  - AWSAuthCore (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSAuthUI (2.6.10):
+    - AWSAuthCore (= 2.6.10)
+    - AWSCore (= 2.6.10)
+  - AWSCognito (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSCognitoIdentityProvider (2.6.10):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.6.10)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.6.10)
+  - AWSDynamoDB (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSFacebookSignIn (2.6.10):
+    - AWSAuthCore (= 2.6.10)
+    - FBSDKCoreKit (~> 4.0)
+    - FBSDKLoginKit (~> 4.0)
+  - AWSLambda (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSMobileAnalytics (2.6.10):
+    - AWSCore (= 2.6.10)
+  - AWSMobileClient (2.6.10):
+    - AWSAuthCore (= 2.6.10)
+  - AWSPinpoint (2.6.10):
+    - AWSCore (= 2.6.10)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - BoringSSL (9.1):
-    - BoringSSL/Implementation (= 9.1)
-    - BoringSSL/Interface (= 9.1)
-  - BoringSSL/Implementation (9.1):
-    - BoringSSL/Interface (= 9.1)
-  - BoringSSL/Interface (9.1)
-  - ChameleonFramework/Default (2.1.0)
-  - ChameleonFramework/Swift (2.1.0):
-    - ChameleonFramework/Default
   - Cloudinary (2.0.4):
     - Alamofire (~> 4.5.1)
-  - Eureka (4.0.1)
+  - FacebookCore (0.3.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.27)
+  - FacebookLogin (0.3.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.3)
+    - FBSDKCoreKit (~> 4.27)
+    - FBSDKLoginKit (~> 4.27)
+  - FacebookShare (0.3.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.3)
+    - FBSDKCoreKit (~> 4.27)
+    - FBSDKShareKit (~> 4.27)
   - FBSDKCoreKit (4.29.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.29.0):
     - FBSDKCoreKit
-  - Firebase (4.8.0):
-    - Firebase/Core (= 4.8.0)
-  - Firebase/Auth (4.8.0):
-    - Firebase/Core
-    - FirebaseAuth (= 4.4.1)
-  - Firebase/Core (4.8.0):
-    - FirebaseAnalytics (= 4.0.5)
-    - FirebaseCore (= 4.0.13)
-  - Firebase/Firestore (4.8.0):
-    - Firebase/Core
-    - FirebaseFirestore (= 0.9.4)
-  - Firebase/Storage (4.8.0):
-    - Firebase/Core
-    - FirebaseStorage (= 2.1.1)
-  - FirebaseAnalytics (4.0.5):
-    - FirebaseCore (~> 4.0)
-    - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-    - nanopb (~> 0.3)
-  - FirebaseAuth (4.4.1):
-    - FirebaseAnalytics (~> 4.0)
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.13):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseFirestore (0.9.4):
-    - FirebaseAnalytics (~> 4.0)
-    - FirebaseCore (~> 4.0)
-    - gRPC-ProtoRPC (~> 1.0)
-    - leveldb-library (~> 1.18)
-    - Protobuf (~> 3.1)
-  - FirebaseInstanceID (2.0.8):
-    - FirebaseCore (~> 4.0)
-  - FirebaseStorage (2.1.1):
-    - FirebaseAnalytics (~> 4.0)
-    - FirebaseCore (~> 4.0)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseUI/Auth (4.5.0):
-    - Firebase/Auth (~> 4.2)
-  - FirebaseUI/Facebook (4.5.0):
-    - FBSDKLoginKit (~> 4.0)
-    - FirebaseUI/Auth
-  - FirebaseUI/Google (4.5.0):
-    - FirebaseUI/Auth
-    - GoogleSignIn (~> 4.0)
-  - FirebaseUI/Phone (4.5.0):
-    - FirebaseUI/Auth
-  - GoogleSignIn (4.1.1):
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
-    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
-    - GTMOAuth2 (~> 1.0)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleToolboxForMac/DebugUtils (2.1.3):
-    - GoogleToolboxForMac/Defines (= 2.1.3)
-  - GoogleToolboxForMac/Defines (2.1.3)
-  - GoogleToolboxForMac/NSData+zlib (2.1.3):
-    - GoogleToolboxForMac/Defines (= 2.1.3)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
-    - GoogleToolboxForMac/DebugUtils (= 2.1.3)
-    - GoogleToolboxForMac/Defines (= 2.1.3)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
-  - gRPC (1.8.0):
-    - gRPC-RxLibrary (= 1.8.0)
-    - gRPC/Main (= 1.8.0)
-  - gRPC-Core (1.8.0):
-    - gRPC-Core/Implementation (= 1.8.0)
-    - gRPC-Core/Interface (= 1.8.0)
-  - gRPC-Core/Implementation (1.8.0):
-    - BoringSSL (~> 9.0)
-    - gRPC-Core/Interface (= 1.8.0)
-    - nanopb (~> 0.3)
-  - gRPC-Core/Interface (1.8.0)
-  - gRPC-ProtoRPC (1.8.0):
-    - gRPC (= 1.8.0)
-    - gRPC-RxLibrary (= 1.8.0)
-    - Protobuf (~> 3.0)
-  - gRPC-RxLibrary (1.8.0)
-  - gRPC/Main (1.8.0):
-    - gRPC-Core (= 1.8.0)
-    - gRPC-RxLibrary (= 1.8.0)
-  - GTMOAuth2 (1.1.6):
-    - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.1.12):
-    - GTMSessionFetcher/Full (= 1.1.12)
-  - GTMSessionFetcher/Core (1.1.12)
-  - GTMSessionFetcher/Full (1.1.12):
-    - GTMSessionFetcher/Core (= 1.1.12)
-  - ImageRow (3.0.0):
-    - Eureka (~> 4.0)
-  - leveldb-library (1.20)
+  - FBSDKShareKit (4.29.0):
+    - FBSDKCoreKit
   - lottie-ios (2.1.5)
-  - nanopb (0.3.8):
-    - nanopb/decode (= 0.3.8)
-    - nanopb/encode (= 0.3.8)
-  - nanopb/decode (0.3.8)
-  - nanopb/encode (0.3.8)
-  - NVActivityIndicatorView (4.1.1):
-    - NVActivityIndicatorView/Presenter (= 4.1.1)
-  - NVActivityIndicatorView/Presenter (4.1.1)
-  - Protobuf (3.5.0)
-  - SwiftyAvatar (1.1.3)
 
 DEPENDENCIES:
-  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
-  - Cloudinary (= 2.0.4)
-  - Eureka
-  - Firebase
-  - Firebase/Auth
-  - Firebase/Core
-  - Firebase/Firestore
-  - Firebase/Storage
-  - FirebaseUI/Auth
-  - FirebaseUI/Facebook
-  - FirebaseUI/Google
-  - FirebaseUI/Phone
-  - ImageRow
+  - AWSAuthUI (~> 2.6.6)
+  - AWSCognito
+  - AWSCognitoIdentityProvider
+  - AWSDynamoDB
+  - AWSFacebookSignIn (~> 2.6.6)
+  - AWSLambda
+  - AWSMobileAnalytics
+  - AWSMobileClient (~> 2.6.6)
+  - AWSPinpoint (~> 2.6.6)
+  - Cloudinary
+  - FacebookCore
+  - FacebookLogin
+  - FacebookShare
   - lottie-ios
-  - NVActivityIndicatorView
-  - SwiftyAvatar (~> 1.1)
-
-EXTERNAL SOURCES:
-  ChameleonFramework:
-    :git: https://github.com/ViccAlexander/Chameleon.git
-
-CHECKOUT OPTIONS:
-  ChameleonFramework:
-    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
-    :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AWSAuthCore: d5e52ee671c815bee92c8fc1077fb6bd526f026a
+  AWSAuthUI: 7635d801f4162f812fa00f7711917371d3392269
+  AWSCognito: 94d97a52c51310dfd20f2db5dc4fce7ebce0e8dc
+  AWSCognitoIdentityProvider: f88d27fef26b131191da06c0a9a398e3c686945c
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: 5bb072a6b5b185f43ddbd239d6554d2f8a285ad2
+  AWSDynamoDB: 46c7d83862a8375fb824796dc60b04f9273c5d3f
+  AWSFacebookSignIn: 9e190809bbf046e2241d0a61345c0ddc7c4c424c
+  AWSLambda: 2f3e873db574ea3096d55cbab2b15c08d1a70b2c
+  AWSMobileAnalytics: db5e87cb7c17f5dd10ccbc5b81eaef182e15034a
+  AWSMobileClient: 6bdf1228aa064a9f2ee9db1486f09bfc6bc64c1e
+  AWSPinpoint: 92ec19e8fa844ff2330ca08695c326520d7d08aa
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  BoringSSL: 84318770d120503ab1a6aaf1df777c5ca053697e
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Cloudinary: b104153aa69a73cf87a32a3e26758eaec7fcd05f
-  Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
+  FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
+  FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
+  FacebookShare: 0469964297ebd75f052be2c5083389a4208e82b7
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
-  Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
-  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
-  FirebaseAuth: dc0dd403beca5b2b016aac89c2d0b8dad1c81926
-  FirebaseCore: 3c02ec652db3d03fdc8bc6d9154af3e20d64b6f5
-  FirebaseFirestore: 0fb0301657759bdd7a4bc37a436e543a86b189ad
-  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
-  FirebaseStorage: ab08d1c93a2feffa038fdd6693088b310ab1e6c6
-  FirebaseUI: 883482fea73b73bbb488c55176f4c6ad128957eb
-  GoogleSignIn: 3fdaa34a2ba04dbd7a25d7db39aecb0da98d5bdc
-  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
-  gRPC: cc3f797b97bf221a9e535e8e012a6f99b1d7f797
-  gRPC-Core: 250fd60016c4e4c413279f4002679b0e14e7df26
-  gRPC-ProtoRPC: 5b934b29a95b94b0f871d4fc361ff52269476765
-  gRPC-RxLibrary: 7c57a1b2ff2f9cafb0face35bbfa0a326281295d
-  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
-  GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
-  ImageRow: 048123c296de9a6ac3998c415a6706c45ce480af
-  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  FBSDKShareKit: 18a2cd118aef11dd657fe7e8b64bae5c719088b2
   lottie-ios: 836cdbba92f62f3c6a00e37a4ce485321fe317cf
-  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
-  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
-  SwiftyAvatar: 33aecda825c91851cac2aabd06b33f3698b2414c
 
-PODFILE CHECKSUM: ce2bff3a46681daa595ffe04d7ea663c96229d06
+PODFILE CHECKSUM: db1c36bfa99d1dca9275213ece5901f53743a251
 
 COCOAPODS: 1.3.1
