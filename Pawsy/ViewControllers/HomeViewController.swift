@@ -1,76 +1,62 @@
 //
 //  HomeViewController.swift
-//  PawsyApp
+//  Pawsy
 //
-//  Created by Shantini Vyas on 12/12/17.
-//  Copyright © 2017 Pawsy.dog. All rights reserved.
+//  Created by Shantini Vyas on 1/11/18.
+//  Copyright © 2018 Pawsy.dog. All rights reserved.
 //
 
 import UIKit
-import Firebase
 import FirebaseAuthUI
-import CoreLocation
-import Cloudinary
-import ChameleonFramework
-import Lottie
-import NVActivityIndicatorView
+import Firebase
 
 
-class HomeViewController: UIViewController, OnboardingViewControllerDelegate {
-    
-    var animationView: LOTAnimationView?
-    
-    @IBOutlet weak var addNewButton: UIButton!
+class HomeViewController: UIViewController {
     
     var user: User?
-    var userDoc: DocumentReference?
-    var authUI: FUIAuth?
-    var currentLocation: CLLocation?
+    var dogs: [DocumentSnapshot] = [DocumentSnapshot]()
+  
     
-    
-    @IBAction func addNewPup(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToOnboarding", sender: nil)
-    }
-    @IBAction func logOutButtonPressed(_ sender: UIButton)  {
-        do{
-            try self.authUI!.signOut()
-            self.dismiss(animated: true, completion: nil)
-        }
-        catch {
-            print("error")
-        }
+    @IBAction func addNewDog(_ sender: UIButton) {
+        performSegue(withIdentifier: "addNewDog", sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToOnboarding" {
-            let destination = segue.destination as! UINavigationController
-            let final = destination.childViewControllers[0] as! OnboardingViewController
-            final.delegate = self
+    func checkForDogs(){
+        let db = Firestore.firestore()
+        let userDoc = db.collection("users").document(user!.uid)
+        let dogList = userDoc.collection("dogs")
+        dogList.getDocuments { (querySnapshot, error) in
+            if querySnapshot!.documents.isEmpty  {
+                print("no dog-uments found")
+            }
+            else{
+                print(querySnapshot!.count)
+                for document in (querySnapshot?.documents)! {
+                    self.dogs.append(document)
+                    print(document.documentID)
+                }
+            }
         }
     }
     
-    func addLocationToUserDoc(){
-        self.user = Auth.auth().currentUser
-        self.userDoc = Firestore.firestore().collection("users").document(self.user!.uid)
-        if currentLocation != nil{
-            userDoc?.updateData(["latitude": currentLocation?.coordinate.latitude as Any])
-            userDoc?.updateData(["longitude": currentLocation?.coordinate.longitude as Any])
+    func displayDogs(){
+        for i in 0..<dogs.count{
+            var ref = self.dogs[i]
+            
+            
         }
         
     }
     
-    func showOnboardButton(){
-        self.addNewButton.isHidden = false
-    }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addLocationToUserDoc()
-        
+        user = Auth.auth().currentUser
+        checkForDogs()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
 }

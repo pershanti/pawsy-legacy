@@ -16,13 +16,11 @@ pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Facebook'
 pod 'FirebaseUI/Phone'
 pod 'Firebase/Storage'
-pod 'Eureka'
-pod 'ImageRow'
 pod 'lottie-ios'
-pod 'Cloudinary', '2.0.4'
-pod 'SwiftyAvatar', '~> 1.1'
+pod 'Cloudinary'
+pod 'SendBirdSDK'
 pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-pod 'NVActivityIndicatorView'
-
+pod "Koloda"
+pod 'AWSMobileClient', '~> 2.6.6'
 
 end
