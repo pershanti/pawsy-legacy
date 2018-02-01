@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5614C3AD2022E9AD00DC6800 /* HomeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5614C3AC2022E9AD00DC6800 /* HomeMenu.swift */; };
 		5614C3AF2022EB1800DC6800 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5614C3AE2022EB1800DC6800 /* Launch.swift */; };
 		5614C3B12022EC8600DC6800 /* CustomFUIAuthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5614C3B02022EC8600DC6800 /* CustomFUIAuthPicker.swift */; };
 		5614C3B52022F16300DC6800 /* Snoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5614C3B42022F16200DC6800 /* Snoot.swift */; };
@@ -40,6 +39,11 @@
 		56707505200C86D900992DB4 /* img_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 567074EE200C86D900992DB4 /* img_9.png */; };
 		56707507200C87FC00992DB4 /* favourite_app_icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 56707506200C87FB00992DB4 /* favourite_app_icon.json */; };
 		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
+		56A17C422022FA1300E4A070 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A17C412022FA1300E4A070 /* ContainerViewController.swift */; };
+		56A17C442022FA7600E4A070 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A17C432022FA7600E4A070 /* CenterViewController.swift */; };
+		56A17C462022FD9D00E4A070 /* CenterViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A17C452022FD9C00E4A070 /* CenterViewControllerDelegate.swift */; };
+		56A17C482022FECD00E4A070 /* HomeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A17C472022FECD00E4A070 /* HomeMenu.swift */; };
+		56A17C4A20230B6D00E4A070 /* floating_cloud.json in Resources */ = {isa = PBXBuildFile; fileRef = 56A17C4920230B6D00E4A070 /* floating_cloud.json */; };
 		56ED9CC820219A6C0097237E /* UploadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED9CC720219A6C0097237E /* UploadPhoto.swift */; };
 		56ED9CCA20219B130097237E /* camera.json in Resources */ = {isa = PBXBuildFile; fileRef = 56ED9CC920219B130097237E /* camera.json */; };
 		56ED9CCC2021A7E10097237E /* GetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED9CCB2021A7E10097237E /* GetLocation.swift */; };
@@ -53,7 +57,6 @@
 
 /* Begin PBXFileReference section */
 		36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
-		5614C3AC2022E9AD00DC6800 /* HomeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeMenu.swift; path = /Users/shantini/Pawsy/Pawsy/HomeMenu.swift; sourceTree = "<absolute>"; };
 		5614C3AE2022EB1800DC6800 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		5614C3B02022EC8600DC6800 /* CustomFUIAuthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFUIAuthPicker.swift; sourceTree = "<group>"; };
 		5614C3B42022F16200DC6800 /* Snoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snoot.swift; sourceTree = "<group>"; };
@@ -88,6 +91,11 @@
 		567074EE200C86D900992DB4 /* img_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_9.png; sourceTree = "<group>"; };
 		56707506200C87FB00992DB4 /* favourite_app_icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favourite_app_icon.json; sourceTree = "<group>"; };
 		569A71E42000AF4700B74517 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		56A17C412022FA1300E4A070 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		56A17C432022FA7600E4A070 /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
+		56A17C452022FD9C00E4A070 /* CenterViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewControllerDelegate.swift; sourceTree = "<group>"; };
+		56A17C472022FECD00E4A070 /* HomeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeMenu.swift; path = /Users/shantini/Pawsy/Pawsy/HomeMenu.swift; sourceTree = "<absolute>"; };
+		56A17C4920230B6D00E4A070 /* floating_cloud.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = floating_cloud.json; sourceTree = "<group>"; };
 		56ED9CC720219A6C0097237E /* UploadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhoto.swift; sourceTree = "<group>"; };
 		56ED9CC920219B130097237E /* camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera.json; sourceTree = "<group>"; };
 		56ED9CCB2021A7E10097237E /* GetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocation.swift; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				56707506200C87FB00992DB4 /* favourite_app_icon.json */,
+				56A17C4920230B6D00E4A070 /* floating_cloud.json */,
 				56ED9CC920219B130097237E /* camera.json */,
 				56ED9CCD2021A8E90097237E /* location.json */,
 				56ED9CCF2021B5B70097237E /* text */,
@@ -144,11 +153,14 @@
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				569A71E42000AF4700B74517 /* Main.storyboard */,
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
+				56A17C412022FA1300E4A070 /* ContainerViewController.swift */,
+				56A17C432022FA7600E4A070 /* CenterViewController.swift */,
+				56A17C452022FD9C00E4A070 /* CenterViewControllerDelegate.swift */,
 				5614C3B02022EC8600DC6800 /* CustomFUIAuthPicker.swift */,
 				56ED9CD62021B5E10097237E /* GetName.swift */,
 				56ED9CCB2021A7E10097237E /* GetLocation.swift */,
+				56A17C472022FECD00E4A070 /* HomeMenu.swift */,
 				5614C3AE2022EB1800DC6800 /* Launch.swift */,
-				5614C3AC2022E9AD00DC6800 /* HomeMenu.swift */,
 				5614C3B42022F16200DC6800 /* Snoot.swift */,
 				56ED9CC720219A6C0097237E /* UploadPhoto.swift */,
 			);
@@ -309,6 +321,7 @@
 				567074F3200C86D900992DB4 /* img_10.png in Resources */,
 				567074F6200C86D900992DB4 /* img_13.png in Resources */,
 				567074F0200C86D900992DB4 /* dogrun.json in Resources */,
+				56A17C4A20230B6D00E4A070 /* floating_cloud.json in Resources */,
 				567074FB200C86D900992DB4 /* img_18.png in Resources */,
 				567074F2200C86D900992DB4 /* img_1.png in Resources */,
 				56707505200C86D900992DB4 /* img_9.png in Resources */,
@@ -331,7 +344,9 @@
 				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
 				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
 				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -368,23 +383,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
-				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -392,27 +400,19 @@
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/SendBirdSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -420,7 +420,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -434,14 +433,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5614C3AD2022E9AD00DC6800 /* HomeMenu.swift in Sources */,
 				5614C3B52022F16300DC6800 /* Snoot.swift in Sources */,
 				56ED9CCC2021A7E10097237E /* GetLocation.swift in Sources */,
+				56A17C482022FECD00E4A070 /* HomeMenu.swift in Sources */,
+				56A17C422022FA1300E4A070 /* ContainerViewController.swift in Sources */,
 				56ED9CD72021B5E10097237E /* GetName.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
 				5614C3AF2022EB1800DC6800 /* Launch.swift in Sources */,
 				56ED9CC820219A6C0097237E /* UploadPhoto.swift in Sources */,
 				5614C3B12022EC8600DC6800 /* CustomFUIAuthPicker.swift in Sources */,
+				56A17C442022FA7600E4A070 /* CenterViewController.swift in Sources */,
+				56A17C462022FD9D00E4A070 /* CenterViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

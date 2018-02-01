@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeMenu: UIViewController {
 
     @IBAction func logOut(_ sender: UIButton) {
+        
     }
     @IBOutlet weak var menuPic: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +24,9 @@ class HomeMenu: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
   
 
 }

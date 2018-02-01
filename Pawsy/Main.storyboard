@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ipi-9O-X1P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="goz-2q-0hu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,17 +23,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawsy heart blue" translatesAutoresizingMaskIntoConstraints="NO" id="qop-kJ-op9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deeper gradient" translatesAutoresizingMaskIntoConstraints="NO" id="qop-kJ-op9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.18039215689999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBj-cG-3b1" userLabel="Google Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBj-cG-3b1" userLabel="Google Button">
                                 <rect key="frame" x="24" y="580" width="327" height="52"/>
+                                <color key="backgroundColor" red="0.75525170564651489" green="0.15682828426361084" blue="0.89731317758560181" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FBj-cG-3b1" secondAttribute="height" multiplier="327:52" id="Qh5-WI-CMa"/>
                                 </constraints>
-                                <state key="normal" title="Continue with Facebook or Google" backgroundImage="greyButton">
+                                <state key="normal" title="Continue with Facebook or Google">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -43,18 +44,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qop-kJ-op9" firstAttribute="bottom" secondItem="uRD-IT-3kw" secondAttribute="bottom" id="0Og-R1-BvA"/>
-                            <constraint firstItem="qop-kJ-op9" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" id="Flh-dA-yf8"/>
-                            <constraint firstItem="FBj-cG-3b1" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" constant="24" id="SBu-gt-ogQ"/>
-                            <constraint firstItem="uRD-IT-3kw" firstAttribute="trailing" secondItem="FBj-cG-3b1" secondAttribute="trailing" constant="24" id="WRT-tg-jWa"/>
-                            <constraint firstItem="qop-kJ-op9" firstAttribute="top" secondItem="QDM-aS-tE9" secondAttribute="top" id="pWJ-5r-bL4"/>
-                            <constraint firstItem="qop-kJ-op9" firstAttribute="trailing" secondItem="uRD-IT-3kw" secondAttribute="trailing" id="u26-aZ-9Pk"/>
+                            <constraint firstItem="FBj-cG-3b1" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" constant="24" id="2mg-qF-ifW"/>
+                            <constraint firstItem="qop-kJ-op9" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" id="6JJ-hw-hcv"/>
+                            <constraint firstItem="uRD-IT-3kw" firstAttribute="bottom" secondItem="FBj-cG-3b1" secondAttribute="bottom" constant="35" id="DnV-3u-c9i"/>
+                            <constraint firstItem="qop-kJ-op9" firstAttribute="bottom" secondItem="uRD-IT-3kw" secondAttribute="bottom" id="UXx-fd-nuX"/>
+                            <constraint firstItem="uRD-IT-3kw" firstAttribute="trailing" secondItem="FBj-cG-3b1" secondAttribute="trailing" constant="24" id="awo-c6-WvJ"/>
+                            <constraint firstItem="qop-kJ-op9" firstAttribute="top" secondItem="QDM-aS-tE9" secondAttribute="top" id="mKD-XQ-5y2" userLabel="pawsy heart blue.top = Safe Area.top"/>
+                            <constraint firstItem="qop-kJ-op9" firstAttribute="trailing" secondItem="uRD-IT-3kw" secondAttribute="trailing" id="yNg-w9-EOM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uRD-IT-3kw"/>
                     </view>
                     <connections>
                         <segue destination="Lud-Cd-686" kind="presentation" identifier="toOnboarding" id="hto-CD-hWU"/>
-                        <segue destination="cpl-xo-uJJ" kind="show" identifier="goToHomeFromLogin" id="wpI-F1-Uy8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OL-dV-LS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,7 +65,7 @@
         <!--Home Menu-->
         <scene sceneID="nMh-nk-z5s">
             <objects>
-                <viewController id="cpl-xo-uJJ" customClass="HomeMenu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeMenu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cpl-xo-uJJ" customClass="HomeMenu" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sRL-df-rC2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsU-MJ-T76" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1164" y="533"/>
+            <point key="canvasLocation" x="-362" y="386"/>
         </scene>
         <!--Snoot-->
         <scene sceneID="yi5-dv-RkV">
@@ -577,10 +578,10 @@
             </objects>
             <point key="canvasLocation" x="2005.5999999999999" y="-360.2698650674663"/>
         </scene>
-        <!--View Controller-->
+        <!--Center View Controller-->
         <scene sceneID="uen-IC-y0V">
             <objects>
-                <viewController id="ygj-nt-NlJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CenterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ygj-nt-NlJ" customClass="CenterViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVe-lR-KOb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -590,19 +591,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3V-VW-xlp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-308" y="358"/>
+            <point key="canvasLocation" x="-1164" y="387"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg" width="327" height="52"/>
-        <image name="greyButton" width="327" height="52"/>
+        <image name="deeper gradient" width="375" height="812"/>
         <image name="icons8-cat_footprint_filled" width="100" height="100"/>
         <image name="icons8-communication" width="120" height="120"/>
         <image name="icons8-map_marker-1" width="120" height="120"/>
         <image name="icons8-search_filled" width="100" height="100"/>
         <image name="icons8-settings" width="100" height="100"/>
         <image name="img" width="375" height="529"/>
-        <image name="pawsy heart blue" width="375" height="812"/>
         <image name="textfield" width="372" height="97"/>
     </resources>
 </document>

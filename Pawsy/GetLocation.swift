@@ -17,9 +17,16 @@ class GetLocation: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var lottieLocation: UIView!
     
     @IBAction func nextButton(_ sender: UIButton) {
+        manager.requestAlwaysAuthorization()
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,14 +9,24 @@
 import UIKit
 import FirebaseAuthUI
 import Firebase
+import Lottie
 
 class CustomFUIAuthPicker: FUIAuthPickerViewController {
     
     override func viewWillAppear(_ animated: Bool) {
-        var backView = UIImageView(image: UIImage(named: "pawsy heart blue")!)
-        backView.frame = self.view.frame
+        self.navigationController?.navigationBar.alpha = 0.5
+        
+        let backView = UIImageView(image: UIImage(named: "gradient only"))
+        backView.frame = view.frame
+        backView.contentMode = UIViewContentMode.scaleAspectFill
         self.view.addSubview(backView)
-        view.sendSubview(toBack: backView)
+        self.view.sendSubview(toBack: backView)
+        let animationView = LOTAnimationView(name: "floating_cloud")
+        animationView.frame = CGRect(x: view.center.x-125, y: view.center.y-125, width: 250, height: 250)
+        view.contentMode = UIViewContentMode.scaleAspectFit
+        animationView.loopAnimation = true
+        self.view.addSubview(animationView)
+        animationView.play()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,5 +36,7 @@ class CustomFUIAuthPicker: FUIAuthPickerViewController {
     init(authUI: FUIAuth){
         super.init(nibName: nil, bundle: nil, authUI: authUI)
     }
+    
+ 
 
 }

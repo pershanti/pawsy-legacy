@@ -6,8 +6,8 @@
 //  Copyright © 2017 Pawsy.dog. All rights reserved.
 //
 import UIKit
-import ChameleonFramework
 import CoreData
+import GoogleMaps
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         _ = Firestore.firestore()
+        GMSServices.provideAPIKey("AIzaSyB6f2XjcMcpGIQ1WfuvnU6_GBJtUSSErNM")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "m0") as! Launch
         self.window?.rootViewController = controller

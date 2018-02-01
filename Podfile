@@ -14,13 +14,10 @@ pod 'Firebase/Firestore'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Facebook'
-pod 'FirebaseUI/Phone'
-pod 'Firebase/Storage'
 pod 'lottie-ios'
 pod 'Cloudinary'
-pod 'SendBirdSDK'
-pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-pod "Koloda"
-pod 'AWSMobileClient', '~> 2.6.6'
+pod 'GooglePlaces'
+pod 'GooglePlacePicker'
+pod 'GoogleMaps'
 
 end

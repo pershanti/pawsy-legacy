@@ -43,9 +43,13 @@ class Launch: UIViewController, FUIAuthDelegate, UINavigationControllerDelegate 
                     "name": self.user?.displayName as Any,
                     ])
                 self.performSegue(withIdentifier: "toOnboarding", sender: self)
+                
             }
             else {
-                self.performSegue(withIdentifier: "goToHomeFromLogin", sender: self)
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let containerViewController = ContainerViewController()
+                self.window!.rootViewController = containerViewController
+                self.window!.makeKeyAndVisible()
             }
         }
     }
@@ -55,7 +59,7 @@ class Launch: UIViewController, FUIAuthDelegate, UINavigationControllerDelegate 
             print(error.debugDescription)
         }
         self.user = Auth.auth().currentUser
-        performSegue(withIdentifier: "toOnboarding", sender: self)
+        self.checkIfOnboarded()
     }
     
     func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
