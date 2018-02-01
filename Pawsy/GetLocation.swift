@@ -8,14 +8,22 @@
 
 import UIKit
 import Lottie
+import CoreLocation
 
-class GetLocation: UIViewController {
+class GetLocation: UIViewController, CLLocationManagerDelegate {
+    
+    var manager: CLLocationManager = CLLocationManager()
 
     @IBOutlet weak var lottieLocation: UIView!
+    
+    @IBAction func nextButton(_ sender: UIButton) {
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +38,7 @@ class GetLocation: UIViewController {
         self.lottieLocation.addSubview(animationView)
         animationView.play()
     }
+    
     
 
     

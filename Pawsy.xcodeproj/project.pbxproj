@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5614C3AD2022E9AD00DC6800 /* HomeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5614C3AC2022E9AD00DC6800 /* HomeMenu.swift */; };
+		5614C3AF2022EB1800DC6800 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5614C3AE2022EB1800DC6800 /* Launch.swift */; };
+		5614C3B12022EC8600DC6800 /* CustomFUIAuthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5614C3B02022EC8600DC6800 /* CustomFUIAuthPicker.swift */; };
+		5614C3B52022F16300DC6800 /* Snoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5614C3B42022F16200DC6800 /* Snoot.swift */; };
 		564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CA1FE25E9A00D292FA /* AppDelegate.swift */; };
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
@@ -49,6 +53,10 @@
 
 /* Begin PBXFileReference section */
 		36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
+		5614C3AC2022E9AD00DC6800 /* HomeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeMenu.swift; path = /Users/shantini/Pawsy/Pawsy/HomeMenu.swift; sourceTree = "<absolute>"; };
+		5614C3AE2022EB1800DC6800 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		5614C3B02022EC8600DC6800 /* CustomFUIAuthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFUIAuthPicker.swift; sourceTree = "<group>"; };
+		5614C3B42022F16200DC6800 /* Snoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snoot.swift; sourceTree = "<group>"; };
 		564872C71FE25E9A00D292FA /* Pawsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564872CA1FE25E9A00D292FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564872D11FE25E9A00D292FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,12 +140,16 @@
 				567074D6200C86D800992DB4 /* Dogrun */,
 				564872D61FE25E9A00D292FA /* Info.plist */,
 				566A86511FF801FF0020B6BA /* GoogleService-Info.plist */,
-				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				569A71E42000AF4700B74517 /* Main.storyboard */,
+				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
+				5614C3B02022EC8600DC6800 /* CustomFUIAuthPicker.swift */,
 				56ED9CD62021B5E10097237E /* GetName.swift */,
 				56ED9CCB2021A7E10097237E /* GetLocation.swift */,
+				5614C3AE2022EB1800DC6800 /* Launch.swift */,
+				5614C3AC2022E9AD00DC6800 /* HomeMenu.swift */,
+				5614C3B42022F16200DC6800 /* Snoot.swift */,
 				56ED9CC720219A6C0097237E /* UploadPhoto.swift */,
 			);
 			path = Pawsy;
@@ -422,10 +434,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5614C3AD2022E9AD00DC6800 /* HomeMenu.swift in Sources */,
+				5614C3B52022F16300DC6800 /* Snoot.swift in Sources */,
 				56ED9CCC2021A7E10097237E /* GetLocation.swift in Sources */,
 				56ED9CD72021B5E10097237E /* GetName.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
+				5614C3AF2022EB1800DC6800 /* Launch.swift in Sources */,
 				56ED9CC820219A6C0097237E /* UploadPhoto.swift in Sources */,
+				5614C3B12022EC8600DC6800 /* CustomFUIAuthPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
