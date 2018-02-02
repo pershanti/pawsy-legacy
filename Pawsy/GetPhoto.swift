@@ -12,9 +12,9 @@ import CoreData
 
 class GetPhoto: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var photoUpload: UIImagePickerController?
-    var alert: UIAlertController?
-    var user: [LocalUser]?
+    var photoUpload: UIImagePickerController = UIImagePickerController()
+    var alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+    var user =  [LocalUser]()
 
     @IBOutlet weak var lottieUpload: UIView!
     
@@ -22,11 +22,12 @@ class GetPhoto: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         guard sender.view != nil else { return }
         
         if sender.state == .ended{
-            self.present(alert!, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         } 
     }
     
     @IBAction func continueButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToFinish", sender: self)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -43,16 +44,18 @@ class GetPhoto: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             appDelegate.persistentContainer.viewContext
         
         let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: "LocalUser") as! [LocalUser]
+            NSFetchRequest<NSManagedObject>(entityName: "LocalUser")
         //3
         do {
-            user = try managedContext.fetch(fetchRequest)
+            user = try managedContext.fetch(fetchRequest) as! [LocalUser]
+            print(user)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     
     func save(photo: UIImage){
+        let imageData = UIImageJPEGRepresentation(photo, 1)
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -64,9 +67,9 @@ class GetPhoto: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let entity =
             NSEntityDescription.entity(forEntityName: "LocalUser",
                                        in: managedContext)!
-        let person = self.user![0]
+        let person = self.user[0]
         // 3
-        person.setValue(photo, forKeyPath: "photo")
+        person.setValue(imageData, forKeyPath: "photo")
         
         // 4
         do {
@@ -77,14 +80,14 @@ class GetPhoto: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     func setUpAlertController(){
-        self.photoUpload?.delegate = self
-        self.alert?.addAction(UIAlertAction(title: "Take New Photo", style: UIAlertActionStyle.default, handler: { (alertAction) in
-            self.photoUpload?.sourceType = .camera
-            self.present(self.photoUpload!, animated: true, completion: nil)
+        self.photoUpload.delegate = self
+        self.alert.addAction(UIAlertAction(title: "Take New Photo", style: UIAlertActionStyle.default, handler: { (alertAction) in
+            self.photoUpload.sourceType = .camera
+            self.present(self.photoUpload, animated: true, completion: nil)
         }))
-        self.alert?.addAction(UIAlertAction(title: "Select From Photo Library", style: UIAlertActionStyle.default, handler: { (alertAction) in
-            self.photoUpload?.sourceType = .photoLibrary
-            self.present(self.photoUpload!, animated: true, completion: nil)
+        self.alert.addAction(UIAlertAction(title: "Select From Photo Library", style: UIAlertActionStyle.default, handler: { (alertAction) in
+            self.photoUpload.sourceType = .photoLibrary
+            self.present(self.photoUpload, animated: true, completion: nil)
         }))
     }
     

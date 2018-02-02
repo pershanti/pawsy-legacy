@@ -46,10 +46,11 @@ class Launch: UIViewController, FUIAuthDelegate, UINavigationControllerDelegate 
                 
             }
             else {
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                let containerViewController = ContainerViewController()
-                self.window!.rootViewController = containerViewController
-                self.window!.makeKeyAndVisible()
+                self.performSegue(withIdentifier: "toOnboarding", sender: self)
+//                self.window = UIWindow(frame: UIScreen.main.bounds)
+//                let containerViewController = ContainerViewController()
+//                self.window!.rootViewController = containerViewController
+//                self.window!.makeKeyAndVisible()
             }
         }
     }

@@ -44,13 +44,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FBj-cG-3b1" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" constant="24" id="2mg-qF-ifW"/>
-                            <constraint firstItem="qop-kJ-op9" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" id="6JJ-hw-hcv"/>
-                            <constraint firstItem="uRD-IT-3kw" firstAttribute="bottom" secondItem="FBj-cG-3b1" secondAttribute="bottom" constant="35" id="DnV-3u-c9i"/>
-                            <constraint firstItem="qop-kJ-op9" firstAttribute="bottom" secondItem="uRD-IT-3kw" secondAttribute="bottom" id="UXx-fd-nuX"/>
-                            <constraint firstItem="uRD-IT-3kw" firstAttribute="trailing" secondItem="FBj-cG-3b1" secondAttribute="trailing" constant="24" id="awo-c6-WvJ"/>
-                            <constraint firstItem="qop-kJ-op9" firstAttribute="top" secondItem="QDM-aS-tE9" secondAttribute="top" id="mKD-XQ-5y2" userLabel="pawsy heart blue.top = Safe Area.top"/>
-                            <constraint firstItem="qop-kJ-op9" firstAttribute="trailing" secondItem="uRD-IT-3kw" secondAttribute="trailing" id="yNg-w9-EOM"/>
+                            <constraint firstItem="uRD-IT-3kw" firstAttribute="bottom" secondItem="FBj-cG-3b1" secondAttribute="bottom" constant="35" id="5R0-zD-pMO"/>
+                            <constraint firstItem="uRD-IT-3kw" firstAttribute="trailing" secondItem="FBj-cG-3b1" secondAttribute="trailing" constant="24" id="7H6-Nk-2x8"/>
+                            <constraint firstItem="qop-kJ-op9" firstAttribute="bottom" secondItem="uRD-IT-3kw" secondAttribute="bottom" id="MhT-jj-OR5"/>
+                            <constraint firstItem="qop-kJ-op9" firstAttribute="trailing" secondItem="uRD-IT-3kw" secondAttribute="trailing" id="Sc9-P6-SSC"/>
+                            <constraint firstItem="qop-kJ-op9" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" id="Wpd-Py-bv7"/>
+                            <constraint firstItem="qop-kJ-op9" firstAttribute="top" secondItem="QDM-aS-tE9" secondAttribute="top" id="c4W-bA-BXn"/>
+                            <constraint firstItem="FBj-cG-3b1" firstAttribute="leading" secondItem="uRD-IT-3kw" secondAttribute="leading" constant="24" id="kiG-YI-41u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uRD-IT-3kw"/>
                     </view>
@@ -492,7 +492,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pwy-A7-i66">
+                            <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pwy-A7-i66">
                                 <rect key="frame" x="135" y="262" width="170" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="OED-lr-JMM"/>
@@ -541,24 +541,36 @@
                         <outlet property="gender" destination="PRJ-C8-U7d" id="swX-YV-HzU"/>
                         <outlet property="spayed" destination="4Of-Jf-bIv" id="yfV-Ho-XUa"/>
                         <outlet property="weight" destination="Fg1-aO-TGY" id="WFN-xL-dKX"/>
-                        <segue destination="LrW-fo-WYV" kind="show" identifier="showBreeds" id="CaC-Pk-SFr"/>
+                        <segue destination="LrW-fo-WYV" kind="show" identifier="selectBreed" id="CaC-Pk-SFr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqh-DI-aVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3346" y="-360"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Breeds Table View Controller-->
         <scene sceneID="LDr-em-Urm">
             <objects>
-                <tableViewController id="LrW-fo-WYV" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fog-Mp-Cw3">
+                <tableViewController id="LrW-fo-WYV" customClass="BreedsTableViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fog-Mp-Cw3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Enter breed name to search" id="Uru-It-gC7">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="LrW-fo-WYV" id="Imq-jE-tfh"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="rho-0M-bf5">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rho-0M-bf5" id="3ka-4A-tAq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -571,8 +583,20 @@
                             <outlet property="delegate" destination="LrW-fo-WYV" id="rg4-mb-auz"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="JRI-o4-iRF" id="aWT-Mb-lql"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ags-NW-Oa5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="JRI-o4-iRF">
+                    <connections>
+                        <outlet property="delegate" destination="LrW-fo-WYV" id="xEP-NT-NCX"/>
+                        <outlet property="searchBar" destination="Uru-It-gC7" id="HFt-nq-g6h"/>
+                        <outlet property="searchContentsController" destination="LrW-fo-WYV" id="3tY-Es-6QQ"/>
+                        <outlet property="searchResultsDataSource" destination="LrW-fo-WYV" id="lzs-xk-NKf"/>
+                        <outlet property="searchResultsDelegate" destination="LrW-fo-WYV" id="r5T-Ee-9hi"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="4056" y="-362"/>
         </scene>
@@ -661,6 +685,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xRw-Se-5BU">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="c01-PV-Op1" kind="relationship" relationship="rootViewController" id="lbJ-og-HiT"/>
                     </connections>

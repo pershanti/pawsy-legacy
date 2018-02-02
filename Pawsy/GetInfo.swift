@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class GetInfo: UIViewController {
+class GetInfo: UIViewController, BreedViewControllerDelegate {
 
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet weak var spayed: UISegmentedControl!
@@ -17,6 +17,7 @@ class GetInfo: UIViewController {
     @IBOutlet weak var weight: UITextField!
     var breed: String?
     @IBAction func breedButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "selectBreed", sender: self)
     }
     
     @IBAction func finishButton(_ sender: Any) {
@@ -43,6 +44,10 @@ class GetInfo: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func goBack(breed: String) {
+        self.breed = breed
+    }
+    
     func fetchUser(){
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -56,7 +61,7 @@ class GetInfo: UIViewController {
         
         //3
         do {
-            user = try managedContext.fetch(fetchRequest) as! [LocalUser]
+            user = try managedContext.fetch(fetchRequest) as? [LocalUser]
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -85,7 +90,13 @@ class GetInfo: UIViewController {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+        
+        print (person.photo?.isEmpty)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! BreedsTableViewController
+        destination.delegate = self
+    }
     
 }
