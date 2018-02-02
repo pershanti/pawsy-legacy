@@ -21,11 +21,11 @@ class GetLocation: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
+        performSegue(withIdentifier: "goToName", sender: self)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        performSegue(withIdentifier: "goToName", sender: self)
     }
     
     override func viewDidLoad() {

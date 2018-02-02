@@ -39,12 +39,15 @@
 		56707505200C86D900992DB4 /* img_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 567074EE200C86D900992DB4 /* img_9.png */; };
 		56707507200C87FC00992DB4 /* favourite_app_icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 56707506200C87FB00992DB4 /* favourite_app_icon.json */; };
 		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
+		569CFC5520243555009B0A6C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 569CFC5320243555009B0A6C /* Model.xcdatamodeld */; };
+		569CFC5720243FD2009B0A6C /* GetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569CFC5620243FD2009B0A6C /* GetInfo.swift */; };
+		569CFC592024473F009B0A6C /* BreedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569CFC582024473F009B0A6C /* BreedsTableViewController.swift */; };
 		56A17C422022FA1300E4A070 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A17C412022FA1300E4A070 /* ContainerViewController.swift */; };
 		56A17C442022FA7600E4A070 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A17C432022FA7600E4A070 /* CenterViewController.swift */; };
 		56A17C462022FD9D00E4A070 /* CenterViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A17C452022FD9C00E4A070 /* CenterViewControllerDelegate.swift */; };
 		56A17C482022FECD00E4A070 /* HomeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A17C472022FECD00E4A070 /* HomeMenu.swift */; };
 		56A17C4A20230B6D00E4A070 /* floating_cloud.json in Resources */ = {isa = PBXBuildFile; fileRef = 56A17C4920230B6D00E4A070 /* floating_cloud.json */; };
-		56ED9CC820219A6C0097237E /* UploadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED9CC720219A6C0097237E /* UploadPhoto.swift */; };
+		56ED9CC820219A6C0097237E /* GetPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED9CC720219A6C0097237E /* GetPhoto.swift */; };
 		56ED9CCA20219B130097237E /* camera.json in Resources */ = {isa = PBXBuildFile; fileRef = 56ED9CC920219B130097237E /* camera.json */; };
 		56ED9CCC2021A7E10097237E /* GetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED9CCB2021A7E10097237E /* GetLocation.swift */; };
 		56ED9CCE2021A8E90097237E /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = 56ED9CCD2021A8E90097237E /* location.json */; };
@@ -91,12 +94,15 @@
 		567074EE200C86D900992DB4 /* img_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_9.png; sourceTree = "<group>"; };
 		56707506200C87FB00992DB4 /* favourite_app_icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favourite_app_icon.json; sourceTree = "<group>"; };
 		569A71E42000AF4700B74517 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		569CFC5420243555009B0A6C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		569CFC5620243FD2009B0A6C /* GetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfo.swift; sourceTree = "<group>"; };
+		569CFC582024473F009B0A6C /* BreedsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsTableViewController.swift; sourceTree = "<group>"; };
 		56A17C412022FA1300E4A070 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		56A17C432022FA7600E4A070 /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		56A17C452022FD9C00E4A070 /* CenterViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewControllerDelegate.swift; sourceTree = "<group>"; };
 		56A17C472022FECD00E4A070 /* HomeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeMenu.swift; path = /Users/shantini/Pawsy/Pawsy/HomeMenu.swift; sourceTree = "<absolute>"; };
 		56A17C4920230B6D00E4A070 /* floating_cloud.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = floating_cloud.json; sourceTree = "<group>"; };
-		56ED9CC720219A6C0097237E /* UploadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhoto.swift; sourceTree = "<group>"; };
+		56ED9CC720219A6C0097237E /* GetPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhoto.swift; sourceTree = "<group>"; };
 		56ED9CC920219B130097237E /* camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera.json; sourceTree = "<group>"; };
 		56ED9CCB2021A7E10097237E /* GetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocation.swift; sourceTree = "<group>"; };
 		56ED9CCD2021A8E90097237E /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
@@ -150,19 +156,22 @@
 				564872D61FE25E9A00D292FA /* Info.plist */,
 				566A86511FF801FF0020B6BA /* GoogleService-Info.plist */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
-				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
-				569A71E42000AF4700B74517 /* Main.storyboard */,
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
 				56A17C412022FA1300E4A070 /* ContainerViewController.swift */,
 				56A17C432022FA7600E4A070 /* CenterViewController.swift */,
 				56A17C452022FD9C00E4A070 /* CenterViewControllerDelegate.swift */,
 				5614C3B02022EC8600DC6800 /* CustomFUIAuthPicker.swift */,
-				56ED9CD62021B5E10097237E /* GetName.swift */,
 				56ED9CCB2021A7E10097237E /* GetLocation.swift */,
+				56ED9CD62021B5E10097237E /* GetName.swift */,
+				56ED9CC720219A6C0097237E /* GetPhoto.swift */,
+				569CFC5620243FD2009B0A6C /* GetInfo.swift */,
 				56A17C472022FECD00E4A070 /* HomeMenu.swift */,
 				5614C3AE2022EB1800DC6800 /* Launch.swift */,
 				5614C3B42022F16200DC6800 /* Snoot.swift */,
-				56ED9CC720219A6C0097237E /* UploadPhoto.swift */,
+				569CFC5320243555009B0A6C /* Model.xcdatamodeld */,
+				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
+				569A71E42000AF4700B74517 /* Main.storyboard */,
+				569CFC582024473F009B0A6C /* BreedsTableViewController.swift */,
 			);
 			path = Pawsy;
 			sourceTree = "<group>";
@@ -435,15 +444,18 @@
 			files = (
 				5614C3B52022F16300DC6800 /* Snoot.swift in Sources */,
 				56ED9CCC2021A7E10097237E /* GetLocation.swift in Sources */,
+				569CFC592024473F009B0A6C /* BreedsTableViewController.swift in Sources */,
 				56A17C482022FECD00E4A070 /* HomeMenu.swift in Sources */,
 				56A17C422022FA1300E4A070 /* ContainerViewController.swift in Sources */,
 				56ED9CD72021B5E10097237E /* GetName.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
+				569CFC5720243FD2009B0A6C /* GetInfo.swift in Sources */,
 				5614C3AF2022EB1800DC6800 /* Launch.swift in Sources */,
-				56ED9CC820219A6C0097237E /* UploadPhoto.swift in Sources */,
+				56ED9CC820219A6C0097237E /* GetPhoto.swift in Sources */,
 				5614C3B12022EC8600DC6800 /* CustomFUIAuthPicker.swift in Sources */,
 				56A17C442022FA7600E4A070 /* CenterViewController.swift in Sources */,
 				56A17C462022FD9D00E4A070 /* CenterViewControllerDelegate.swift in Sources */,
+				569CFC5520243555009B0A6C /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +625,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		569CFC5320243555009B0A6C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				569CFC5420243555009B0A6C /* Model.xcdatamodel */,
+			);
+			currentVersion = 569CFC5420243555009B0A6C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 564872BF1FE25E9A00D292FA /* Project object */;
 }
