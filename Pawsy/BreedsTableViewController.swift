@@ -38,9 +38,7 @@ class BreedsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let breed = breeds[indexPath.row]
         delegate!.goBack(breed: breed)
-        self.dismiss(animated: true) {
-            self.delegate!.goBack(breed: breed)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
 
     var breeds: [String] = ["Unknown",

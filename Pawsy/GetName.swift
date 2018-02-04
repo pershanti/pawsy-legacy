@@ -39,11 +39,14 @@ class GetName: UIViewController, UITextFieldDelegate, BreedViewControllerDelegat
         }
         save()
         self.performSegue(withIdentifier: "goToPhoto", sender: self)
+
         
     }
     
     @IBAction func breedButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "showBreeds", sender: self)
+        let breedsVC = storyboard?.instantiateViewController(withIdentifier: "breeds") as! BreedsTableViewController
+        breedsVC.delegate = self
+        present(breedsVC, animated: true, completion: nil)
     }
 
     func save(){
@@ -71,7 +74,7 @@ class GetName: UIViewController, UITextFieldDelegate, BreedViewControllerDelegat
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
-        
+        print (person)
     }
 
     override func viewDidLoad() {
@@ -89,13 +92,7 @@ class GetName: UIViewController, UITextFieldDelegate, BreedViewControllerDelegat
         self.breed = breed
         self.breedLabel.text = breed
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showBreeds"{
-            let destination = segue.destination as! BreedsTableViewController
-            destination.delegate = self
-        }
-    }
+
 
 }
 
