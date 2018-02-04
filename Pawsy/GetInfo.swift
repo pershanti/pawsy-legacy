@@ -16,6 +16,7 @@ class GetInfo: UIViewController, BreedViewControllerDelegate {
     @IBOutlet weak var birthdate: UIDatePicker!
     @IBOutlet weak var weight: UITextField!
     var breed: String?
+    
     @IBAction func breedButton(_ sender: UIButton) {
         performSegue(withIdentifier: "selectBreed", sender: self)
     }
@@ -38,6 +39,8 @@ class GetInfo: UIViewController, BreedViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboard()
+        self.fetchUser()
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,8 +98,11 @@ class GetInfo: UIViewController, BreedViewControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! BreedsTableViewController
-        destination.delegate = self
+        if segue.identifier == "selectBreed"{
+            let destination = segue.destination as! BreedsTableViewController
+            destination.delegate = self
+        }
     }
     
 }
+

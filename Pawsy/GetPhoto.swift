@@ -13,8 +13,9 @@ import CoreData
 class GetPhoto: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photoUpload: UIImagePickerController = UIImagePickerController()
-    var alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+    var alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
     var user =  [LocalUser]()
+    var animationView: LOTAnimationView?
 
     @IBOutlet weak var lottieUpload: UIView!
     
@@ -31,6 +32,7 @@ class GetPhoto: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
         let image = info["UIImagePickerControllerOriginalImage"] as! UIImage
         save(photo: image)
     }
@@ -98,11 +100,13 @@ class GetPhoto: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let animationView = LOTAnimationView(name: "camera")
-        animationView.center = self.lottieUpload.center
-        animationView.loopAnimation = true
-        self.lottieUpload.addSubview(animationView)
-        animationView.play()
+        if animationView == nil{
+            animationView = LOTAnimationView(name: "camera")
+            animationView!.center = self.lottieUpload.center
+            animationView!.loopAnimation = true
+            self.lottieUpload.addSubview(animationView!)
+        }
+        animationView!.play()
     }
     
     override func didReceiveMemoryWarning() {

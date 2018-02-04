@@ -21,12 +21,6 @@ class CustomFUIAuthPicker: FUIAuthPickerViewController {
         backView.contentMode = UIViewContentMode.scaleAspectFill
         self.view.addSubview(backView)
         self.view.sendSubview(toBack: backView)
-        let animationView = LOTAnimationView(name: "floating_cloud")
-        animationView.frame = CGRect(x: view.center.x-125, y: view.center.y-125, width: 250, height: 250)
-        view.contentMode = UIViewContentMode.scaleAspectFit
-        animationView.loopAnimation = true
-        self.view.addSubview(animationView)
-        animationView.play()
     }
     
     required init?(coder aDecoder: NSCoder) {
