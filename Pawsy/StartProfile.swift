@@ -18,16 +18,18 @@ class StartProfile: UIViewController, UITextFieldDelegate, UIImagePickerControll
     @IBOutlet weak var spayed: UISegmentedControl!
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var nameBox: UITextField!
-    var firebaseID = Auth.auth().currentUser!.uid
     var details = [String:Any]()
     var photo: Data?
     var photoUpload: UIImagePickerController = UIImagePickerController()
     var alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+    var dogID: String?
     
     @IBAction func continueButton(_ sender: UIButton) {
+        let dogRef = Firestore.firestore().collection("dogs").addDocument(data: [:])
+        dogID = dogRef.documentID
+        details["firebaseID"] = dogID!
         details["gender"] = gender.titleForSegment(at: gender.selectedSegmentIndex)
         details["spayed"] = spayed.titleForSegment(at: spayed.selectedSegmentIndex)
-        details["firebaseID"] = self.firebaseID
         if nameBox.text != nil{
             details["name"] = nameBox.text!
         }
@@ -46,6 +48,13 @@ class StartProfile: UIViewController, UITextFieldDelegate, UIImagePickerControll
     @IBAction func getPhoto(_ sender: UIButton) {
         present(alert, animated: true, completion: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "finishProfile"{
+            let destination = segue.destination as! FinishProfile
+            destination.dogID = self.dogID!
+        }
     }
 
     func save(){

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
@@ -79,13 +80,12 @@ class Launch: UIViewController, FUIAuthDelegate, UINavigationControllerDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
 
   
 }

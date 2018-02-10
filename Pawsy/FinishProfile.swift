@@ -16,7 +16,7 @@ class FinishProfile: UIViewController, BreedViewControllerDelegate {
     var breed: String?
     var details = [String:Any]()
     var user: LocalUser?
-    var firebaseID = Auth.auth().currentUser?.uid
+    var dogID: String?
     
     @IBOutlet weak var birthdate: UIDatePicker!
     @IBAction func continueButton(_ sender: UIButton) {
@@ -34,6 +34,13 @@ class FinishProfile: UIViewController, BreedViewControllerDelegate {
         let breedsVC = storyboard?.instantiateViewController(withIdentifier: "breeds") as! BreedsTableViewController
         breedsVC.delegate = self
         present(breedsVC, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "saveProfileData" {
+            let destination = segue.destination as! SaveUserData
+            destination.dogID = self.dogID!
+        }
     }
     
     func save(){
@@ -88,7 +95,7 @@ class FinishProfile: UIViewController, BreedViewControllerDelegate {
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "LocalUser")
         
-        let predicate = NSPredicate(format: "firebaseID = \(self.firebaseID!)")
+        let predicate = NSPredicate(format: "firebaseID = '\(self.dogID!)'")
         fetchRequest.predicate = predicate
         
         do {

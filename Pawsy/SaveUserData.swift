@@ -14,12 +14,12 @@ import CoreLocation
 
 class SaveUserData: UIViewController {
     var user: LocalUser?
-    var fireBaseUser: User?
     var locationManager = CLLocationManager()
     var location: CLLocation?
     var userDoc: DocumentReference?
     var dogDoc: DocumentReference?
     var dogCollection: CollectionReference?
+    var dogID: String?
     var userCollection: CollectionReference?
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
@@ -38,14 +38,13 @@ class SaveUserData: UIViewController {
     }
     
     func getFirebaseUser(){
-        self.fireBaseUser = Auth.auth().currentUser
         userCollection = Firestore.firestore().collection("users")
-        userDoc = userCollection!.document(fireBaseUser!.uid)
+        userDoc = userCollection!.document(Auth.auth().currentUser!.uid)
         dogCollection = Firestore.firestore().collection("dogs")
         let keys = Array(user!.entity.attributesByName.keys)
         let dict = user!.dictionaryWithValues(forKeys: keys)
-        print (dict)
-        dogDoc = dogCollection!.addDocument(data: dict)
+        dogDoc = dogCollection!.document(dogID!)
+        dogDoc!.updateData(dict)
         userDoc?.collection("dogs").addDocument(data: ["dogID": dogDoc!.documentID], completion: { (error) in
             print("upload started")
             if error != nil{
@@ -89,7 +88,9 @@ class SaveUserData: UIViewController {
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "LocalUser")
         
-        //3
+        let predicate = NSPredicate(format: "firebaseID = '\(self.dogID!)'")
+        fetchRequest.predicate = predicate
+        
         do {
             user = (try managedContext.fetch(fetchRequest)[0] as? LocalUser)!
         } catch let error as NSError {
