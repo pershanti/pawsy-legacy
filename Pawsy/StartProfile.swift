@@ -9,44 +9,43 @@
 import UIKit
 import Lottie
 import CoreData
+import Firebase
 
-class GetName: UIViewController, UITextFieldDelegate, BreedViewControllerDelegate{
+class StartProfile: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
    
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet weak var spayed: UISegmentedControl!
-    @IBOutlet weak var birthdate: UIDatePicker!
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var nameBox: UITextField!
-    @IBOutlet weak var breedLabel: UILabel!
-    var breed: String?
+    var firebaseID = Auth.auth().currentUser!.uid
     var details = [String:Any]()
-    var lottieName = "ModernPictogramsForLottie_Text"
-
+    var photo: Data?
+    var photoUpload: UIImagePickerController = UIImagePickerController()
+    var alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
     
     @IBAction func continueButton(_ sender: UIButton) {
         details["gender"] = gender.titleForSegment(at: gender.selectedSegmentIndex)
         details["spayed"] = spayed.titleForSegment(at: spayed.selectedSegmentIndex)
-        details["birthdate"] = birthdate.date
-        if breed != nil{
-            details["breed"] = breed
-        }
+        details["firebaseID"] = self.firebaseID
         if nameBox.text != nil{
             details["name"] = nameBox.text!
         }
         if weight.text != nil{
             details["weight"] = weight.text!
         }
-        save()
-        self.performSegue(withIdentifier: "goToPhoto", sender: self)
-
+        if self.photo != nil{
+            details["photo"] = self.photo!
+        }
         
+        save()
+        self.performSegue(withIdentifier: "finishProfile", sender: self)
+
     }
     
-    @IBAction func breedButton(_ sender: UIButton) {
-        let breedsVC = storyboard?.instantiateViewController(withIdentifier: "breeds") as! BreedsTableViewController
-        breedsVC.delegate = self
-        present(breedsVC, animated: true, completion: nil)
+    @IBAction func getPhoto(_ sender: UIButton) {
+        present(alert, animated: true, completion: nil)
+        
     }
 
     func save(){
@@ -74,25 +73,40 @@ class GetName: UIViewController, UITextFieldDelegate, BreedViewControllerDelegat
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
-        print (person)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
+        setUpAlertController()
 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
-    func goBack(breed: String) {
-        self.breed = breed
-        self.breedLabel.text = breed
+    
+    func setUpAlertController(){
+        self.photoUpload.delegate = self
+        self.alert.addAction(UIAlertAction(title: "Take New Photo", style: UIAlertActionStyle.default, handler: { (alertAction) in
+            self.photoUpload.sourceType = .camera
+            self.present(self.photoUpload, animated: true, completion: nil)
+        }))
+        self.alert.addAction(UIAlertAction(title: "Select From Photo Library", style: UIAlertActionStyle.default, handler: { (alertAction) in
+            self.photoUpload.sourceType = .photoLibrary
+            self.present(self.photoUpload, animated: true, completion: nil)
+        }))
+        
+        self.alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (alertAction) in
+            
+        }))
     }
-
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        let image = info["UIImagePickerControllerOriginalImage"] as! UIImage
+        self.photo = UIImageJPEGRepresentation(image, 1)
+    }
 
 }
 

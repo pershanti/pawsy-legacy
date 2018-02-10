@@ -19,6 +19,7 @@ class GetLocation: UIViewController, CLLocationManagerDelegate {
     @IBAction func nextButton(_ sender: UIButton) {
         if manager.location == nil{
             manager.requestAlwaysAuthorization()
+            performSegue(withIdentifier: "goToName", sender: self)
         }
         else{
             performSegue(withIdentifier: "goToName", sender: self)
