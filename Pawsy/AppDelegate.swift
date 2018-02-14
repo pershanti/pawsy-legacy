@@ -23,9 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         _ = Firestore.firestore()
         GMSServices.provideAPIKey("AIzaSyB6f2XjcMcpGIQ1WfuvnU6_GBJtUSSErNM")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "m0") as! Launch
-        self.window?.rootViewController = controller
         return true
     }
     

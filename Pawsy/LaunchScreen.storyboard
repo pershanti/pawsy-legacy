@@ -17,16 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deeper gradient" translatesAutoresizingMaskIntoConstraints="NO" id="4Y8-0U-Oa5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PawsyLaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Qek-o8-ct8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="4Y8-0U-Oa5" secondAttribute="bottom" id="GS9-b7-xZw"/>
-                            <constraint firstItem="4Y8-0U-Oa5" firstAttribute="trailing" secondItem="Nt5-dT-Gw5" secondAttribute="trailing" id="Z9z-rQ-bkE"/>
-                            <constraint firstItem="4Y8-0U-Oa5" firstAttribute="leading" secondItem="Nt5-dT-Gw5" secondAttribute="leading" id="ZNI-xY-NNp"/>
-                            <constraint firstItem="4Y8-0U-Oa5" firstAttribute="top" secondItem="bnD-A9-Eex" secondAttribute="top" id="xxO-TW-G1B"/>
+                            <constraint firstItem="Qek-o8-ct8" firstAttribute="top" secondItem="bnD-A9-Eex" secondAttribute="top" id="CzO-Wy-Pk9"/>
+                            <constraint firstItem="Qek-o8-ct8" firstAttribute="leading" secondItem="Nt5-dT-Gw5" secondAttribute="leading" id="OJm-JN-lXY"/>
+                            <constraint firstAttribute="bottom" secondItem="Qek-o8-ct8" secondAttribute="bottom" id="bHV-gW-ezC"/>
+                            <constraint firstItem="Qek-o8-ct8" firstAttribute="trailing" secondItem="Nt5-dT-Gw5" secondAttribute="trailing" id="lgr-8b-msJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nt5-dT-Gw5"/>
                     </view>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="deeper gradient" width="375" height="812"/>
+        <image name="PawsyLaunchScreen" width="375" height="812"/>
     </resources>
 </document>
