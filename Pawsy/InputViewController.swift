@@ -15,23 +15,16 @@ import Lottie
 
 class InputViewController: UIViewController, BreedViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var Gender: UIStackView!
+    @IBOutlet weak var Fixed: UIStackView!
     @IBOutlet weak var agePicker: UIDatePicker!
     @IBOutlet weak var Weight: UITextField!
     @IBOutlet weak var Name: UITextField!
-    @IBOutlet weak var Fixed: UISegmentedControl!
-    @IBOutlet weak var Gender: UISegmentedControl!
     @IBOutlet weak var selectBreed: UIButton!
     @IBOutlet weak var inputImageView: UIImageView!
     @IBOutlet weak var selectPhoto: UIButton!
-    @IBAction func photoButton(_ sender: UIButton) {
-        self.present(alertController, animated: true, completion: nil)
-    }
-    @IBAction func breedButton(_ sender: UIButton) {
-        let breedsVC = storyboard?.instantiateViewController(withIdentifier: "breeds") as! BreedTableViewController
-        breedsVC.delegate = self
-        present(breedsVC, animated: true, completion: nil)
-    }
     @IBOutlet weak var profilePhoto: UIImageView!
+   
     
     var currentInput: Int = 0
     var inputImages = [UIImage]()
@@ -43,20 +36,118 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     let locationManager = CLLocationManager()
+    var dogGender: String?
+    var dogFixed: String?
+    
+    @IBAction func boy(_ sender: UIButton) {
+        self.dogGender = "boy"
+        self.next(self)
+    }
+    
+    @IBAction func girl(_ sender: UIButton) {
+        self.dogGender = "girl"
+        self.next(self)
+    }
+    
+    @IBAction func genderNeutral(_ sender: UIButton) {
+        self.dogGender = "neutral"
+        self.next(self)
+    }
+    
+    @IBAction func fixedYes(_ sender: UIButton) {
+        self.dogFixed = "yes"
+        self.next(self)
+    }
+    
+    @IBAction func fixedNo(_ sender: UIButton) {
+        self.dogFixed = "no"
+        self.next(self)
+    }
+    
+    
+    
+    
+    @IBAction func photoButton(_ sender: UIButton) {
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func breedButton(_ sender: UIButton) {
+        let breedsVC = storyboard?.instantiateViewController(withIdentifier: "breeds") as! BreedTableViewController
+        breedsVC.delegate = self
+        present(breedsVC, animated: true, completion: nil)
+    }
+    
     
     //cycle through screen images until last screen reached
-    @IBAction func next(_ sender: UIButton) {
-        if currentInput < inputImages.count-1{
-            itemList![currentInput].isHidden = true
-            currentInput += 1
-            inputImageView.image = inputImages[currentInput]
-            itemList![currentInput].isHidden = false
-            itemList![currentInput].center = view.center
-            if self.profilePhoto.isHidden == false{
-                self.profilePhoto.isHidden = true
+    @IBAction func next(_ sender: Any) {
+        if  selectPhoto.isHidden == false {
+            let alert = UIAlertController(title: "No Image Selected", message: "Please select an image to upload", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if (Name.text?.count)! < 1{
+            if Name.isHidden == false
+            {
+                print("is Nil")
+                let alert = UIAlertController(title: "No Name Entered", message: "Please enter a name.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+            else{
+                cycleImages()
             }
         }
-        else{
+            
+        else if (Weight.text?.count)! < 1 {
+             if Weight.isHidden == false {
+                let alert = UIAlertController(title: "No Weight Entered", message: "Please enter a number for weight.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+             else{
+                cycleImages()
+            }
+        }
+            
+        else if Gender.isHidden == false{
+            
+            let alert = UIAlertController(title: "No Gender Selected", message: "Please select a gender.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        else if Fixed.isHidden == false{
+            
+            let alert = UIAlertController(title: "No Spay/Neuter Status Selected", message: "Please select an option.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+       
+        else if self.breed == nil{
+           if selectBreed.isHidden == false {
+                let alert = UIAlertController(title: "No Breed Selected", message: "Please select a breed.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+        }
+        else if currentInput < inputImages.count-1 {
+            self.cycleImages()
+        }
+        
+        else {
             self.inputImageView.image = UIImage(named:"grass")
             self.selectBreed.isHidden = true
             let newFrame = CGRect(x: view.frame.width/2-100, y: view.frame.height/2-100, width: 200, height: 200)
@@ -74,6 +165,16 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         self.breed = breed
     }
     
+    func cycleImages(){
+        itemList![currentInput].isHidden = true
+        currentInput += 1
+        inputImageView.image = inputImages[currentInput]
+        itemList![currentInput].isHidden = false
+        itemList![currentInput].center = view.center
+        if self.profilePhoto.isHidden == false{
+            self.profilePhoto.isHidden = true
+        }
+    }
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -135,17 +236,40 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             }
         })
     }
+    
+    func checkForErrors(){
+        if self.Name.text == nil {
+            
+        }
+        if self.Weight.text == nil{
+            
+        }
+        if self.agePicker.date == nil{
+            
+        }
+        
+        if dogGender == nil{
+            
+        }
+        if dogFixed == nil{
+            
+        }
+        if self.breed == nil{
+            
+        }
+    }
 
     
     func uploadToFirebase(photoURL: String){
         let db = Firestore.firestore()
+        
         let dogDoc = db.collection("dogs").addDocument(data: [
             "name": self.Name.text!,
             "weight": self.Weight.text!,
             "birthdate": self.agePicker.date,
             "photo": photoURL,
-            "gender": Gender.titleForSegment(at: Gender.selectedSegmentIndex)!,
-            "fixed": Fixed.titleForSegment(at: Fixed.selectedSegmentIndex)!,
+            "gender": dogGender!,
+            "fixed": dogFixed!,
             "breed": self.breed!
         ])
         if self.locationManager.location != nil {

@@ -19,7 +19,7 @@ pod 'Cloudinary'
 pod 'GooglePlaces'
 pod 'GooglePlacePicker'
 pod 'GoogleMaps'
-pod 'SkyFloatingLabelTextField', '~> 3.0'
-pod 'FormValidatorSwift', '~> 1.0'
+pod 'DLRadioButton', '~> 1.4'
+
 
 end

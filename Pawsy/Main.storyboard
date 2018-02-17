@@ -106,6 +106,34 @@
             </objects>
             <point key="canvasLocation" x="-2133.5999999999999" y="-761.82266009852219"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Eb8-Nq-eLh">
+            <objects>
+                <tableViewController id="Osb-TS-F7C" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f0l-Mo-y5X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="GQq-c0-P9i">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GQq-c0-P9i" id="JCQ-de-HL9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Osb-TS-F7C" id="Tmf-FJ-7oM"/>
+                            <outlet property="delegate" destination="Osb-TS-F7C" id="7Z6-lt-6Oi"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5zh-aN-V7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1380" y="-21"/>
+        </scene>
         <!--ready to play-->
         <scene sceneID="ihP-rO-0en">
             <objects>
@@ -131,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4x-QA-6Tf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1913" y="287"/>
+            <point key="canvasLocation" x="-599" y="-21"/>
         </scene>
         <!--Breed Table View Controller-->
         <scene sceneID="Lmv-qC-5Km">
@@ -159,7 +187,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1N6-nf-9l6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1380" y="-1594"/>
+            <point key="canvasLocation" x="177" y="-762"/>
         </scene>
         <!--Input View Controller-->
         <scene sceneID="q2h-gb-XLx">
@@ -172,14 +200,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zEj-7r-TVT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="lbs." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-o7-qEy">
-                                <rect key="frame" x="104" y="280" width="195" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09o-7L-Scy">
                                 <rect key="frame" x="126" y="242" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -191,31 +211,6 @@
                                     <action selector="breedButton:" destination="Rns-9V-jrd" eventType="touchUpInside" id="fAN-1t-Adh"/>
                                 </connections>
                             </button>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hFh-Kc-mO8">
-                                <rect key="frame" x="71" y="113" width="217" height="29"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="lKN-at-ovp"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Good Girl"/>
-                                    <segment title="Good Boy"/>
-                                    <segment title="Good Dog"/>
-                                </segments>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </segmentedControl>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2lp-6K-M5t">
-                                <rect key="frame" x="86" y="170" width="208" height="29"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="bHO-Wv-nUv"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Yes"/>
-                                    <segment title="No"/>
-                                </segments>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </segmentedControl>
                             <datePicker hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bQg-rI-cBR">
                                 <rect key="frame" x="0.0" y="356" width="375" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -225,17 +220,6 @@
                                     <!--2018-02-15 22:03:32 +0000-->
                                 </date>
                             </datePicker>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzu-R4-qvE">
-                                <rect key="frame" x="150" y="42" width="159" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="select photo">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="photoButton:" destination="Rns-9V-jrd" eventType="touchUpInside" id="Ob3-xd-Elp"/>
-                                </connections>
-                            </button>
                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1Q-kK-ZOR">
                                 <rect key="frame" x="64" y="196" width="224" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -260,22 +244,132 @@
                                     <action selector="next:" destination="0IA-uq-CUV" eventType="touchUpInside" id="ywm-cj-fch"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzu-R4-qvE">
+                                <rect key="frame" x="187" y="382" width="0.0" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="select photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="photoButton:" destination="Rns-9V-jrd" eventType="touchUpInside" id="Ob3-xd-Elp"/>
+                                </connections>
+                            </button>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hIB-GF-68Z">
+                                <rect key="frame" x="100" y="366" width="175" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hf-9Z-zKI" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="fixedYes:" destination="Rns-9V-jrd" eventType="touchUpInside" id="UsS-Wk-sdE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgI-yJ-tAA" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="49" width="175" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                        <state key="normal" title="No">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="fixedNo:" destination="Rns-9V-jrd" eventType="touchUpInside" id="L86-yM-eDN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lF3-LT-CMX">
+                                <rect key="frame" x="100" y="341.66666666666669" width="175" height="139"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBo-kB-qve" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                        <state key="normal" title="Good Girl">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="girl:" destination="Rns-9V-jrd" eventType="touchUpInside" id="TAP-0J-V1S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-S3-yYT" userLabel="Good Dog" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="49" width="175" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                        <state key="normal" title="Good Boy">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="boy:" destination="Rns-9V-jrd" eventType="touchUpInside" id="d7I-vq-327"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fma-Wv-6A3" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="98" width="175" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                        <state key="normal" title="Good Dog">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="genderNeutral:" destination="Rns-9V-jrd" eventType="touchUpInside" id="sEO-Zp-ejz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="lbs." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-o7-qEy">
+                                <rect key="frame" x="82" y="283" width="195" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zEj-7r-TVT" firstAttribute="trailing" secondItem="i6X-ho-vmr" secondAttribute="trailing" id="7eT-UV-Vn0"/>
                             <constraint firstItem="zEj-7r-TVT" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" id="AS3-KO-3uV"/>
+                            <constraint firstItem="hIB-GF-68Z" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" constant="100" id="BHB-ch-1fU"/>
+                            <constraint firstItem="i6X-ho-vmr" firstAttribute="trailing" secondItem="lF3-LT-CMX" secondAttribute="trailing" constant="100" id="CXE-KV-u0W"/>
+                            <constraint firstItem="lF3-LT-CMX" firstAttribute="centerY" secondItem="i6X-ho-vmr" secondAttribute="centerY" id="Uo1-3s-9E5"/>
                             <constraint firstItem="i6X-ho-vmr" firstAttribute="trailing" secondItem="hS3-BA-2HD" secondAttribute="trailing" constant="115" id="V7b-d3-Okf"/>
                             <constraint firstAttribute="bottom" secondItem="zEj-7r-TVT" secondAttribute="bottom" id="XCz-La-Jnd"/>
+                            <constraint firstItem="lF3-LT-CMX" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" constant="100" id="XQr-WB-tZl"/>
+                            <constraint firstItem="hIB-GF-68Z" firstAttribute="centerY" secondItem="i6X-ho-vmr" secondAttribute="centerY" id="Y7v-MR-P12"/>
                             <constraint firstItem="hS3-BA-2HD" firstAttribute="bottom" secondItem="i6X-ho-vmr" secondAttribute="bottom" id="ZxM-bb-BnM"/>
+                            <constraint firstItem="i6X-ho-vmr" firstAttribute="trailing" secondItem="hIB-GF-68Z" secondAttribute="trailing" constant="100" id="eli-42-iB4"/>
                             <constraint firstItem="hS3-BA-2HD" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" constant="115" id="mgf-zs-2Rr"/>
                             <constraint firstItem="zEj-7r-TVT" firstAttribute="top" secondItem="OCB-qb-C0q" secondAttribute="top" id="nrR-KJ-3z0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i6X-ho-vmr"/>
                     </view>
                     <connections>
-                        <outlet property="Fixed" destination="2lp-6K-M5t" id="YeV-iV-zsn"/>
-                        <outlet property="Gender" destination="hFh-Kc-mO8" id="7FU-wp-ebr"/>
+                        <outlet property="Fixed" destination="hIB-GF-68Z" id="08N-fO-aRh"/>
+                        <outlet property="Gender" destination="lF3-LT-CMX" id="AkK-Ho-W2v"/>
                         <outlet property="Name" destination="l1Q-kK-ZOR" id="ZXf-3p-4pj"/>
                         <outlet property="Weight" destination="JDw-o7-qEy" id="EJY-ur-PFu"/>
                         <outlet property="agePicker" destination="bQg-rI-cBR" id="Las-w1-A25"/>
