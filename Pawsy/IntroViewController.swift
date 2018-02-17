@@ -21,14 +21,13 @@ class IntroViewController: UIViewController {
             introImageView.image = introImages[currentIntro]
         }
         else{
-            self.performSegue(withIdentifier: "goToInput", sender: nil)
+            self.performSegue(withIdentifier: "goToLocation", sender: nil)
         }
     }
     
     override func viewDidLoad() {
         self.introImages.append(UIImage(named:"heyDog")!)
         self.introImages.append(UIImage(named:"welcomeToPawsy")!)
-        self.introImages.append(UIImage(named:"parkr+matchr")!)
         self.introImages.append(UIImage(named:"parkr+matchr")!)
         self.introImages.append(UIImage(named:"parkrIntro")!)
         self.introImages.append(UIImage(named:"matchrIntro")!)
