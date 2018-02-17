@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import Cloudinary
 import CoreLocation
+import Lottie
 
 
 class InputViewController: UIViewController, BreedViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -56,6 +57,14 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             }
         }
         else{
+            self.inputImageView.image = UIImage(named:"grass")
+            self.selectBreed.isHidden = true
+            let newFrame = CGRect(x: view.frame.width/2-100, y: view.frame.height/2-100, width: 200, height: 200)
+            let lottieView = LOTAnimationView(name: "acrobatics")
+            lottieView.frame = newFrame
+            lottieView.loopAnimation = true
+            self.view.addSubview(lottieView)
+            lottieView.play()
             self.uploadToCloudinary(photo: self.photo!)
         }
     }
@@ -74,9 +83,11 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         self.profilePhoto.image = image
         self.profilePhoto.isHidden = false
         self.selectPhoto.isHidden = true
-        self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.width
+        self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.width/2
         self.profilePhoto.layer.masksToBounds = true
+        self.inputImageView.image = UIImage(named: "grass2")
     }
+    
     func setUpAlertController(){
         alertController.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { (alertAction) in
             self.photoPicker.sourceType = .camera

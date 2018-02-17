@@ -10,6 +10,7 @@
 		56275D9C203683E800C544BC /* BreedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56275D9B203683E800C544BC /* BreedTableViewController.swift */; };
 		56275DA220368AD700C544BC /* BreedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */; };
 		56275DA420379B5800C544BC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56275DA320379B5800C544BC /* LocationViewController.swift */; };
+		5637DB642037DC82005C9D6E /* acrobatics.json in Resources */ = {isa = PBXBuildFile; fileRef = 5637DB632037DC82005C9D6E /* acrobatics.json */; };
 		564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CA1FE25E9A00D292FA /* AppDelegate.swift */; };
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
@@ -28,6 +29,7 @@
 		56275D9B203683E800C544BC /* BreedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreedTableViewController.swift; path = /Users/shantini/Pawsy/Pawsy/BreedTableViewController.swift; sourceTree = "<absolute>"; };
 		56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreedViewControllerDelegate.swift; path = /Users/shantini/Pawsy/Pawsy/BreedViewControllerDelegate.swift; sourceTree = "<absolute>"; };
 		56275DA320379B5800C544BC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		5637DB632037DC82005C9D6E /* acrobatics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = acrobatics.json; sourceTree = "<group>"; };
 		564872C71FE25E9A00D292FA /* Pawsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564872CA1FE25E9A00D292FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564872D11FE25E9A00D292FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				564872D61FE25E9A00D292FA /* Info.plist */,
 				566A86511FF801FF0020B6BA /* GoogleService-Info.plist */,
+				5637DB632037DC82005C9D6E /* acrobatics.json */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
 				569CFC5320243555009B0A6C /* Model.xcdatamodeld */,
@@ -176,6 +179,7 @@
 			files = (
 				564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */,
 				5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */,
+				5637DB642037DC82005C9D6E /* acrobatics.json in Resources */,
 				569A71E52000AF4700B74517 /* Main.storyboard in Resources */,
 				566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */,
 			);

@@ -27,7 +27,7 @@ class IntroViewController: UIViewController {
     
     override func viewDidLoad() {
         self.introImages.append(UIImage(named:"heyDog")!)
-        self.introImages.append(UIImage(named:"welcomeToPawsy")!)
+        self.introImages.append(UIImage(named:"friends")!)
         self.introImages.append(UIImage(named:"parkr+matchr")!)
         self.introImages.append(UIImage(named:"parkrIntro")!)
         self.introImages.append(UIImage(named:"matchrIntro")!)
