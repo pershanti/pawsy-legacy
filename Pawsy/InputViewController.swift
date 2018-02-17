@@ -120,7 +120,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             }
             else{
                 self.uploadToFirebase(photoURL: String(describing: result?.resultJson["url"]!))
-                self.performSegue(withIdentifier: "loadHome", sender: nil)
+                
             }
         })
     }
@@ -134,7 +134,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             "birthdate": self.agePicker.date,
             "photo": photoURL,
             "gender": Gender.titleForSegment(at: Gender.selectedSegmentIndex)!,
-            "fixed": Fixed.titleForSegment(at: Gender.selectedSegmentIndex)!,
+            "fixed": Fixed.titleForSegment(at: Fixed.selectedSegmentIndex)!,
             "breed": self.breed!
         ])
         if self.locationManager.location != nil {
@@ -144,6 +144,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         let user = Auth.auth().currentUser!
         let userDoc = db.collection("users").document(user.uid)
         userDoc.collection("dogs").addDocument(data: ["dogID": dogDoc.documentID])
+        self.performSegue(withIdentifier: "loadHome", sender: nil)
         
     }
     
