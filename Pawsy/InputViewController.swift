@@ -295,6 +295,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         super.didReceiveMemoryWarning()
     }
     
+    
 }
 
 extension UIViewController

@@ -10,13 +10,16 @@
 		56275D9C203683E800C544BC /* BreedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56275D9B203683E800C544BC /* BreedTableViewController.swift */; };
 		56275DA220368AD700C544BC /* BreedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */; };
 		56275DA420379B5800C544BC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56275DA320379B5800C544BC /* LocationViewController.swift */; };
+		562E257920382A48008C7204 /* NearbyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562E257820382A48008C7204 /* NearbyTableViewController.swift */; };
 		5637DB642037DC82005C9D6E /* acrobatics.json in Resources */ = {isa = PBXBuildFile; fileRef = 5637DB632037DC82005C9D6E /* acrobatics.json */; };
 		564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564872CA1FE25E9A00D292FA /* AppDelegate.swift */; };
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
 		566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 566A86511FF801FF0020B6BA /* GoogleService-Info.plist */; };
+		566DF7AF20382BD200456DEF /* MatchrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566DF7AE20382BD200456DEF /* MatchrViewController.swift */; };
 		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
 		569CFC5520243555009B0A6C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 569CFC5320243555009B0A6C /* Model.xcdatamodeld */; };
+		56A0C66E203BE6620006B1BE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0C66D203BE6620006B1BE /* MapViewController.swift */; };
 		56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */; };
 		56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */; };
 		56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE52032CAEE0023C18A /* IntroViewController.swift */; };
@@ -29,6 +32,7 @@
 		56275D9B203683E800C544BC /* BreedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreedTableViewController.swift; path = /Users/shantini/Pawsy/Pawsy/BreedTableViewController.swift; sourceTree = "<absolute>"; };
 		56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreedViewControllerDelegate.swift; path = /Users/shantini/Pawsy/Pawsy/BreedViewControllerDelegate.swift; sourceTree = "<absolute>"; };
 		56275DA320379B5800C544BC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		562E257820382A48008C7204 /* NearbyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyTableViewController.swift; sourceTree = "<group>"; };
 		5637DB632037DC82005C9D6E /* acrobatics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = acrobatics.json; sourceTree = "<group>"; };
 		564872C71FE25E9A00D292FA /* Pawsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564872CA1FE25E9A00D292FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,8 +40,10 @@
 		564872D61FE25E9A00D292FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		566A86511FF801FF0020B6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		566DF7AE20382BD200456DEF /* MatchrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MatchrViewController.swift; path = /Users/shantini/Pawsy/Pawsy/MatchrViewController.swift; sourceTree = "<absolute>"; };
 		569A71E42000AF4700B74517 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		569CFC5420243555009B0A6C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		56A0C66D203BE6620006B1BE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFUIAuthPicker.swift; sourceTree = "<group>"; };
 		56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		56D5FEE52032CAEE0023C18A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -87,13 +93,16 @@
 				569CFC5320243555009B0A6C /* Model.xcdatamodeld */,
 				56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */,
 				56275D9B203683E800C544BC /* BreedTableViewController.swift */,
+				56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */,
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				569A71E42000AF4700B74517 /* Main.storyboard */,
-				56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */,
-				56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */,
-				56275DA320379B5800C544BC /* LocationViewController.swift */,
 				56D5FEE52032CAEE0023C18A /* IntroViewController.swift */,
 				56D5FEE72032CAFB0023C18A /* InputViewController.swift */,
+				56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */,
+				56275DA320379B5800C544BC /* LocationViewController.swift */,
+				566DF7AE20382BD200456DEF /* MatchrViewController.swift */,
+				562E257820382A48008C7204 /* NearbyTableViewController.swift */,
+				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
 			);
 			path = Pawsy;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -255,6 +265,7 @@
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -268,6 +279,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -276,6 +288,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -291,9 +304,12 @@
 			files = (
 				56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */,
 				56275DA220368AD700C544BC /* BreedViewControllerDelegate.swift in Sources */,
+				562E257920382A48008C7204 /* NearbyTableViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
 				56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */,
 				56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */,
+				566DF7AF20382BD200456DEF /* MatchrViewController.swift in Sources */,
+				56A0C66E203BE6620006B1BE /* MapViewController.swift in Sources */,
 				56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */,
 				56275DA420379B5800C544BC /* LocationViewController.swift in Sources */,
 				56275D9C203683E800C544BC /* BreedTableViewController.swift in Sources */,
