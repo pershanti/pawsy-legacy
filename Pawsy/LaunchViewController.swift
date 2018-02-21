@@ -48,11 +48,7 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
                 
             }
             else {
-                self.performSegue(withIdentifier: "goToIntro", sender: nil)
-                //                self.window = UIWindow(frame: UIScreen.main.bounds)
-                //                let containerViewController = ContainerViewController()
-                //                self.window!.rootViewController = containerViewController
-                //                self.window!.makeKeyAndVisible()
+                self.performSegue(withIdentifier: "loggedInHome", sender: nil)
             }
         }
     }

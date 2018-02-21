@@ -31,14 +31,20 @@ class NearbyTableViewController: UITableViewController {
         }
         
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dog = dogs[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+        vc.dog = dog
+        vc.photo = images[indexPath.row]
+        present(vc, animated: true, completion: nil)
+        
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func loadImages(cellNum: Int){
-        
     }
     
 
@@ -61,10 +67,10 @@ class NearbyTableViewController: UITableViewController {
         
         let doc = self.dogs[indexPath.row]
         let photoURL = doc.data()["photo"] as! String
-        print (photoURL)
         self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, error) in
             DispatchQueue.main.async {
                 cell.imageView?.image = image
+                self.images.append(image!)
             }
         })
         cell.textLabel?.text = self.dogs[indexPath.row].data()["name"] as? String
