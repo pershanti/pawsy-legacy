@@ -77,5 +77,15 @@
 	<false/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>uses location to find dogs in your area.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string></string>
+		<string>Lobster-Regular.ttf</string>
+		<string>BebasNeue Bold.ttf</string>
+		<string>BebasNeue Book.ttf</string>
+		<string>BebasNeue Light.ttf</string>
+		<string>BebasNeue Regular.ttf</string>
+		<string>BebasNeue Thin.ttf</string>
+	</array>
 </dict>
 </plist>

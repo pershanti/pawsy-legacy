@@ -38,8 +38,6 @@ class NearbyTableViewController: UITableViewController {
         vc.dog = dog
         vc.photo = images[indexPath.row]
         present(vc, animated: true, completion: nil)
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,10 +45,6 @@ class NearbyTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

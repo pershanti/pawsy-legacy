@@ -236,28 +236,6 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             }
         })
     }
-    
-    func checkForErrors(){
-        if self.Name.text == nil {
-            
-        }
-        if self.Weight.text == nil{
-            
-        }
-        if self.agePicker.date == nil{
-            
-        }
-        
-        if dogGender == nil{
-            
-        }
-        if dogFixed == nil{
-            
-        }
-        if self.breed == nil{
-            
-        }
-    }
 
     
     func uploadToFirebase(photoURL: String){

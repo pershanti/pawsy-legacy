@@ -28,6 +28,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addFriendButton: UIButton!
     
     @IBAction func addFriend(_ sender: Any) {
+        
     }
     
     @IBOutlet weak var message: UIButton!
