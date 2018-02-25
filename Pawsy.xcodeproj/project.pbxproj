@@ -105,12 +105,12 @@
 				56D5FEE52032CAEE0023C18A /* IntroViewController.swift */,
 				56D5FEE72032CAFB0023C18A /* InputViewController.swift */,
 				56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */,
-				568BEC7F203E73CE006DB9EB /* HomeViewController.swift */,
 				56275DA320379B5800C544BC /* LocationViewController.swift */,
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				569A71E42000AF4700B74517 /* Main.storyboard */,
 				568BEC81203E7F66006DB9EB /* Fonts */,
 				56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */,
+				568BEC7F203E73CE006DB9EB /* HomeViewController.swift */,
 				562E257820382A48008C7204 /* NearbyTableViewController.swift */,
 				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
 			);

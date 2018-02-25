@@ -57,7 +57,7 @@ class NearbyTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
-        
+
         
         let doc = self.dogs[indexPath.row]
         let photoURL = doc.data()["photo"] as! String

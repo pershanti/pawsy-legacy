@@ -44,6 +44,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.getDogIDs()
         self.cloudinary = CLDCloudinary(configuration: self.config!)
     }
@@ -64,6 +67,8 @@ class HomeViewController: UIViewController {
         }
     }
     
+    
+    
     func showDogs(){
         let dog1ID = listOfDogIDs[0]
         let docRef = db.collection("dogs").document(dog1ID)
@@ -72,20 +77,28 @@ class HomeViewController: UIViewController {
                 self.dogName1.text = document.data()["name"] as? String
                 self.dogBreed1.text = document.data()["breed"] as? String
                 let imageURL = document.data()["photo"] as! String
-                self.cloudinary?.createDownloader().fetchImage(imageURL, nil, completionHandler: { (image, error) in
+                self.cloudinary?.createDownloader().fetchImage(imageURL, { (progress) in
+                    print(progress.fractionCompleted)
+                }, completionHandler: { (image, error) in
+
                     if error != nil{
                         print(error!.description)
                     }
                     if image != nil{
                         self.downloadImage1 = image!
                     }
+                    DispatchQueue.main.async {
+                        self.image1.image = self.downloadImage1
+                        self.image1.isHidden = false
+                    }
                 })
+                
+
             } else {
                 print("Document does not exist")
             }
             
-            self.image1.image = self.downloadImage1
-            
+
         }
         
         

@@ -802,16 +802,30 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Jvo-Rg-fJE" kind="relationship" relationship="viewControllers" id="QW7-RX-NFc"/>
-                        <segue destination="Osb-TS-F7C" kind="relationship" relationship="viewControllers" id="Bk4-2A-gQO"/>
-                        <segue destination="soI-p5-Qdr" kind="relationship" relationship="viewControllers" id="jgr-zR-033"/>
-                        <segue destination="rck-9E-KnF" kind="relationship" relationship="viewControllers" id="I46-QE-gJx"/>
-                        <segue destination="Eqb-mS-KkA" kind="relationship" relationship="viewControllers" id="TvX-CC-14M"/>
+                        <segue destination="Eqb-mS-KkA" kind="relationship" relationship="viewControllers" id="E5m-6D-HRT"/>
+                        <segue destination="soI-p5-Qdr" kind="relationship" relationship="viewControllers" id="wnk-PD-oZk"/>
+                        <segue destination="rck-9E-KnF" kind="relationship" relationship="viewControllers" id="kUw-3p-D55"/>
+                        <segue destination="Osb-TS-F7C" kind="relationship" relationship="viewControllers" id="dt9-Uy-Jbw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSf-Xw-NCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-899.20000000000005" y="-21.428571428571431"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oLK-wf-hdl">
+            <objects>
+                <viewController id="RcU-pX-X8T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oJv-Iz-oak">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="17o-aC-eU5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ef-Xs-s4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-172" y="-30"/>
         </scene>
     </scenes>
     <resources>
@@ -833,6 +847,6 @@
         <image name="pawsy text logo" width="2560" height="2560"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iWL-0h-79Y"/>
+        <segue reference="s0S-5f-6mw"/>
     </inferredMetricsTieBreakers>
 </document>
