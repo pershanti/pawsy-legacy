@@ -16,6 +16,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dogName1: UILabel!
     @IBOutlet weak var dogBreed1: UILabel!
     @IBAction func select1(_ sender: Any) {
+        if self.listOfDogIDs.count > 0{
+            currentDog.sharedInstance.dogID = self.listOfDogIDs[0]
+        }
+        
     }
     
     @IBOutlet weak var image2: UIImageView!
@@ -23,6 +27,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dogBreed2: UILabel!
     @IBOutlet weak var select2: UIButton!
     @IBAction func selectButton2(_ sender: Any) {
+        if self.listOfDogIDs.count > 1 {
+            currentDog.sharedInstance.dogID = self.listOfDogIDs[1]
+        }
     }
     
     @IBOutlet weak var image3: UIImageView!
@@ -30,6 +37,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dogBreed3: UILabel!
     @IBOutlet weak var select3: UIButton!
     @IBAction func selectButton3(_ sender: Any) {
+        if self.listOfDogIDs.count > 2 {
+            currentDog.sharedInstance.dogID = self.listOfDogIDs[2]
+        }
     }
     
 
@@ -169,4 +179,12 @@ class HomeViewController: UIViewController {
     }
     
 
+}
+
+class currentDog{
+    static let sharedInstance = currentDog()
+    var dogID: String?
+    
+    private init(){
+    }
 }
