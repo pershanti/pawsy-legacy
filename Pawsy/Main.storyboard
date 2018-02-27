@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0IA-uq-CUV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLU-MB-rh6">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -268,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iga-of-kK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1602" y="754"/>
+            <point key="canvasLocation" x="1314" y="760"/>
         </scene>
         <!--parkr-->
         <scene sceneID="5z6-zc-bFI">
@@ -277,7 +277,24 @@
                     <view key="view" contentMode="scaleToFill" id="96l-db-1lB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6v-xQ-iF3">
+                                <rect key="frame" x="0.0" y="685" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Check In" id="Oz2-SI-3hi">
+                                        <connections>
+                                            <action selector="checkInButton:" destination="soI-p5-Qdr" id="ZZd-uj-0PQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K6v-xQ-iF3" firstAttribute="trailing" secondItem="nkv-Ua-YgM" secondAttribute="trailing" id="PuY-dC-uAZ"/>
+                            <constraint firstItem="K6v-xQ-iF3" firstAttribute="leading" secondItem="nkv-Ua-YgM" secondAttribute="leading" id="UxM-wd-ECb"/>
+                            <constraint firstItem="K6v-xQ-iF3" firstAttribute="bottom" secondItem="nkv-Ua-YgM" secondAttribute="bottom" id="Z5T-G4-Hq8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nkv-Ua-YgM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="parkr" image="icons8-map_marker-1" selectedImage="icons8-map_marker" id="4ya-t7-0f4"/>
@@ -847,6 +864,6 @@
         <image name="pawsy text logo" width="2560" height="2560"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s0S-5f-6mw"/>
+        <segue reference="iWL-0h-79Y"/>
     </inferredMetricsTieBreakers>
 </document>

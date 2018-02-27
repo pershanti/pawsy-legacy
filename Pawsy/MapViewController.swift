@@ -15,6 +15,8 @@ class MapViewController: UIViewController {
     var dogs = [DocumentSnapshot]()
     var coordinates = [CLLocationCoordinate2D]()
    
+    @IBAction func checkInButton(_ sender: Any) {
+    }
     override func loadView() {
         navigationItem.title = "Hello Map"
         
@@ -22,8 +24,13 @@ class MapViewController: UIViewController {
                                               longitude: 151.2086,
                                               zoom: 14)
         let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+
         self.view = mapView
         
+        
+        mapView.settings.zoomGestures = true
+        mapView.settings.myLocationButton = true
+        mapView.settings.scrollGestures = true
         let marker = GMSMarker()
         marker.position = camera.target
         marker.snippet = "Hello World"

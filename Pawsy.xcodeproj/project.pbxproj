@@ -21,6 +21,7 @@
 		569CFC5520243555009B0A6C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 569CFC5320243555009B0A6C /* Model.xcdatamodeld */; };
 		56A0C66E203BE6620006B1BE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0C66D203BE6620006B1BE /* MapViewController.swift */; };
 		56A0C670203BF90F0006B1BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */; };
+		56A6A3BA2045441400508B81 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6A3B92045441400508B81 /* FriendsViewController.swift */; };
 		56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */; };
 		56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */; };
 		56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE52032CAEE0023C18A /* IntroViewController.swift */; };
@@ -52,6 +53,7 @@
 		569CFC5420243555009B0A6C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		56A0C66D203BE6620006B1BE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		56A6A3B92045441400508B81 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFUIAuthPicker.swift; sourceTree = "<group>"; };
 		56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		56D5FEE52032CAEE0023C18A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				568BEC81203E7F66006DB9EB /* Fonts */,
 				56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */,
 				568BEC7F203E73CE006DB9EB /* HomeViewController.swift */,
+				56A6A3B92045441400508B81 /* FriendsViewController.swift */,
 				562E257820382A48008C7204 /* NearbyTableViewController.swift */,
 				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
 			);
@@ -329,6 +332,7 @@
 				56275DA220368AD700C544BC /* BreedViewControllerDelegate.swift in Sources */,
 				562E257920382A48008C7204 /* NearbyTableViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
+				56A6A3BA2045441400508B81 /* FriendsViewController.swift in Sources */,
 				56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */,
 				56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */,
 				56A0C670203BF90F0006B1BE /* ProfileViewController.swift in Sources */,
