@@ -579,10 +579,10 @@
             </objects>
             <point key="canvasLocation" x="-1380" y="-763.30049261083752"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="oLK-wf-hdl">
             <objects>
-                <viewController id="RcU-pX-X8T" sceneMemberID="viewController">
+                <viewController id="RcU-pX-X8T" customClass="HomeViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oJv-Iz-oak">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -602,6 +602,9 @@
                                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAZ-3I-TgM">
                                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                         <state key="normal" image="AddButton"/>
+                                                        <connections>
+                                                            <action selector="newFriends:" destination="RcU-pX-X8T" eventType="touchUpInside" id="naW-wG-NWd"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -611,6 +614,9 @@
                                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2c-2h-mKi">
                                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                         <state key="normal" image="TreeButton"/>
+                                                        <connections>
+                                                            <action selector="parkButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="qtb-GW-G7T"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -625,6 +631,9 @@
                                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ia-gC-f54">
                                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                         <state key="normal" image="MailButton"/>
+                                                        <connections>
+                                                            <action selector="inboxButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="LOM-Oe-LwL"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -634,6 +643,9 @@
                                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52W-Bw-HGV">
                                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                         <state key="normal" image="Friendsbutton"/>
+                                                        <connections>
+                                                            <action selector="friendsButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="HRB-Bm-QvJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -648,6 +660,9 @@
                                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bS-0O-bFv">
                                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                         <state key="normal" image="profilebutton"/>
+                                                        <connections>
+                                                            <action selector="profileButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="SRI-LC-sAP"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -657,6 +672,9 @@
                                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZA-7e-I1D">
                                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                         <state key="normal" image="logoutbutton"/>
+                                                        <connections>
+                                                            <action selector="logoutButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="1sZ-se-2ZU"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
