@@ -9,7 +9,6 @@ target 'Pawsy' do
 
 pod 'Firebase'
 pod 'Firebase/Core'
-pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Google'

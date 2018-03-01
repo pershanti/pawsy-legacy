@@ -26,11 +26,11 @@
 		56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */; };
 		56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE52032CAEE0023C18A /* IntroViewController.swift */; };
 		56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE72032CAFB0023C18A /* InputViewController.swift */; };
-		F4AF6CC3E5F481E715B4F0B8 /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */; };
+		5EF658A9875E659B58AECB4A /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A10F8C70E1093DCE1DDEE8 /* Pods_Pawsy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
+		07A10F8C70E1093DCE1DDEE8 /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56275D9B203683E800C544BC /* BreedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreedTableViewController.swift; path = /Users/shantini/Pawsy/Pawsy/BreedTableViewController.swift; sourceTree = "<absolute>"; };
 		56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreedViewControllerDelegate.swift; path = /Users/shantini/Pawsy/Pawsy/BreedViewControllerDelegate.swift; sourceTree = "<absolute>"; };
 		56275DA320379B5800C544BC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -58,8 +58,8 @@
 		56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		56D5FEE52032CAEE0023C18A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		56D5FEE72032CAFB0023C18A /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
-		D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
-		F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30A718CC7010AA67D5F90B5 /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
+		D0174B9DD0474232E8F215F8 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,20 +67,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4AF6CC3E5F481E715B4F0B8 /* Pods_Pawsy.framework in Frameworks */,
+				5EF658A9875E659B58AECB4A /* Pods_Pawsy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06F82032A75D0ACD43C337A7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B30A718CC7010AA67D5F90B5 /* Pods-Pawsy.debug.xcconfig */,
+				D0174B9DD0474232E8F215F8 /* Pods-Pawsy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		347D6584E85F3B02A5C78671 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07A10F8C70E1093DCE1DDEE8 /* Pods_Pawsy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		564872BE1FE25E9A00D292FA = {
 			isa = PBXGroup;
 			children = (
 				564872C91FE25E9A00D292FA /* Pawsy */,
 				564872C81FE25E9A00D292FA /* Products */,
-				DBBE86A2E67D015D1220FFD1 /* Pods */,
-				DBB876FC65ABF2F5E0292D7A /* Frameworks */,
+				06F82032A75D0ACD43C337A7 /* Pods */,
+				347D6584E85F3B02A5C78671 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,23 +150,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		DBB876FC65ABF2F5E0292D7A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F14F068EAB6FBB3ECB960F4F /* Pods_Pawsy.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DBBE86A2E67D015D1220FFD1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */,
-				36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,12 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 564872D91FE25E9A00D292FA /* Build configuration list for PBXNativeTarget "Pawsy" */;
 			buildPhases = (
-				32B0A8ED8C2B09944CC076AD /* [CP] Check Pods Manifest.lock */,
+				EF492956098201840A35D9D9 /* [CP] Check Pods Manifest.lock */,
 				564872C31FE25E9A00D292FA /* Sources */,
 				564872C41FE25E9A00D292FA /* Frameworks */,
 				564872C51FE25E9A00D292FA /* Resources */,
-				A5C2E476C5BA2CCBDB3AB927 /* [CP] Embed Pods Frameworks */,
-				16D6227BC184A62F53A2A60F /* [CP] Copy Pods Resources */,
+				D52502FF84F74BEE7B489ED6 /* [CP] Embed Pods Frameworks */,
+				0B3A1433C7B1310E51E0494F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,16 +223,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		16D6227BC184A62F53A2A60F /* [CP] Copy Pods Resources */ = {
+		0B3A1433C7B1310E51E0494F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
@@ -240,32 +240,20 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		32B0A8ED8C2B09944CC076AD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Pawsy-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A5C2E476C5BA2CCBDB3AB927 /* [CP] Embed Pods Frameworks */ = {
+		D52502FF84F74BEE7B489ED6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -319,6 +307,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF492956098201840A35D9D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pawsy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -457,7 +463,7 @@
 		};
 		564872DA1FE25E9A00D292FA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D79F4995EDD345738CE0B27A /* Pods-Pawsy.debug.xcconfig */;
+			baseConfigurationReference = B30A718CC7010AA67D5F90B5 /* Pods-Pawsy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -474,7 +480,7 @@
 		};
 		564872DB1FE25E9A00D292FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36D437D8E00DCC32F244AF85 /* Pods-Pawsy.release.xcconfig */;
+			baseConfigurationReference = D0174B9DD0474232E8F215F8 /* Pods-Pawsy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

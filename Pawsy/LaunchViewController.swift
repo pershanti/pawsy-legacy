@@ -14,6 +14,7 @@ import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
 
+
 class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationControllerDelegate {
     
     var window: UIWindow?
@@ -21,7 +22,8 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     var user: User?
     let providers: [FUIAuthProvider] = [
         FUIGoogleAuth(),
-        FUIFacebookAuth()
+        FUIFacebookAuth(),
+
     ]
     var userDoc: DocumentReference?
     

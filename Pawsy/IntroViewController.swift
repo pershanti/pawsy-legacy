@@ -26,14 +26,13 @@ class IntroViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        self.introImages.append(UIImage(named:"heyDog")!)
-        self.introImages.append(UIImage(named:"friends")!)
-        self.introImages.append(UIImage(named:"parkr+matchr")!)
-        self.introImages.append(UIImage(named:"parkrIntro")!)
-        self.introImages.append(UIImage(named:"matchrIntro")!)
-        self.introImages.append(UIImage(named:"getHooman")!)
+        self.introImages.append(UIImage(named:"Hey")!)
+        self.introImages.append(UIImage(named:"Hookup")!)
+        self.introImages.append(UIImage(named:"Park")!)
+        self.introImages.append(UIImage(named:"Human")!)
+        
         self.introImageView.contentMode = .scaleAspectFill
-        self.introImageView.image = UIImage(named: "heyDog")
+        self.introImageView.image = UIImage(named: "Hey")
     }
 
     override func didReceiveMemoryWarning() {

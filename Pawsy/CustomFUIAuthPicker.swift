@@ -15,7 +15,7 @@ class CustomFUIAuthPicker: FUIAuthPickerViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.alpha = 0.5
         
-        let backView = UIImageView(image: UIImage(named: "bwDog"))
+        let backView = UIImageView(image: UIImage(named: "auth"))
         backView.frame = view.frame
         backView.contentMode = UIViewContentMode.scaleAspectFill
         self.view.addSubview(backView)

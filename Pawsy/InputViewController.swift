@@ -41,27 +41,22 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     
     @IBAction func boy(_ sender: UIButton) {
         self.dogGender = "boy"
-        self.next(self)
     }
     
     @IBAction func girl(_ sender: UIButton) {
         self.dogGender = "girl"
-        self.next(self)
     }
     
     @IBAction func genderNeutral(_ sender: UIButton) {
         self.dogGender = "neutral"
-        self.next(self)
     }
     
     @IBAction func fixedYes(_ sender: UIButton) {
         self.dogFixed = "yes"
-        self.next(self)
     }
     
     @IBAction func fixedNo(_ sender: UIButton) {
         self.dogFixed = "no"
-        self.next(self)
     }
     
     
@@ -87,35 +82,24 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             }))
             self.present(alert, animated: true, completion: nil)
         }
-        else if (Name.text?.count)! < 1{
-            if Name.isHidden == false
-            {
+        else if (Name.text?.count)! < 1 && Name.isHidden == false {
                 print("is Nil")
                 let alert = UIAlertController(title: "No Name Entered", message: "Please enter a name.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 self.present(alert, animated: true, completion: nil)
-            }
-            else{
-                cycleImages()
-            }
         }
             
-        else if (Weight.text?.count)! < 1 {
-             if Weight.isHidden == false {
+        else if (Weight.text?.count)! < 1 && Weight.isHidden == false {
                 let alert = UIAlertController(title: "No Weight Entered", message: "Please enter a number for weight.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 self.present(alert, animated: true, completion: nil)
-            }
-             else{
-                cycleImages()
-            }
         }
             
-        else if Gender.isHidden == false{
+        else if Gender.isHidden == false && self.dogGender == nil{
             
             let alert = UIAlertController(title: "No Gender Selected", message: "Please select a gender.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
@@ -124,7 +108,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             self.present(alert, animated: true, completion: nil)
             
         }
-        else if Fixed.isHidden == false{
+        else if Fixed.isHidden == false && self.dogFixed == nil{
             
             let alert = UIAlertController(title: "No Spay/Neuter Status Selected", message: "Please select an option.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
@@ -133,23 +117,20 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             self.present(alert, animated: true, completion: nil)
         }
        
-        else if self.breed == nil{
-           if selectBreed.isHidden == false {
+        else if self.breed == nil && selectBreed.isHidden == false {
                 let alert = UIAlertController(title: "No Breed Selected", message: "Please select a breed.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (uialert) in
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 self.present(alert, animated: true, completion: nil)
-            }
-            
         }
         else if currentInput < inputImages.count-1 {
             self.cycleImages()
         }
         
         else {
-            self.inputImageView.image = UIImage(named:"grass")
-            self.selectBreed.isHidden = true
+            self.inputImageView.image = UIImage(named:"pink")
+            self.profilePhoto.isHidden = true
             let newFrame = CGRect(x: view.frame.width/2-100, y: view.frame.height/2-100, width: 200, height: 200)
             let lottieView = LOTAnimationView(name: "acrobatics")
             lottieView.frame = newFrame
@@ -166,6 +147,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     }
     
     func cycleImages(){
+        print ("cycling")
         itemList![currentInput].isHidden = true
         currentInput += 1
         inputImageView.image = inputImages[currentInput]
@@ -186,7 +168,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         self.selectPhoto.isHidden = true
         self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.width/2
         self.profilePhoto.layer.masksToBounds = true
-        self.inputImageView.image = UIImage(named: "grass2")
+        self.inputImageView.image = UIImage(named: "pink")
     }
     
     func setUpAlertController(){
@@ -202,18 +184,17 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         
     }
     func setUpImages(){
-        self.inputImages.append(UIImage(named:"name")!)
-        self.inputImages.append(UIImage(named:"photo")!)
-        self.inputImages.append(UIImage(named:"weight")!)
-        self.inputImages.append(UIImage(named:"birthday")!)
-        self.inputImages.append(UIImage(named:"gender")!)
-        self.inputImages.append(UIImage(named:"fixed")!)
-        self.inputImages.append(UIImage(named:"breed")!)
-        self.inputImageView.contentMode = .scaleAspectFill
+        self.inputImages.append(UIImage(named:"DogName")!)
+        self.inputImages.append(UIImage(named:"Weight")!)
+        self.inputImages.append(UIImage(named:"Birthdate")!)
+        self.inputImages.append(UIImage(named:"Gender")!)
+        self.inputImages.append(UIImage(named:"Fix")!)
+        self.inputImages.append(UIImage(named:"Breeds")!)
+        self.inputImages.append(UIImage(named:"Pic")!)
         self.inputImageView.image = self.inputImages[0]
-        itemList = [Name, selectPhoto, Weight, agePicker, Gender, Fixed, selectBreed]
-        agePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        agePicker.backgroundColor = UIColor.darkGray
+        itemList = [Name, Weight, agePicker, Gender, Fixed, selectBreed, selectPhoto]
+        agePicker.setValue(UIColor.black, forKeyPath: "textColor")
+        agePicker.backgroundColor = UIColor.white
         itemList![0].isHidden = false
         itemList![0].center = view.center
         self.profilePhoto.frame = CGRect(x: 0, y:0 , width: 200, height: 200)
