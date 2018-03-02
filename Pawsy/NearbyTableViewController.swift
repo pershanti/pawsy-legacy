@@ -16,6 +16,7 @@ class NearbyTableViewController: UITableViewController {
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     var dogs = [DocumentSnapshot]()
     var images = [UIImage]()
+    var currentDog: DocumentReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()

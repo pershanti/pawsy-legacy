@@ -38,6 +38,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     let locationManager = CLLocationManager()
     var dogGender: String?
     var dogFixed: String?
+    var dogDoc: DocumentReference?
     
     @IBAction func boy(_ sender: UIButton) {
         self.dogGender = "boy"
@@ -222,7 +223,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     func uploadToFirebase(photoURL: String){
         let db = Firestore.firestore()
         
-        let dogDoc = db.collection("dogs").addDocument(data: [
+        self.dogDoc = db.collection("dogs").addDocument(data: [
             "name": self.Name.text!,
             "weight": self.Weight.text!,
             "birthdate": self.agePicker.date,
@@ -232,12 +233,12 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             "breed": self.breed!
         ])
         if self.locationManager.location != nil {
-            dogDoc.updateData(["longitude":self.locationManager.location!.coordinate.longitude, "latitude":self.locationManager.location!.coordinate.latitude])
+            dogDoc?.updateData(["longitude":self.locationManager.location!.coordinate.longitude, "latitude":self.locationManager.location!.coordinate.latitude])
         }
         
         let user = Auth.auth().currentUser!
         let userDoc = db.collection("users").document(user.uid)
-        userDoc.collection("dogs").addDocument(data: ["dogID": dogDoc.documentID])
+        userDoc.collection("dogs").addDocument(data: ["dogID": dogDoc?.documentID])
         self.performSegue(withIdentifier: "loadHome", sender: nil)
         
     }
@@ -252,6 +253,14 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loadHome"{
+            let destination = segue.destination as! HomeViewController
+            destination.currentDog = dogDoc
+            destination.currentUser = Auth.auth().currentUser!
+        }
     }
     
     

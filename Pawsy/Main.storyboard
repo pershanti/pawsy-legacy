@@ -266,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iga-of-kK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="180"/>
+            <point key="canvasLocation" x="-1447" y="751"/>
         </scene>
         <!--matchr-->
         <scene sceneID="Eb8-Nq-eLh">
@@ -315,7 +315,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zh-aN-V7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="180"/>
+            <point key="canvasLocation" x="-2382" y="751"/>
         </scene>
         <!--Breed Table View Controller-->
         <scene sceneID="Lmv-qC-5Km">
@@ -365,13 +365,13 @@
                                     <action selector="breedButton:" destination="Rns-9V-jrd" eventType="touchUpInside" id="fAN-1t-Adh"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1Q-kK-ZOR">
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l1Q-kK-ZOR">
                                 <rect key="frame" x="64" y="196" width="224" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wb-6W-b0H">
                                 <rect key="frame" x="48" y="520" width="128" height="128"/>
@@ -483,13 +483,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="lbs." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-o7-qEy">
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="lbs." adjustsFontSizeToFit="NO" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-o7-qEy">
                                 <rect key="frame" x="82" y="283" width="195" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <datePicker hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bQg-rI-cBR">
                                 <rect key="frame" x="2" y="330" width="375" height="162"/>
@@ -701,6 +701,56 @@
             </objects>
             <point key="canvasLocation" x="-1447.2" y="-7.389162561576355"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="0si-75-qjB">
+            <objects>
+                <viewController storyboardIdentifier="map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Og-sT-udd" customClass="MapViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dtO-vL-bSH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5um-up-zdR">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <items>
+                                    <barButtonItem title="Home" id="mWi-hG-Iju">
+                                        <connections>
+                                            <action selector="homeButton:" destination="1Og-sT-udd" id="ncn-Fu-2rS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="K7d-Ck-45m"/>
+                                    <barButtonItem title="Check In" id="a8V-J9-AnC">
+                                        <connections>
+                                            <action selector="checkInButton:" destination="1Og-sT-udd" id="YZ1-R9-8y1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-CX-HyT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oDk-CX-HyT" firstAttribute="trailing" secondItem="kh3-6N-TIu" secondAttribute="trailing" id="6nf-C2-LU9"/>
+                            <constraint firstItem="oDk-CX-HyT" firstAttribute="top" secondItem="dtO-vL-bSH" secondAttribute="top" id="eha-bU-pMe"/>
+                            <constraint firstItem="5um-up-zdR" firstAttribute="trailing" secondItem="kh3-6N-TIu" secondAttribute="trailing" id="fHu-ky-9lK"/>
+                            <constraint firstItem="oDk-CX-HyT" firstAttribute="leading" secondItem="kh3-6N-TIu" secondAttribute="leading" id="mKr-Ds-UjS"/>
+                            <constraint firstItem="5um-up-zdR" firstAttribute="bottom" secondItem="kh3-6N-TIu" secondAttribute="bottom" id="vHh-Xt-8zh"/>
+                            <constraint firstItem="5um-up-zdR" firstAttribute="top" secondItem="oDk-CX-HyT" secondAttribute="bottom" id="wen-95-oOG"/>
+                            <constraint firstItem="5um-up-zdR" firstAttribute="leading" secondItem="kh3-6N-TIu" secondAttribute="leading" id="xRE-b5-9i4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kh3-6N-TIu"/>
+                    </view>
+                    <connections>
+                        <outlet property="checkinButtonChange" destination="a8V-J9-AnC" id="4h8-bP-2Ou"/>
+                        <outlet property="gmsmapView" destination="oDk-CX-HyT" id="DZB-AP-7dH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KaY-6T-dCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-567.20000000000005" y="750.73891625615772"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AddButton" width="121" height="121"/>
@@ -719,6 +769,6 @@
         <image name="profilebutton" width="121" height="121"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Th-0z-quy"/>
+        <segue reference="y7x-YU-iYT"/>
     </inferredMetricsTieBreakers>
 </document>

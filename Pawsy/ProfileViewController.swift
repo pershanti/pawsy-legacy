@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     
     var dog: DocumentSnapshot?
     var photo: UIImage?
+    var currentDog: DocumentReference?
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -28,7 +29,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addFriendButton: UIButton!
     
     @IBAction func addFriend(_ sender: Any) {
-        
+        if self.currentDog != nil{
+            let newFriendID = self.dog?.documentID
+            //send friend request
+        }
     }
     
     @IBOutlet weak var message: UIButton!

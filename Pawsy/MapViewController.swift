@@ -14,19 +14,39 @@ import Firebase
 class MapViewController: UIViewController {
     var dogs = [DocumentSnapshot]()
     var coordinates = [CLLocationCoordinate2D]()
+    var checkedIn = false
+    var currentDog: DocumentReference?
    
+    @IBOutlet weak var gmsmapView: UIView!
+    @IBOutlet weak var checkinButtonChange: UIBarButtonItem!
     @IBAction func checkInButton(_ sender: Any) {
+        if self.checkedIn == false{
+            self.checkedIn = true
+            print("checkedIn")
+            self.checkinButtonChange.title = "Check Out"
+        }
+        else{
+            self.checkedIn = true
+            print("checkedOut")
+            self.checkinButtonChange.title = "Check In"
+        }
     }
+    
+    @IBAction func homeButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     override func loadView() {
         navigationItem.title = "Hello Map"
-        
+    }
+    
+    override func viewDidLoad() {
+       
         let camera = GMSCameraPosition.camera(withLatitude: -33.868,
                                               longitude: 151.2086,
                                               zoom: 14)
-        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-
-        self.view = mapView
-        
+        let mapView = GMSMapView.map(withFrame: self.gmsmapView.frame, camera: camera)
         
         mapView.settings.zoomGestures = true
         mapView.settings.myLocationButton = true
@@ -36,6 +56,7 @@ class MapViewController: UIViewController {
         marker.snippet = "Hello World"
         marker.appearAnimation = GMSMarkerAnimation.pop
         marker.map = mapView
+        self.view.addSubview(mapView)
         
         let db = Firestore.firestore().collection("dogs")
         db.getDocuments { (snapshot, error) in
@@ -55,13 +76,7 @@ class MapViewController: UIViewController {
                 }
             }
         }
-       
-    
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
