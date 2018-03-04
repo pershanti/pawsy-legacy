@@ -26,6 +26,7 @@
 		56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */; };
 		56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE52032CAEE0023C18A /* IntroViewController.swift */; };
 		56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE72032CAFB0023C18A /* InputViewController.swift */; };
+		56E586B7204BC00B003030D5 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E586B6204BC00B003030D5 /* PlacesViewController.swift */; };
 		5EF658A9875E659B58AECB4A /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A10F8C70E1093DCE1DDEE8 /* Pods_Pawsy.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		56D5FEE52032CAEE0023C18A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		56D5FEE72032CAFB0023C18A /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		56E586B6204BC00B003030D5 /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		B30A718CC7010AA67D5F90B5 /* Pods-Pawsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.debug.xcconfig"; sourceTree = "<group>"; };
 		D0174B9DD0474232E8F215F8 /* Pods-Pawsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pawsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pawsy/Pods-Pawsy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 				56A6A3B92045441400508B81 /* FriendsViewController.swift */,
 				562E257820382A48008C7204 /* NearbyTableViewController.swift */,
 				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
+				56E586B6204BC00B003030D5 /* PlacesViewController.swift */,
 			);
 			path = Pawsy;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */,
 				56275DA420379B5800C544BC /* LocationViewController.swift in Sources */,
 				56275D9C203683E800C544BC /* BreedTableViewController.swift in Sources */,
+				56E586B7204BC00B003030D5 /* PlacesViewController.swift in Sources */,
 				568BEC80203E73CE006DB9EB /* HomeViewController.swift in Sources */,
 				569CFC5520243555009B0A6C /* Model.xcdatamodeld in Sources */,
 			);

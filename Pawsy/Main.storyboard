@@ -587,9 +587,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pink" translatesAutoresizingMaskIntoConstraints="NO" id="oCR-HG-21r">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-Oq-pYl">
                                 <rect key="frame" x="62" y="217" width="250" height="379"/>
                                 <subviews>
@@ -685,13 +682,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oCR-HG-21r" firstAttribute="top" secondItem="oJv-Iz-oak" secondAttribute="top" id="IU8-WP-Pkc"/>
-                            <constraint firstItem="oCR-HG-21r" firstAttribute="leading" secondItem="17o-aC-eU5" secondAttribute="leading" id="Wgd-u7-gcu"/>
                             <constraint firstItem="17o-aC-eU5" firstAttribute="trailing" secondItem="seJ-Oq-pYl" secondAttribute="trailing" constant="63" id="Zlp-kX-XVz"/>
-                            <constraint firstAttribute="bottom" secondItem="oCR-HG-21r" secondAttribute="bottom" id="aFB-22-OLx"/>
                             <constraint firstItem="seJ-Oq-pYl" firstAttribute="leading" secondItem="17o-aC-eU5" secondAttribute="leading" constant="62" id="ep5-0b-At2"/>
                             <constraint firstItem="17o-aC-eU5" firstAttribute="bottom" secondItem="seJ-Oq-pYl" secondAttribute="bottom" constant="182" id="gcH-EU-7IZ"/>
-                            <constraint firstItem="oCR-HG-21r" firstAttribute="trailing" secondItem="17o-aC-eU5" secondAttribute="trailing" id="iP0-cR-yPR"/>
                             <constraint firstItem="seJ-Oq-pYl" firstAttribute="top" secondItem="17o-aC-eU5" secondAttribute="top" constant="173" id="pyN-1s-iGf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="17o-aC-eU5"/>
@@ -700,6 +693,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ef-Xs-s4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1447.2" y="-7.389162561576355"/>
+        </scene>
+        <!--Places View Controller-->
+        <scene sceneID="8gQ-9w-OnO">
+            <objects>
+                <viewController id="4zL-g2-5Sa" customClass="PlacesViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pFh-NM-Pi8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kp1-BV-xJD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Kp1-BV-xJD" secondAttribute="bottom" id="1ac-hN-SQo"/>
+                            <constraint firstItem="Kp1-BV-xJD" firstAttribute="leading" secondItem="G2d-DD-7r9" secondAttribute="leading" id="U7c-Jy-dGL"/>
+                            <constraint firstItem="Kp1-BV-xJD" firstAttribute="top" secondItem="pFh-NM-Pi8" secondAttribute="top" id="nMN-KI-xUq"/>
+                            <constraint firstItem="Kp1-BV-xJD" firstAttribute="trailing" secondItem="G2d-DD-7r9" secondAttribute="trailing" id="tIX-1v-8U0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G2d-DD-7r9"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Kp1-BV-xJD" id="QYc-nS-wNC"/>
+                        <segue destination="1Og-sT-udd" kind="presentation" identifier="unwindToMain" id="BYa-KB-ZfV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1cb-hd-cRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.80000000000001" y="750.73891625615772"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="0si-75-qjB">
@@ -725,7 +749,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-CX-HyT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-CX-HyT" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -745,11 +769,12 @@
                     <connections>
                         <outlet property="checkinButtonChange" destination="a8V-J9-AnC" id="4h8-bP-2Ou"/>
                         <outlet property="gmsmapView" destination="oDk-CX-HyT" id="DZB-AP-7dH"/>
+                        <segue destination="4zL-g2-5Sa" kind="presentation" identifier="segueToSelect" id="Byf-3v-62Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaY-6T-dCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-567.20000000000005" y="750.73891625615772"/>
+            <point key="canvasLocation" x="-569" y="751"/>
         </scene>
     </scenes>
     <resources>
@@ -765,10 +790,10 @@
         <image name="launch" width="375" height="812"/>
         <image name="logoutbutton" width="121" height="121"/>
         <image name="pawsy text logo" width="2560" height="2560"/>
-        <image name="pink" width="375" height="812"/>
         <image name="profilebutton" width="121" height="121"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Byf-3v-62Z"/>
         <segue reference="y7x-YU-iYT"/>
     </inferredMetricsTieBreakers>
 </document>
