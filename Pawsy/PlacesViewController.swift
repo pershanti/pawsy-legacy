@@ -34,6 +34,7 @@ class PlacesViewController: UIViewController {
     
     // Cell reuse id (cells that scroll out of view can be reused).
     let cellReuseIdentifier = "cell";
+    var delegate: PlaceViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,23 +48,15 @@ class PlacesViewController: UIViewController {
         
         tableView.reloadData()
     }
-   
-    // Pass the selected place to the new view controller.
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "unwindToMain" {
-            if let nextViewController = segue.destination as? MapViewController {
-                nextViewController.selectedPlace = self.selectedPlace
-
-            }
-        }
-    }
 }
 
 // Respond when a user selects a place.
 extension PlacesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedPlace = likelyPlaces[indexPath.row]
-        performSegue(withIdentifier: "unwindToMain", sender: self)
+        self.selectedPlace = likelyPlaces[indexPath.row]
+        print("the controller selected this place: ", selectedPlace?.name)
+        self.delegate!.setSelectedPlace(place: self.selectedPlace!)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -84,9 +77,6 @@ extension PlacesViewController: UITableViewDataSource {
     
     // Adjust cell height to only show the first five items in the table
     // (scrolling is disabled in IB).
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.tableView.frame.size.height/5
-    }
     
     // Make table rows display at proper height if there are less than 5 items.
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

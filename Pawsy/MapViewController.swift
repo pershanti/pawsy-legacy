@@ -13,7 +13,8 @@ import GooglePlaces
 
 
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, PlaceViewControllerDelegate {
+ 
     var dogs = [DocumentSnapshot]()
     var coordinates = [CLLocationCoordinate2D]()
     var checkedIn = false
@@ -22,7 +23,10 @@ class MapViewController: UIViewController {
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var placesClient: GMSPlacesClient!
+    var placeDoc: DocumentReference?
     var zoomLevel: Float = 15.0
+    var checkedInReference: DocumentReference?
+    var checkInTime: Date?
     let defaultLocation = CLLocation(latitude: 37.332239, longitude: -122.030824)
     
     // An array to hold the list of likely places.
@@ -41,7 +45,11 @@ class MapViewController: UIViewController {
             self.performSegue(withIdentifier: "segueToSelect", sender: self)
         }
         else{
-            self.checkedIn = true
+            self.checkedIn = false
+            if self.selectedPlace != nil && self.checkedInReference != nil{
+                print("okay to go")
+                 self.checkOutOfFirebase()
+            }
             print("checkedOut")
             self.checkinButtonChange.title = "Check In"
         }
@@ -49,6 +57,36 @@ class MapViewController: UIViewController {
     
     @IBAction func homeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    //PlacesViewController Delegate Function
+    func setSelectedPlace(place: GMSPlace) {
+        self.selectedPlace = place
+        print("place Selected", selectedPlace?.name)
+        let marker = GMSMarker(position: (self.selectedPlace?.coordinate)!)
+        marker.title = selectedPlace?.name
+        marker.snippet = selectedPlace?.formattedAddress
+        marker.map = self.gmsmapView
+        self.checkInToFirebase()
+        
+    }
+    
+    
+    func checkOutOfFirebase(){
+        print("checkout function running")
+        let checkInDoc = self.currentDog?.collection("check-ins").document()
+        checkInDoc?.setData(["placeID": self.selectedPlace?.placeID, "checkInTime": self.checkInTime!, "checkOutTime": Date()])
+        self.checkedInReference?.delete()
+        self.checkedInReference = nil
+    }
+    
+    func checkInToFirebase(){
+        let placeID = self.selectedPlace!.placeID
+        print("placeID: ", placeID)
+        placeDoc = Firestore.firestore().collection("dogParks").document(placeID)
+        placeDoc!.setData(["placeName" : self.selectedPlace!.name])
+        self.checkedInReference = placeDoc!.collection("checkedInUsers").document(self.currentDog!.documentID)
+        self.checkedInReference?.setData(["Check-In Time": Date()])
+        self.checkInTime = Date()
     }
     
     
@@ -72,13 +110,6 @@ class MapViewController: UIViewController {
         gmsmapView.settings.scrollGestures = true
         gmsmapView.isMyLocationEnabled = true
         self.gmsmapView.clear()
-        if selectedPlace != nil {
-            let marker = GMSMarker(position: (self.selectedPlace?.coordinate)!)
-            marker.title = selectedPlace?.name
-            marker.snippet = selectedPlace?.formattedAddress
-            marker.map = self.gmsmapView
-        }
-        
         listLikelyPlaces()
         
         let db = Firestore.firestore().collection("dogs")
@@ -129,6 +160,7 @@ class MapViewController: UIViewController {
         if segue.identifier == "segueToSelect" {
             if let nextViewController = segue.destination as? PlacesViewController {
                 nextViewController.likelyPlaces = likelyPlaces
+                nextViewController.delegate = self
             }
         }
 
