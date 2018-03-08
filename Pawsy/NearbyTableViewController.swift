@@ -70,7 +70,6 @@ class NearbyTableViewController: UITableViewController {
         })
         cell.textLabel?.text = self.dogs[indexPath.row].data()["name"] as? String
         cell.detailTextLabel?.text = self.dogs[indexPath.row].data()["breed"] as? String
-        
         return cell
     }
 

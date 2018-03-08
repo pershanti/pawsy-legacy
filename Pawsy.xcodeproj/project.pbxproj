@@ -16,6 +16,7 @@
 		564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564872D11FE25E9A00D292FA /* Assets.xcassets */; };
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
 		566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 566A86511FF801FF0020B6BA /* GoogleService-Info.plist */; };
+		5681CE1320510C20009856E8 /* InboxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681CE1220510C20009856E8 /* InboxTableViewController.swift */; };
 		568BEC80203E73CE006DB9EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568BEC7F203E73CE006DB9EB /* HomeViewController.swift */; };
 		568EF3D8204D39B1008FF81E /* PlaceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EF3D7204D39B1008FF81E /* PlaceViewControllerDelegate.swift */; };
 		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		564872D61FE25E9A00D292FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		566A86511FF801FF0020B6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5681CE1220510C20009856E8 /* InboxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxTableViewController.swift; sourceTree = "<group>"; };
 		568BEC7F203E73CE006DB9EB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		568BEC83203E7F7A006DB9EB /* BebasNeue Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Book.ttf"; sourceTree = "<group>"; };
 		568BEC86203E7F80006DB9EB /* BebasNeue Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Light.ttf"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */,
 				568BEC7F203E73CE006DB9EB /* HomeViewController.swift */,
 				56A6A3B92045441400508B81 /* FriendsViewController.swift */,
+				5681CE1220510C20009856E8 /* InboxTableViewController.swift */,
 				562E257820382A48008C7204 /* NearbyTableViewController.swift */,
 				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
 				56E586B6204BC00B003030D5 /* PlacesViewController.swift */,
@@ -352,6 +355,7 @@
 				56A6A3BA2045441400508B81 /* FriendsViewController.swift in Sources */,
 				56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */,
 				56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */,
+				5681CE1320510C20009856E8 /* InboxTableViewController.swift in Sources */,
 				56A0C670203BF90F0006B1BE /* ProfileViewController.swift in Sources */,
 				56A0C66E203BE6620006B1BE /* MapViewController.swift in Sources */,
 				56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */,
@@ -497,6 +501,44 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LVLYB83ZJM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Atlas\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Bolts\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Cloudinary\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DLRadioButton\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKCoreKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBSDKLoginKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMOAuth2\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Koloda\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-ProtoRPC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-RxLibrary\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/pop\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseFirestore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseUI/FirebaseUIFrameworks/FirebaseAuthUI/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseUI/FirebaseUIFrameworks/FirebaseFacebookAuthUI/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseUI/FirebaseUIFrameworks/FirebaseGoogleAuthUI/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlacePicker/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSignIn/Frameworks\"",
+					"\"${PODS_ROOT}/LayerKit\"",
+				);
 				INFOPLIST_FILE = Pawsy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -674,6 +674,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="17o-aC-eU5"/>
                     </view>
+                    <connections>
+                        <segue destination="HAz-qk-iGQ" kind="presentation" identifier="goToInbox" id="KGp-2J-6Bg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ef-Xs-s4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -791,7 +794,7 @@
         <!--Inbox-->
         <scene sceneID="RM4-Hn-YHz">
             <objects>
-                <tableViewController id="cVJ-RH-1ZG" sceneMemberID="viewController">
+                <tableViewController id="cVJ-RH-1ZG" customClass="InboxTableViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3sq-sC-0Db">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -831,7 +834,13 @@
                             <outlet property="delegate" destination="cVJ-RH-1ZG" id="8oD-BJ-iw1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Inbox" id="7CK-CV-LVr"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="CDf-SN-fKM">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="3gO-Ez-7o5">
+                            <connections>
+                                <action selector="goHome:" destination="cVJ-RH-1ZG" id="K5J-L6-sem"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVY-9R-gMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

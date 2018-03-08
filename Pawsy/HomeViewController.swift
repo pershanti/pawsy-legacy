@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func inboxButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToInbox", sender: self)
     }
     @IBAction func friendsButton(_ sender: UIButton) {
     }
@@ -47,12 +48,10 @@ class HomeViewController: UIViewController {
         
         self.currentUser = Auth.auth().currentUser
         if currentDog == nil{
-        var dogID: String = ""
    //sets the current dog as the first one on the user's dog list
             Firestore.firestore().collection("users").document(currentUser!.uid).collection("dogs").getDocuments(completion: { (snapshot, error) in
                 if snapshot!.count > 0{
-                    dogID = snapshot!.documents[0].documentID
-                    self.currentDog = Firestore.firestore().collection("dogs").document(dogID)
+                    self.currentDog = snapshot!.documents[0].reference
                     print(self.currentDog?.documentID)
                 }
             })
