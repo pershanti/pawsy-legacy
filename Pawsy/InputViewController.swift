@@ -185,13 +185,13 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         
     }
     func setUpImages(){
-        self.inputImages.append(UIImage(named:"DogName")!)
-        self.inputImages.append(UIImage(named:"Weight")!)
-        self.inputImages.append(UIImage(named:"Birthdate")!)
-        self.inputImages.append(UIImage(named:"Gender")!)
-        self.inputImages.append(UIImage(named:"Fix")!)
-        self.inputImages.append(UIImage(named:"Breeds")!)
-        self.inputImages.append(UIImage(named:"Pic")!)
+        self.inputImages.append(UIImage(named:"NamePage")!)
+        self.inputImages.append(UIImage(named:"WeightPage")!)
+        self.inputImages.append(UIImage(named:"BirthdatePage")!)
+        self.inputImages.append(UIImage(named:"GenderPage")!)
+        self.inputImages.append(UIImage(named:"FixPage")!)
+        self.inputImages.append(UIImage(named:"BreedPage")!)
+        self.inputImages.append(UIImage(named:"PicPage")!)
         self.inputImageView.image = self.inputImages[0]
         itemList = [Name, Weight, agePicker, Gender, Fixed, selectBreed, selectPhoto]
         agePicker.setValue(UIColor.black, forKeyPath: "textColor")

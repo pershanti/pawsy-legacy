@@ -265,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iga-of-kK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1447" y="751"/>
+            <point key="canvasLocation" x="1636" y="784.72906403940885"/>
         </scene>
         <!--matchr-->
         <scene sceneID="Eb8-Nq-eLh">
@@ -284,18 +284,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xx0-WB-fFR">
-                                            <rect key="frame" x="139" y="34" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="81" y="34" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="pawsy text logo" id="Yn7-mc-SLg">
-                                            <rect key="frame" x="16" y="0.0" width="108" height="107.66666666666667"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Human" id="Yn7-mc-SLg">
+                                            <rect key="frame" x="16" y="0.0" width="50" height="107.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Lf-cq-OBQ">
-                                            <rect key="frame" x="139" y="57.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="81" y="57.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -314,7 +314,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zh-aN-V7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2382" y="751"/>
+            <point key="canvasLocation" x="-2866" y="751"/>
         </scene>
         <!--Breed Table View Controller-->
         <scene sceneID="Lmv-qC-5Km">
@@ -381,7 +381,7 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" red="0.16078431369999999" green="0.90588235289999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="next">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="next:" destination="Rns-9V-jrd" eventType="touchUpInside" id="GNF-QR-Tcb"/>
@@ -404,7 +404,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                         <state key="normal" title="Yes">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
@@ -419,7 +419,7 @@
                                         <rect key="frame" x="0.0" y="49" width="175" height="41"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                         <state key="normal" title="No">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
@@ -438,9 +438,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBo-kB-qve" customClass="DLRadioButton">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="Good Girl">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" title="Good Girl"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
                                                 <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -453,9 +451,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-S3-yYT" userLabel="Good Dog" customClass="DLRadioButton">
                                         <rect key="frame" x="0.0" y="49" width="175" height="41"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="Good Boy">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" title="Good Boy"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
                                                 <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -468,9 +464,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fma-Wv-6A3" customClass="DLRadioButton">
                                         <rect key="frame" x="0.0" y="98" width="175" height="41"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="Good Dog">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" title="Good Dog"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
                                                 <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -586,11 +580,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="X81-ts-thX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAZ-3I-TgM">
                                 <rect key="frame" x="0.0" y="232" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Find new friends">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="newFriends:" destination="RcU-pX-X8T" eventType="touchUpInside" id="naW-wG-NWd"/>
@@ -599,7 +596,7 @@
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZA-7e-I1D">
                                 <rect key="frame" x="16" y="744" width="343" height="34"/>
                                 <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="logoutButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="1sZ-se-2ZU"/>
@@ -615,7 +612,7 @@
                                 <rect key="frame" x="3" y="280" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="See who's at the park">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="parkButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="qtb-GW-G7T"/>
@@ -625,7 +622,7 @@
                                 <rect key="frame" x="142" y="328" width="90" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="My Friends">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="friendsButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="HRB-Bm-QvJ"/>
@@ -635,7 +632,7 @@
                                 <rect key="frame" x="0.0" y="376" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="My Profile">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="profileButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="SRI-LC-sAP"/>
@@ -645,7 +642,7 @@
                                 <rect key="frame" x="0.0" y="424" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Inbox">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="inboxButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="LOM-Oe-LwL"/>
@@ -657,11 +654,15 @@
                             <constraint firstItem="bRX-Im-sK6" firstAttribute="top" secondItem="17o-aC-eU5" secondAttribute="top" constant="24" id="6D5-oI-43Z"/>
                             <constraint firstItem="x2c-2h-mKi" firstAttribute="centerX" secondItem="17o-aC-eU5" secondAttribute="centerX" id="GcV-dl-Kzl"/>
                             <constraint firstItem="52W-Bw-HGV" firstAttribute="centerX" secondItem="17o-aC-eU5" secondAttribute="centerX" id="Jdj-dt-fqU"/>
+                            <constraint firstItem="X81-ts-thX" firstAttribute="leading" secondItem="17o-aC-eU5" secondAttribute="leading" id="Jdz-G3-VwN"/>
                             <constraint firstItem="6ia-gC-f54" firstAttribute="top" secondItem="3bS-0O-bFv" secondAttribute="bottom" constant="8" id="L0n-bh-eQJ"/>
                             <constraint firstItem="JZA-7e-I1D" firstAttribute="centerX" secondItem="17o-aC-eU5" secondAttribute="centerX" id="OHe-Uw-dF1"/>
+                            <constraint firstAttribute="bottom" secondItem="X81-ts-thX" secondAttribute="bottom" id="OgD-7B-GMq"/>
                             <constraint firstItem="3bS-0O-bFv" firstAttribute="centerX" secondItem="17o-aC-eU5" secondAttribute="centerX" id="TJt-5J-9rf"/>
+                            <constraint firstItem="X81-ts-thX" firstAttribute="top" secondItem="oJv-Iz-oak" secondAttribute="top" id="Tcb-mt-b06"/>
                             <constraint firstItem="bRX-Im-sK6" firstAttribute="trailing" secondItem="17o-aC-eU5" secondAttribute="trailing" id="WHf-lT-vem"/>
                             <constraint firstItem="xAZ-3I-TgM" firstAttribute="centerX" secondItem="17o-aC-eU5" secondAttribute="centerX" id="XDi-tX-ZsC"/>
+                            <constraint firstItem="X81-ts-thX" firstAttribute="trailing" secondItem="17o-aC-eU5" secondAttribute="trailing" id="YGn-ko-obU"/>
                             <constraint firstItem="JZA-7e-I1D" firstAttribute="bottom" secondItem="17o-aC-eU5" secondAttribute="bottom" id="bJ6-z7-MrI"/>
                             <constraint firstItem="52W-Bw-HGV" firstAttribute="top" secondItem="x2c-2h-mKi" secondAttribute="bottom" constant="8" id="d73-Ds-gN7"/>
                             <constraint firstItem="x2c-2h-mKi" firstAttribute="top" secondItem="xAZ-3I-TgM" secondAttribute="bottom" constant="8" id="iNJ-E2-63o"/>
@@ -734,7 +735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cb-hd-cRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168.80000000000001" y="750.73891625615772"/>
+            <point key="canvasLocation" x="-1986" y="1448"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="0si-75-qjB">
@@ -785,17 +786,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaY-6T-dCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-569" y="751"/>
+            <point key="canvasLocation" x="-1986" y="751"/>
+        </scene>
+        <!--Inbox-->
+        <scene sceneID="RM4-Hn-YHz">
+            <objects>
+                <tableViewController id="cVJ-RH-1ZG" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3sq-sC-0Db">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="messageCell" textLabel="3pB-79-s5X" detailTextLabel="Ffn-Q1-QHW" imageView="Bsp-WE-Uw0" style="IBUITableViewCellStyleSubtitle" id="sok-Ns-hGn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sok-Ns-hGn" id="KBS-u9-lQF">
+                                    <rect key="frame" x="0.0" y="0.0" width="327" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3pB-79-s5X">
+                                            <rect key="frame" x="51" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ffn-Q1-QHW">
+                                            <rect key="frame" x="51" y="25.333333333333332" width="32.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="blank" id="Bsp-WE-Uw0">
+                                            <rect key="frame" x="16" y="0.0" width="20" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cVJ-RH-1ZG" id="Ixr-vR-GiO"/>
+                            <outlet property="delegate" destination="cVJ-RH-1ZG" id="8oD-BJ-iw1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Inbox" id="7CK-CV-LVr"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KVY-9R-gMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-996" y="1417"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yd7-CQ-4Z5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HAz-qk-iGQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KWL-Lf-YKq">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cVJ-RH-1ZG" kind="relationship" relationship="rootViewController" id="zdm-uf-3Fc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDF-xR-4rD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-996" y="722"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Human" width="375" height="812"/>
         <image name="Location" width="375" height="812"/>
+        <image name="blank" width="375" height="812"/>
         <image name="icons8-forest-blue" width="25" height="25"/>
         <image name="icons8-forest-gray" width="25" height="25"/>
         <image name="icons8-two_hearts-blue" width="25" height="25"/>
         <image name="icons8-two_hearts-gray" width="25" height="25"/>
         <image name="launch" width="375" height="812"/>
-        <image name="pawsy text logo" width="2560" height="2560"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="y7x-YU-iYT"/>

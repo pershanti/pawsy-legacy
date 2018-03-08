@@ -19,7 +19,8 @@ pod 'GooglePlaces'
 pod 'GooglePlacePicker'
 pod 'GoogleMaps'
 pod 'DLRadioButton', '~> 1.4'
-pod "Koloda"
+pod 'Koloda'
+pod 'Atlas'
 
 
 

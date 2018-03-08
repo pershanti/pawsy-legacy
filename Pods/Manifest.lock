@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.5.1)
+  - Atlas (1.1.5):
+    - LayerKit (>= 0.26.13)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -110,6 +112,7 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.14)
   - Koloda (4.3.1):
     - pop (~> 1.0)
+  - LayerKit (0.26.14)
   - leveldb-library (1.20)
   - lottie-ios (2.1.5)
   - nanopb (0.3.8):
@@ -121,6 +124,7 @@ PODS:
   - Protobuf (3.5.0)
 
 DEPENDENCIES:
+  - Atlas
   - Cloudinary
   - DLRadioButton (~> 1.4)
   - Firebase
@@ -137,6 +141,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Atlas: 50f737bdbb8329788a8424ee104f6c20e6dad4a1
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: 84318770d120503ab1a6aaf1df777c5ca053697e
   Cloudinary: b104153aa69a73cf87a32a3e26758eaec7fcd05f
@@ -162,12 +167,13 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
+  LayerKit: 1f80c370d4f38d9b837cbb58d7220aadf4b64656
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   lottie-ios: 836cdbba92f62f3c6a00e37a4ce485321fe317cf
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
-PODFILE CHECKSUM: 7b44c467d4f73ea8333471fb092d117f2d195374
+PODFILE CHECKSUM: d7ec949a0740295605ede3dc1ead5885303c5555
 
 COCOAPODS: 1.4.0

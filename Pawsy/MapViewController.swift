@@ -62,10 +62,6 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
     func setSelectedPlace(place: GMSPlace) {
         self.selectedPlace = place
         print("place Selected", selectedPlace?.name)
-        let marker = GMSMarker(position: (self.selectedPlace?.coordinate)!)
-        marker.title = selectedPlace?.name
-        marker.snippet = selectedPlace?.formattedAddress
-        marker.map = self.gmsmapView
         self.checkInToFirebase()
         
     }
@@ -92,7 +88,6 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
     
     override func viewDidLoad() {
         navigationItem.title = "Pawsy"
-        
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
@@ -105,6 +100,7 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
                                              longitude: self.defaultLocation.coordinate.longitude,
                                              zoom: 14)
         self.gmsmapView.camera = camera
+        
         gmsmapView.settings.zoomGestures = true
         gmsmapView.settings.myLocationButton = true
         gmsmapView.settings.scrollGestures = true
@@ -118,6 +114,7 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
                 if snapshot!.documents.count != 0{
                     self.dogs = snapshot!.documents
                     for doc in self.dogs{
+                        // safe unwrap these!!!!!!
                         let latitude = doc.data()["latitude"] as! NSNumber
                         let longitude = doc.data()["longitude"] as! NSNumber
                         let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
