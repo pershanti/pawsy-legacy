@@ -8,12 +8,15 @@
 
 import UIKit
 import Firebase
+import Cloudinary
 
 class ProfileViewController: UIViewController {
     
     var dog: DocumentSnapshot?
     var photo: UIImage?
     var currentDog: DocumentReference?
+    var cloudinary: CLDCloudinary?
+    let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -31,7 +34,7 @@ class ProfileViewController: UIViewController {
     @IBAction func addFriend(_ sender: Any) {
         if self.currentDog != nil{
             let newFriendID = self.dog?.documentID
-            //send friend request
+           //make new friend request method
         }
     }
     
@@ -39,7 +42,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.profilePhoto.image = self.photo!
+        self.cloudinary  = CLDCloudinary(configuration: self.config!)
         self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.width/2
         self.profilePhoto.layer.masksToBounds = true
         self.profileName.text = dog?.data()["name"] as? String
@@ -47,6 +50,17 @@ class ProfileViewController: UIViewController {
         self.weight.text = dog?.data()["weight"] as? String
         self.gender.text = dog?.data()["gender"] as? String
         self.fixed.text = dog?.data()["fixed"] as? String
+        let photoURL = dog?.data()["photo"] as? String
+        self.cloudinary?.createDownloader().fetchImage(photoURL!, nil, completionHandler: { (image, error) in
+            if error != nil {
+                print("error")
+            }
+            if image != nil{
+                DispatchQueue.main.async {
+                    self.profilePhoto.image = image
+                }
+            }
+        })
 //        let date = dog?.data()["birthdate"] as! Date
 //        let age = date.timeIntervalSinceNow
 

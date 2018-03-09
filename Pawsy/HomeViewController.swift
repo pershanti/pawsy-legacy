@@ -13,16 +13,11 @@ import Cloudinary
 class HomeViewController: UIViewController {
     
     @IBAction func newFriends(_ sender: UIButton) {
-        let newVC = storyboard?.instantiateViewController(withIdentifier: "friends0") as! NearbyTableViewController
-        
-        newVC.currentDog = currentDog.sharedInstance.currentReference
-        self.present(newVC, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "goToNearby", sender: self)
     }
     
     @IBAction func parkButton(_ sender: UIButton) {
-        let newVC = storyboard?.instantiateViewController(withIdentifier: "map") as! MapViewController
-        newVC.currentDog = currentDog.sharedInstance.currentReference
-        self.present(newVC, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "goToMap", sender: self)
     }
     
     @IBAction func inboxButton(_ sender: UIButton) {
@@ -31,6 +26,7 @@ class HomeViewController: UIViewController {
     @IBAction func friendsButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToFriends", sender: self)
     }
+    
     @IBAction func profileButton(_ sender: UIButton) {
         let profileVC = storyboard!.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         profileVC.currentDog = currentDog.sharedInstance.currentReference
@@ -53,7 +49,7 @@ class HomeViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        print(currentDog.sharedInstance.currentReference)
+        print(currentDog.sharedInstance.currentReference?.documentID)
     }
 }
 

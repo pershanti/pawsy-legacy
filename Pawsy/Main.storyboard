@@ -268,7 +268,7 @@
             </objects>
             <point key="canvasLocation" x="780" y="741"/>
         </scene>
-        <!--matchr-->
+        <!--Nearby Table View Controller-->
         <scene sceneID="Eb8-Nq-eLh">
             <objects>
                 <tableViewController storyboardIdentifier="friends0" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Osb-TS-F7C" customClass="NearbyTableViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
@@ -291,7 +291,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Human" id="Yn7-mc-SLg">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="Human" id="Yn7-mc-SLg">
                                             <rect key="frame" x="16" y="0.0" width="50" height="107.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -311,11 +311,11 @@
                             <outlet property="delegate" destination="Osb-TS-F7C" id="7Z6-lt-6Oi"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="matchr" image="icons8-two_hearts-gray" selectedImage="icons8-two_hearts-blue" id="y21-rB-Rg5"/>
+                    <navigationItem key="navigationItem" id="bpo-e6-J8f"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zh-aN-V7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2866" y="751"/>
+            <point key="canvasLocation" x="-2488.8000000000002" y="1452.7093596059115"/>
         </scene>
         <!--Breed Table View Controller-->
         <scene sceneID="Lmv-qC-5Km">
@@ -584,8 +584,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="X81-ts-thX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAZ-3I-TgM">
-                                <rect key="frame" x="0.0" y="232" width="375" height="40"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAZ-3I-TgM">
+                                <rect key="frame" x="120.66666666666669" y="232" width="134" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Find new friends">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -603,8 +603,8 @@
                                     <action selector="logoutButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="1sZ-se-2ZU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2c-2h-mKi">
-                                <rect key="frame" x="3" y="280" width="375" height="40"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2c-2h-mKi">
+                                <rect key="frame" x="3" y="274" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="See who's at the park">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -613,8 +613,8 @@
                                     <action selector="parkButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="qtb-GW-G7T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52W-Bw-HGV">
-                                <rect key="frame" x="142" y="328" width="90" height="40"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52W-Bw-HGV">
+                                <rect key="frame" x="142" y="322" width="90" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="My Friends">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -623,8 +623,8 @@
                                     <action selector="friendsButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="HRB-Bm-QvJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bS-0O-bFv">
-                                <rect key="frame" x="0.0" y="376" width="375" height="40"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bS-0O-bFv">
+                                <rect key="frame" x="0.0" y="365" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="My Profile">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -633,8 +633,8 @@
                                     <action selector="profileButton:" destination="RcU-pX-X8T" eventType="touchUpInside" id="SRI-LC-sAP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ia-gC-f54">
-                                <rect key="frame" x="0.0" y="424" width="375" height="40"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ia-gC-f54">
+                                <rect key="frame" x="0.0" y="413" width="375" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Inbox">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -662,6 +662,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xAZ-3I-TgM" firstAttribute="top" secondItem="bRX-Im-sK6" secondAttribute="bottom" constant="65" id="1sN-zB-2vU"/>
                             <constraint firstItem="x2c-2h-mKi" firstAttribute="centerX" secondItem="17o-aC-eU5" secondAttribute="centerX" id="GcV-dl-Kzl"/>
                             <constraint firstItem="52W-Bw-HGV" firstAttribute="centerX" secondItem="17o-aC-eU5" secondAttribute="centerX" id="Jdj-dt-fqU"/>
                             <constraint firstItem="X81-ts-thX" firstAttribute="leading" secondItem="17o-aC-eU5" secondAttribute="leading" id="Jdz-G3-VwN"/>
@@ -692,6 +693,8 @@
                         <segue destination="dt1-EQ-SV3" kind="presentation" identifier="selectDogFromHome" id="bCW-Fg-ZJC"/>
                         <segue destination="NPy-QV-red" kind="presentation" identifier="goToFriends" id="Lhs-XM-k0d"/>
                         <segue destination="cLU-MB-rh6" kind="presentation" identifier="goToLaunchAfterSignOut" id="kjN-3a-uAP"/>
+                        <segue destination="PI3-7E-s1Q" kind="presentation" identifier="goToNearby" id="DQd-PM-7zb"/>
+                        <segue destination="1Og-sT-udd" kind="presentation" identifier="goToMap" id="XBT-TK-hQW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ef-Xs-s4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -785,7 +788,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cb-hd-cRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1986" y="1448"/>
+            <point key="canvasLocation" x="-1644" y="1447.536945812808"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="0si-75-qjB">
@@ -836,7 +839,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaY-6T-dCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1986" y="751"/>
+            <point key="canvasLocation" x="-1924" y="722"/>
         </scene>
         <!--Inbox-->
         <scene sceneID="RM4-Hn-YHz">
@@ -891,7 +894,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVY-9R-gMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-996" y="1417"/>
+            <point key="canvasLocation" x="-653.60000000000002" y="1416.5024630541873"/>
         </scene>
         <!--My Friends-->
         <scene sceneID="BX5-AF-wOi">
@@ -920,7 +923,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glD-cp-TtO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-126" y="1453"/>
+            <point key="canvasLocation" x="215.19999999999999" y="1452.7093596059115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yd7-CQ-4Z5">
@@ -957,6 +960,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBt-6g-1ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-126" y="722"/>
+        </scene>
+        <!--matchr-->
+        <scene sceneID="tPX-td-ukW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PI3-7E-s1Q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="matchr" image="icons8-two_hearts-gray" selectedImage="icons8-two_hearts-blue" id="y21-rB-Rg5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kni-h2-ztz">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Osb-TS-F7C" kind="relationship" relationship="rootViewController" id="5Qu-YC-cc7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Y9-wR-HrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2742" y="722"/>
         </scene>
     </scenes>
     <resources>

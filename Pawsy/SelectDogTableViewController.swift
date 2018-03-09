@@ -12,7 +12,9 @@ import Cloudinary
 
 class SelectDogTableViewController: UITableViewController {
     
+    
     var dogs: [DocumentSnapshot] = [DocumentSnapshot]()
+    var dogImages = [UIImage]()
     
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
@@ -24,8 +26,19 @@ class SelectDogTableViewController: UITableViewController {
         Firestore.firestore().collection("users").document(currentUserID).collection("dogs").getDocuments { (snap, err) in
             if snap!.documents.count > 0 {
                 for doc in snap!.documents{
-                    self.dogs.append(doc)
-                    self.tableView.reloadData()
+                    let dogID = doc.data()["dogID"] as! String
+                    Firestore.firestore().collection("dogs").document(dogID).getDocument(completion: { (snapshot, error) in
+                        if snapshot != nil{
+                            let photoURL = snapshot!.data()["photo"] as! String
+                            self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, cloudErr) in
+                                if image != nil{
+                                    self.dogImages.append(image!)
+                                    self.dogs.append(snapshot!)
+                                    self.tableView.reloadData()
+                                }
+                            })
+                        }
+                    })
                 }
             }
         }
@@ -56,14 +69,12 @@ class SelectDogTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dogCell", for: indexPath)
         let doc = self.dogs[indexPath.row]
+        let image = self.dogImages[indexPath.row]
         cell.textLabel?.text = doc.data()["name"] as? String
-        let photoURL = doc.data()["photo"] as! String
-        self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, error) in
-            DispatchQueue.main.async {
-                cell.imageView?.image = image
-            }
-        })
-
+        cell.imageView!.image = image
+         cell.imageView!.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        cell.imageView!.layer.masksToBounds = true
+        cell.imageView!.layer.cornerRadius = cell.imageView!.frame.width/2
         return cell
     }
  

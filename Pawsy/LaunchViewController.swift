@@ -61,6 +61,7 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
                         self.performSegue(withIdentifier: "selectDog", sender: nil)
                     }
                     else{
+                        currentDog.sharedInstance.currentReference =  Firestore.firestore().collection("dogs").document(snap!.documents[0].data()["dogID"] as! String)
                         self.performSegue(withIdentifier: "loggedInHome", sender: nil)
                     }
                 })

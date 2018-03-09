@@ -15,8 +15,7 @@ class NearbyTableViewController: UITableViewController {
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     var dogs = [DocumentSnapshot]()
-    var images = [UIImage]()
-    var currentDog: DocumentReference?
+    var dogPhotos = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +24,29 @@ class NearbyTableViewController: UITableViewController {
         db.getDocuments { (snapshot, error) in
             if error == nil {
                 if snapshot!.documents.count != 0{
-                    self.dogs = snapshot!.documents
-                    self.tableView.reloadData()
+                    for doc in snapshot!.documents{
+                        
+                        let photoURL = doc.data()["photo"] as! String
+                        self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, error) in
+                            if error != nil{
+                                print(error?.description)
+                            }
+                            if image != nil{
+                                self.dogs.append(doc)
+                                self.dogPhotos.append(image!)
+                                self.tableView.reloadData()
+                            }
+                        })
+                    }
                 }
             }
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dog = dogs[indexPath.row]
         let vc = storyboard?.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
         vc.dog = dog
-        vc.photo = images[indexPath.row]
         present(vc, animated: true, completion: nil)
     }
 
@@ -58,18 +67,16 @@ class NearbyTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
-
         
         let doc = self.dogs[indexPath.row]
-        let photoURL = doc.data()["photo"] as! String
-        self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, error) in
-            DispatchQueue.main.async {
-                cell.imageView?.image = image
-                self.images.append(image!)
-            }
-        })
-        cell.textLabel?.text = self.dogs[indexPath.row].data()["name"] as? String
-        cell.detailTextLabel?.text = self.dogs[indexPath.row].data()["breed"] as? String
+        let image = self.dogPhotos[indexPath.row]
+        cell.imageView!.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        cell.imageView!.image = image
+        cell.imageView!.layer.cornerRadius = cell.imageView!.frame.width/2
+        cell.imageView!.layer.masksToBounds = true
+        cell.textLabel?.text = doc.data()["name"] as? String
+        cell.detailTextLabel?.text = doc.data()["breed"] as? String
+        
         return cell
     }
 

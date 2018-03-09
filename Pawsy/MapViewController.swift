@@ -18,7 +18,7 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
     var dogs = [DocumentSnapshot]()
     var coordinates = [CLLocationCoordinate2D]()
     var checkedIn = false
-    var currentDog: DocumentReference?
+    var current: DocumentReference?
     var currentUser = Auth.auth().currentUser
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
@@ -69,7 +69,7 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
     
     func checkOutOfFirebase(){
         print("checkout function running")
-        let checkInDoc = self.currentDog?.collection("check-ins").document()
+        let checkInDoc = self.current?.collection("check-ins").document()
         checkInDoc?.setData(["placeID": self.selectedPlace?.placeID, "checkInTime": self.checkInTime!, "checkOutTime": Date()])
         self.checkedInReference?.delete()
         self.checkedInReference = nil
@@ -80,13 +80,14 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
         print("placeID: ", placeID)
         placeDoc = Firestore.firestore().collection("dogParks").document(placeID)
         placeDoc!.setData(["placeName" : self.selectedPlace!.name])
-        self.checkedInReference = placeDoc!.collection("checkedInUsers").document(self.currentDog!.documentID)
+        self.checkedInReference = placeDoc!.collection("checkedInUsers").document(self.current!.documentID)
         self.checkedInReference?.setData(["Check-In Time": Date()])
         self.checkInTime = Date()
     }
     
     
     override func viewDidLoad() {
+        self.current = currentDog.sharedInstance.currentReference
         navigationItem.title = "Pawsy"
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest

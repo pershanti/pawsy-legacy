@@ -21,6 +21,7 @@ class InboxTableViewController: UITableViewController {
     var messageChains: [messageChain] = [messageChain]()
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
+    var dogImages = [UIImage]()
     
     @IBAction func goHome(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -28,14 +29,12 @@ class InboxTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadMessages()
-        let dogID = currentDog.sharedInstance.currentReference
         self.cloudinary = CLDCloudinary(configuration: self.config!)
-        self.current = dogID
     }
     
     func loadMessages(){
         let db = Firestore.firestore()
-        let msgQuery = db.collection("messages").whereField("receiverID", isEqualTo: self.current?.documentID)
+        let msgQuery = db.collection("messages").whereField("receiverID", isEqualTo: currentDog.sharedInstance.currentReference?.documentID)
         msgQuery.getDocuments { (snapshot, error) in
             if snapshot!.documents.count > 0 {
                 for doc in snapshot!.documents{
@@ -47,19 +46,24 @@ class InboxTableViewController: UITableViewController {
                     var senderName = ""
                     let newMessage = message(content: content!, timeSent: sentTime!, timeReceived: receivedTime!, unread: unread!)
                     if !self.senders.contains(senderID!){
-                        print("hasIt")
                         let senderDoc = db.collection("dogs").document(senderID!)
                         senderDoc.getDocument(completion: { (snap, err) in
                             if snap != nil{
-                                self.senders.append(senderID!)
                                 senderName = (snap!.data()["name"] as? String)!
-                                print(senderName)
                                 newMessage.senderName = senderName
                                 let newChain = messageChain(senderName: senderName, senderID: senderID!, message: newMessage)
-                                newChain.profilePicLink = snap!.data()["photo"] as? String
-                                self.messageChains.append(newChain)
+                                newChain.profilePicLink = (snap!.data()["photo"] as? String)!
+                                
                                 print (self.messageChains.count)
-                                self.tableView.reloadData()
+                                let photoURL = newChain.profilePicLink
+                                self.cloudinary!.createDownloader().fetchImage(photoURL!, nil, completionHandler: { (image, cloudError) in
+
+                                    self.dogImages.append(image!)
+                                    self.messageChains.append(newChain)
+                                     self.senders.append(senderID!)
+                                    print ("dogImages:",self.dogImages.count)
+                                    self.tableView.reloadData()
+                                })
                             }
                         })
                     }
@@ -98,23 +102,21 @@ class InboxTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
         let msgChain = messageChains[indexPath.row]
+        
+//        label.text = msgChain.messages![msgChain.messages!.count-1].timeReceived
+        let image = self.dogImages[indexPath.row]
+        cell.imageView!.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        cell.imageView!.layer.cornerRadius = cell.imageView!.frame.width/2
+        cell.imageView!.layer.masksToBounds = true
+        cell.imageView!.image = image
         cell.textLabel!.text = msgChain.senderName
         let newString = msgChain.messages[msgChain.messages.count-1].content
         cell.detailTextLabel?.text = newString
         let label = UILabel()
         label.text = "time"
-//        label.text = msgChain.messages![msgChain.messages!.count-1].timeReceived
-        
-        let photoURL = msgChain.profilePicLink
-        self.cloudinary?.createDownloader().fetchImage(photoURL!, nil, completionHandler: { (image, error) in
-            DispatchQueue.main.async {
-                cell.imageView!.layer.cornerRadius = cell.imageView!.frame.width/2
-                cell.imageView!.layer.masksToBounds = true
-                cell.imageView!.image = image
-            }
-        })
-        
         cell.accessoryView = label
+       
+    
         return cell
     }
     
