@@ -41,6 +41,7 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
         let db = Firestore.firestore()
         let uid = self.user?.uid
         self.userDoc = db.collection("users").document(uid!)
+        let dogCollection = self.userDoc?.collection("dogs")
         self.userDoc!.getDocument { (document, error) in
             if document?.exists == false {
                 self.userDoc!.setData([
@@ -50,7 +51,19 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
                 
             }
             else {
-                self.performSegue(withIdentifier: "loggedInHome", sender: nil)
+                dogCollection?.getDocuments(completion: { (snap, err) in
+                    //if user has not added a dog, go to onboarding
+                    if snap!.documents.count == 0 {
+                        self.performSegue(withIdentifier: "goToIntro", sender: nil)
+                    }
+                        //if user has more than one dog, go to selectDog screen
+                    else if snap!.documents.count > 1 {
+                        self.performSegue(withIdentifier: "selectDog", sender: nil)
+                    }
+                    else{
+                        self.performSegue(withIdentifier: "loggedInHome", sender: nil)
+                    }
+                })
             }
         }
     }
@@ -87,4 +100,12 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     
     
     
+}
+
+class currentDog{
+    static let sharedInstance = currentDog()
+    var currentReference: DocumentReference?
+    private init(){
+        
+    }
 }

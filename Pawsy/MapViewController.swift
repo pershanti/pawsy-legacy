@@ -108,25 +108,6 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
         self.gmsmapView.clear()
         listLikelyPlaces()
         
-        let db = Firestore.firestore().collection("dogs")
-        db.getDocuments { (snapshot, error) in
-            if error == nil {
-                if snapshot!.documents.count != 0{
-                    self.dogs = snapshot!.documents
-                    for doc in self.dogs{
-                        // safe unwrap these!!!!!!
-                        let latitude = doc.data()["latitude"] as! NSNumber
-                        let longitude = doc.data()["longitude"] as! NSNumber
-                        let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
-                        let marker = GMSMarker()
-                        marker.position = coordinate
-                        marker.snippet = doc.data()["name"] as? String
-                        marker.appearAnimation = GMSMarkerAnimation.pop
-                        marker.map = self.gmsmapView
-                    }
-                }
-            }
-        }
       
         
         

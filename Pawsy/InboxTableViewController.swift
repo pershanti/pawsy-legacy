@@ -7,14 +7,20 @@
 
 import UIKit
 import Firebase
-
+import Cloudinary
 
 class InboxTableViewController: UITableViewController {
     
+    
+    //change userIDs to dogIDS, use currentDog singleton!!!
+    
     let user = Auth.auth().currentUser
+    var current: DocumentReference?
     var messages: [DocumentSnapshot]? = [DocumentSnapshot]()
     var senders: [String] = [String]()
     var messageChains: [messageChain] = [messageChain]()
+    var cloudinary: CLDCloudinary?
+    let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     
     @IBAction func goHome(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -22,11 +28,14 @@ class InboxTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadMessages()
+        let dogID = currentDog.sharedInstance.currentReference
+        self.cloudinary = CLDCloudinary(configuration: self.config!)
+        self.current = dogID
     }
     
     func loadMessages(){
         let db = Firestore.firestore()
-        let msgQuery = db.collection("messages").whereField("receiverID", isEqualTo: self.user!.uid)
+        let msgQuery = db.collection("messages").whereField("receiverID", isEqualTo: self.current?.documentID)
         msgQuery.getDocuments { (snapshot, error) in
             if snapshot!.documents.count > 0 {
                 for doc in snapshot!.documents{
@@ -39,7 +48,7 @@ class InboxTableViewController: UITableViewController {
                     let newMessage = message(content: content!, timeSent: sentTime!, timeReceived: receivedTime!, unread: unread!)
                     if !self.senders.contains(senderID!){
                         print("hasIt")
-                        let senderDoc = db.collection("users").document(senderID!)
+                        let senderDoc = db.collection("dogs").document(senderID!)
                         senderDoc.getDocument(completion: { (snap, err) in
                             if snap != nil{
                                 self.senders.append(senderID!)
@@ -47,6 +56,7 @@ class InboxTableViewController: UITableViewController {
                                 print(senderName)
                                 newMessage.senderName = senderName
                                 let newChain = messageChain(senderName: senderName, senderID: senderID!, message: newMessage)
+                                newChain.profilePicLink = snap!.data()["photo"] as? String
                                 self.messageChains.append(newChain)
                                 print (self.messageChains.count)
                                 self.tableView.reloadData()
@@ -94,6 +104,16 @@ class InboxTableViewController: UITableViewController {
         let label = UILabel()
         label.text = "time"
 //        label.text = msgChain.messages![msgChain.messages!.count-1].timeReceived
+        
+        let photoURL = msgChain.profilePicLink
+        self.cloudinary?.createDownloader().fetchImage(photoURL!, nil, completionHandler: { (image, error) in
+            DispatchQueue.main.async {
+                cell.imageView!.layer.cornerRadius = cell.imageView!.frame.width/2
+                cell.imageView!.layer.masksToBounds = true
+                cell.imageView!.image = image
+            }
+        })
+        
         cell.accessoryView = label
         return cell
     }
@@ -129,6 +149,7 @@ class messageChain {
     var senderName: String?
     var senderID: String?
     var messages: [message] = [message]()
+    var profilePicLink: String?
     init(senderName: String, senderID: String, message: message) {
         self.senderName = senderName
         self.messages.append(message)

@@ -12,23 +12,16 @@ import Cloudinary
 
 class HomeViewController: UIViewController {
     
-    var currentDog: DocumentReference?
-    var currentUser: User?
-    
-    
     @IBAction func newFriends(_ sender: UIButton) {
         let newVC = storyboard?.instantiateViewController(withIdentifier: "friends0") as! NearbyTableViewController
         
-        newVC.currentDog = self.currentDog
+        newVC.currentDog = currentDog.sharedInstance.currentReference
         self.present(newVC, animated: true, completion: nil)
     }
     
     @IBAction func parkButton(_ sender: UIButton) {
         let newVC = storyboard?.instantiateViewController(withIdentifier: "map") as! MapViewController
-        if self.currentDog != nil{
-            newVC.currentDog = self.currentDog
-        }
-        
+        newVC.currentDog = currentDog.sharedInstance.currentReference
         self.present(newVC, animated: true, completion: nil)
     }
     
@@ -36,30 +29,32 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "goToInbox", sender: self)
     }
     @IBAction func friendsButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToFriends", sender: self)
     }
     @IBAction func profileButton(_ sender: UIButton) {
+        let profileVC = storyboard!.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+        profileVC.currentDog = currentDog.sharedInstance.currentReference
+        self.present(profileVC, animated: true, completion: nil)
     }
     @IBAction func logoutButton(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        self.performSegue(withIdentifier: "goToLaunchAfterSignOut", sender: self)
+        currentDog.sharedInstance.currentReference = nil
     }
     
+    @IBAction func switchDogs(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "selectDogFromHome", sender: self)
+    }
     
     
     override func viewDidLoad() {
-        
-        self.currentUser = Auth.auth().currentUser
-        if currentDog == nil{
-   //sets the current dog as the first one on the user's dog list
-            Firestore.firestore().collection("users").document(currentUser!.uid).collection("dogs").getDocuments(completion: { (snapshot, error) in
-                if snapshot!.count > 0{
-                    self.currentDog = snapshot!.documents[0].reference
-                    print(self.currentDog?.documentID)
-                }
-            })
-        }
+        print(currentDog.sharedInstance.currentReference)
     }
-    
-    
-    
-    
-    
 }
+
+

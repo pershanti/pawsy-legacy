@@ -17,13 +17,14 @@
 		5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */; };
 		566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 566A86511FF801FF0020B6BA /* GoogleService-Info.plist */; };
 		5681CE1320510C20009856E8 /* InboxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681CE1220510C20009856E8 /* InboxTableViewController.swift */; };
+		5681CE15205258CC009856E8 /* SelectDogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681CE14205258CC009856E8 /* SelectDogTableViewController.swift */; };
+		5681CE1720526499009856E8 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681CE1620526499009856E8 /* FriendsTableViewController.swift */; };
 		568BEC80203E73CE006DB9EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568BEC7F203E73CE006DB9EB /* HomeViewController.swift */; };
 		568EF3D8204D39B1008FF81E /* PlaceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EF3D7204D39B1008FF81E /* PlaceViewControllerDelegate.swift */; };
 		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
 		569CFC5520243555009B0A6C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 569CFC5320243555009B0A6C /* Model.xcdatamodeld */; };
 		56A0C66E203BE6620006B1BE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0C66D203BE6620006B1BE /* MapViewController.swift */; };
 		56A0C670203BF90F0006B1BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */; };
-		56A6A3BA2045441400508B81 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A6A3B92045441400508B81 /* FriendsViewController.swift */; };
 		56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */; };
 		56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */; };
 		56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE52032CAEE0023C18A /* IntroViewController.swift */; };
@@ -46,6 +47,8 @@
 		5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		566A86511FF801FF0020B6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5681CE1220510C20009856E8 /* InboxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxTableViewController.swift; sourceTree = "<group>"; };
+		5681CE14205258CC009856E8 /* SelectDogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogTableViewController.swift; sourceTree = "<group>"; };
+		5681CE1620526499009856E8 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewController.swift; path = /Users/shantini/Pawsy/Pawsy/FriendsTableViewController.swift; sourceTree = "<absolute>"; };
 		568BEC7F203E73CE006DB9EB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		568BEC83203E7F7A006DB9EB /* BebasNeue Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Book.ttf"; sourceTree = "<group>"; };
 		568BEC86203E7F80006DB9EB /* BebasNeue Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Light.ttf"; sourceTree = "<group>"; };
@@ -58,7 +61,6 @@
 		569CFC5420243555009B0A6C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		56A0C66D203BE6620006B1BE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		56A6A3B92045441400508B81 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFUIAuthPicker.swift; sourceTree = "<group>"; };
 		56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		56D5FEE52032CAEE0023C18A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -127,16 +129,17 @@
 				56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */,
 				56275D9B203683E800C544BC /* BreedTableViewController.swift */,
 				56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */,
+				5681CE1620526499009856E8 /* FriendsTableViewController.swift */,
 				56D5FEE52032CAEE0023C18A /* IntroViewController.swift */,
 				56D5FEE72032CAFB0023C18A /* InputViewController.swift */,
 				56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */,
 				56275DA320379B5800C544BC /* LocationViewController.swift */,
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				569A71E42000AF4700B74517 /* Main.storyboard */,
+				5681CE14205258CC009856E8 /* SelectDogTableViewController.swift */,
 				568BEC81203E7F66006DB9EB /* Fonts */,
 				56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */,
 				568BEC7F203E73CE006DB9EB /* HomeViewController.swift */,
-				56A6A3B92045441400508B81 /* FriendsViewController.swift */,
 				5681CE1220510C20009856E8 /* InboxTableViewController.swift */,
 				562E257820382A48008C7204 /* NearbyTableViewController.swift */,
 				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
@@ -347,12 +350,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5681CE15205258CC009856E8 /* SelectDogTableViewController.swift in Sources */,
 				56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */,
+				5681CE1720526499009856E8 /* FriendsTableViewController.swift in Sources */,
 				568EF3D8204D39B1008FF81E /* PlaceViewControllerDelegate.swift in Sources */,
 				56275DA220368AD700C544BC /* BreedViewControllerDelegate.swift in Sources */,
 				562E257920382A48008C7204 /* NearbyTableViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
-				56A6A3BA2045441400508B81 /* FriendsViewController.swift in Sources */,
 				56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */,
 				56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */,
 				5681CE1320510C20009856E8 /* InboxTableViewController.swift in Sources */,

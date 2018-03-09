@@ -239,6 +239,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         let user = Auth.auth().currentUser!
         let userDoc = db.collection("users").document(user.uid)
         userDoc.collection("dogs").addDocument(data: ["dogID": dogDoc?.documentID])
+        currentDog.sharedInstance.currentReference = self.dogDoc!
         self.performSegue(withIdentifier: "loadHome", sender: nil)
         
     }
@@ -256,11 +257,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "loadHome"{
-            let destination = segue.destination as! HomeViewController
-            destination.currentDog = dogDoc
-            destination.currentUser = Auth.auth().currentUser!
-        }
+    
     }
     
     
