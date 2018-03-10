@@ -14,10 +14,8 @@ class ProfileViewController: UIViewController {
     
     var dog: DocumentSnapshot?
     var photo: UIImage?
-    var currentDog: DocumentReference?
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
-    
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -32,10 +30,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addFriendButton: UIButton!
     
     @IBAction func addFriend(_ sender: Any) {
-        if self.currentDog != nil{
-            let newFriendID = self.dog?.documentID
-           //make new friend request method
-        }
+      
     }
     
     @IBOutlet weak var message: UIButton!
@@ -43,8 +38,14 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cloudinary  = CLDCloudinary(configuration: self.config!)
-        self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.width/2
-        self.profilePhoto.layer.masksToBounds = true
+        if self.dog == nil{
+            currentDog.sharedInstance.currentReference?.getDocument(completion: { (snapshot, error) in
+                if snapshot != nil{
+                    self.dog = snapshot
+                }
+            })
+        }
+        
         self.profileName.text = dog?.data()["name"] as? String
         self.breed.text = dog?.data()["breed"] as? String
         self.weight.text = dog?.data()["weight"] as? String

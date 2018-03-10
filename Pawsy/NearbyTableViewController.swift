@@ -25,14 +25,13 @@ class NearbyTableViewController: UITableViewController {
             if error == nil {
                 if snapshot!.documents.count != 0{
                     for doc in snapshot!.documents{
-                        
+                        self.dogs.append(doc)
                         let photoURL = doc.data()["photo"] as! String
                         self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, error) in
                             if error != nil{
                                 print(error?.description)
                             }
                             if image != nil{
-                                self.dogs.append(doc)
                                 self.dogPhotos.append(image!)
                                 self.tableView.reloadData()
                             }

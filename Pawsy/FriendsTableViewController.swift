@@ -62,6 +62,7 @@ class FriendsTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 cell.imageView!.image = image
                 cell.imageView!.layer.cornerRadius = cell.imageView!.frame.width/2
+                cell.imageView!.layer.masksToBounds = true
             }
         })
         

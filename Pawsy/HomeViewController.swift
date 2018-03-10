@@ -29,7 +29,6 @@ class HomeViewController: UIViewController {
     
     @IBAction func profileButton(_ sender: UIButton) {
         let profileVC = storyboard!.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-        profileVC.currentDog = currentDog.sharedInstance.currentReference
         self.present(profileVC, animated: true, completion: nil)
     }
     @IBAction func logoutButton(_ sender: UIButton) {
