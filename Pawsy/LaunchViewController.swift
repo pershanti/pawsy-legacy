@@ -73,8 +73,10 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
         if error != nil{
             print(error.debugDescription)
         }
-        self.user = Auth.auth().currentUser
-        self.checkIfOnboarded()
+        if user != nil{
+            self.user = Auth.auth().currentUser
+            self.checkIfOnboarded()
+        }
     }
     
     func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {

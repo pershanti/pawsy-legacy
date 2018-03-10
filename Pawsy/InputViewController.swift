@@ -130,7 +130,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         }
         
         else {
-            self.inputImageView.image = UIImage(named:"pink")
+            self.inputImageView.image = UIImage(named:"purpleScreen")
             self.profilePhoto.isHidden = true
             let newFrame = CGRect(x: view.frame.width/2-100, y: view.frame.height/2-100, width: 200, height: 200)
             let lottieView = LOTAnimationView(name: "loading")
@@ -153,7 +153,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         currentInput += 1
         inputImageView.image = inputImages[currentInput]
         itemList![currentInput].isHidden = false
-        itemList![currentInput].center = view.center
+        itemList![currentInput].center.x = view.center.x
         if self.profilePhoto.isHidden == false{
             self.profilePhoto.isHidden = true
         }
@@ -165,7 +165,11 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         let image = info["UIImagePickerControllerOriginalImage"] as! UIImage
         self.photo = UIImageJPEGRepresentation(image, 1)!
         self.selectPhoto.isHidden = true
-        self.inputImageView.image = image
+        self.profilePhoto.image = image
+        self.profilePhoto.layer.masksToBounds = true
+        self.profilePhoto.frame = CGRect(x: 87, y: 200, width: 200, height: 200)
+        self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.width/2
+        
     }
     
     func setUpAlertController(){
@@ -209,7 +213,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
                 print(error!)
             }
             else{
-                self.uploadToFirebase(photoURL: String(describing: result?.resultJson["url"]!))
+                self.uploadToFirebase(photoURL: String(describing: result!.resultJson["url"]!))
                 
             }
         })
@@ -218,7 +222,6 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     
     func uploadToFirebase(photoURL: String){
         let db = Firestore.firestore()
-        
         self.dogDoc = db.collection("dogs").addDocument(data: [
             "name": self.Name.text!,
             "weight": self.Weight.text!,

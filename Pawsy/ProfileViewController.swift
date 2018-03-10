@@ -42,29 +42,30 @@ class ProfileViewController: UIViewController {
             currentDog.sharedInstance.currentReference?.getDocument(completion: { (snapshot, error) in
                 if snapshot != nil{
                     self.dog = snapshot
+                    DispatchQueue.main.async {
+                        self.profileName.text = self.dog?.data()["name"] as? String
+                        self.breed.text = self.dog?.data()["breed"] as? String
+                        self.weight.text = self.dog?.data()["weight"] as? String
+                        self.gender.text = self.dog?.data()["gender"] as? String
+                        self.fixed.text = self.dog?.data()["fixed"] as? String
+                        let photoURL = self.dog?.data()["photo"] as! String
+
+                        self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, error) in
+                            if error != nil {
+                                print(error!.description)
+                            }
+                            if image != nil{
+                                DispatchQueue.main.async {
+                                    self.profilePhoto.image = image
+                                }
+                            }
+                        })
+                    }
                 }
             })
         }
-        
-        self.profileName.text = dog?.data()["name"] as? String
-        self.breed.text = dog?.data()["breed"] as? String
-        self.weight.text = dog?.data()["weight"] as? String
-        self.gender.text = dog?.data()["gender"] as? String
-        self.fixed.text = dog?.data()["fixed"] as? String
-        let photoURL = dog?.data()["photo"] as? String
-        self.cloudinary?.createDownloader().fetchImage(photoURL!, nil, completionHandler: { (image, error) in
-            if error != nil {
-                print("error")
-            }
-            if image != nil{
-                DispatchQueue.main.async {
-                    self.profilePhoto.image = image
-                }
-            }
-        })
 //        let date = dog?.data()["birthdate"] as! Date
 //        let age = date.timeIntervalSinceNow
-
     }
 
     override func didReceiveMemoryWarning() {

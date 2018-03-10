@@ -12,6 +12,7 @@ import Cloudinary
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBAction func newFriends(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToNearby", sender: self)
     }
@@ -48,6 +49,14 @@ class HomeViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        currentDog.sharedInstance.currentReference!.getDocument(completion: { (snapshot, error) in
+            if snapshot != nil{
+                let name = snapshot?.data()["name"] as? String
+                DispatchQueue.main.async {
+                    self.nameLabel.text = name
+                }
+            }
+        })
         print(currentDog.sharedInstance.currentReference?.documentID)
     }
 }

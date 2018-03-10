@@ -17,6 +17,10 @@ class NearbyTableViewController: UITableViewController {
     var dogs = [DocumentSnapshot]()
     var dogPhotos = [UIImage]()
     
+    @IBAction func goHome(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cloudinary = CLDCloudinary(configuration: self.config!)

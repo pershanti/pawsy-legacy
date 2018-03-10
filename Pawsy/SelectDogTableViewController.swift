@@ -19,6 +19,9 @@ class SelectDogTableViewController: UITableViewController {
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     
+    @IBAction func goHomeFromDog(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cloudinary = CLDCloudinary(configuration: self.config!)
