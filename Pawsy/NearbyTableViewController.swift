@@ -14,8 +14,8 @@ class NearbyTableViewController: UITableViewController {
     
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
-    var dogs = [DocumentSnapshot]()
-    var dogPhotos = [UIImage]()
+    var dogs = [Dog]()
+    var dogForProfile: DocumentSnapshot?
     
     @IBAction func goHome(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -29,14 +29,16 @@ class NearbyTableViewController: UITableViewController {
             if error == nil {
                 if snapshot!.documents.count != 0{
                     for doc in snapshot!.documents{
-                        self.dogs.append(doc)
                         let photoURL = doc.data()["photo"] as! String
                         self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, error) in
                             if error != nil{
                                 print(error?.description)
                             }
                             if image != nil{
-                                self.dogPhotos.append(image!)
+                                let newDog = Dog()
+                                newDog.doc = doc
+                                newDog.image = image!
+                                self.dogs.append(newDog)
                                 self.tableView.reloadData()
                             }
                         })
@@ -46,11 +48,17 @@ class NearbyTableViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToProfileFromNearby"{
+            let nav = segue.destination as! UINavigationController
+            let profile = nav.childViewControllers[0] as! ProfileViewController
+            profile.dog = self.dogForProfile!
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dog = dogs[indexPath.row]
-        let vc = storyboard?.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-        vc.dog = dog
-        present(vc, animated: true, completion: nil)
+        self.dogForProfile = dogs[indexPath.row].doc
+        self.performSegue(withIdentifier: "goToProfileFromNearby", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,20 +77,50 @@ class NearbyTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! Cell
         
-        let doc = self.dogs[indexPath.row]
-        let image = self.dogPhotos[indexPath.row]
-        cell.imageView!.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        cell.imageView!.image = image
-        cell.imageView!.layer.cornerRadius = cell.imageView!.frame.width/2
-        cell.imageView!.layer.masksToBounds = true
-        cell.textLabel?.text = doc.data()["name"] as? String
-        cell.detailTextLabel?.text = doc.data()["breed"] as? String
+        let dog = self.dogs[indexPath.row]
+        cell.myimageView.image = dog.image
+        cell.setCircularImageView()
+        cell.textLabel?.text = dog.doc!.data()["name"] as? String
+        cell.detailTextLabel?.text = dog.doc!.data()["breed"] as? String
         
         return cell
     }
 
+}
+
+class Cell: UITableViewCell {
+    
+    @IBOutlet weak var myimageView: UIImageView!
+    
+    override var bounds: CGRect {
+        didSet {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.myimageView.layer.masksToBounds = true
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.setCircularImageView()
+    }
+    
+    func setCircularImageView() {
+        self.myimageView.frame = CGRect(x: 15, y: 15, width: 50, height: 50)
+        self.myimageView.layer.cornerRadius = CGFloat(roundf(Float(self.myimageView.frame.size.width / 2.0)))
+    }
+}
+
+class Dog {
+    var image: UIImage?
+    var doc: DocumentSnapshot?
 }
 
 

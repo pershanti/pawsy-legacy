@@ -41,23 +41,23 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     var dogDoc: DocumentReference?
     
     @IBAction func boy(_ sender: UIButton) {
-        self.dogGender = "boy"
+        self.dogGender = "Male"
     }
     
     @IBAction func girl(_ sender: UIButton) {
-        self.dogGender = "girl"
+        self.dogGender = "Female"
     }
     
     @IBAction func genderNeutral(_ sender: UIButton) {
-        self.dogGender = "neutral"
+        self.dogGender = "No Gender"
     }
     
     @IBAction func fixedYes(_ sender: UIButton) {
-        self.dogFixed = "yes"
+        self.dogFixed = "Yes"
     }
     
     @IBAction func fixedNo(_ sender: UIButton) {
-        self.dogFixed = "no"
+        self.dogFixed = "No"
     }
     
     

@@ -70,16 +70,41 @@ class SelectDogTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dogCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dogCell", for: indexPath) as! DogCell
         let doc = self.dogs[indexPath.row]
         let image = self.dogImages[indexPath.row]
         cell.textLabel?.text = doc.data()["name"] as? String
-        cell.imageView!.image = image
-         cell.imageView!.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        cell.imageView!.layer.masksToBounds = true
-        cell.imageView!.layer.cornerRadius = cell.imageView!.frame.width/2
+        cell.myimageView!.image = image
         return cell
     }
  
 
+}
+
+class DogCell: UITableViewCell {
+    
+    @IBOutlet weak var myimageView: UIImageView!
+    
+    override var bounds: CGRect {
+        didSet {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.myimageView.layer.masksToBounds = true
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.setCircularImageView()
+    }
+    
+    func setCircularImageView() {
+        self.myimageView.layer.frame = CGRect(x: 15, y: 15, width: 50, height: 50)
+        self.myimageView.layer.cornerRadius = CGFloat(roundf(Float(self.myimageView.frame.size.width / 2.0)))
+    }
 }

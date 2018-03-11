@@ -100,15 +100,13 @@ class InboxTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! InboxCell
         let msgChain = messageChains[indexPath.row]
         
 //        label.text = msgChain.messages![msgChain.messages!.count-1].timeReceived
         let image = self.dogImages[indexPath.row]
-        cell.imageView!.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        cell.imageView!.layer.cornerRadius = cell.imageView!.frame.width/2
-        cell.imageView!.layer.masksToBounds = true
-        cell.imageView!.image = image
+        cell.myimageView!.image = image
+        cell.setCircularImageView()
         cell.textLabel!.text = msgChain.senderName
         let newString = msgChain.messages[msgChain.messages.count-1].content
         cell.detailTextLabel?.text = newString
@@ -155,6 +153,34 @@ class messageChain {
     init(senderName: String, senderID: String, message: message) {
         self.senderName = senderName
         self.messages.append(message)
+    }
+}
+
+class InboxCell: UITableViewCell {
+    
+    @IBOutlet weak var myimageView: UIImageView!
+    
+    override var bounds: CGRect {
+        didSet {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.myimageView.layer.masksToBounds = true
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.setCircularImageView()
+    }
+    
+    func setCircularImageView() {
+        self.myimageView.frame = CGRect(x: 15, y: 15, width: 50, height: 50)
+        self.myimageView.layer.cornerRadius = CGFloat(roundf(Float(self.myimageView.frame.size.width / 2.0)))
     }
 }
 

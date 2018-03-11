@@ -29,8 +29,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func profileButton(_ sender: UIButton) {
-        let profileVC = storyboard!.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-        self.present(profileVC, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "goToProfile", sender: self)
     }
     @IBAction func logoutButton(_ sender: UIButton) {
         let firebaseAuth = Auth.auth()
