@@ -21,6 +21,7 @@ pod 'GoogleMaps'
 pod 'DLRadioButton', '~> 1.4'
 pod 'Koloda'
 pod 'Atlas'
+pod "YelpAPI"
 
 
 
