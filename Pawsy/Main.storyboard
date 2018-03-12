@@ -190,17 +190,21 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="07c-72-oif">
                         <barButtonItem key="leftBarButtonItem" title="Home" id="m3x-m4-cL2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="backButton:" destination="PEw-z4-XGo" id="CZ1-6V-5zF"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" systemItem="add" id="fyf-rN-RVX">
+                                <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="addFriend:" destination="PEw-z4-XGo" id="hHZ-EP-cDO"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="compose" id="dRm-A1-hPA"/>
+                            <barButtonItem systemItem="compose" id="dRm-A1-hPA">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -267,6 +271,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Nearby Dogs" largeTitleDisplayMode="always" id="bpo-e6-J8f">
                         <barButtonItem key="leftBarButtonItem" title="Home" id="w03-Dm-1ly">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="goHome:" destination="Osb-TS-F7C" id="omI-dJ-b7L"/>
                             </connections>
@@ -441,13 +446,13 @@
                                 </subviews>
                             </stackView>
                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="lbs." adjustsFontSizeToFit="NO" minimumFontSize="14" background="textbox" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-o7-qEy">
-                                <rect key="frame" x="100" y="401" width="175" height="19"/>
+                                <rect key="frame" x="100" y="401.66666666666669" width="175" height="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <datePicker hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bQg-rI-cBR">
-                                <rect key="frame" x="27" y="104" width="320" height="200"/>
+                                <rect key="frame" x="27.666666666666657" y="104" width="320" height="200"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -559,7 +564,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAZ-3I-TgM">
-                                <rect key="frame" x="120.66666666666669" y="234.33333333333334" width="134" height="34.000000000000028"/>
+                                <rect key="frame" x="120.66666666666669" y="234.66666666666666" width="134" height="33.999999999999972"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Find new friends">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -588,7 +593,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52W-Bw-HGV">
-                                <rect key="frame" x="142" y="318.33333333333331" width="90" height="34"/>
+                                <rect key="frame" x="142.66666666666666" y="318.66666666666669" width="90" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="My Friends">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -701,6 +706,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="wEB-n0-uFK">
+                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -715,7 +721,7 @@
                             <outlet property="delegate" destination="dt1-EQ-SV3" id="9gh-Cm-Aas"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select a dog" id="Z9N-hY-win">
+                    <navigationItem key="navigationItem" title="Select a dog" largeTitleDisplayMode="always" id="Z9N-hY-win">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="z0J-tQ-47V">
                             <connections>
                                 <action selector="goHomeFromDog:" destination="dt1-EQ-SV3" id="y4y-nz-P8D"/>
@@ -739,10 +745,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="12" sectionFooterHeight="12" translatesAutoresizingMaskIntoConstraints="NO" id="Kp1-BV-xJD">
-                                <rect key="frame" x="0.0" y="88.333333333333314" width="375" height="723.66666666666674"/>
+                                <rect key="frame" x="0.0" y="88.666666666666686" width="375" height="723.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Vso-MV-Xq7" style="IBUITableViewCellStyleDefault" id="Kry-F2-2Rq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Vso-MV-Xq7" style="IBUITableViewCellStyleDefault" id="Kry-F2-2Rq">
                                         <rect key="frame" x="0.0" y="12" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kry-F2-2Rq" id="6yz-zd-2RK">
@@ -762,7 +768,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Location to Check In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmQ-cI-ykY">
-                                <rect key="frame" x="0.0" y="44" width="375" height="20.333333333333329"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="20.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -812,8 +818,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-CX-HyT" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-CX-HyT" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -887,6 +893,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Inbox" largeTitleDisplayMode="always" id="CDf-SN-fKM">
                         <barButtonItem key="leftBarButtonItem" title="Home" id="3gO-Ez-7o5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="goHome:" destination="cVJ-RH-1ZG" id="K5J-L6-sem"/>
                             </connections>
@@ -933,9 +940,16 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HAz-qk-iGQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KWL-Lf-YKq">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="KWL-Lf-YKq">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.53725490196078429" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -951,8 +965,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NPy-QV-red" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q5B-vW-r9Q">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Q5B-vW-r9Q">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -970,9 +984,16 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PI3-7E-s1Q" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="matchr" image="icons8-two_hearts-gray" selectedImage="icons8-two_hearts-blue" id="y21-rB-Rg5"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kni-h2-ztz">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Kni-h2-ztz">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14117647058823529" green="0.792156862745098" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1007,9 +1028,16 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OpA-Ze-EPq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Parkr" image="icons8-forest-gray" selectedImage="icons8-forest-blue" id="ly6-GX-YOu"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EfL-ju-V8Y">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="EfL-ju-V8Y">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.60392156862745094" green="0.19607843137254902" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1036,6 +1064,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="TOI-Jy-cSr"/>
         <segue reference="P5O-0g-ksn"/>
         <segue reference="bCW-Fg-ZJC"/>
         <segue reference="vml-sB-mNi"/>
