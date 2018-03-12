@@ -13,10 +13,6 @@ import Cloudinary
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBAction func newFriends(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToNearby", sender: self)
-    }
-    
     @IBAction func parkButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToMap", sender: self)
     }

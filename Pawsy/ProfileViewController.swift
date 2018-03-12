@@ -20,7 +20,6 @@ class ProfileViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var profilePhoto: UIImageView!
-    @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var breed: UILabel!
     @IBOutlet weak var weight: UILabel!
     @IBOutlet weak var age: UILabel!
@@ -34,7 +33,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setLabels(){
-        self.profileName.text = self.dog?.data()["name"] as? String
+        self.navigationItem.title = self.dog?.data()["name"] as? String
         self.breed.text = self.dog?.data()["breed"] as? String
         
         if let string = self.dog?.data()["weight"] as? NSString {

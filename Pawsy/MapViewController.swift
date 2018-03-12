@@ -13,7 +13,7 @@ import GooglePlaces
 
 
 
-class MapViewController: UIViewController, PlaceViewControllerDelegate {
+class MapViewController: UIViewController, GMSMapViewDelegate {
  
     var dogs = [DocumentSnapshot]()
     var coordinates = [CLLocationCoordinate2D]()
@@ -29,11 +29,6 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
     var checkInTime: Date?
     let defaultLocation = CLLocation(latitude: 37.332239, longitude: -122.030824)
     
-    // An array to hold the list of likely places.
-    var likelyPlaces: [GMSPlace] = []
-    
-    // The currently selected place.
-    var selectedPlace: GMSPlace?
 
     @IBOutlet weak var gmsmapView: GMSMapView!
     @IBOutlet weak var checkinButtonChange: UIBarButtonItem!
@@ -42,14 +37,9 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
             self.checkedIn = true
             print("checkedIn")
             self.checkinButtonChange.title = "Check Out"
-            self.performSegue(withIdentifier: "segueToSelect", sender: self)
         }
         else{
             self.checkedIn = false
-            if self.selectedPlace != nil && self.checkedInReference != nil{
-                print("okay to go")
-                 self.checkOutOfFirebase()
-            }
             print("checkedOut")
             self.checkinButtonChange.title = "Check In"
         }
@@ -58,31 +48,24 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
     @IBAction func homeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    //PlacesViewController Delegate Function
-    func setSelectedPlace(place: GMSPlace) {
-        self.selectedPlace = place
-        print("place Selected", selectedPlace?.name)
-        self.checkInToFirebase()
-        
-    }
-    
+
     
     func checkOutOfFirebase(){
         print("checkout function running")
         let checkInDoc = self.current?.collection("check-ins").document()
-        checkInDoc?.setData(["placeID": self.selectedPlace?.placeID, "checkInTime": self.checkInTime!, "checkOutTime": Date()])
         self.checkedInReference?.delete()
         self.checkedInReference = nil
     }
     
     func checkInToFirebase(){
-        let placeID = self.selectedPlace!.placeID
-        print("placeID: ", placeID)
-        placeDoc = Firestore.firestore().collection("dogParks").document(placeID)
-        placeDoc!.setData(["placeName" : self.selectedPlace!.name])
         self.checkedInReference = placeDoc!.collection("checkedInUsers").document(self.current!.documentID)
         self.checkedInReference?.setData(["Check-In Time": Date()])
         self.checkInTime = Date()
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String,
+                 name: String, location: CLLocationCoordinate2D) {
+        print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
     }
     
     
@@ -107,44 +90,13 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
         gmsmapView.settings.scrollGestures = true
         gmsmapView.isMyLocationEnabled = true
         self.gmsmapView.clear()
-        listLikelyPlaces()
-        
-      
-        
-        
+        self.gmsmapView.delegate = self
     }
 
-    func listLikelyPlaces() {
-        // Clean up from previous sessions.
-        likelyPlaces.removeAll()
-        
-        placesClient.currentPlace(callback: { (placeLikelihoods, error) -> Void in
-            if let error = error {
-                // TODO: Handle the error.
-                print("Current Place error: \(error.localizedDescription)")
-                return
-            }
-            
-            // Get likely places and add to the list.
-            if let likelihoodList = placeLikelihoods {
-                for likelihood in likelihoodList.likelihoods {
-                    let place = likelihood.place
-                    self.likelyPlaces.append(place)
-                }
-            }
-        })
-    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToSelect" {
-            if let nextViewController = segue.destination as? PlacesViewController {
-                nextViewController.likelyPlaces = likelyPlaces
-                nextViewController.delegate = self
-            }
-        }
-
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        return true
     }
-    
     
 
     override func didReceiveMemoryWarning() {
@@ -158,9 +110,7 @@ class MapViewController: UIViewController, PlaceViewControllerDelegate {
 
 
 extension MapViewController: CLLocationManagerDelegate {
-    
-    // Handle incoming location events.
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.currentLocation = locations.last!
         print("Location: \(self.currentLocation)")
         
@@ -168,6 +118,7 @@ extension MapViewController: CLLocationManagerDelegate {
                                               longitude: self.currentLocation!.coordinate.longitude,
                                               zoom: zoomLevel)
         gmsmapView.animate(to: camera)
-        self.listLikelyPlaces()
     }
-}
+    }
+
+
