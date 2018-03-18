@@ -1,8 +1,8 @@
 //
-//  SelectDogTableViewController.swift
+//  SelectDogCollectionViewController.swift
 //  Pawsy
 //
-//  Created by Shantini Vyas on 3/8/18.
+//  Created by Shantini Persaud on 3/17/18.
 //  Copyright © 2018 Pawsy.dog. All rights reserved.
 //
 
@@ -10,19 +10,24 @@ import UIKit
 import Firebase
 import Cloudinary
 
-class SelectDogTableViewController: UITableViewController {
-    
-    
-    var dogs: [DocumentSnapshot] = [DocumentSnapshot]()
-    var dogImages = [UIImage]()
-    
-    var cloudinary: CLDCloudinary?
-    let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
-    
-    @IBAction func goHomeFromDog(_ sender: UIBarButtonItem) {
+class SelectDogViewController: UICollectionViewController, UIGestureRecognizerDelegate {
+
+    @IBAction func dismissFromDog(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+
+    @IBOutlet weak var myDogCollectionView: UICollectionView!
+
+
+    var dogs: [DocumentSnapshot] = [DocumentSnapshot]()
+    var dogImages = [UIImage]()
+    var cloudinary: CLDCloudinary?
+    let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
+   
+
     override func viewDidLoad() {
+        self.myDogCollectionView = UICollectionView(centeredCollectionViewFlowLayout: centeredCollectionViewFlowLayout)
+        
         super.viewDidLoad()
         self.cloudinary = CLDCloudinary(configuration: self.config!)
         let currentUserID = Auth.auth().currentUser!.uid
@@ -38,7 +43,7 @@ class SelectDogTableViewController: UITableViewController {
                                     DispatchQueue.main.async {
                                         self.dogImages.append(image!)
                                         self.dogs.append(snapshot!)
-                                        self.tableView.reloadData()
+                                        self.collectionView!.reloadData()
                                     }
                                 }
                             })
@@ -48,69 +53,52 @@ class SelectDogTableViewController: UITableViewController {
             }
         }
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let current = dogs[indexPath.row]
-        currentDog.sharedInstance.currentReference = current.reference
-        self.performSegue(withIdentifier: "dogSelected", sender: self)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+
+
+
+
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
         return dogs.count
     }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dogCell", for: indexPath) as! DogCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dogSelectCell", for: indexPath)
         let doc = self.dogs[indexPath.row]
         let image = self.dogImages[indexPath.row]
-        cell.textLabel?.text = doc.data()["name"] as? String
-        cell.myimageView!.image = image
+        cell.dogLabel.text = doc.data()["name"] as? String
+        cell.dogPhoto.image = image
         return cell
     }
 
-    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-
-}
-
-
-
-class DogCell: UITableViewCell {
-    
-    @IBOutlet weak var myimageView: UIImageView!
-    
-    override var bounds: CGRect {
-        didSet {
-            self.layoutIfNeeded()
+        let currentCenteredPage = centeredCollectionViewFlowLayout.currentCenteredPage
+        if currentCenteredPage != indexPath.row {
+            // trigger a scrollTo(index: animated:)
+            centeredCollectionViewFlowLayout.scrollToPage(index: indexPath.row, animated: true)
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        self.myimageView.layer.masksToBounds = true
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.setCircularImageView()
-    }
-    
-    func setCircularImageView() {
-        self.myimageView.layer.frame = CGRect(x: 15, y: 15, width: 50, height: 50)
-        self.myimageView.layer.cornerRadius = CGFloat(roundf(Float(self.myimageView.frame.size.width / 2.0)))
-    }
 }
+
+class dogSelectionCell: UICollectionViewCell{
+    
+}
+

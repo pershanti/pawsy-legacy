@@ -22,7 +22,7 @@ pod 'DLRadioButton', '~> 1.4'
 pod 'Koloda'
 pod 'Atlas'
 pod "YelpAPI"
-
+pod 'CenteredCollectionView'
 
 
 end

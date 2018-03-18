@@ -14,6 +14,9 @@ import Cloudinary
 
 class FriendsTableViewController: UITableViewController {
     
+    @IBAction func gotohome(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     var friends: [DocumentSnapshot] = [DocumentSnapshot]()
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
