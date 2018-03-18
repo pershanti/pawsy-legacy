@@ -10,24 +10,18 @@ import UIKit
 import Firebase
 import Cloudinary
 
-class SelectDogViewController: UICollectionViewController, UIGestureRecognizerDelegate {
+class SelectDogViewController: UICollectionViewController {
 
     @IBAction func dismissFromDog(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
 
-    @IBOutlet weak var myDogCollectionView: UICollectionView!
-
-
     var dogs: [DocumentSnapshot] = [DocumentSnapshot]()
     var dogImages = [UIImage]()
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
-   
 
     override func viewDidLoad() {
-        self.myDogCollectionView = UICollectionView(centeredCollectionViewFlowLayout: centeredCollectionViewFlowLayout)
-        
         super.viewDidLoad()
         self.cloudinary = CLDCloudinary(configuration: self.config!)
         let currentUserID = Auth.auth().currentUser!.uid
@@ -65,9 +59,6 @@ class SelectDogViewController: UICollectionViewController, UIGestureRecognizerDe
     }
 
 
-
-
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -80,7 +71,7 @@ class SelectDogViewController: UICollectionViewController, UIGestureRecognizerDe
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dogSelectCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dogSelectCell", for: indexPath) as! DogPhotoCollectionViewCell
         let doc = self.dogs[indexPath.row]
         let image = self.dogImages[indexPath.row]
         cell.dogLabel.text = doc.data()["name"] as? String
@@ -89,16 +80,11 @@ class SelectDogViewController: UICollectionViewController, UIGestureRecognizerDe
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        let currentCenteredPage = centeredCollectionViewFlowLayout.currentCenteredPage
-        if currentCenteredPage != indexPath.row {
-            // trigger a scrollTo(index: animated:)
-            centeredCollectionViewFlowLayout.scrollToPage(index: indexPath.row, animated: true)
-        }
+        currentDog.sharedInstance.currentReference = dogs[indexPath.row].reference
+        self.performSegue(withIdentifier: "dogSelected", sender: self)
     }
+
 }
 
-class dogSelectionCell: UICollectionViewCell{
-    
-}
+
 

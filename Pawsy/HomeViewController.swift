@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     @IBAction func profileButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToProfile", sender: self)
     }
-    @IBAction func logoutButton(_ sender: UIButton) {
+    @IBAction func logoutButton(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         currentDog.sharedInstance.currentReference = nil
     }
     
-    @IBAction func switchDogs(_ sender: UIButton) {
+    @IBAction func switchDogs(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "selectDogFromHome", sender: self)
     }
     

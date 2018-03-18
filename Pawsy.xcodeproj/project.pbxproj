@@ -32,6 +32,12 @@
 		56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */; };
 		56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE52032CAEE0023C18A /* IntroViewController.swift */; };
 		56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE72032CAFB0023C18A /* InputViewController.swift */; };
+		56FF5E2D205E2A8B00AAAEC3 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 568BEC8C203E7FCC006DB9EB /* Lobster-Regular.ttf */; };
+		56FF5E2E205E2A9000AAAEC3 /* BebasNeue Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 568BEC89203E7F85006DB9EB /* BebasNeue Bold.ttf */; };
+		56FF5E2F205E2A9000AAAEC3 /* BebasNeue Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 568BEC83203E7F7A006DB9EB /* BebasNeue Book.ttf */; };
+		56FF5E30205E2A9000AAAEC3 /* BebasNeue Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 568BEC86203E7F80006DB9EB /* BebasNeue Light.ttf */; };
+		56FF5E31205E2A9000AAAEC3 /* BebasNeue Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 568BEC88203E7F84006DB9EB /* BebasNeue Regular.ttf */; };
+		56FF5E32205E2A9000AAAEC3 /* BebasNeue Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 568BEC87203E7F82006DB9EB /* BebasNeue Thin.ttf */; };
 		5EF658A9875E659B58AECB4A /* Pods_Pawsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A10F8C70E1093DCE1DDEE8 /* Pods_Pawsy.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,7 +138,6 @@
 				5681CE1820528618009856E8 /* loading.json */,
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				569A71E42000AF4700B74517 /* Main.storyboard */,
-				565EC151205DB24A00208F0E /* SelectDogViewController.swift */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
 				5681CE1620526499009856E8 /* FriendsTableViewController.swift */,
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
@@ -151,6 +156,7 @@
 				562E257820382A48008C7204 /* NearbyTableViewController.swift */,
 				56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */,
 				5681CE14205258CC009856E8 /* SelectDogTableViewController.swift */,
+				565EC151205DB24A00208F0E /* SelectDogViewController.swift */,
 			);
 			path = Pawsy;
 			sourceTree = "<group>";
@@ -230,12 +236,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56FF5E31205E2A9000AAAEC3 /* BebasNeue Regular.ttf in Resources */,
 				564872D21FE25E9A00D292FA /* Assets.xcassets in Resources */,
+				56FF5E30205E2A9000AAAEC3 /* BebasNeue Light.ttf in Resources */,
+				56FF5E2F205E2A9000AAAEC3 /* BebasNeue Book.ttf in Resources */,
+				56FF5E2E205E2A9000AAAEC3 /* BebasNeue Bold.ttf in Resources */,
 				5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */,
 				5681CE1920528619009856E8 /* loading.json in Resources */,
+				56FF5E2D205E2A8B00AAAEC3 /* Lobster-Regular.ttf in Resources */,
 				5637DB642037DC82005C9D6E /* acrobatics.json in Resources */,
 				569A71E52000AF4700B74517 /* Main.storyboard in Resources */,
 				566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */,
+				56FF5E32205E2A9000AAAEC3 /* BebasNeue Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
