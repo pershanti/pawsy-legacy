@@ -11,8 +11,6 @@ import Firebase
 import GoogleMaps
 import GooglePlaces
 
-
-
 class MapViewController: UIViewController, GMSMapViewDelegate {
  
     var dogs = [DocumentSnapshot]()
@@ -71,20 +69,26 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         self.current = currentDog.sharedInstance.currentReference
-        navigationItem.title = "Pawsy"
+        self.getLocation()
+        
+    }
+
+
+    func getLocation(){
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        self.setUpMap()
+    }
+    func setUpMap(){
         placesClient = GMSPlacesClient.shared()
-
         let camera = GMSCameraPosition.camera(withLatitude: self.defaultLocation.coordinate.latitude,
-                                             longitude: self.defaultLocation.coordinate.longitude,
-                                             zoom: 14)
+                                              longitude: self.defaultLocation.coordinate.longitude,
+                                              zoom: 14)
         self.gmsmapView.camera = camera
-        
         gmsmapView.settings.zoomGestures = true
         gmsmapView.settings.myLocationButton = true
         gmsmapView.settings.scrollGestures = true
