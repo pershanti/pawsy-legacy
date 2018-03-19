@@ -9,27 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Atlas-AtlasResource.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Atlas.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>BoringSSL.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>CenteredCollectionView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -84,11 +69,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Koloda.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Pawsy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -99,7 +79,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>YelpAPI.xcscheme</key>
+		<key>SwiftHTTP.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -140,11 +120,6 @@
 			<false/>
 		</dict>
 		<key>nanopb.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D24D2A88B10BCFB43CA46716E6A68C14"
-               BlueprintName = "FirebaseUI-FirebaseAuthUI"
+               BlueprintIdentifier = "E9ECFB69B4288B9C6C086E0CAF3D8F60"
+               BlueprintName = "SwiftHTTP"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "FirebaseUI-FirebaseAuthUI.bundle">
+               BuildableName = "SwiftHTTP.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

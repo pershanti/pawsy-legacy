@@ -19,10 +19,6 @@ pod 'GooglePlaces'
 pod 'GooglePlacePicker'
 pod 'GoogleMaps'
 pod 'DLRadioButton', '~> 1.4'
-pod 'Koloda'
-pod 'Atlas'
-pod "YelpAPI"
-pod 'CenteredCollectionView'
-
+pod 'SwiftHTTP'
 
 end

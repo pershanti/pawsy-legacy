@@ -70,7 +70,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         self.current = currentDog.sharedInstance.currentReference
         self.getLocation()
-        
+
     }
 
 
@@ -95,6 +95,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         gmsmapView.isMyLocationEnabled = true
         self.gmsmapView.clear()
         self.gmsmapView.delegate = self
+    }
+
+    func getParks(){
+        
     }
 
     
