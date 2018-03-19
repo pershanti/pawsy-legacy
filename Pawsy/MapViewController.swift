@@ -10,9 +10,10 @@ import UIKit
 import Firebase
 import GoogleMaps
 import GooglePlaces
+import SwiftHTTP
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
- 
+
     var dogs = [DocumentSnapshot]()
     var coordinates = [CLLocationCoordinate2D]()
     var checkedIn = false
@@ -70,7 +71,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         self.current = currentDog.sharedInstance.currentReference
         self.getLocation()
-
     }
 
 
@@ -81,12 +81,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-        self.setUpMap()
+
     }
     func setUpMap(){
         placesClient = GMSPlacesClient.shared()
-        let camera = GMSCameraPosition.camera(withLatitude: self.defaultLocation.coordinate.latitude,
-                                              longitude: self.defaultLocation.coordinate.longitude,
+        let camera = GMSCameraPosition.camera(withLatitude: self.currentLocation!.coordinate.latitude,
+                                              longitude: self.currentLocation!.coordinate.longitude,
                                               zoom: 14)
         self.gmsmapView.camera = camera
         gmsmapView.settings.zoomGestures = true
@@ -95,12 +95,38 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         gmsmapView.isMyLocationEnabled = true
         self.gmsmapView.clear()
         self.gmsmapView.delegate = self
+        self.getParks()
     }
 
     func getParks(){
-        
-    }
+        let serializer = JSONParameterSerializer()
+        let radius = self.gmsmapView.getRadius()
+        let parameters = [
+            "key":"AIzaSyBi_wAJjT3NnPaX0gjpmsGE5d0UYhTNAx8",
+            "location" : "\(self.currentLocation!.coordinate.latitude), \(self.currentLocation!.coordinate.longitude)",
+            "radius" : "\(radius)",
+            "keyword" : "dog park",
+            ]
+        HTTP.GET("https://maps.googleapis.com/maps/api/place/nearbysearch/json", parameters: parameters, headers: nil) { (response) in
+            if response.error != nil{
+                print("error: ", response.error!.localizedDescription)
+                return
+            }
+            else{
+                do{
+                    let json = try JSONSerialization.jsonObject(with: response.data) as? [String: NSArray]
+                    for place in json!["results"]! {
+                        
 
+                        let newMarker = GMSMarker(position)
+                    }
+                }
+                catch{
+                    print("couldnt deserialize json")
+                }
+            }
+        }
+    }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         return true
@@ -111,14 +137,36 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
+extension GMSMapView {
+    func getCenterCoordinate() -> CLLocationCoordinate2D {
+        let centerPoint = self.center
+        let centerCoordinate = self.projection.coordinate(for: centerPoint)
+        return centerCoordinate
+    }
 
+    func getTopCenterCoordinate() -> CLLocationCoordinate2D {
+        // to get coordinate from CGPoint of your map
+        let topCenterCoor = self.convert(CGPoint(x: self.frame.size.width, y: 0), from: self)
+        let point = self.projection.coordinate(for: topCenterCoor)
+        return point
+    }
+
+    func getRadius() -> CLLocationDistance {
+        let centerCoordinate = getCenterCoordinate()
+        let centerLocation = CLLocation(latitude: centerCoordinate.latitude, longitude: centerCoordinate.longitude)
+        let topCenterCoordinate = self.getTopCenterCoordinate()
+        let topCenterLocation = CLLocation(latitude: topCenterCoordinate.latitude, longitude: topCenterCoordinate.longitude)
+        let radius = CLLocationDistance(centerLocation.distance(from: topCenterLocation))
+        return round(radius)
+    }
 }
 
 
+
 extension MapViewController: CLLocationManagerDelegate {
-        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.currentLocation = locations.last!
         print("Location: \(self.currentLocation)")
         
@@ -126,7 +174,8 @@ extension MapViewController: CLLocationManagerDelegate {
                                               longitude: self.currentLocation!.coordinate.longitude,
                                               zoom: zoomLevel)
         gmsmapView.animate(to: camera)
+         self.setUpMap()
     }
-    }
+}
 
 
