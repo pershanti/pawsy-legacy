@@ -10,6 +10,9 @@ import UIKit
 
 class DogParkViewController: UIViewController {
 
+    @IBAction func dismissButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

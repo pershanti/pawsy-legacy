@@ -11,6 +11,7 @@ import Firebase
 import GoogleMaps
 import GooglePlaces
 import SwiftHTTP
+import SwiftyJSON
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
 
@@ -99,11 +100,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
 
     func getParks(){
-        let serializer = JSONParameterSerializer()
         let radius = self.gmsmapView.getRadius()
         let parameters = [
             "key":"AIzaSyBi_wAJjT3NnPaX0gjpmsGE5d0UYhTNAx8",
-            "location" : "\(self.currentLocation!.coordinate.latitude), \(self.currentLocation!.coordinate.longitude)",
+            "location" : "\(self.gmsmapView.camera.target.latitude), \(self.gmsmapView.camera.target.longitude)",
             "radius" : "\(radius)",
             "keyword" : "dog park",
             ]
@@ -113,23 +113,29 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 return
             }
             else{
-                do{
-                    let json = try JSONSerialization.jsonObject(with: response.data) as? [String: NSArray]
-                    for place in json!["results"]! {
-                        
-
-                        let newMarker = GMSMarker(position)
+                let json = JSON(response.data)
+                let count = json["results"].array?.count
+                for number in 0...count!{
+                    let place = json["results"][number]
+                    let placeName = place["name"].string
+                    let lat  = place["geometry"]["location"]["lat"].double
+                    let lng  = place["geometry"]["location"]["lng"].double
+                    if lat != nil && lng != nil{
+                        let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: lat!,longitude: lng!))
+                        marker.snippet = placeName!
+                        marker.map = self.gmsmapView
                     }
-                }
-                catch{
-                    print("couldnt deserialize json")
                 }
             }
         }
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        return true
+    
+       return false
+    }
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        self.getParks()
     }
     
 
@@ -176,6 +182,9 @@ extension MapViewController: CLLocationManagerDelegate {
         gmsmapView.animate(to: camera)
          self.setUpMap()
     }
+
 }
+
+
 
 

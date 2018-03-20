@@ -117,6 +117,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
   - SwiftHTTP (3.0.1)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Cloudinary
@@ -132,6 +133,7 @@ DEPENDENCIES:
   - GooglePlaces
   - lottie-ios
   - SwiftHTTP
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
@@ -164,7 +166,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: bff6af42350b07f4f293633b4c78bfcaed0d8a16
+PODFILE CHECKSUM: 1481169b6d9de342168fe97402864a4deb837b55
 
 COCOAPODS: 1.4.0

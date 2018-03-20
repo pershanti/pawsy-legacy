@@ -19,6 +19,6 @@ pod 'GooglePlaces'
 pod 'GooglePlacePicker'
 pod 'GoogleMaps'
 pod 'DLRadioButton', '~> 1.4'
+pod 'SwiftyJSON'
 pod 'SwiftHTTP'
-
 end
