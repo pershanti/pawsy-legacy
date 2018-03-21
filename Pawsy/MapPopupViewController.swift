@@ -29,7 +29,6 @@ class MapPopupViewController: UIViewController {
             print("checkedIn")
             self.checkInButton.setTitle("Check Out", for: .normal)
             self.delegate!.checkIn()
-
         }
         else if self.checkedIn == true {
             self.checkedIn = false

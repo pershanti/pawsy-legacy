@@ -21,4 +21,5 @@ pod 'GoogleMaps'
 pod 'DLRadioButton', '~> 1.4'
 pod 'SwiftyJSON'
 pod 'SwiftHTTP'
+pod SendBirdSDK
 end

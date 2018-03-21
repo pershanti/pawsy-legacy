@@ -52,7 +52,6 @@ extension MapViewController{
         { (response) in
             if response.error != nil{
                 print("error: ", response.error!.localizedDescription)
-                return
             }
             else{
                 let json = JSON(response.data)
@@ -64,12 +63,14 @@ extension MapViewController{
                     let lat  = place["geometry"]["location"]["lat"].double
                     let lng  = place["geometry"]["location"]["lng"].double
                     if lat != nil && lng != nil{
-                        let coordinate = CLLocationCoordinate2D(latitude: lat!,longitude: lng!)
-                        let marker = GMSMarker(position: coordinate)
-                        marker.snippet = placeName!
-                        marker.map = self.gmsmapView
-                        let newPark = Park(placename: placeName!, id: placeID!, coordinate: coordinate)
-                        self.list_of_parks[placeName!] = newPark
+                        DispatchQueue.main.async {
+                            let coordinate = CLLocationCoordinate2D(latitude: lat!,longitude: lng!)
+                            let marker = GMSMarker(position: coordinate)
+                            marker.snippet = placeName!
+                            marker.map = self.gmsmapView
+                            let newPark = Park(placename: placeName!, id: placeID!, coordinate: coordinate)
+                            self.list_of_parks[placeName!] = newPark
+                        }
                     }
                 }
             }

@@ -49,7 +49,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
         self.newCheckIn = CheckIn(cin: Date(), place: self.clickedPark.placeID!, dog: currentDogID, name: self.clickedPark.name!)
         self.checkInReference = Firestore.firestore().collection("allCheckIns").addDocument(data: ["checkInTime" : self.newCheckIn?.checkInTime!, "placeName": self.newCheckIn?.placeName, "placeID" : self.newCheckIn?.placeID!, "dogID" : self.newCheckIn?.dogID]){ (error) in
             //add the check in to a list specific to this dog park
-
             self.dogParkReference = Firestore.firestore().collection("dogParks").document(self.clickedPark.placeID!)
             self.dogParkReference?.setData(["placeName": self.newCheckIn?.placeName, "placeID":self.newCheckIn!.placeID!])
             self.dogParkCheckInReference =  self.dogParkReference!.collection("currentCheckIns").addDocument(data: ["checkInReferenceID":self.checkInReference!.documentID])
