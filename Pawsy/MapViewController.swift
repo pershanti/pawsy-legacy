@@ -13,28 +13,28 @@ import GooglePlaces
 import SwiftHTTP
 import SwiftyJSON
 
-class MapViewController: UIViewController, GMSMapViewDelegate {
+class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewControllerDelegate, DogParkViewControllerDelegate  {
 
-    var dogs = [DocumentSnapshot]()
-    var coordinates = [CLLocationCoordinate2D]()
     var checkedIn = false
-    var current: DocumentReference?
+    var checkedInReference: DocumentReference?
+    var checkInTime: Date?
     var currentUser = Auth.auth().currentUser
-    var locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()           
     var currentLocation: CLLocation?
     var placesClient: GMSPlacesClient!
     var placeDoc: DocumentReference?
     var zoomLevel: Float = 15.0
-    var checkedInReference: DocumentReference?
-    var checkInTime: Date?
-    let defaultLocation = CLLocation(latitude: 37.332239, longitude: -122.030824)
     var list_of_parks = [String : Park]()
-    var clickedPark = Park(placename: "", id: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
-    
+    var clickedPark = Park(placename: "Select a Dog Park", id: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
+    var newCheckIn: CheckIn?
+    var checkInReference: DocumentReference?
+    var dogParkReference: DocumentReference?
+    var dogParkCheckInReference: DocumentReference?
     @IBOutlet weak var containerView: UIView!
-
     @IBOutlet weak var gmsmapView: GMSMapView!
     @IBOutlet weak var checkinButtonChange: UIBarButtonItem!
+
+    //CheckIn and Check out Button Names
     @IBAction func checkInButton(_ sender: Any) {
         if self.checkedIn == false{
             self.checkedIn = true
@@ -47,37 +47,71 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             self.checkinButtonChange.title = "Check In"
         }
     }
-    
+    //Navigation
     @IBAction func homeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
-    
-    func checkOutOfFirebase(){
-        print("checkout function running")
-        let checkInDoc = self.current?.collection("check-ins").document()
-        self.checkedInReference?.delete()
-        self.checkedInReference = nil
+    //Map Popup View Controller Delegate Functions
+    func goToParkPage() {
+        self.performSegue(withIdentifier: "goToParkPage", sender: self)
     }
-    
-    func checkInToFirebase(){
-        self.checkedInReference = placeDoc!.collection("checkedInUsers").document(self.current!.documentID)
-        self.checkedInReference?.setData(["Check-In Time": Date()])
-        self.checkInTime = Date()
+
+    func checkIn(){
+        let currentDogID = currentDog.sharedInstance.currentReference!.documentID
+        //create a new check in and add it to a list of park check ins
+        self.newCheckIn = CheckIn(cin: Date(), place: self.clickedPark.placeID!, dog: currentDogID)
+        self.checkInReference = Firestore.firestore().collection("allCheckIns").addDocument(data: ["checkInTime" : self.newCheckIn?.checkInTime!, "place" : self.newCheckIn?.placeID!, "dogID" : self.newCheckIn?.dogID]){ (error) in
+            //add the check in to a list specific to this dog park
+            self.dogParkReference = Firestore.firestore().collection("dogParks").addDocument(data: ["placeID":self.newCheckIn!.placeID!])
+            self.dogParkCheckInReference =  self.dogParkReference!.collection("currentCheckIns").addDocument(data: ["checkInReferenceID":self.checkInReference!.documentID])
+        }
     }
-    
-    func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String,
-                 name: String, location: CLLocationCoordinate2D) {
-        print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
+
+
+    func checkOut(){
+        self.newCheckIn?.checkOutTime = Date()
+        //update the checkIn to add checkOut time
+        self.checkInReference?.setData(["checkOutTime" : self.newCheckIn?.checkOutTime])
+        //add the check in ID to the park's past check in page
+        self.dogParkReference!.collection("pastCheckIns").addDocument(data: ["placeID":self.newCheckIn!.placeID])
+        //add the check in ID to the dog's past checkIn page
+        currentDog.sharedInstance.currentReference?.collection("pastCheckIns").addDocument(data: ["placeID":self.newCheckIn!.placeID]) { (error) in
+            //delete references
+            self.dogParkCheckInReference?.delete()
+            self.checkInReference = nil
+            self.dogParkReference = nil
+            self.dogParkCheckInReference = nil
+            self.newCheckIn = nil
+        }
     }
-    
-    
+
+    //Map Delegate functions
+
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        self.clickedPark = list_of_parks[marker.snippet!]!
+        let vc = self.childViewControllers[0] as! MapPopupViewController
+        vc.park = self.clickedPark
+        vc.parkPageButton.setTitleColor(UIColor.blue, for: .normal)
+        vc.dismissButton.setTitleColor(UIColor.blue, for: .normal)
+        vc.checkInButton.setTitleColor(UIColor.blue, for: .normal)
+        vc.viewDidLoad()
+        return true
+    }
+
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        getParks()
+    }
+
+    //Functions to set up the view
     override func viewDidLoad() {
-        self.current = currentDog.sharedInstance.currentReference
         self.getLocation()
+        let popup = self.childViewControllers[0] as! MapPopupViewController
+        popup.delegate = self
+        popup.park = self.clickedPark
     }
 
-
+    //Sets up location Manager
     func getLocation(){
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -85,13 +119,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-
     }
+
+    //creates the map and sets the camera on the current location
     func setUpMap(){
         placesClient = GMSPlacesClient.shared()
-        let camera = GMSCameraPosition.camera(withLatitude: self.currentLocation!.coordinate.latitude,
-                                              longitude: self.currentLocation!.coordinate.longitude,
-                                              zoom: 14)
+        let camera = GMSCameraPosition.camera(withLatitude: self.currentLocation!.coordinate.latitude, longitude: self.currentLocation!.coordinate.longitude, zoom: 14)
         self.gmsmapView.camera = camera
         gmsmapView.settings.zoomGestures = true
         gmsmapView.settings.myLocationButton = true
@@ -102,119 +135,19 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         self.getParks()
     }
 
-    func getParks(){
-        let radius = self.gmsmapView.getRadius()
-        let parameters = [
-            "key":"AIzaSyBi_wAJjT3NnPaX0gjpmsGE5d0UYhTNAx8",
-            "location" : "\(self.gmsmapView.camera.target.latitude), \(self.gmsmapView.camera.target.longitude)",
-            "radius" : "\(radius)",
-            "keyword" : "dog park",
-            ]
-        HTTP.GET("https://maps.googleapis.com/maps/api/place/nearbysearch/json", parameters: parameters, headers: nil) { (response) in
-            if response.error != nil{
-                print("error: ", response.error!.localizedDescription)
-                return
-            }
-            else{
-                let json = JSON(response.data)
-                let count = json["results"].array?.count
-                for number in 0...count!{
-                    let place = json["results"][number]
-                    let placeName = place["name"].string
-                    let placeID = place["place_id"].string
-                    let lat  = place["geometry"]["location"]["lat"].double
-                    let lng  = place["geometry"]["location"]["lng"].double
-                    if lat != nil && lng != nil{
-                        let coordinate = CLLocationCoordinate2D(latitude: lat!,longitude: lng!)
-                        let marker = GMSMarker(position: coordinate)
-                        marker.snippet = placeName!
-                        marker.map = self.gmsmapView
-                        let newPark = Park(placename: placeName!, id: placeID!, coordinate: coordinate)
-                        self.list_of_parks[placeName!] = newPark
-                    }
-                }
-            }
-        }
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        self.clickedPark = list_of_parks[marker.snippet!]!
-        return true
-    }
-    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        self.getParks()
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPopup"{
-            let popup = segue.destination as! MapPopupViewController
-            popup.park  = self.clickedPark
-        }
-        if segue.identifier == "goToParkPage"{
-            let parkPage = segue.destination as! DogParkViewController
-            parkPage.park = self.clickedPark
-        }
-
-    }
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-}
 
-extension GMSMapView {
-    func getCenterCoordinate() -> CLLocationCoordinate2D {
-        let centerPoint = self.center
-        let centerCoordinate = self.projection.coordinate(for: centerPoint)
-        return centerCoordinate
-    }
-
-    func getTopCenterCoordinate() -> CLLocationCoordinate2D {
-        // to get coordinate from CGPoint of your map
-        let topCenterCoor = self.convert(CGPoint(x: self.frame.size.width, y: 0), from: self)
-        let point = self.projection.coordinate(for: topCenterCoor)
-        return point
-    }
-
-    func getRadius() -> CLLocationDistance {
-        let centerCoordinate = getCenterCoordinate()
-        let centerLocation = CLLocation(latitude: centerCoordinate.latitude, longitude: centerCoordinate.longitude)
-        let topCenterCoordinate = self.getTopCenterCoordinate()
-        let topCenterLocation = CLLocation(latitude: topCenterCoordinate.latitude, longitude: topCenterCoordinate.longitude)
-        let radius = CLLocationDistance(centerLocation.distance(from: topCenterLocation))
-        return round(radius)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToParkPage"{
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.viewControllers[0] as! DogParkViewController
+            vc.park = self.clickedPark
+            vc.delegate = self
+        }
     }
 }
-
-
-
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.currentLocation = locations.last!
-        print("Location: \(self.currentLocation)")
-        
-        let camera = GMSCameraPosition.camera(withLatitude: self.currentLocation!.coordinate.latitude,
-                                              longitude: self.currentLocation!.coordinate.longitude,
-                                              zoom: zoomLevel)
-        gmsmapView.animate(to: camera)
-         self.setUpMap()
-    }
-
-}
-
-class Park {
-    var name: String?
-    var placeID: String?
-    var coordinates: CLLocationCoordinate2D?
-    init(placename: String, id: String, coordinate: CLLocationCoordinate2D) {
-        self.name = placename
-        self.placeID = id
-        self.coordinates = coordinate
-    }
-}
-
-
 
 

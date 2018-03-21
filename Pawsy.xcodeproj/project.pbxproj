@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5607213B20572C03009DE3DA /* DogParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5607213A20572C03009DE3DA /* DogParkViewController.swift */; };
 		560E2E342061EAB800C0CA6C /* MapPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E2E332061EAB800C0CA6C /* MapPopupViewController.swift */; };
+		560E2E36206225CA00C0CA6C /* Map Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E2E35206225CA00C0CA6C /* Map Extensions.swift */; };
+		560E2E382062260600C0CA6C /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E2E372062260600C0CA6C /* Park.swift */; };
 		56275D9C203683E800C544BC /* BreedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56275D9B203683E800C544BC /* BreedTableViewController.swift */; };
 		56275DA220368AD700C544BC /* BreedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */; };
 		56275DA420379B5800C544BC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56275DA320379B5800C544BC /* LocationViewController.swift */; };
@@ -46,6 +48,8 @@
 		07A10F8C70E1093DCE1DDEE8 /* Pods_Pawsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pawsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5607213A20572C03009DE3DA /* DogParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogParkViewController.swift; sourceTree = "<group>"; };
 		560E2E332061EAB800C0CA6C /* MapPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPopupViewController.swift; sourceTree = "<group>"; };
+		560E2E35206225CA00C0CA6C /* Map Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Map Extensions.swift"; sourceTree = "<group>"; };
+		560E2E372062260600C0CA6C /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		56275D9B203683E800C544BC /* BreedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreedTableViewController.swift; path = /Users/shantini/Pawsy/Pawsy/BreedTableViewController.swift; sourceTree = "<absolute>"; };
 		56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreedViewControllerDelegate.swift; path = /Users/shantini/Pawsy/Pawsy/BreedViewControllerDelegate.swift; sourceTree = "<absolute>"; };
 		56275DA320379B5800C544BC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -154,9 +158,11 @@
 				56D5FEE72032CAFB0023C18A /* InputViewController.swift */,
 				56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */,
 				56275DA320379B5800C544BC /* LocationViewController.swift */,
-				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
+				560E2E35206225CA00C0CA6C /* Map Extensions.swift */,
 				560E2E332061EAB800C0CA6C /* MapPopupViewController.swift */,
+				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
 				562E257820382A48008C7204 /* NearbyTableViewController.swift */,
+				560E2E372062260600C0CA6C /* Park.swift */,
 				56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */,
 				5681CE14205258CC009856E8 /* SelectDogTableViewController.swift */,
 				565EC151205DB24A00208F0E /* SelectDogViewController.swift */,
@@ -375,9 +381,11 @@
 				56275DA220368AD700C544BC /* BreedViewControllerDelegate.swift in Sources */,
 				562E257920382A48008C7204 /* NearbyTableViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
+				560E2E382062260600C0CA6C /* Park.swift in Sources */,
 				56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */,
 				56D2939D205DC0C000319D28 /* DogPhotoCollectionViewCell.swift in Sources */,
 				56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */,
+				560E2E36206225CA00C0CA6C /* Map Extensions.swift in Sources */,
 				5681CE1320510C20009856E8 /* InboxTableViewController.swift in Sources */,
 				5607213B20572C03009DE3DA /* DogParkViewController.swift in Sources */,
 				56A0C670203BF90F0006B1BE /* ProfileViewController.swift in Sources */,
