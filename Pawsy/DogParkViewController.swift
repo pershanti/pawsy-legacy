@@ -10,12 +10,15 @@ import UIKit
 
 class DogParkViewController: UIViewController {
 
+    var park: Park?
+
     @IBAction func dismissButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.title = self.park!.name
         // Do any additional setup after loading the view.
     }
 

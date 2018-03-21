@@ -28,7 +28,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var checkedInReference: DocumentReference?
     var checkInTime: Date?
     let defaultLocation = CLLocation(latitude: 37.332239, longitude: -122.030824)
+    var list_of_parks = [String : Park]()
+    var clickedPark = Park(placename: "", id: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
     
+    @IBOutlet weak var containerView: UIView!
 
     @IBOutlet weak var gmsmapView: GMSMapView!
     @IBOutlet weak var checkinButtonChange: UIBarButtonItem!
@@ -118,12 +121,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 for number in 0...count!{
                     let place = json["results"][number]
                     let placeName = place["name"].string
+                    let placeID = place["place_id"].string
                     let lat  = place["geometry"]["location"]["lat"].double
                     let lng  = place["geometry"]["location"]["lng"].double
                     if lat != nil && lng != nil{
-                        let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: lat!,longitude: lng!))
+                        let coordinate = CLLocationCoordinate2D(latitude: lat!,longitude: lng!)
+                        let marker = GMSMarker(position: coordinate)
                         marker.snippet = placeName!
                         marker.map = self.gmsmapView
+                        let newPark = Park(placename: placeName!, id: placeID!, coordinate: coordinate)
+                        self.list_of_parks[placeName!] = newPark
                     }
                 }
             }
@@ -131,11 +138,23 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-    
-       return false
+        self.clickedPark = list_of_parks[marker.snippet!]!
+        return true
     }
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         self.getParks()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPopup"{
+            let popup = segue.destination as! MapPopupViewController
+            popup.park  = self.clickedPark
+        }
+        if segue.identifier == "goToParkPage"{
+            let parkPage = segue.destination as! DogParkViewController
+            parkPage.park = self.clickedPark
+        }
+
     }
     
 
@@ -183,6 +202,17 @@ extension MapViewController: CLLocationManagerDelegate {
          self.setUpMap()
     }
 
+}
+
+class Park {
+    var name: String?
+    var placeID: String?
+    var coordinates: CLLocationCoordinate2D?
+    init(placename: String, id: String, coordinate: CLLocationCoordinate2D) {
+        self.name = placename
+        self.placeID = id
+        self.coordinates = coordinate
+    }
 }
 
 

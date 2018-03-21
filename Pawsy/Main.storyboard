@@ -662,7 +662,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3K5-DN-hso" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfE-SM-7kG">
+                                        <rect key="frame" x="0.0" y="563" width="375" height="161"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="161" id="UNz-3H-hlh"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="iRN-Zp-EHg" kind="embed" identifier="showPopup" id="NmE-Bs-xn7"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UfE-SM-7kG" secondAttribute="trailing" id="7ZE-rm-dtr"/>
+                                    <constraint firstItem="UfE-SM-7kG" firstAttribute="leading" secondItem="3K5-DN-hso" secondAttribute="leading" id="8uf-YA-V4P"/>
+                                    <constraint firstAttribute="bottom" secondItem="UfE-SM-7kG" secondAttribute="bottom" id="FBs-mm-pUG"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -688,10 +704,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="checkinButtonChange" destination="a8V-J9-AnC" id="4h8-bP-2Ou"/>
+                        <outlet property="containerView" destination="UfE-SM-7kG" id="m6Y-UL-qvt"/>
                         <outlet property="gmsmapView" destination="3K5-DN-hso" id="lyE-qb-Px6"/>
-                        <segue destination="ElP-7o-wml" kind="popoverPresentation" id="07x-96-XA0">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="ElP-7o-wml" kind="presentation" identifier="goToParkPage" id="07x-96-XA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaY-6T-dCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -998,6 +1013,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifJ-1H-EEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1615" y="-5554"/>
+        </scene>
+        <!--Map Popup View Controller-->
+        <scene sceneID="uTe-bf-3vt">
+            <objects>
+                <viewController id="iRN-Zp-EHg" customClass="MapPopupViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SdL-hL-cSQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="161"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="1XK-En-Bqk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="161"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-DS-VKM">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                                        <fontDescription key="fontDescription" name="Lobster-Regular" family="Lobster" pointSize="32"/>
+                                        <color key="textColor" red="0.21534854170000001" green="0.80420732500000003" blue="0.51005548239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="z8V-1n-5oj" customClass="MapPopupViewController">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="69"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-j5-O4P">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="69"/>
+                                                <state key="normal" title="View Park Page"/>
+                                                <connections>
+                                                    <action selector="goToParkPageButton:" destination="iRN-Zp-EHg" eventType="touchUpInside" id="bE5-jX-I4Z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvE-gA-Drq">
+                                                <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="69"/>
+                                                <state key="normal" title="Dismiss"/>
+                                                <connections>
+                                                    <action selector="dismissButton:" destination="iRN-Zp-EHg" eventType="touchUpInside" id="cBu-Jv-mYr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1XK-En-Bqk" firstAttribute="leading" secondItem="SdL-hL-cSQ" secondAttribute="leading" id="0r4-Ts-TQC"/>
+                            <constraint firstItem="1XK-En-Bqk" firstAttribute="top" secondItem="SdL-hL-cSQ" secondAttribute="top" id="2hA-ZJ-D0E"/>
+                            <constraint firstAttribute="bottom" secondItem="1XK-En-Bqk" secondAttribute="bottom" id="VGL-xk-LgL"/>
+                            <constraint firstAttribute="trailing" secondItem="1XK-En-Bqk" secondAttribute="trailing" id="hEX-zV-st2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="parkNameLabel" destination="P2b-DS-VKM" id="tsJ-DX-Z6S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkI-om-XCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5360.8000000000002" y="-4885.3448275862074"/>
         </scene>
     </scenes>
     <resources>
