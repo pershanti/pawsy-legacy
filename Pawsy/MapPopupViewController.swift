@@ -75,11 +75,13 @@ struct CheckIn {
     var checkInTime: Date?
     var checkOutTime: Date?
     var placeID: String?
+    var placeName: String?
     var dogID: String?
-    init(cin: Date, place: String, dog: String) {
+    init(cin: Date, place: String, dog: String, name: String) {
         self.checkInTime = cin
         self.placeID = place
         self.dogID = dog
+        self.placeName = name
     }
 }
 

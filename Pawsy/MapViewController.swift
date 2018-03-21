@@ -60,10 +60,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
     func checkIn(){
         let currentDogID = currentDog.sharedInstance.currentReference!.documentID
         //create a new check in and add it to a list of park check ins
-        self.newCheckIn = CheckIn(cin: Date(), place: self.clickedPark.placeID!, dog: currentDogID)
-        self.checkInReference = Firestore.firestore().collection("allCheckIns").addDocument(data: ["checkInTime" : self.newCheckIn?.checkInTime!, "place" : self.newCheckIn?.placeID!, "dogID" : self.newCheckIn?.dogID]){ (error) in
+        self.newCheckIn = CheckIn(cin: Date(), place: self.clickedPark.placeID!, dog: currentDogID, name: self.clickedPark.name!)
+        self.checkInReference = Firestore.firestore().collection("allCheckIns").addDocument(data: ["checkInTime" : self.newCheckIn?.checkInTime!, "placeName": self.newCheckIn?.placeName, "placeID" : self.newCheckIn?.placeID!, "dogID" : self.newCheckIn?.dogID]){ (error) in
             //add the check in to a list specific to this dog park
-            self.dogParkReference = Firestore.firestore().collection("dogParks").addDocument(data: ["placeID":self.newCheckIn!.placeID!])
+            self.dogParkReference = Firestore.firestore().collection("dogParks").addDocument(data: ["placeName": self.newCheckIn?.placeName, "placeID":self.newCheckIn!.placeID!])
             self.dogParkCheckInReference =  self.dogParkReference!.collection("currentCheckIns").addDocument(data: ["checkInReferenceID":self.checkInReference!.documentID])
         }
     }
@@ -74,9 +74,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
         //update the checkIn to add checkOut time
         self.checkInReference?.setData(["checkOutTime" : self.newCheckIn?.checkOutTime])
         //add the check in ID to the park's past check in page
-        self.dogParkReference!.collection("pastCheckIns").addDocument(data: ["placeID":self.newCheckIn!.placeID])
+        self.dogParkReference!.collection("pastCheckIns").addDocument(data: ["checkInID":self.checkInReference?.documentID])
         //add the check in ID to the dog's past checkIn page
-        currentDog.sharedInstance.currentReference?.collection("pastCheckIns").addDocument(data: ["placeID":self.newCheckIn!.placeID]) { (error) in
+        currentDog.sharedInstance.currentReference?.collection("pastCheckIns").addDocument(data: ["checkInID":self.checkInReference?.documentID]) { (error) in
             //delete references
             self.dogParkCheckInReference?.delete()
             self.checkInReference = nil
