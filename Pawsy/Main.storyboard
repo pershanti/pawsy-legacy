@@ -692,14 +692,8 @@
                                 <action selector="homeButton:" destination="1Og-sT-udd" id="ncn-Fu-2rS"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Check In" id="a8V-J9-AnC">
-                            <connections>
-                                <action selector="checkInButton:" destination="1Og-sT-udd" id="YZ1-R9-8y1"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="checkinButtonChange" destination="a8V-J9-AnC" id="4h8-bP-2Ou"/>
                         <outlet property="containerView" destination="UfE-SM-7kG" id="m6Y-UL-qvt"/>
                         <outlet property="gmsmapView" destination="3K5-DN-hso" id="lyE-qb-Px6"/>
                         <segue destination="ElP-7o-wml" kind="presentation" identifier="goToParkPage" id="07x-96-XA0"/>

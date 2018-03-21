@@ -15,8 +15,7 @@ import SwiftyJSON
 
 class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewControllerDelegate, DogParkViewControllerDelegate  {
 
-    var checkedIn = false
-    var checkedInReference: DocumentReference?
+
     var checkInTime: Date?
     var currentUser = Auth.auth().currentUser
     var locationManager = CLLocationManager()           
@@ -32,21 +31,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
     var dogParkCheckInReference: DocumentReference?
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var gmsmapView: GMSMapView!
-    @IBOutlet weak var checkinButtonChange: UIBarButtonItem!
 
-    //CheckIn and Check out Button Names
-    @IBAction func checkInButton(_ sender: Any) {
-        if self.checkedIn == false{
-            self.checkedIn = true
-            print("checkedIn")
-            self.checkinButtonChange.title = "Check Out"
-        }
-        else{
-            self.checkedIn = false
-            print("checkedOut")
-            self.checkinButtonChange.title = "Check In"
-        }
-    }
+
     //Navigation
     @IBAction func homeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -63,7 +49,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
         self.newCheckIn = CheckIn(cin: Date(), place: self.clickedPark.placeID!, dog: currentDogID, name: self.clickedPark.name!)
         self.checkInReference = Firestore.firestore().collection("allCheckIns").addDocument(data: ["checkInTime" : self.newCheckIn?.checkInTime!, "placeName": self.newCheckIn?.placeName, "placeID" : self.newCheckIn?.placeID!, "dogID" : self.newCheckIn?.dogID]){ (error) in
             //add the check in to a list specific to this dog park
-            self.dogParkReference = Firestore.firestore().collection("dogParks").addDocument(data: ["placeName": self.newCheckIn?.placeName, "placeID":self.newCheckIn!.placeID!])
+
+            self.dogParkReference = Firestore.firestore().collection("dogParks").document(self.clickedPark.placeID!)
+            self.dogParkReference?.setData(["placeName": self.newCheckIn?.placeName, "placeID":self.newCheckIn!.placeID!])
             self.dogParkCheckInReference =  self.dogParkReference!.collection("currentCheckIns").addDocument(data: ["checkInReferenceID":self.checkInReference!.documentID])
         }
     }
@@ -72,7 +60,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
     func checkOut(){
         self.newCheckIn?.checkOutTime = Date()
         //update the checkIn to add checkOut time
-        self.checkInReference?.setData(["checkOutTime" : self.newCheckIn?.checkOutTime])
+        self.checkInReference?.updateData(["checkOutTime" : self.newCheckIn?.checkOutTime])
         //add the check in ID to the park's past check in page
         self.dogParkReference!.collection("pastCheckIns").addDocument(data: ["checkInID":self.checkInReference?.documentID])
         //add the check in ID to the dog's past checkIn page

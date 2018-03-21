@@ -14,6 +14,8 @@ class MapPopupViewController: UIViewController {
 
     var park: Park?
     var delegate: MapPopupViewControllerDelegate?
+    var checkedIn = false
+    var checkedInReference: DocumentReference?
 
 
     @IBOutlet weak var parkPageButton: UIButton!
@@ -22,12 +24,17 @@ class MapPopupViewController: UIViewController {
     @IBOutlet weak var checkInButton: UIButton!
 
     @IBAction func checkInButtonPressed(_ sender: UIButton) {
-        if checkInButton.titleLabel?.text == "Check In"{
-            checkInButton.titleLabel?.text = "Check Out"
+        if self.checkedIn == false{
+            self.checkedIn = true
+            print("checkedIn")
+            self.checkInButton.setTitle("Check Out", for: .normal)
             self.delegate!.checkIn()
+
         }
-        else{
-            checkInButton.titleLabel?.text = "Check In"
+        else if self.checkedIn == true {
+            self.checkedIn = false
+            print("checkedOut")
+            self.checkInButton.setTitle("Check In", for: .normal)
             self.delegate!.checkOut()
         }
     }
