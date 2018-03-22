@@ -48,6 +48,10 @@ class MapPopupViewController: UIViewController {
         self.checkInButton.setTitleColor(UIColor.white, for: .normal)
     }
 
+    func checkIfCheckedIn(){
+        self.delegate!.checkIfCheckedIn()
+    }
+
 
 
     override func viewDidLoad() {
@@ -56,6 +60,7 @@ class MapPopupViewController: UIViewController {
             self.park = Park(placename: "Select a Dog Park", id: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
         }
         self.parkNameLabel.text = park!.name
+
 
     }
 
@@ -95,6 +100,7 @@ protocol MapPopupViewControllerDelegate {
     func goToParkPage()
     func checkIn()
     func checkOut()
+    func checkIfCheckedIn()
 }
 
 
