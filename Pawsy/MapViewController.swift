@@ -52,12 +52,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
     func checkIn(){
         let currentDogID = currentDog.sharedInstance.currentReference!.documentID
         //check if child view controller knows it's checked in
-
+        print("this function is called")
+        print("check in reference document id:", self.checkInReference?.documentID)
         //create a new check in and add it to a list of park check ins
         if self.checkInReference == nil{
+            print("checkInReference is Nil")
             self.newCheckIn = CheckIn(cin: Date(), place: self.clickedPark.placeID!, dog: currentDogID, name: self.clickedPark.name!)
             self.checkInReference = self.db.collection("allCheckIns").addDocument(data: ["checkInTime" : self.newCheckIn!.checkInTime!, "placeName": self.newCheckIn!.placeName!, "placeID" : self.newCheckIn!.placeID!, "dogID" : self.newCheckIn!.dogID!]){ (error) in
-
+                print("creating new check ins")
                 //add the check in to a list specific to this dog park
                 self.dogParkReference = self.db.collection("dogParks").document(self.clickedPark.placeID!)
                 self.dogParkReference?.setData(["placeName": self.newCheckIn!.placeName!, "placeID":self.newCheckIn!.placeID!])
@@ -74,10 +76,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
 
 
         else{
-            ("check in else initiated")
+            print("check in else initiated")
             //add the check in to a list specific to this dog park
             self.checkInReference!.getDocument(completion: { (snapshot, error) in
-                if error != nil{
+                if error == nil{
+                    print("got check in document")
                     self.checkInDocument = snapshot!
                     self.checkedInParkPlaceID = self.checkInDocument!.data()["placeID"] as! String
                     //set dogParkReference
@@ -98,6 +101,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
 
                     })
                 }
+                else{
+                    print(error?.localizedDescription)
+                }
             })
 
         }
@@ -106,9 +112,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
 
 
     func checkOut(){
-        self.newCheckIn?.checkOutTime = Date()
         //update the checkIn to add checkOut time
-        self.checkInReference?.updateData(["checkOutTime" : self.newCheckIn!.checkOutTime!])
+        self.checkInReference?.updateData(["checkOutTime" : Date()])
         //add the check in ID to the park's past check in page
         self.dogParkReference!.collection("pastCheckIns").addDocument(data: ["checkInID":self.checkInReference!.documentID])
         //delete references
@@ -131,6 +136,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
                 print("thereIsACurrentCheckIn")
                 self.dogCurrentCheckInsReference = snap!.documents[0].reference
                 let checkInID = snap!.documents[0].data()["checkInReferenceID"] as! String
+                print (checkInID)
                 self.checkInReference = self.db.collection("allCheckIns").document(checkInID)
                 self.checkIn()
             }
