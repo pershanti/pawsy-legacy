@@ -14,6 +14,7 @@ class DogParkViewController: UIViewController {
 
     //info to show: # dogs checked in for less than 30 min, link to list of dogs, link to group chat
 
+    @IBOutlet weak var chatFrame: UIView!
     @IBOutlet weak var checkInButton: UIBarButtonItem!
     var park: Park?
     var checkInReferenceDocs =  [DocumentSnapshot]()
@@ -30,7 +31,6 @@ class DogParkViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.navigationItem.title = self.park!.name
         self.getCurrentCheckIns()
@@ -51,7 +51,7 @@ class DogParkViewController: UIViewController {
         checkInQuery.getDocuments { (Snapshot, error) in
             if Snapshot!.documents.count > 0 {
                 let doc = Snapshot!.documents[0].reference
-                doc.collection("currentCheckIns").addSnapshotListener( { (snap2, error2) in
+                doc.collection("currentCheckIns").getDocuments( completion: { (snap2, error2) in
                     if snap2!.documents.count > 0{
                         self.checkInReferenceDocs = snap2!.documents
                         DispatchQueue.main.async {
@@ -81,6 +81,25 @@ class DogParkViewController: UIViewController {
             })
         }
 
+    }
+
+    func setUpChat(){
+        let block = NM.publicThread().createPublicThread(withName: self.park!.name, entityID: self.park!.placeID, isHidden: false).thenOnMain
+        block!({(result:Any?) -> Any? in
+            if let thread = result as! PThread? {
+                DispatchQueue.main.async {
+                    let vc  = BInterfaceManager().a.chatViewController(with: thread)
+                    self.addChildViewController(vc!)
+
+                    vc!.view.frame = self.chatFrame.frame
+                    self.chatFrame.addSubview(vc!.view())
+                    vc!.didMove(toParentViewController: self)
+                }
+            }
+            return result
+        }, {(error: Error?) -> Any? in
+            return error
+        })
     }
     
 

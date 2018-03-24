@@ -240,13 +240,13 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         let userDoc = db.collection("users").document(self.user.uid)
         userDoc.collection("dogs").addDocument(data: ["dogID": dogDoc?.documentID])
         currentDog.sharedInstance.currentReference = self.dogDoc!
-        self.signUpForChat()
+        self.signUpForChat(url: photoURL)
         self.performSegue(withIdentifier: "loadHome", sender: nil)
         
     }
-    func signUpForChat(){
-        let details = BAccountDetails.signUp(self.user.uid, password: currentDog.sharedInstance.currentReference?.documentID)
-        NM.auth().authenticate(details)
+    func signUpForChat(url: String){
+        BIntegrationHelper.authenticate(withToken: self.user.uid)
+        BIntegrationHelper.updateUser(withName: self.Name.text!, image: self.profilePhoto.image, url: url)
     }
     
     override func viewDidLoad() {

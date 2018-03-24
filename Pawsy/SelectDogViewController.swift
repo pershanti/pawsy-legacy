@@ -24,7 +24,7 @@ class SelectDogViewController: UICollectionViewController {
     var dogImages = [UIImage]()
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
-    var user = Auth.auth().currentUser
+    var userID = Auth.auth().currentUser!.uid
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +58,11 @@ class SelectDogViewController: UICollectionViewController {
 
     }
 
+    func setUpChat(token: String, photo: UIImage, url: String, name: String){
+        BIntegrationHelper.authenticate(withToken: token)
+        BIntegrationHelper.updateUser(withName: name, image: photo, url: url)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
@@ -67,11 +72,6 @@ class SelectDogViewController: UICollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
-    }
-    
-    func signIntoChat(){
-        let details = BAccountDetails.username(self.user!.uid, password: currentDog.sharedInstance.currentReference?.documentID)
-        NM.auth().authenticate(details)
     }
 
 
@@ -91,7 +91,11 @@ class SelectDogViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentDog.sharedInstance.currentReference = dogs[indexPath.row].reference
-        self.signIntoChat()
+        let image = self.dogImages[indexPath.row]
+        let refID = dogs[indexPath.row].documentID
+        let imageURL = dogs[indexPath.row].data()!["photo"] as! String
+        let name = dogs[indexPath.row].data()!["name"] as! String
+        self.setUpChat(token: refID, photo: image, url: imageURL, name: name)
         self.performSegue(withIdentifier: "dogSelected", sender: self)
     }
 

@@ -818,12 +818,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ka0-pQ-2sU">
+                                <rect key="frame" x="0.0" y="375" width="375" height="395"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="395" id="yWz-9C-90D"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="2Bt-q5-PfA" kind="embed" id="sYk-SL-MpP"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pq0-Iw-eNj" firstAttribute="leading" secondItem="7xL-hF-NlQ" secondAttribute="leading" constant="16" id="5sd-Pr-ASH"/>
+                            <constraint firstItem="ka0-pQ-2sU" firstAttribute="leading" secondItem="7xL-hF-NlQ" secondAttribute="leading" id="Qzh-7J-eW8"/>
+                            <constraint firstItem="7xL-hF-NlQ" firstAttribute="bottom" secondItem="ka0-pQ-2sU" secondAttribute="bottom" constant="8" id="T2Y-0s-zTc"/>
                             <constraint firstItem="7xL-hF-NlQ" firstAttribute="trailing" secondItem="pq0-Iw-eNj" secondAttribute="trailing" constant="16" id="Vid-QX-PJS"/>
                             <constraint firstItem="pq0-Iw-eNj" firstAttribute="top" secondItem="7xL-hF-NlQ" secondAttribute="top" constant="36" id="sb9-05-ZpK"/>
+                            <constraint firstItem="ka0-pQ-2sU" firstAttribute="trailing" secondItem="7xL-hF-NlQ" secondAttribute="trailing" id="uGT-r9-1kP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7xL-hF-NlQ"/>
                     </view>
@@ -840,6 +852,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="chatFrame" destination="ka0-pQ-2sU" id="TpV-Te-7sO"/>
                         <outlet property="checkInButton" destination="1dl-kg-yXk" id="QFy-BL-RGw"/>
                         <outlet property="checkedInLabel" destination="TYE-T9-9NP" id="owA-4y-s7i"/>
                         <outlet property="lessThan30MinLabel" destination="4Ti-ZD-BL1" id="IxO-A1-VJs"/>
@@ -1105,6 +1118,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkI-om-XCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5948" y="-4827"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="t0B-fA-lQL">
+            <objects>
+                <viewController id="2Bt-q5-PfA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sqM-2I-fog">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="395"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OW2-5i-3Oh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6991" y="-4741"/>
         </scene>
     </scenes>
     <resources>

@@ -108,6 +108,7 @@ extension MapViewController: MapPopupViewControllerDelegate, DogParkViewControll
                     print("got check in document")
                     self.checkInDocument = snapshot!
                     self.checkedInParkPlaceID = self.checkInDocument!.data()!["placeID"] as! String
+                    let placeName = self.checkInDocument!.data()!["placeName"] as! String
                     //set dogParkReference
                     //set dogParkCheckInReference
                     self.dogParkReference = self.db.collection("dogParks").document(self.checkedInParkPlaceID!)
@@ -119,6 +120,8 @@ extension MapViewController: MapPopupViewControllerDelegate, DogParkViewControll
                                 if vc.checkedIn == false{
                                     vc.checkedIn = true
                                     vc.checkInButton.setTitle("Check Out", for: .normal)
+                                    self.gmsmapView.isUserInteractionEnabled = false
+                                    self.clickedPark = self.list_of_parks[placeName]!
                                 }
                             }
                         }

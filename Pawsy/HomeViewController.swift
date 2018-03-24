@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
         }
         self.performSegue(withIdentifier: "goToLaunchAfterSignOut", sender: self)
         currentDog.sharedInstance.currentReference = nil
+        NM.auth().logout()
     }
     
     @IBAction func switchDogs(_ sender: UIBarButtonItem) {

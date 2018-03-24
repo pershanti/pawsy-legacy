@@ -33,10 +33,6 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
         self.checkIfLoggedIn()
     }
 
-    func signIntoChat(){
-        let details = BAccountDetails.username(self.user!.uid, password: currentDog.sharedInstance.currentReference?.documentID)
-        NM.auth().authenticate(details)
-    }
 
     func checkIfLoggedIn(){
         Auth.auth().addStateDidChangeListener { (auth, user) in
@@ -75,14 +71,8 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
                     if snap!.documents.count == 0 {
                         self.performSegue(withIdentifier: "goToIntro", sender: nil)
                     }
-                        //if user has more than one dog, go to selectDog screen
-                    else if snap!.documents.count > 1 {
-                        self.performSegue(withIdentifier: "selectDog", sender: nil)
-                    }
                     else{
-                        currentDog.sharedInstance.currentReference =  Firestore.firestore().collection("dogs").document(snap!.documents[0].data()["dogID"] as! String)
-                        self.signIntoChat()
-                        self.performSegue(withIdentifier: "loggedInHome", sender: nil)
+                        self.performSegue(withIdentifier: "selectDog", sender: nil)
                     }
                 })
             }
