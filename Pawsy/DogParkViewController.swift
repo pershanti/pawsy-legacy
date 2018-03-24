@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ChatSDK
 
 class DogParkViewController: UIViewController {
 
@@ -29,9 +30,12 @@ class DogParkViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.navigationItem.title = self.park!.name
         self.getCurrentCheckIns()
+        let config = BConfiguration()
+
         // Do any additional setup after loading the view.
     }
 
@@ -39,9 +43,11 @@ class DogParkViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
     
     func getCurrentCheckIns(){
-        let checkInQuery = Firestore.firestore().collection("dogParks").whereField("placeID", isEqualTo: self.park?.placeID)
+        let checkInQuery = Firestore.firestore().collection("dogParks").whereField("placeID", isEqualTo: self.park?.placeID as Any)
         checkInQuery.getDocuments { (Snapshot, error) in
             if Snapshot!.documents.count > 0 {
                 let doc = Snapshot!.documents[0].reference
@@ -61,9 +67,9 @@ class DogParkViewController: UIViewController {
         self.checkedInLabel.text = String(describing: self.checkInReferenceDocs.count)
         self.lessThan30 = 0
         for checkIn in self.checkInReferenceDocs{
-            let id = checkIn.data()["checkInReferenceID"] as! String
+            let id = checkIn.data()!["checkInReferenceID"] as! String
             Firestore.firestore().collection("allCheckIns").document(id).getDocument(completion: { (snapshot, error) in
-                let checkInTime = snapshot!.data()["checkInTime"] as! Date
+                let checkInTime = snapshot!.data()!["checkInTime"] as! Date
                 let difference = -(checkInTime.timeIntervalSinceNow)
                 print(difference)
                 if Int(difference) < 1800{
@@ -89,4 +95,5 @@ class DogParkViewController: UIViewController {
 protocol DogParkViewControllerDelegate {
     func checkIn()
     func checkOut()
+    func checkIfCheckedIn()
 }

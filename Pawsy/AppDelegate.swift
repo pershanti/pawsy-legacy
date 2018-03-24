@@ -18,6 +18,8 @@ import FirebaseFacebookAuthUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
+
     
     var window: UIWindow?
     
@@ -26,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = Firestore.firestore()
         GMSServices.provideAPIKey("AIzaSyB6f2XjcMcpGIQ1WfuvnU6_GBJtUSSErNM")
         GMSPlacesClient.provideAPIKey("AIzaSyCzWzZga1bxo6c6AosjoSMfpmc6OzNA7vw")
+
         return true
     }
     

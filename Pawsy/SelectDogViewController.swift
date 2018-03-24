@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChatSDK
 import Firebase
 import Cloudinary
 
@@ -15,11 +16,15 @@ class SelectDogViewController: UICollectionViewController {
     @IBAction func dismissFromDog(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    @IBAction func addNewDog(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "addNewDog", sender: self)
+    }
 
     var dogs: [DocumentSnapshot] = [DocumentSnapshot]()
     var dogImages = [UIImage]()
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
+    var user = Auth.auth().currentUser
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +36,7 @@ class SelectDogViewController: UICollectionViewController {
                     let dogID = doc.data()["dogID"] as! String
                     Firestore.firestore().collection("dogs").document(dogID).getDocument(completion: { (snapshot, error) in
                         if snapshot != nil{
-                            let photoURL = snapshot!.data()["photo"] as! String
+                            let photoURL = snapshot!.data()!["photo"] as! String
                             self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, cloudErr) in
                                 if image != nil{
                                     DispatchQueue.main.async {
@@ -63,6 +68,11 @@ class SelectDogViewController: UICollectionViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    func signIntoChat(){
+        let details = BAccountDetails.username(self.user!.uid, password: currentDog.sharedInstance.currentReference?.documentID)
+        NM.auth().authenticate(details)
+    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -74,13 +84,14 @@ class SelectDogViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dogSelectCell", for: indexPath) as! DogPhotoCollectionViewCell
         let doc = self.dogs[indexPath.row]
         let image = self.dogImages[indexPath.row]
-        cell.dogLabel.text = doc.data()["name"] as? String
+        cell.dogLabel.text = doc.data()!["name"] as? String
         cell.dogPhoto.image = image
         return cell
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentDog.sharedInstance.currentReference = dogs[indexPath.row].reference
+        self.signIntoChat()
         self.performSegue(withIdentifier: "dogSelected", sender: self)
     }
 

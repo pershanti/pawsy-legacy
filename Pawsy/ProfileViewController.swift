@@ -33,23 +33,23 @@ class ProfileViewController: UIViewController {
     }
     
     func setLabels(){
-        self.navigationItem.title = self.dog?.data()["name"] as? String
-        self.breed.text = self.dog?.data()["breed"] as? String
+        self.navigationItem.title = self.dog?.data()!["name"] as? String
+        self.breed.text = self.dog?.data()!["breed"] as? String
         
-        if let string = self.dog?.data()["weight"] as? NSString {
-            self.weight.text = self.dog?.data()["weight"] as! String + " lbs."
+        if let string = self.dog!.data()!["weight"] as? NSString {
+            self.weight.text = self.dog?.data()!["weight"] as! String + " lbs."
         }
         else{
-            self.weight.text = (self.dog?.data()["weight"] as! NSNumber).stringValue + " lbs."
+            self.weight.text = (self.dog!.data()!["weight"] as! NSNumber).stringValue + " lbs."
         }
-        self.gender.text = self.dog?.data()["gender"] as? String
-        if self.dog?.data()["fixed"] as? String == "Yes"{
+        self.gender.text = self.dog!.data()!["gender"] as? String
+        if self.dog!.data()!["fixed"] as? String == "Yes"{
             self.fixed.text = "Fixed"
         }
         else{
             self.fixed.text = "Not Fixed"
         }
-        let photoURL = self.dog?.data()["photo"] as! String
+        let photoURL = self.dog!.data()!["photo"] as! String
         
         self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, error) in
             if error != nil {
@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController {
             }
         })
     
-        let date = self.dog?.data()["birthdate"] as? Date
+        let date = self.dog?.data()!["birthdate"] as? Date
             let components = Calendar.current.dateComponents([.year, .month], from: date!, to: Date())
             if components.year! < 1{
                 self.age.text = String(describing: components.month!) + " months old"

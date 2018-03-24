@@ -9,6 +9,7 @@
 
 import UIKit
 import CoreData
+import ChatSDK
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
@@ -22,21 +23,40 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     var user: User?
     let providers: [FUIAuthProvider] = [
         FUIGoogleAuth(),
-        FUIFacebookAuth(),
+        FUIFacebookAuth()
 
     ]
     var userDoc: DocumentReference?
+    var isLoggedIn = false
     
     @IBAction func signUpButton(_ sender: UIButton) {
-        authUI = FUIAuth.defaultAuthUI()
-        authUI?.delegate = self
-        authUI?.providers = self.providers
-        
-        let authViewController = authUI!.authViewController()
-        authViewController.delegate = self
-        present(authViewController, animated: true, completion: nil)
+        self.checkIfLoggedIn()
     }
-    
+
+    func signIntoChat(){
+        let details = BAccountDetails.username(self.user!.uid, password: currentDog.sharedInstance.currentReference?.documentID)
+        NM.auth().authenticate(details)
+    }
+
+    func checkIfLoggedIn(){
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil{
+                self.user = user!
+                self.isLoggedIn = true
+                self.checkIfOnboarded()
+            }
+            else{
+                self.isLoggedIn = false
+                self.authUI = FUIAuth.defaultAuthUI()
+                self.authUI?.delegate = self
+                self.authUI?.providers = self.providers
+                let authViewController = self.authUI!.authViewController()
+                authViewController.delegate = self
+                self.present(authViewController, animated: true, completion: nil)
+            }
+        }
+    }
+
     func checkIfOnboarded() {
         let db = Firestore.firestore()
         let uid = self.user?.uid
@@ -48,7 +68,6 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
                     "name": self.user?.displayName as Any,
                     ])
                 self.performSegue(withIdentifier: "goToIntro", sender: nil)
-                
             }
             else {
                 dogCollection?.getDocuments(completion: { (snap, err) in
@@ -62,6 +81,7 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
                     }
                     else{
                         currentDog.sharedInstance.currentReference =  Firestore.firestore().collection("dogs").document(snap!.documents[0].data()["dogID"] as! String)
+                        self.signIntoChat()
                         self.performSegue(withIdentifier: "loggedInHome", sender: nil)
                     }
                 })

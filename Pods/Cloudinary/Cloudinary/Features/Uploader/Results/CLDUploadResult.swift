@@ -24,7 +24,7 @@
 
 import Foundation
 
-@objc open class CLDUploadResult: CLDBaseResult {
+@objcMembers open class CLDUploadResult: CLDBaseResult {
     
     
     // MARK: - Getters
@@ -70,6 +70,17 @@ import Foundation
     
     open var moderation: AnyObject? {
         return getParam(.moderation)
+    }
+
+    open var accessControl: ([CLDAccessControlRule])? {
+        if let rules = getParam(.accessControl) as? [[String: String]] {
+            let result:[CLDAccessControlRule] = rules.flatMap{fromJson(object: $0)}
+            if !result.isEmpty {
+                return result
+            }
+        }
+
+        return nil
     }
 
     open var context: [String:[String:String]]? {
@@ -191,7 +202,7 @@ import Foundation
 
 // MARK: - Video Result
 
-@objc open class CLDVideo: CLDBaseResult {
+@objcMembers open class CLDVideo: CLDBaseResult {
     
     open var format: String? {
         return getParam(.pixFormat) as? String
@@ -229,7 +240,7 @@ import Foundation
     }
 }
 
-@objc open class CLDAudio: CLDBaseResult {
+@objcMembers open class CLDAudio: CLDBaseResult {
     
     open var codec: String? {
         return getParam(.codec) as? String

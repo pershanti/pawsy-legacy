@@ -27,7 +27,7 @@ import Foundation
 /**
  The CLDTransformation class represents a full transformation performed by Cloudinay on-the-fly on a certain asset.
  */
-@objc open class CLDTransformation: NSObject {
+@objcMembers open class CLDTransformation: NSObject {
     
     fileprivate var currentTransformationParams: [String : String] = [:]
     fileprivate var transformations: [[String : String]] = []
@@ -1557,12 +1557,13 @@ import Foundation
     // MARK: Gravity
     
     @objc public enum CLDGravity: Int, CustomStringConvertible {
-        case center, face, faceCenter, faces, facesCenter, advFace, advFaces, advEyes, north, northWest, northEast, south, southWest, southEast, east, west, xyCenter, custom, customFace, customFaces, customAdvFace, customAdvFaces
+        case center, auto, face, faceCenter, faces, facesCenter, advFace, advFaces, advEyes, north, northWest, northEast, south, southWest, southEast, east, west, xyCenter, custom, customFace, customFaces, customAdvFace, customAdvFaces
         
         public var description: String {
             get {
                 switch self {
                 case .center:           return "center"
+                case .auto:             return "auto"
                 case .face:             return "face"
                 case .faceCenter:       return "faceCenter"
                 case .faces:            return "faces"

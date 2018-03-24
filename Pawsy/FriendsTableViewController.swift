@@ -57,10 +57,10 @@ class FriendsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
         let doc = self.friends[indexPath.row]
-        cell.textLabel!.text = doc.data()["name"] as? String
-        cell.detailTextLabel!.text = doc.data()["breed"] as? String
+        cell.textLabel!.text = doc.data()!["name"] as? String
+        cell.detailTextLabel!.text = doc.data()!["breed"] as? String
         
-        let photoURL = doc.data()["photo"] as! String
+        let photoURL = doc.data()!["photo"] as! String
         self.cloudinary?.createDownloader().fetchImage(photoURL, nil, completionHandler: { (image, error) in
             DispatchQueue.main.async {
                 cell.imageView!.image = image

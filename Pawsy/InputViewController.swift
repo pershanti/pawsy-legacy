@@ -8,10 +8,10 @@
 
 import UIKit
 import Firebase
+import ChatSDK
 import Cloudinary
 import CoreLocation
 import Lottie
-
 
 class InputViewController: UIViewController, BreedViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -39,6 +39,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     var dogGender: String?
     var dogFixed: String?
     var dogDoc: DocumentReference?
+    let user = Auth.auth().currentUser!
     
     @IBAction func boy(_ sender: UIButton) {
         self.dogGender = "Male"
@@ -235,12 +236,17 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             dogDoc?.updateData(["longitude":self.locationManager.location!.coordinate.longitude, "latitude":self.locationManager.location!.coordinate.latitude])
         }
         
-        let user = Auth.auth().currentUser!
-        let userDoc = db.collection("users").document(user.uid)
+
+        let userDoc = db.collection("users").document(self.user.uid)
         userDoc.collection("dogs").addDocument(data: ["dogID": dogDoc?.documentID])
         currentDog.sharedInstance.currentReference = self.dogDoc!
+        self.signUpForChat()
         self.performSegue(withIdentifier: "loadHome", sender: nil)
         
+    }
+    func signUpForChat(){
+        let details = BAccountDetails.signUp(self.user.uid, password: currentDog.sharedInstance.currentReference?.documentID)
+        NM.auth().authenticate(details)
     }
     
     override func viewDidLoad() {

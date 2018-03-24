@@ -29,7 +29,7 @@ import Foundation
 /**
 The CLDSignature class represents a signature used to sign a URL request.
 */
-@objc open class CLDSignature: NSObject {
+@objcMembers open class CLDSignature: NSObject {
         
     open let signature: String
     open let timestamp: NSNumber
@@ -57,12 +57,100 @@ The CLDSignature class represents a signature used to sign a URL request.
 }
 
 
+// MARK: - CLDAccessControlRule
+
+/**
+ The CLDAccessControlRule class represents a single access control rule for upload/update API
+ */
+@objcMembers open class CLDAccessControlRule: NSObject, Codable {
+    // MARK: Properties
+    
+    internal var start: Date?
+    internal var end: Date?
+    internal var accessType: CLDAccessType
+    
+    // MARK: Init
+
+    /**
+     Initializes the CLDAccessControlRule
+     
+     - parameter accessType:    The access type for this rule
+     - parameter start:         The start time for the rule
+     - parameter end:           The end time for the rule
+     
+     - returns:                 A new CLDaccessControlRule instance.
+     */
+    internal init(accessType: CLDAccessType, start: Date? = nil, end: Date? = nil) {
+        self.accessType = accessType
+        self.start = start
+        self.end = end
+    }
+    
+    // MARK: Static builders
+
+    /**
+    Get a new instance of CLDAccessControlRule with token strategy
+    */
+    public static func token()-> CLDAccessControlRule {
+        return CLDAccessControlRule(accessType: CLDAccessType.token)
+    }
+
+    /**
+    Get a new instance of CLDAccessControlRule with anonymous strategy
+
+    - parameter start:    The start date for the rule
+
+    */
+    public static func anonymous(start: Date)-> CLDAccessControlRule {
+        return CLDAccessControlRule(accessType: CLDAccessType.anonymous, start: start)
+    }
+
+    /**
+    Get a new instance of CLDAccessControlRule with anonymous strategy
+
+    - parameter end:    The end date for the rule
+
+    */
+    public static func anonymous(end: Date)-> CLDAccessControlRule {
+        return CLDAccessControlRule(accessType: CLDAccessType.anonymous, end: end)
+    }
+
+    /**
+    Get a new instance of CLDAccessControlRule with anonymous strategy
+
+    - parameter start:    The start date for the rule
+    - parameter end:      The end date for the rule
+
+    */
+    public static func anonymous(start: Date, end: Date)-> CLDAccessControlRule {
+        return CLDAccessControlRule(accessType: CLDAccessType.anonymous, start: start, end: end)
+    }
+    
+    // MARK: Encodable
+    
+    enum CodingKeys: String, CodingKey {
+        case start
+        case end
+        case accessType = "access_type"
+    }
+
+    // MARK: Equatable
+
+    static func == (lhs: CLDAccessControlRule, rhs: CLDAccessControlRule) -> Bool {
+        return lhs.accessType == rhs.accessType && lhs.start == rhs.start && lhs.end == rhs.end
+    }
+}
+
+public enum CLDAccessType : String, Codable {
+    case anonymous, token
+}
+
 // MARK: - CLDCoordinate
 
 /**
 The CLDCoordinate class represents a rectangle area on an asset.
 */
-@objc open class CLDCoordinate: NSObject {
+@objcMembers open class CLDCoordinate: NSObject {
     
     let rect: CGRect
     
@@ -115,7 +203,7 @@ The CLDCoordinate class represents a rectangle area on an asset.
 The CLDResponsiveBreakpoints class describe the settings available for configuring responsive breakpoints.
 Responsive breakpoints is used to request Cloudinary to automatically find the best breakpoints.
 */
-@objc open class CLDResponsiveBreakpoints: NSObject {
+@objcMembers open class CLDResponsiveBreakpoints: NSObject {
     
     internal var params: [String: AnyObject] = [:]
     

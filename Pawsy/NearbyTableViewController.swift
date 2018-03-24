@@ -82,8 +82,8 @@ class NearbyTableViewController: UITableViewController {
         let dog = self.dogs[indexPath.row]
         cell.myimageView.image = dog.image
         cell.setCircularImageView()
-        cell.textLabel?.text = dog.doc!.data()["name"] as? String
-        cell.detailTextLabel?.text = dog.doc!.data()["breed"] as? String
+        cell.textLabel?.text = dog.doc!.data()!["name"] as? String
+        cell.detailTextLabel?.text = dog.doc!.data()!["breed"] as? String
         
         return cell
     }

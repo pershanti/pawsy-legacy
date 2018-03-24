@@ -49,10 +49,10 @@ class InboxTableViewController: UITableViewController {
                         let senderDoc = db.collection("dogs").document(senderID!)
                         senderDoc.getDocument(completion: { (snap, err) in
                             if snap != nil{
-                                senderName = (snap!.data()["name"] as? String)!
+                                senderName = (snap!.data()!["name"] as? String)!
                                 newMessage.senderName = senderName
                                 let newChain = messageChain(senderName: senderName, senderID: senderID!, message: newMessage)
-                                newChain.profilePicLink = (snap!.data()["photo"] as? String)!
+                                newChain.profilePicLink = (snap!.data()!["photo"] as? String)!
                                 
                                 print (self.messageChains.count)
                                 let photoURL = newChain.profilePicLink

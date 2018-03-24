@@ -13,33 +13,30 @@ import GooglePlaces
 import SwiftHTTP
 import SwiftyJSON
 
-class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewControllerDelegate, DogParkViewControllerDelegate  {
+class MapViewController: UIViewController, GMSMapViewDelegate  {
 
 
     var checkInTime: Date?
-    var currentUser = Auth.auth().currentUser
-    var locationManager = CLLocationManager()           
+    var checkedInParkPlaceID: String?
+    var checkInDocument: DocumentSnapshot?
+    var checkInReference: DocumentReference?
+    var clickedPark = Park(placename: "Select a Dog Park", id: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
     var currentLocation: CLLocation?
+    var currentUser = Auth.auth().currentUser
+    var db = Firestore.firestore()
+    var dogCheckInReference: DocumentReference?
+    var dogCurrentCheckInsReference: DocumentReference?
+    var dogParkCheckInReference: DocumentReference?
+    var dogParkReference: DocumentReference?
+    var dogReference =  currentDog.sharedInstance.currentReference
+    var list_of_parks = [String : Park]()
+    var locationManager = CLLocationManager()
+    var newCheckIn: CheckIn?
     var placesClient: GMSPlacesClient!
     var placeDoc: DocumentReference?
     var zoomLevel: Float = 15.0
-    var list_of_parks = [String : Park]()
-    var clickedPark = Park(placename: "Select a Dog Park", id: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
-    var newCheckIn: CheckIn?
-    var checkInReference: DocumentReference?
-    var dogParkReference: DocumentReference?
-    var dogParkCheckInReference: DocumentReference?
-    var dogCheckInReference: DocumentReference?
-    var dogCurrentCheckInsReference: DocumentReference?
-    var dogReference =  currentDog.sharedInstance.currentReference
-    var db = Firestore.firestore()
-    var checkInDocument: DocumentSnapshot?
-    var checkedInParkPlaceID: String?
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var gmsmapView: GMSMapView!
-
-
-    //Navigation
     @IBAction func homeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -47,103 +44,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapPopupViewContr
     //Map Popup View Controller Delegate Functions
     func goToParkPage() {
         self.performSegue(withIdentifier: "goToParkPage", sender: self)
-    }
-
-    func checkIn(){
-        let currentDogID = currentDog.sharedInstance.currentReference!.documentID
-        //check if child view controller knows it's checked in
-        print("this function is called")
-        print("check in reference document id:", self.checkInReference?.documentID)
-        //create a new check in and add it to a list of park check ins
-        if self.checkInReference == nil{
-            print("checkInReference is Nil")
-            self.newCheckIn = CheckIn(cin: Date(), place: self.clickedPark.placeID!, dog: currentDogID, name: self.clickedPark.name!)
-            self.checkInReference = self.db.collection("allCheckIns").addDocument(data: ["checkInTime" : self.newCheckIn!.checkInTime!, "placeName": self.newCheckIn!.placeName!, "placeID" : self.newCheckIn!.placeID!, "dogID" : self.newCheckIn!.dogID!]){ (error) in
-                print("creating new check ins")
-                //add the check in to a list specific to this dog park
-                self.dogParkReference = self.db.collection("dogParks").document(self.clickedPark.placeID!)
-                self.dogParkReference?.setData(["placeName": self.newCheckIn!.placeName!, "placeID":self.newCheckIn!.placeID!])
-                self.dogParkCheckInReference =  self.dogParkReference!.collection("currentCheckIns").addDocument(data: ["checkInReferenceID":self.checkInReference!.documentID])
-
-                //add the check in ID to the dog's checkIn collection
-                self.dogCheckInReference =  self.dogReference!.collection("checkIns").addDocument(data: ["checkInReferenceID":self.checkInReference!.documentID])
-
-                //add the check in ID to the dog's current check ins
-                self.dogCurrentCheckInsReference = self.dogReference!.collection("currentCheckIns").addDocument(data: ["checkInReferenceID":self.checkInReference!.documentID])
-
-                }
-            }
-
-
-        else{
-            print("check in else initiated")
-            //add the check in to a list specific to this dog park
-            self.checkInReference!.getDocument(completion: { (snapshot, error) in
-                if error == nil{
-                    print("got check in document")
-                    self.checkInDocument = snapshot!
-                    self.checkedInParkPlaceID = self.checkInDocument!.data()["placeID"] as! String
-                    //set dogParkReference
-                    //set dogParkCheckInReference
-                    self.dogParkReference = self.db.collection("dogParks").document(self.checkedInParkPlaceID!)
-                    self.dogParkReference!.collection("currentCheckIns").whereField("checkInReferenceID", isEqualTo: self.checkInDocument!.documentID).getDocuments(completion: { (snap2, error2) in
-                        if snap2!.documents.count > 0 {
-                            self.dogParkCheckInReference = snap2!.documents[0].reference
-                             ("set dog Park Check in reference")
-                            DispatchQueue.main.async {
-                                let vc = self.childViewControllers[0] as! MapPopupViewController
-                                if vc.checkedIn == false{
-                                    vc.checkedIn = true
-                                    vc.checkInButton.setTitle("Check Out", for: .normal)
-                                }
-                            }
-                        }
-
-                    })
-                }
-                else{
-                    print(error?.localizedDescription)
-                }
-            })
-
-        }
-    }
-
-
-
-    func checkOut(){
-        //update the checkIn to add checkOut time
-        self.checkInReference?.updateData(["checkOutTime" : Date()])
-        //add the check in ID to the park's past check in page
-        self.dogParkReference!.collection("pastCheckIns").addDocument(data: ["checkInID":self.checkInReference!.documentID])
-        //delete references
-        self.dogParkCheckInReference!.delete()
-        self.dogCurrentCheckInsReference!.delete()
-        self.checkInReference = nil
-        self.dogParkReference = nil
-        self.dogParkCheckInReference = nil
-        self.newCheckIn = nil
-        self.dogCurrentCheckInsReference = nil
-        self.dogCheckInReference = nil
-    }
-
-    func checkIfCheckedIn() {
-        //set checkInReference
-        //set dogCurrentCheckInsReference
-        print("checkingIfCheckedIn")
-        self.dogReference?.collection("currentCheckIns").getDocuments(completion: { (snap, error) in
-            if snap!.documents.count > 0 {
-                print("thereIsACurrentCheckIn")
-                self.dogCurrentCheckInsReference = snap!.documents[0].reference
-                let checkInID = snap!.documents[0].data()["checkInReferenceID"] as! String
-                print (checkInID)
-                self.checkInReference = self.db.collection("allCheckIns").document(checkInID)
-                self.checkIn()
-            }
-            else{
-                print("no current checkIns")
-            }
-        })
     }
 
     //Map Delegate functions

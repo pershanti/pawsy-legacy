@@ -38,6 +38,9 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+
+    <key>cloud_messaging_server_key</key>
+    <string>AAAAUNoRNsQ:APA91bEsrSKE-ivbXuwsiAQkgjvIJn1qtADy3cSSDTBK6xgLUJGBMOoyt8ZeTg5MAkLER3t5iUUncvJaHFfXzJ4Tw6MJQkPSFJX2OOTnq1C0B8LkLthkgO8mfbhNt-RdrvBCigQ4o0Jn</string>
 	<key>FacebookAppID</key>
 	<string>185112482070863</string>
 	<key>FacebookDisplayName</key>

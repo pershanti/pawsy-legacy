@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Cloudinary
+import ChatSDK
 
 class HomeViewController: UIViewController {
     
@@ -41,12 +42,13 @@ class HomeViewController: UIViewController {
     @IBAction func switchDogs(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "selectDogFromHome", sender: self)
     }
+
     
     
     override func viewDidLoad() {
         currentDog.sharedInstance.currentReference!.getDocument(completion: { (snapshot, error) in
             if snapshot != nil{
-                let name = snapshot?.data()["name"] as? String
+                let name = snapshot?.data()!["name"] as? String
                 DispatchQueue.main.async {
                     self.nameLabel.text = name
                 }
