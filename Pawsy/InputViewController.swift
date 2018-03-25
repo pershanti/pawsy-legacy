@@ -8,10 +8,10 @@
 
 import UIKit
 import Firebase
-import ChatSDK
 import Cloudinary
 import CoreLocation
 import Lottie
+import Quickblox
 
 class InputViewController: UIViewController, BreedViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -240,14 +240,41 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         let userDoc = db.collection("users").document(self.user.uid)
         userDoc.collection("dogs").addDocument(data: ["dogID": dogDoc?.documentID])
         currentDog.sharedInstance.currentReference = self.dogDoc!
-        self.signUpForChat(url: photoURL)
+        self.createQuickBloxUser(name: self.Name.text!, userID: self.user.uid, pass: currentDog.sharedInstance.currentReference!.documentID, photo: self.profilePhoto.image!)
         self.performSegue(withIdentifier: "loadHome", sender: nil)
         
     }
-    func signUpForChat(url: String){
-        BIntegrationHelper.authenticate(withToken: self.user.uid)
-        BIntegrationHelper.updateUser(withName: self.Name.text!, image: self.profilePhoto.image, url: url)
+
+    func createQuickBloxUser(name: String, userID: String, pass: String, photo:UIImage){
+        let newUser = QBUUser()
+        newUser.login = userID
+        newUser.password = pass
+        newUser.fullName = name
+
+        QBRequest.signUp(newUser, successBlock: { (response, quser) in
+            if quser != nil {
+                print("successfully created user")
+            }
+
+        }) { (response) in
+            if response.error != nil{
+                print(response.error.debugDescription)
+            }
+        }
     }
+
+    func quickBloxLogin(user: QBUUser){
+        QBRequest.logIn(withUserLogin: user.login!, password: user.password!, successBlock: { (response, quser) in
+            if quser != nil {
+                print("successfully logged in user")
+            }
+        }) { (response) in
+            if response.error != nil{
+                print(response.error.debugDescription)
+            }
+        }
+    }
+
     
     override func viewDidLoad() {
         setUpImages()

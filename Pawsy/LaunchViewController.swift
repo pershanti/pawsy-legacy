@@ -9,7 +9,6 @@
 
 import UIKit
 import CoreData
-import ChatSDK
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
@@ -115,10 +114,5 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     
 }
 
-class currentDog{
-    static let sharedInstance = currentDog()
-    var currentReference: DocumentReference?
-    private init(){
-        
-    }
-}
+
+

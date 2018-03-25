@@ -1,19 +1,4 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
-    - AFNetworking/NSURLSession
   - Alamofire (4.6.0)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
@@ -27,40 +12,14 @@ PODS:
   - BoringSSL/Implementation (10.0):
     - BoringSSL/Interface (= 10.0)
   - BoringSSL/Interface (10.0)
-  - ChatSDK (4.5.7):
-    - ChatSDK/UI (= 4.5.7)
-  - ChatSDK/Core (4.5.7):
-    - AFNetworking (~> 3.1.0)
-    - Reachability (~> 3.0)
-    - RXPromise (~> 1.0)
-  - ChatSDK/CoreData (4.5.7):
-    - ChatSDK/Core
-  - ChatSDK/UI (4.5.7):
-    - ChatSDK/CoreData
-    - ChatSDKKeepLayout
-    - CountryPicker (~> 1.0)
-    - DateTools (~> 1.0)
-    - Hakawai (~> 5.0.0)
-    - MBProgressHUD (~> 1.0)
-    - SDWebImage (~> 4.0)
-    - StaticDataTableViewController (~> 2.0)
-    - Toast (~> 4.0.0)
-    - TOCropViewController (~> 2.0)
-    - VENTokenField (~> 2.0)
-  - ChatSDKKeepLayout (1.7.5):
-    - ChatSDKKeepLayout/Swift (= 1.7.5)
-  - ChatSDKKeepLayout/ObjC (1.7.5)
-  - ChatSDKKeepLayout/Swift (1.7.5):
-    - ChatSDKKeepLayout/ObjC
   - Cloudinary (2.3.0):
     - Alamofire (~> 4.6.0)
-  - CountryPicker (1.3)
-  - DateTools (1.7.0)
   - DLRadioButton (1.4.11)
   - FBSDKCoreKit (4.31.1):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.31.1):
     - FBSDKCoreKit
+  - FFCircularProgressView (0.5)
   - Firebase (4.11.0):
     - Firebase/Core (= 4.11.0)
   - Firebase/Auth (4.11.0):
@@ -122,7 +81,6 @@ PODS:
   - FirebaseUI/Google (4.5.5):
     - FirebaseUI/Auth
     - GoogleSignIn (~> 4.0)
-  - FrameAccessor (1.3.2)
   - GoogleMaps (2.6.0):
     - GoogleMaps/Maps (= 2.6.0)
   - GoogleMaps/Base (2.6.0)
@@ -176,36 +134,70 @@ PODS:
   - GTMSessionFetcher/Core (1.1.14)
   - GTMSessionFetcher/Full (1.1.14):
     - GTMSessionFetcher/Core (= 1.1.14)
-  - Hakawai (5.0.0):
-    - Hakawai/Core (= 5.0.0)
-    - Hakawai/Mentions (= 5.0.0)
-  - Hakawai/Core (5.0.0)
-  - Hakawai/Mentions (5.0.0):
-    - Hakawai/Core
   - leveldb-library (1.20)
   - lottie-ios (2.5.0)
-  - MBProgressHUD (1.1.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
-  - Reachability (3.2)
-  - RXPromise (1.0.5)
+  - QMChatViewController (0.6.2):
+    - FFCircularProgressView
+    - QMChatViewController/Categories (= 0.6.2)
+    - QMChatViewController/Protocols (= 0.6.2)
+    - QMChatViewController/QMChatDataSource (= 0.6.2)
+    - QMChatViewController/QMChatLocationSnapshotter (= 0.6.2)
+    - QMChatViewController/Utils (= 0.6.2)
+    - QMChatViewController/Views (= 0.6.2)
+    - QuickBlox
+    - SDWebImage
+    - TTTAttributedLabel
+  - QMChatViewController/Categories (0.6.2):
+    - FFCircularProgressView
+    - QuickBlox
+    - SDWebImage
+    - TTTAttributedLabel
+  - QMChatViewController/Protocols (0.6.2):
+    - FFCircularProgressView
+    - QuickBlox
+    - SDWebImage
+    - TTTAttributedLabel
+  - QMChatViewController/QMChatDataSource (0.6.2):
+    - FFCircularProgressView
+    - QMChatViewController/Utils
+    - QuickBlox
+    - SDWebImage
+    - TTTAttributedLabel
+  - QMChatViewController/QMChatLocationSnapshotter (0.6.2):
+    - FFCircularProgressView
+    - QMChatViewController/Utils
+    - QuickBlox
+    - SDWebImage
+    - TTTAttributedLabel
+  - QMChatViewController/Utils (0.6.2):
+    - FFCircularProgressView
+    - QMChatViewController/Categories
+    - QuickBlox
+    - SDWebImage
+    - TTTAttributedLabel
+  - QMChatViewController/Views (0.6.2):
+    - FFCircularProgressView
+    - QMChatViewController/Categories
+    - QMChatViewController/Protocols
+    - QMChatViewController/Utils
+    - QuickBlox
+    - SDWebImage
+    - TTTAttributedLabel
+  - QuickBlox (2.16)
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - StaticDataTableViewController (2.0.5)
   - SwiftHTTP (3.0.1)
   - SwiftyJSON (4.0.0)
-  - Toast (4.0.0)
-  - TOCropViewController (2.3.6)
-  - VENTokenField (2.5.2):
-    - FrameAccessor (~> 1.0)
+  - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
-  - ChatSDK
   - Cloudinary
   - DLRadioButton (~> 1.4)
   - Firebase
@@ -221,22 +213,20 @@ DEPENDENCIES:
   - GooglePlacePicker
   - GooglePlaces
   - lottie-ios
+  - QMChatViewController
+  - QuickBlox
   - SwiftHTTP
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: 32764dbaf5f5888cf51fbaa172a010126b41bcd4
-  ChatSDK: fd1a6d8e83503f5f399030ad9730691a836ca991
-  ChatSDKKeepLayout: 1ddfbdee4cba338728ede47e77c452ef865e46e2
   Cloudinary: fd611d907bd6608f3556c40673b628e466809816
-  CountryPicker: 664c26411d833bb068c80beb15dc951eadde2911
-  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   DLRadioButton: 0d04b8259e7bfd886571a1e9173c73fee7118f50
   FBSDKCoreKit: e08ccfcefa7bc1347a07c276dac9bf6c7fe57024
   FBSDKLoginKit: 99797ac39252fef6f72600b886f6ee60b4b29cab
+  FFCircularProgressView: 683a4ab1e1bd613246a3dffa61503ffdebcde8d8
   Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
   FirebaseAuth: 147bf340a0706b44ca1753d6b41ebafd9687cfe6
@@ -247,7 +237,6 @@ SPEC CHECKSUMS:
   FirebaseMessaging: db0e01c52ef7e1f42846431273558107d084ede4
   FirebaseStorage: 9a863a2bb96c406958eeff7c2f1dfa9f44c44a13
   FirebaseUI: 7f149d40db1a67c459df16540256b66d8f8e8c70
-  FrameAccessor: 0f7ba6ce37be9a5d0302a27c731dca70af8d438b
   GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
   GooglePlacePicker: e4488625effb006f59de49e14b7a603e463e4261
   GooglePlaces: f6ddf33b75cef69e888907d9947c57198ed845f3
@@ -259,22 +248,17 @@ SPEC CHECKSUMS:
   gRPC-RxLibrary: a41a4652d220f230ba1c0491a94ce2ee04c6180a
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
-  Hakawai: 310b3db7d566f274441504ceda488d25a5f5fbf6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  RXPromise: b1e6d6d747db2e0dc53f11ba2a0fbff2456d25e5
+  QMChatViewController: 093d3ad9aa08ecf07e115647207ddab4356eb996
+  QuickBlox: fc3ab36e290d703573fdfa8e3066eade722460f0
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  StaticDataTableViewController: 7ea8d7bc8c7f0a4e9255a320224462c7346c1d4a
   SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  TOCropViewController: 6d972f2c609372312648f96758e13a7f689efbc0
-  VENTokenField: 5a19b838fb97f040e3d4c93f584b4adeaf3fc1ee
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: a3f606ccda6962399d8a0403f35a84ee5e089892
+PODFILE CHECKSUM: b95bb4559badbafb9fb0a7b43965f411a441d2c8
 
 COCOAPODS: 1.4.0

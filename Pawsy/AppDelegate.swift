@@ -6,7 +6,7 @@
 //  Copyright © 2017 Pawsy.dog. All rights reserved.
 //
 import UIKit
-import ChatSDK
+import Quickblox
 import CoreData
 import GoogleMaps
 import GooglePlaces
@@ -19,9 +19,6 @@ import FirebaseFacebookAuthUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-    
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -29,7 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = Firestore.firestore()
         GMSServices.provideAPIKey("AIzaSyB6f2XjcMcpGIQ1WfuvnU6_GBJtUSSErNM")
         GMSPlacesClient.provideAPIKey("AIzaSyCzWzZga1bxo6c6AosjoSMfpmc6OzNA7vw")
-
+        QBSettings.applicationID = 69657
+        QBSettings.authKey = "mFAQPsFuYzt7RRU"
+        QBSettings.authSecret = "QYqaWtZCazv-eCb"
+        QBSettings.accountKey = "GovsLK2FKjnRxzgM8RUs"
         return true
     }
     

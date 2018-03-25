@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import ChatSDK
 
 class DogParkViewController: UIViewController {
 
@@ -24,7 +23,6 @@ class DogParkViewController: UIViewController {
     @IBOutlet weak var lessThan30MinLabel: UILabel!
     @IBOutlet weak var checkedInLabel: UILabel!
     @IBAction func checkInButtonPressed(_ sender: UIBarButtonItem) {
-
     }
     @IBAction func dismissButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -34,7 +32,7 @@ class DogParkViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = self.park!.name
         self.getCurrentCheckIns()
-        let config = BConfiguration()
+
 
         // Do any additional setup after loading the view.
     }
@@ -83,25 +81,7 @@ class DogParkViewController: UIViewController {
 
     }
 
-    func setUpChat(){
-        let block = NM.publicThread().createPublicThread(withName: self.park!.name, entityID: self.park!.placeID, isHidden: false).thenOnMain
-        block!({(result:Any?) -> Any? in
-            if let thread = result as! PThread? {
-                DispatchQueue.main.async {
-                    let vc  = BInterfaceManager().a.chatViewController(with: thread)
-                    self.addChildViewController(vc!)
 
-                    vc!.view.frame = self.chatFrame.frame
-                    self.chatFrame.addSubview(vc!.view())
-                    vc!.didMove(toParentViewController: self)
-                }
-            }
-            return result
-        }, {(error: Error?) -> Any? in
-            return error
-        })
-    }
-    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.

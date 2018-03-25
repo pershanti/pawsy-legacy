@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Quickblox
 import Firebase
 import Cloudinary
-import ChatSDK
+import Quickblox
+
 
 class HomeViewController: UIViewController {
     
@@ -19,6 +21,14 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func inboxButton(_ sender: UIButton) {
+        var chatDialog: QBChatDialog = QBChatDialog(dialogID: nil, type: QBChatDialogType.publicGroup)
+        QBRequest.createDialog(chatDialog, successBlock: { (response, dialog) in
+
+        }) { (response) in
+            if response.error != nil{
+                print(response.error.debugDescription)
+            }
+        }
         performSegue(withIdentifier: "goToInbox", sender: self)
     }
     @IBAction func friendsButton(_ sender: UIButton) {
@@ -35,16 +45,43 @@ class HomeViewController: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-        self.performSegue(withIdentifier: "goToLaunchAfterSignOut", sender: self)
         currentDog.sharedInstance.currentReference = nil
-        NM.auth().logout()
+        currentDog.sharedInstance.imageURL = nil
+        currentDog.sharedInstance.image = nil
+        currentDog.sharedInstance.name = nil
+        currentDog.sharedInstance.documentID = nil
+        currentDog.sharedInstance.quickBloxID = nil
+        currentDog.sharedInstance.quickPass = nil
+        currentDog.sharedInstance.quickUser = nil
+        self.performSegue(withIdentifier: "goToLaunchAfterSignOut", sender: self)
     }
     
     @IBAction func switchDogs(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "selectDogFromHome", sender: self)
     }
 
-    
+    func signIntoChat(){
+
+    }
+
+    func signIntoQuickBlox(){
+        let dog = currentDog.sharedInstance
+        QBRequest.logIn(withUserLogin: dog.documentID, password: Auth.auth().currentUser!.uid, successBlock: { (response, quser) in
+            if quser != nil{
+                print("successfully logged In")
+                QBChat.instance.connect(with: quser, completion: { (error2) in
+                    if error2 != nil{
+                        print ("could not login to chat")
+                    }
+                })
+
+            }
+        }) { (response) in
+            if response.error != nil{
+                print("there was a login error")
+            }
+        }
+    }
     
     override func viewDidLoad() {
         currentDog.sharedInstance.currentReference!.getDocument(completion: { (snapshot, error) in
@@ -52,6 +89,7 @@ class HomeViewController: UIViewController {
                 let name = snapshot?.data()!["name"] as? String
                 DispatchQueue.main.async {
                     self.nameLabel.text = name
+                    self.signIntoQuickBlox()
                 }
             }
         })

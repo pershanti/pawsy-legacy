@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ChatSDKCoreData">
+   </FileRef>
+   <FileRef
+      location = "group:ChatSDKCore">
+   </FileRef>
+   <FileRef
+      location = "group:ChatSDKFirebase">
+   </FileRef>
+   <FileRef
       location = "group:FirebaseNetworkAdapter">
    </FileRef>
    <FileRef

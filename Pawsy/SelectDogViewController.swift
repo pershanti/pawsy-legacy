@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ChatSDK
 import Firebase
 import Cloudinary
 
@@ -58,10 +57,6 @@ class SelectDogViewController: UICollectionViewController {
 
     }
 
-    func setUpChat(token: String, photo: UIImage, url: String, name: String){
-        BIntegrationHelper.authenticate(withToken: token)
-        BIntegrationHelper.updateUser(withName: name, image: photo, url: url)
-    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
@@ -91,11 +86,10 @@ class SelectDogViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentDog.sharedInstance.currentReference = dogs[indexPath.row].reference
-        let image = self.dogImages[indexPath.row]
-        let refID = dogs[indexPath.row].documentID
-        let imageURL = dogs[indexPath.row].data()!["photo"] as! String
-        let name = dogs[indexPath.row].data()!["name"] as! String
-        self.setUpChat(token: refID, photo: image, url: imageURL, name: name)
+        currentDog.sharedInstance.image = self.dogImages[indexPath.row]
+        currentDog.sharedInstance.documentID = dogs[indexPath.row].documentID
+        currentDog.sharedInstance.imageURL = dogs[indexPath.row].data()!["photo"] as! String
+        currentDog.sharedInstance.name = dogs[indexPath.row].data()!["name"] as! String
         self.performSegue(withIdentifier: "dogSelected", sender: self)
     }
 

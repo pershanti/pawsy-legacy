@@ -80,7 +80,7 @@ extension MapViewController{
 
 extension MapViewController: MapPopupViewControllerDelegate, DogParkViewControllerDelegate {
     func checkIn(){
-        let currentDogID = currentDog.sharedInstance.currentReference!.documentID
+        let currentDogID = currentDog.sharedInstance.documentID!
         //create a new check in and add it to a list of park check ins
         if self.checkInReference == nil{
             print("checkInReference is Nil")
@@ -120,8 +120,6 @@ extension MapViewController: MapPopupViewControllerDelegate, DogParkViewControll
                                 if vc.checkedIn == false{
                                     vc.checkedIn = true
                                     vc.checkInButton.setTitle("Check Out", for: .normal)
-                                    self.gmsmapView.isUserInteractionEnabled = false
-                                    self.clickedPark = self.list_of_parks[placeName]!
                                 }
                             }
                         }
@@ -148,6 +146,7 @@ extension MapViewController: MapPopupViewControllerDelegate, DogParkViewControll
         self.newCheckIn = nil
         self.dogCurrentCheckInsReference = nil
         self.dogCheckInReference = nil
+        self.gmsmapView.isUserInteractionEnabled = true
     }
 
     func checkIfCheckedIn() {
