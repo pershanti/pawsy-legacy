@@ -1,6 +1,0 @@
-framework module SendBirdUI {
-  umbrella header "SendBirdUI.h"
-
-  export *
-  module * { export * }
-}

@@ -27,7 +27,6 @@
 		5681CE1920528619009856E8 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5681CE1820528618009856E8 /* loading.json */; };
 		5689BFC520673E44006738B0 /* currentDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689BFC420673E44006738B0 /* currentDog.swift */; };
 		568BEC80203E73CE006DB9EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568BEC7F203E73CE006DB9EB /* HomeViewController.swift */; };
-		5699DC7C206751E300018B07 /* SendbirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5699DC7B206751E300018B07 /* SendbirdViewController.swift */; };
 		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
 		569CFC5520243555009B0A6C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 569CFC5320243555009B0A6C /* Model.xcdatamodeld */; };
 		56A044E42066355E00E11AC3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A044E32066355D00E11AC3 /* Default-568h@2x.png */; };
@@ -35,6 +34,40 @@
 		56A0C670203BF90F0006B1BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */; };
 		56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */; };
 		56D2939D205DC0C000319D28 /* DogPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2939C205DC0C000319D28 /* DogPhotoCollectionViewCell.swift */; };
+		56D2DD232068A65F007D7DED /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 56D2DD222068A65F007D7DED /* Source */; };
+		56D2DD342068B61B007D7DED /* UIView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD252068B617007D7DED /* UIView+SLKAdditions.m */; };
+		56D2DD352068B61B007D7DED /* SLKTextInput+Implementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD262068B617007D7DED /* SLKTextInput+Implementation.m */; };
+		56D2DD362068B61B007D7DED /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD272068B618007D7DED /* SLKTextView+SLKAdditions.m */; };
+		56D2DD372068B61B007D7DED /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD282068B618007D7DED /* SLKTypingIndicatorView.m */; };
+		56D2DD382068B61B007D7DED /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD292068B618007D7DED /* Message.m */; };
+		56D2DD392068B61B007D7DED /* SLKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD2A2068B618007D7DED /* SLKTextView.m */; };
+		56D2DD3A2068B61B007D7DED /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD2B2068B619007D7DED /* SLKTextInputbar.m */; };
+		56D2DD3B2068B61B007D7DED /* TypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD2C2068B619007D7DED /* TypingIndicatorView.m */; };
+		56D2DD3C2068B61B007D7DED /* UIResponder+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD2D2068B619007D7DED /* UIResponder+SLKAdditions.m */; };
+		56D2DD3D2068B61B007D7DED /* MessageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD2E2068B61A007D7DED /* MessageTextView.m */; };
+		56D2DD3E2068B61B007D7DED /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD2F2068B61A007D7DED /* MessageViewController.m */; };
+		56D2DD3F2068B61B007D7DED /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD302068B61A007D7DED /* UIScrollView+SLKAdditions.m */; };
+		56D2DD402068B61B007D7DED /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD312068B61A007D7DED /* SLKInputAccessoryView.m */; };
+		56D2DD412068B61B007D7DED /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD322068B61B007D7DED /* MessageTableViewCell.m */; };
+		56D2DD422068B61B007D7DED /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD332068B61B007D7DED /* SLKTextViewController.m */; };
+		56D2DD552068B64F007D7DED /* MessageTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD432068B64A007D7DED /* MessageTableViewCell.h */; };
+		56D2DD562068B64F007D7DED /* SLKTextInput.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD442068B64A007D7DED /* SLKTextInput.h */; };
+		56D2DD572068B64F007D7DED /* Bridge-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD452068B64B007D7DED /* Bridge-Header.h */; };
+		56D2DD582068B64F007D7DED /* MessageViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD462068B64B007D7DED /* MessageViewController.h */; };
+		56D2DD592068B64F007D7DED /* SLKTextView+SLKAdditions.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD472068B64B007D7DED /* SLKTextView+SLKAdditions.h */; };
+		56D2DD5A2068B64F007D7DED /* SLKTypingIndicatorView.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD482068B64C007D7DED /* SLKTypingIndicatorView.h */; };
+		56D2DD5B2068B64F007D7DED /* UIResponder+SLKAdditions.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD492068B64C007D7DED /* UIResponder+SLKAdditions.h */; };
+		56D2DD5C2068B64F007D7DED /* SLKTextInputbar.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD4A2068B64C007D7DED /* SLKTextInputbar.h */; };
+		56D2DD5D2068B64F007D7DED /* Message.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD4B2068B64C007D7DED /* Message.h */; };
+		56D2DD5E2068B64F007D7DED /* TypingIndicatorView.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD4C2068B64D007D7DED /* TypingIndicatorView.h */; };
+		56D2DD5F2068B64F007D7DED /* MessageTextView.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD4D2068B64D007D7DED /* MessageTextView.h */; };
+		56D2DD602068B64F007D7DED /* UIView+SLKAdditions.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD4E2068B64D007D7DED /* UIView+SLKAdditions.h */; };
+		56D2DD612068B64F007D7DED /* SLKInputAccessoryView.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD4F2068B64D007D7DED /* SLKInputAccessoryView.h */; };
+		56D2DD622068B64F007D7DED /* SLKTextView.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD502068B64E007D7DED /* SLKTextView.h */; };
+		56D2DD632068B64F007D7DED /* SLKTypingIndicatorProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD512068B64E007D7DED /* SLKTypingIndicatorProtocol.h */; };
+		56D2DD642068B64F007D7DED /* SLKTextViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD522068B64E007D7DED /* SLKTextViewController.h */; };
+		56D2DD652068B64F007D7DED /* UIScrollView+SLKAdditions.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD532068B64F007D7DED /* UIScrollView+SLKAdditions.h */; };
+		56D2DD662068B64F007D7DED /* SLKUIConstants.h in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD542068B64F007D7DED /* SLKUIConstants.h */; };
 		56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */; };
 		56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE52032CAEE0023C18A /* IntroViewController.swift */; };
 		56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D5FEE72032CAFB0023C18A /* InputViewController.swift */; };
@@ -77,7 +110,6 @@
 		568BEC88203E7F84006DB9EB /* BebasNeue Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Regular.ttf"; sourceTree = "<group>"; };
 		568BEC89203E7F85006DB9EB /* BebasNeue Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Bold.ttf"; sourceTree = "<group>"; };
 		568BEC8C203E7FCC006DB9EB /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
-		5699DC7B206751E300018B07 /* SendbirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendbirdViewController.swift; sourceTree = "<group>"; };
 		569A71E42000AF4700B74517 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		569CFC5420243555009B0A6C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		56A044E22066333F00E11AC3 /* Pawsy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pawsy.entitlements; sourceTree = "<group>"; };
@@ -86,6 +118,40 @@
 		56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFUIAuthPicker.swift; sourceTree = "<group>"; };
 		56D2939C205DC0C000319D28 /* DogPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		56D2DD222068A65F007D7DED /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source; sourceTree = "<group>"; };
+		56D2DD252068B617007D7DED /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIView+SLKAdditions.m"; path = "Pawsy/Source/UIView+SLKAdditions.m"; sourceTree = "<group>"; };
+		56D2DD262068B617007D7DED /* SLKTextInput+Implementation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SLKTextInput+Implementation.m"; path = "Pawsy/Source/SLKTextInput+Implementation.m"; sourceTree = "<group>"; };
+		56D2DD272068B618007D7DED /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SLKTextView+SLKAdditions.m"; path = "Pawsy/Source/SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
+		56D2DD282068B618007D7DED /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLKTypingIndicatorView.m; path = Pawsy/Source/SLKTypingIndicatorView.m; sourceTree = "<group>"; };
+		56D2DD292068B618007D7DED /* Message.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Message.m; path = Pawsy/Source/Message.m; sourceTree = "<group>"; };
+		56D2DD2A2068B618007D7DED /* SLKTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLKTextView.m; path = Pawsy/Source/SLKTextView.m; sourceTree = "<group>"; };
+		56D2DD2B2068B619007D7DED /* SLKTextInputbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLKTextInputbar.m; path = Pawsy/Source/SLKTextInputbar.m; sourceTree = "<group>"; };
+		56D2DD2C2068B619007D7DED /* TypingIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TypingIndicatorView.m; path = Pawsy/Source/TypingIndicatorView.m; sourceTree = "<group>"; };
+		56D2DD2D2068B619007D7DED /* UIResponder+SLKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+SLKAdditions.m"; path = "Pawsy/Source/UIResponder+SLKAdditions.m"; sourceTree = "<group>"; };
+		56D2DD2E2068B61A007D7DED /* MessageTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MessageTextView.m; path = Pawsy/Source/MessageTextView.m; sourceTree = "<group>"; };
+		56D2DD2F2068B61A007D7DED /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = Pawsy/Source/MessageViewController.m; sourceTree = "<group>"; };
+		56D2DD302068B61A007D7DED /* UIScrollView+SLKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SLKAdditions.m"; path = "Pawsy/Source/UIScrollView+SLKAdditions.m"; sourceTree = "<group>"; };
+		56D2DD312068B61A007D7DED /* SLKInputAccessoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLKInputAccessoryView.m; path = Pawsy/Source/SLKInputAccessoryView.m; sourceTree = "<group>"; };
+		56D2DD322068B61B007D7DED /* MessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MessageTableViewCell.m; path = Pawsy/Source/MessageTableViewCell.m; sourceTree = "<group>"; };
+		56D2DD332068B61B007D7DED /* SLKTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SLKTextViewController.m; path = Pawsy/Source/SLKTextViewController.m; sourceTree = "<group>"; };
+		56D2DD432068B64A007D7DED /* MessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessageTableViewCell.h; path = Pawsy/Source/MessageTableViewCell.h; sourceTree = "<group>"; };
+		56D2DD442068B64A007D7DED /* SLKTextInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLKTextInput.h; path = Pawsy/Source/SLKTextInput.h; sourceTree = "<group>"; };
+		56D2DD452068B64B007D7DED /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridge-Header.h"; path = "Pawsy/Source/Bridge-Header.h"; sourceTree = "<group>"; };
+		56D2DD462068B64B007D7DED /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessageViewController.h; path = Pawsy/Source/MessageViewController.h; sourceTree = "<group>"; };
+		56D2DD472068B64B007D7DED /* SLKTextView+SLKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SLKTextView+SLKAdditions.h"; path = "Pawsy/Source/SLKTextView+SLKAdditions.h"; sourceTree = "<group>"; };
+		56D2DD482068B64C007D7DED /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLKTypingIndicatorView.h; path = Pawsy/Source/SLKTypingIndicatorView.h; sourceTree = "<group>"; };
+		56D2DD492068B64C007D7DED /* UIResponder+SLKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIResponder+SLKAdditions.h"; path = "Pawsy/Source/UIResponder+SLKAdditions.h"; sourceTree = "<group>"; };
+		56D2DD4A2068B64C007D7DED /* SLKTextInputbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLKTextInputbar.h; path = Pawsy/Source/SLKTextInputbar.h; sourceTree = "<group>"; };
+		56D2DD4B2068B64C007D7DED /* Message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Message.h; path = Pawsy/Source/Message.h; sourceTree = "<group>"; };
+		56D2DD4C2068B64D007D7DED /* TypingIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TypingIndicatorView.h; path = Pawsy/Source/TypingIndicatorView.h; sourceTree = "<group>"; };
+		56D2DD4D2068B64D007D7DED /* MessageTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessageTextView.h; path = Pawsy/Source/MessageTextView.h; sourceTree = "<group>"; };
+		56D2DD4E2068B64D007D7DED /* UIView+SLKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIView+SLKAdditions.h"; path = "Pawsy/Source/UIView+SLKAdditions.h"; sourceTree = "<group>"; };
+		56D2DD4F2068B64D007D7DED /* SLKInputAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLKInputAccessoryView.h; path = Pawsy/Source/SLKInputAccessoryView.h; sourceTree = "<group>"; };
+		56D2DD502068B64E007D7DED /* SLKTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLKTextView.h; path = Pawsy/Source/SLKTextView.h; sourceTree = "<group>"; };
+		56D2DD512068B64E007D7DED /* SLKTypingIndicatorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLKTypingIndicatorProtocol.h; path = Pawsy/Source/SLKTypingIndicatorProtocol.h; sourceTree = "<group>"; };
+		56D2DD522068B64E007D7DED /* SLKTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLKTextViewController.h; path = Pawsy/Source/SLKTextViewController.h; sourceTree = "<group>"; };
+		56D2DD532068B64F007D7DED /* UIScrollView+SLKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SLKAdditions.h"; path = "Pawsy/Source/UIScrollView+SLKAdditions.h"; sourceTree = "<group>"; };
+		56D2DD542068B64F007D7DED /* SLKUIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLKUIConstants.h; path = Pawsy/Source/SLKUIConstants.h; sourceTree = "<group>"; };
 		56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		56D5FEE52032CAEE0023C18A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		56D5FEE72032CAFB0023C18A /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +191,39 @@
 		564872BE1FE25E9A00D292FA = {
 			isa = PBXGroup;
 			children = (
+				56D2DD452068B64B007D7DED /* Bridge-Header.h */,
+				56D2DD4B2068B64C007D7DED /* Message.h */,
+				56D2DD432068B64A007D7DED /* MessageTableViewCell.h */,
+				56D2DD4D2068B64D007D7DED /* MessageTextView.h */,
+				56D2DD462068B64B007D7DED /* MessageViewController.h */,
+				56D2DD4F2068B64D007D7DED /* SLKInputAccessoryView.h */,
+				56D2DD442068B64A007D7DED /* SLKTextInput.h */,
+				56D2DD4A2068B64C007D7DED /* SLKTextInputbar.h */,
+				56D2DD502068B64E007D7DED /* SLKTextView.h */,
+				56D2DD472068B64B007D7DED /* SLKTextView+SLKAdditions.h */,
+				56D2DD522068B64E007D7DED /* SLKTextViewController.h */,
+				56D2DD512068B64E007D7DED /* SLKTypingIndicatorProtocol.h */,
+				56D2DD482068B64C007D7DED /* SLKTypingIndicatorView.h */,
+				56D2DD542068B64F007D7DED /* SLKUIConstants.h */,
+				56D2DD4C2068B64D007D7DED /* TypingIndicatorView.h */,
+				56D2DD492068B64C007D7DED /* UIResponder+SLKAdditions.h */,
+				56D2DD532068B64F007D7DED /* UIScrollView+SLKAdditions.h */,
+				56D2DD4E2068B64D007D7DED /* UIView+SLKAdditions.h */,
+				56D2DD292068B618007D7DED /* Message.m */,
+				56D2DD322068B61B007D7DED /* MessageTableViewCell.m */,
+				56D2DD2E2068B61A007D7DED /* MessageTextView.m */,
+				56D2DD2F2068B61A007D7DED /* MessageViewController.m */,
+				56D2DD312068B61A007D7DED /* SLKInputAccessoryView.m */,
+				56D2DD262068B617007D7DED /* SLKTextInput+Implementation.m */,
+				56D2DD2B2068B619007D7DED /* SLKTextInputbar.m */,
+				56D2DD2A2068B618007D7DED /* SLKTextView.m */,
+				56D2DD272068B618007D7DED /* SLKTextView+SLKAdditions.m */,
+				56D2DD332068B61B007D7DED /* SLKTextViewController.m */,
+				56D2DD282068B618007D7DED /* SLKTypingIndicatorView.m */,
+				56D2DD2C2068B619007D7DED /* TypingIndicatorView.m */,
+				56D2DD2D2068B619007D7DED /* UIResponder+SLKAdditions.m */,
+				56D2DD302068B61A007D7DED /* UIScrollView+SLKAdditions.m */,
+				56D2DD252068B617007D7DED /* UIView+SLKAdditions.m */,
 				56A044E32066355D00E11AC3 /* Default-568h@2x.png */,
 				564872C91FE25E9A00D292FA /* Pawsy */,
 				564872C81FE25E9A00D292FA /* Products */,
@@ -154,6 +253,7 @@
 				5656B1731FE25F4C00C3240A /* LaunchScreen.storyboard */,
 				569A71E42000AF4700B74517 /* Main.storyboard */,
 				564872D11FE25E9A00D292FA /* Assets.xcassets */,
+				56D2DD222068A65F007D7DED /* Source */,
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
 				56275D9B203683E800C544BC /* BreedTableViewController.swift */,
 				56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */,
@@ -176,7 +276,6 @@
 				560E2E372062260600C0CA6C /* Park.swift */,
 				56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */,
 				565EC151205DB24A00208F0E /* SelectDogViewController.swift */,
-				5699DC7B206751E300018B07 /* SendbirdViewController.swift */,
 			);
 			path = Pawsy;
 			sourceTree = "<group>";
@@ -229,6 +328,7 @@
 				TargetAttributes = {
 					564872C61FE25E9A00D292FA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -268,6 +368,7 @@
 				56FF5E2E205E2A9000AAAEC3 /* BebasNeue Bold.ttf in Resources */,
 				5656B1751FE25F4D00C3240A /* LaunchScreen.storyboard in Resources */,
 				5681CE1920528619009856E8 /* loading.json in Resources */,
+				56D2DD232068A65F007D7DED /* Source in Resources */,
 				56FF5E2D205E2A8B00AAAEC3 /* Lobster-Regular.ttf in Resources */,
 				5637DB642037DC82005C9D6E /* acrobatics.json in Resources */,
 				56A044E42066355E00E11AC3 /* Default-568h@2x.png in Resources */,
@@ -397,6 +498,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D2DD552068B64F007D7DED /* MessageTableViewCell.h in Sources */,
+				56D2DD562068B64F007D7DED /* SLKTextInput.h in Sources */,
+				56D2DD572068B64F007D7DED /* Bridge-Header.h in Sources */,
+				56D2DD582068B64F007D7DED /* MessageViewController.h in Sources */,
+				56D2DD592068B64F007D7DED /* SLKTextView+SLKAdditions.h in Sources */,
+				56D2DD5A2068B64F007D7DED /* SLKTypingIndicatorView.h in Sources */,
+				56D2DD5B2068B64F007D7DED /* UIResponder+SLKAdditions.h in Sources */,
+				56D2DD5C2068B64F007D7DED /* SLKTextInputbar.h in Sources */,
+				56D2DD5D2068B64F007D7DED /* Message.h in Sources */,
+				56D2DD5E2068B64F007D7DED /* TypingIndicatorView.h in Sources */,
+				56D2DD5F2068B64F007D7DED /* MessageTextView.h in Sources */,
+				56D2DD602068B64F007D7DED /* UIView+SLKAdditions.h in Sources */,
+				56D2DD612068B64F007D7DED /* SLKInputAccessoryView.h in Sources */,
+				56D2DD622068B64F007D7DED /* SLKTextView.h in Sources */,
+				56D2DD632068B64F007D7DED /* SLKTypingIndicatorProtocol.h in Sources */,
+				56D2DD642068B64F007D7DED /* SLKTextViewController.h in Sources */,
+				56D2DD652068B64F007D7DED /* UIScrollView+SLKAdditions.h in Sources */,
+				56D2DD662068B64F007D7DED /* SLKUIConstants.h in Sources */,
+				56D2DD342068B61B007D7DED /* UIView+SLKAdditions.m in Sources */,
+				56D2DD352068B61B007D7DED /* SLKTextInput+Implementation.m in Sources */,
+				56D2DD362068B61B007D7DED /* SLKTextView+SLKAdditions.m in Sources */,
+				56D2DD372068B61B007D7DED /* SLKTypingIndicatorView.m in Sources */,
+				56D2DD382068B61B007D7DED /* Message.m in Sources */,
+				56D2DD392068B61B007D7DED /* SLKTextView.m in Sources */,
+				56D2DD3A2068B61B007D7DED /* SLKTextInputbar.m in Sources */,
+				56D2DD3B2068B61B007D7DED /* TypingIndicatorView.m in Sources */,
+				56D2DD3C2068B61B007D7DED /* UIResponder+SLKAdditions.m in Sources */,
+				56D2DD3D2068B61B007D7DED /* MessageTextView.m in Sources */,
+				56D2DD3E2068B61B007D7DED /* MessageViewController.m in Sources */,
+				56D2DD3F2068B61B007D7DED /* UIScrollView+SLKAdditions.m in Sources */,
+				56D2DD402068B61B007D7DED /* SLKInputAccessoryView.m in Sources */,
+				56D2DD412068B61B007D7DED /* MessageTableViewCell.m in Sources */,
+				56D2DD422068B61B007D7DED /* SLKTextViewController.m in Sources */,
 				560E2E342061EAB800C0CA6C /* MapPopupViewController.swift in Sources */,
 				56D5FEE62032CAEE0023C18A /* IntroViewController.swift in Sources */,
 				5681CE1720526499009856E8 /* FriendsTableViewController.swift in Sources */,
@@ -404,7 +538,6 @@
 				562E257920382A48008C7204 /* NearbyTableViewController.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
 				560E2E382062260600C0CA6C /* Park.swift in Sources */,
-				5699DC7C206751E300018B07 /* SendbirdViewController.swift in Sources */,
 				56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */,
 				5689BFC520673E44006738B0 /* currentDog.swift in Sources */,
 				5680A618206887540061B72F /* ChatViewController.swift in Sources */,
@@ -431,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -477,7 +611,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -488,6 +623,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -528,6 +664,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -539,6 +676,7 @@
 			baseConfigurationReference = B30A718CC7010AA67D5F90B5 /* Pods-Pawsy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pawsy/Pawsy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LVLYB83ZJM;
@@ -551,7 +689,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pawsy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pawsy/Source/Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -562,6 +701,7 @@
 			baseConfigurationReference = D0174B9DD0474232E8F215F8 /* Pods-Pawsy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pawsy/Pawsy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LVLYB83ZJM;
@@ -609,7 +749,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pawsy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pawsy/Source/Bridge-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
