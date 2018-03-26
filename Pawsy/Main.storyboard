@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YQK-GN-4nj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLU-MB-rh6">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -856,49 +856,28 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="YQK-GN-4nj" kind="relationship" relationship="rootViewController" id="Ke9-Nu-Qyg"/>
+                        <segue destination="idL-Ez-sks" kind="relationship" relationship="rootViewController" id="vHm-9R-wNO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zDF-xR-4rD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2594" y="-4148"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="7gZ-Gh-4X7">
+        <!--Message View Controller-->
+        <scene sceneID="EAg-sR-VvY">
             <objects>
-                <tableViewController id="YQK-GN-4nj" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="euj-bt-Xk9">
+                <viewController id="idL-Ez-sks" customClass="MessageViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A5Q-Z5-DBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="54I-tz-1P4" customClass="MessageTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="54I-tz-1P4" id="TB0-wP-hPQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yPX-vT-kfc" customClass="MessageTableViewCell">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yPX-vT-kfc" id="Z3d-kI-Plv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="YQK-GN-4nj" id="bD8-vK-Hck"/>
-                            <outlet property="delegate" destination="YQK-GN-4nj" id="ZBO-Yg-rFp"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="taG-EN-2va"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ciM-C1-cvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="Gmb-w6-qf5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LUT-qs-FvY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZO-qy-PE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="-4148"/>
+            <point key="canvasLocation" x="3397" y="-4147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rwD-2T-c2c">
@@ -1122,7 +1101,7 @@
         <image name="textbox" width="278" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WT4-PQ-ndT"/>
+        <segue reference="3Th-0z-quy"/>
         <segue reference="5Gx-4d-pme"/>
         <segue reference="UTS-Y0-PTK"/>
     </inferredMetricsTieBreakers>
