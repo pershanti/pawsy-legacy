@@ -1,0 +1,3 @@
+[submodule "SendBird-iOS"]
+	path = SendBird-iOS
+	url = https://github.com/smilefam/SendBird-iOS.git

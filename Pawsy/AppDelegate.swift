@@ -6,7 +6,6 @@
 //  Copyright © 2017 Pawsy.dog. All rights reserved.
 //
 import UIKit
-import Quickblox
 import CoreData
 import GoogleMaps
 import GooglePlaces
@@ -26,10 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = Firestore.firestore()
         GMSServices.provideAPIKey("AIzaSyB6f2XjcMcpGIQ1WfuvnU6_GBJtUSSErNM")
         GMSPlacesClient.provideAPIKey("AIzaSyCzWzZga1bxo6c6AosjoSMfpmc6OzNA7vw")
-        QBSettings.applicationID = 69657
-        QBSettings.authKey = "mFAQPsFuYzt7RRU"
-        QBSettings.authSecret = "QYqaWtZCazv-eCb"
-        QBSettings.accountKey = "GovsLK2FKjnRxzgM8RUs"
+
         return true
     }
     

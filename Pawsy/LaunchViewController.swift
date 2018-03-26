@@ -38,6 +38,7 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
             if user != nil{
                 self.user = user!
                 self.isLoggedIn = true
+                print(user!.uid)
                 self.checkIfOnboarded()
             }
             else{
