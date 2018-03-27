@@ -1,49 +1,24 @@
 //
-//  ChatViewController.swift
+//  MessageViewControllerExtensions.swift
 //  Pawsy
 //
-//  Created by Shantini Persaud on 3/25/18.
+//  Created by Shantini Persaud on 3/27/18.
 //  Copyright © 2018 Pawsy.dog. All rights reserved.
 //
+
+import Foundation
 
 import UIKit
 import SlackTextViewController
 import SendBirdSDK
 
 
-class MessageViewController: SLKTextViewController {
-    let DEBUG_CUSTOM_TYPING_INDICATOR = false
-
-    var messages = [Message]()
-    var username: String?
-    var userNickname: String?
-    var userImage: UIImage?
-    var park: Park?
-    var delegate: MessageViewControllerDelegate?
-    var chatRoomURL: String?
-    let firestorePrefix = "https://pawsy-c0063.firebaseio.combase/firestore/dogParks/"
-
-    override var tableView: UITableView {
-        get {
-            return super.tableView!
-        }
-    }
-
-
-    // MARK: - Initialisation
-
-    override class func tableViewStyle(for decoder: NSCoder) -> UITableViewStyle {
-        return .plain
-    }
-
-    override func viewDidLoad() {
-        self.delegate!.setUpMessageViewController()
-        super.viewDidLoad()
-
+extension MessageViewController{
+    func setUpChatView(){
         let currentUser = SBDMain.getCurrentUser()
         self.userNickname = currentDog.sharedInstance.name!
         self.username = currentDog.sharedInstance.documentID!
-        self.userImage = currentDog.sharedInstance.image!
+        self.userImage = UIImageJPEGRepresentation(currentDog.sharedInstance.image!, 1) 
 
         // SLKTVC's configuration
         self.bounces = true
@@ -93,23 +68,14 @@ class MessageViewController: SLKTextViewController {
 
         super.didCommitTextEditing(sender)
     }
-
     override func didCancelTextEditing(_ sender: Any) {
-
         super.didCancelTextEditing(sender)
     }
-
     override func didPressRightButton(_ sender: Any?) {
         self.didCommitTextEditing(self.textView)
     }
-
     override func didPressReturnKey(_ keyCommand: UIKeyCommand?) {
         self.didCommitTextEditing(self.textView)
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     //TableView Delegate functions
@@ -118,11 +84,11 @@ class MessageViewController: SLKTextViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.messages.count
+        return self.messages.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            return self.messageCellForRowAtIndexPath(indexPath)
+        return self.messageCellForRowAtIndexPath(indexPath)
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -184,30 +150,6 @@ class MessageViewController: SLKTextViewController {
         }
     }
 
-    func messageCellForRowAtIndexPath(_ indexPath: IndexPath) -> MessageTableViewCell {
 
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: MessengerCellIdentifier) as! MessageTableViewCell
-
-
-        let message = self.messages[(indexPath as NSIndexPath).row]
-
-        cell.titleLabel.text = message.username
-        cell.bodyLabel.text = message.text
-        cell.thumbnailView.image = message.profileImage!
-
-        cell.indexPath = indexPath
-        cell.usedForMessage = true
-
-        // Cells must inherit the table view's transform
-        // This is very important, since the main table view may be inverted
-        cell.transform = self.tableView.transform
-
-        return cell
-    }
 }
-
-protocol MessageViewControllerDelegate {
-    func setUpMessageViewController()
-}
-
 

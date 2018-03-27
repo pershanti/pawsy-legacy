@@ -15,6 +15,7 @@ class Park {
     var name: String?
     var placeID: String?
     var coordinates: CLLocationCoordinate2D?
+    var hasChatRoom: Bool = false
     init(placename: String, id: String, coordinate: CLLocationCoordinate2D) {
         self.name = placename
         self.placeID = id

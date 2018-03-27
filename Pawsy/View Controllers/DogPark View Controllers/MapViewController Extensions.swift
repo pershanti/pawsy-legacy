@@ -60,15 +60,18 @@ extension MapViewController{
                     let place = json["results"][number]
                     let placeName = place["name"].string
                     let placeID = place["place_id"].string
+                    let hasChat = place["hasChatRoom"].bool
                     let lat  = place["geometry"]["location"]["lat"].double
                     let lng  = place["geometry"]["location"]["lng"].double
                     if lat != nil && lng != nil{
                         DispatchQueue.main.async {
+                            self.list_of_parks.removeAll()
                             let coordinate = CLLocationCoordinate2D(latitude: lat!,longitude: lng!)
                             let marker = GMSMarker(position: coordinate)
                             marker.snippet = placeName!
                             marker.map = self.gmsmapView
                             let newPark = Park(placename: placeName!, id: placeID!, coordinate: coordinate)
+                            newPark.hasChatRoom = hasChat!
                             self.list_of_parks[placeName!] = newPark
                         }
                     }
