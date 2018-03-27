@@ -13,6 +13,7 @@ import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
+import SendBirdSDK
 
 
 class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationControllerDelegate {
@@ -105,6 +106,7 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SBDMain.initWithApplicationId("A4AB8AE7-B595-43EF-ABBD-57F41239E042")
     }
     
     override func didReceiveMemoryWarning() {

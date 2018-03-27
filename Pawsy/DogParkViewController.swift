@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class DogParkViewController: UIViewController {
+class DogParkViewController: UIViewController, MessageViewControllerDelegate {
 
     //info to show: # dogs checked in for less than 30 min, link to list of dogs, link to group chat
 
@@ -20,6 +20,7 @@ class DogParkViewController: UIViewController {
     var delegate: DogParkViewControllerDelegate?
     var checkedIn = false
     var lessThan30 = 0
+
     @IBOutlet weak var lessThan30MinLabel: UILabel!
     @IBOutlet weak var checkedInLabel: UILabel!
     @IBAction func checkInButtonPressed(_ sender: UIBarButtonItem) {
@@ -78,17 +79,19 @@ class DogParkViewController: UIViewController {
                 }
             })
         }
-
     }
-
-
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
 
-
+    //MessageViewController Delegate Functions
+    func setUpMessageViewController() {
+        let popup = self.childViewControllers[0] as! MessageViewController
+        popup.delegate = self
+        popup.park = self.park
+    }
 }
 
 protocol DogParkViewControllerDelegate {

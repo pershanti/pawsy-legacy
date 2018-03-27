@@ -22,7 +22,6 @@
 		565EC152205DB24A00208F0E /* SelectDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565EC151205DB24A00208F0E /* SelectDogViewController.swift */; };
 		566A86521FF801FF0020B6BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 566A86511FF801FF0020B6BA /* GoogleService-Info.plist */; };
 		5680A618206887540061B72F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5680A617206887540061B72F /* MessageViewController.swift */; };
-		5681CE1320510C20009856E8 /* InboxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681CE1220510C20009856E8 /* InboxTableViewController.swift */; };
 		5681CE1720526499009856E8 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681CE1620526499009856E8 /* FriendsTableViewController.swift */; };
 		5681CE1920528619009856E8 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5681CE1820528618009856E8 /* loading.json */; };
 		5689BFC520673E44006738B0 /* currentDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689BFC420673E44006738B0 /* currentDog.swift */; };
@@ -99,7 +98,6 @@
 		565EC151205DB24A00208F0E /* SelectDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogViewController.swift; sourceTree = "<group>"; };
 		566A86511FF801FF0020B6BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5680A617206887540061B72F /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		5681CE1220510C20009856E8 /* InboxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxTableViewController.swift; sourceTree = "<group>"; };
 		5681CE1620526499009856E8 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewController.swift; path = /Users/shantini/Pawsy/Pawsy/FriendsTableViewController.swift; sourceTree = "<absolute>"; };
 		5681CE1820528618009856E8 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		5689BFC420673E44006738B0 /* currentDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentDog.swift; sourceTree = "<group>"; };
@@ -257,14 +255,12 @@
 				564872CA1FE25E9A00D292FA /* AppDelegate.swift */,
 				56275D9B203683E800C544BC /* BreedTableViewController.swift */,
 				56275DA120368AD700C544BC /* BreedViewControllerDelegate.swift */,
-				5680A617206887540061B72F /* MessageViewController.swift */,
 				5689BFC420673E44006738B0 /* currentDog.swift */,
 				56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */,
 				5607213A20572C03009DE3DA /* DogParkViewController.swift */,
 				56D2939C205DC0C000319D28 /* DogPhotoCollectionViewCell.swift */,
 				5681CE1620526499009856E8 /* FriendsTableViewController.swift */,
 				568BEC7F203E73CE006DB9EB /* HomeViewController.swift */,
-				5681CE1220510C20009856E8 /* InboxTableViewController.swift */,
 				56D5FEE52032CAEE0023C18A /* IntroViewController.swift */,
 				56D5FEE72032CAFB0023C18A /* InputViewController.swift */,
 				56D5FEE12032CA9B0023C18A /* LaunchViewController.swift */,
@@ -272,6 +268,7 @@
 				560E2E332061EAB800C0CA6C /* MapPopupViewController.swift */,
 				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
 				560E2E35206225CA00C0CA6C /* MapViewController Extensions.swift */,
+				5680A617206887540061B72F /* MessageViewController.swift */,
 				562E257820382A48008C7204 /* NearbyTableViewController.swift */,
 				560E2E372062260600C0CA6C /* Park.swift */,
 				56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */,
@@ -544,7 +541,6 @@
 				56D2939D205DC0C000319D28 /* DogPhotoCollectionViewCell.swift in Sources */,
 				56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */,
 				560E2E36206225CA00C0CA6C /* MapViewController Extensions.swift in Sources */,
-				5681CE1320510C20009856E8 /* InboxTableViewController.swift in Sources */,
 				5607213B20572C03009DE3DA /* DogParkViewController.swift in Sources */,
 				56A0C670203BF90F0006B1BE /* ProfileViewController.swift in Sources */,
 				565EC152205DB24A00208F0E /* SelectDogViewController.swift in Sources */,

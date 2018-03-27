@@ -1076,10 +1076,10 @@
             </objects>
             <point key="canvasLocation" x="5948" y="-4827"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="t0B-fA-lQL">
             <objects>
-                <viewController id="2Bt-q5-PfA" sceneMemberID="viewController">
+                <viewController title="Chat View Controller" id="2Bt-q5-PfA" customClass="MessageViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sqM-2I-fog">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="395"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Cloudinary
+import SendBirdSDK
 
 class SelectDogViewController: UICollectionViewController {
 
@@ -24,9 +25,11 @@ class SelectDogViewController: UICollectionViewController {
     var cloudinary: CLDCloudinary?
     let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     var userID = Auth.auth().currentUser!.uid
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.cloudinary = CLDCloudinary(configuration: self.config!)
         let currentUserID = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("users").document(currentUserID).collection("dogs").getDocuments { (snap, err) in
@@ -90,9 +93,29 @@ class SelectDogViewController: UICollectionViewController {
         currentDog.sharedInstance.documentID = dogs[indexPath.row].documentID
         currentDog.sharedInstance.imageURL = dogs[indexPath.row].data()!["photo"] as! String
         currentDog.sharedInstance.name = dogs[indexPath.row].data()!["name"] as! String
+        self.loginToSendBird()
         self.performSegue(withIdentifier: "dogSelected", sender: self)
     }
 
+    func loginToSendBird(){
+        let profImage = UIImageJPEGRepresentation(currentDog.sharedInstance.image!, 1)
+        SBDMain.connect(withUserId: currentDog.sharedInstance.documentID!, completionHandler: { (user, error) in
+            if user != nil{
+                 print("connected with user ID: ", user!.userId)
+                SBDMain.updateCurrentUserInfo(withNickname: currentDog.sharedInstance.name, profileUrl: currentDog.sharedInstance.imageURL!, completionHandler: { (error2) in
+                    if error2 == nil{
+                        print("updated user info")
+                    }
+                    else{
+                        print(error2.debugDescription)
+                    }
+                })
+            }
+            else if error != nil {
+                print(error.debugDescription)
+            }
+        })
+    }
 }
 
 

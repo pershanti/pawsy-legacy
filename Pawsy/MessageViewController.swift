@@ -8,6 +8,7 @@
 
 import UIKit
 import SlackTextViewController
+import SendBirdSDK
 
 
 class MessageViewController: SLKTextViewController {
@@ -15,7 +16,12 @@ class MessageViewController: SLKTextViewController {
 
     var messages = [Message]()
     var username: String?
+    var userNickname: String?
     var userImage: UIImage?
+    var park: Park?
+    var delegate: MessageViewControllerDelegate?
+    var chatRoomURL: String?
+    let firestorePrefix = "https://pawsy-c0063.firebaseio.combase/firestore/dogParks/"
 
     override var tableView: UITableView {
         get {
@@ -31,10 +37,12 @@ class MessageViewController: SLKTextViewController {
     }
 
     override func viewDidLoad() {
-
+        self.delegate!.setUpMessageViewController()
         super.viewDidLoad()
 
-        self.username = currentDog.sharedInstance.name!
+        let currentUser = SBDMain.getCurrentUser()
+        self.userNickname = currentDog.sharedInstance.name!
+        self.username = currentDog.sharedInstance.documentID!
         self.userImage = currentDog.sharedInstance.image!
 
         // SLKTVC's configuration
@@ -73,8 +81,11 @@ class MessageViewController: SLKTextViewController {
     override func didCommitTextEditing(_ sender: Any) {
         let message: Message = Message()
         message.text =  self.textView.text
-        message.username = self.username!
+        message.username = self.userNickname!
+        message.userID = self.username!
         message.profileImage = self.userImage!
+
+
         self.messages.insert(message, at: 0)
 
         self.tableView.reloadData()
@@ -193,6 +204,10 @@ class MessageViewController: SLKTextViewController {
 
         return cell
     }
+}
+
+protocol MessageViewControllerDelegate {
+    func setUpMessageViewController()
 }
 
 
