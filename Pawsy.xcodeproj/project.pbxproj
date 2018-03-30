@@ -31,6 +31,7 @@
 		56A0C670203BF90F0006B1BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */; };
 		56BC0D29206E200B00DDED0C /* CheckInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC0D28206E200B00DDED0C /* CheckInManager.swift */; };
 		56BC0D2B206E213500DDED0C /* Data Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC0D2A206E213500DDED0C /* Data Structs.swift */; };
+		56BC0D2D206E39FA00DDED0C /* CurrentCheckInsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC0D2C206E39FA00DDED0C /* CurrentCheckInsTableViewController.swift */; };
 		56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */; };
 		56D2939D205DC0C000319D28 /* DogPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2939C205DC0C000319D28 /* DogPhotoCollectionViewCell.swift */; };
 		56D2DD342068B61B007D7DED /* UIView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D2DD252068B617007D7DED /* UIView+SLKAdditions.m */; };
@@ -113,6 +114,7 @@
 		56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		56BC0D28206E200B00DDED0C /* CheckInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInManager.swift; sourceTree = "<group>"; };
 		56BC0D2A206E213500DDED0C /* Data Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Structs.swift"; sourceTree = "<group>"; };
+		56BC0D2C206E39FA00DDED0C /* CurrentCheckInsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentCheckInsTableViewController.swift; path = "Pawsy/View Controllers/DogPark View Controllers/CurrentCheckInsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFUIAuthPicker.swift; sourceTree = "<group>"; };
 		56D2939C205DC0C000319D28 /* DogPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		56D2DD252068B617007D7DED /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SLKAdditions.m"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				56BC0D28206E200B00DDED0C /* CheckInManager.swift */,
+				56BC0D2C206E39FA00DDED0C /* CurrentCheckInsTableViewController.swift */,
 				56BC0D2A206E213500DDED0C /* Data Structs.swift */,
 				5607213A20572C03009DE3DA /* DogParkViewController.swift */,
 				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
@@ -617,6 +620,7 @@
 				56A0C66E203BE6620006B1BE /* MapViewController.swift in Sources */,
 				56D5FEE22032CA9B0023C18A /* LaunchViewController.swift in Sources */,
 				56275DA420379B5800C544BC /* LocationViewController.swift in Sources */,
+				56BC0D2D206E39FA00DDED0C /* CurrentCheckInsTableViewController.swift in Sources */,
 				56275D9C203683E800C544BC /* BreedTableViewController.swift in Sources */,
 				568BEC80203E73CE006DB9EB /* HomeViewController.swift in Sources */,
 			);

@@ -755,19 +755,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="pq0-Iw-eNj">
-                                <rect key="frame" x="16" y="176" width="343" height="64.666666666666686"/>
+                                <rect key="frame" x="16" y="176" width="343" height="192"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="w63-VL-iko">
-                                        <rect key="frame" x="0.0" y="0.0" width="286" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dogs Checked In:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zx-vX-dSO">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYE-T9-9NP">
-                                                <rect key="frame" x="151" y="0.0" width="135" height="20.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYE-T9-9NP">
+                                                <rect key="frame" x="151" y="0.0" width="135" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -775,22 +775,33 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6V7-to-J2d">
-                                        <rect key="frame" x="0.0" y="44.333333333333343" width="303" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="54" width="272" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checked in for less than 30 min:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvG-Os-u6u">
-                                                <rect key="frame" x="0.0" y="0.0" width="245.66666666666666" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="245.66666666666666" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ti-ZD-BL1">
-                                                <rect key="frame" x="261.66666666666669" y="0.0" width="41.333333333333314" height="20.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ti-ZD-BL1">
+                                                <rect key="frame" x="261.66666666666669" y="0.0" width="10.333333333333314" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6W-DD-qeF" userLabel="See who's checked in">
+                                        <rect key="frame" x="0.0" y="108" width="149" height="30"/>
+                                        <state key="normal" title="See who's checked in"/>
+                                        <connections>
+                                            <action selector="goToCheckIns:" destination="KKb-8d-8Ye" eventType="touchUpInside" id="z2f-Us-tlJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D54-30-WDs">
+                                        <rect key="frame" x="0.0" y="162" width="119" height="30"/>
+                                        <state key="normal" title="Discussion Board"/>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -808,7 +819,7 @@
                                 <action selector="dismissButton:" destination="KKb-8d-8Ye" id="Kee-mr-Fs8"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Chat Page" id="1dl-kg-yXk">
+                        <barButtonItem key="rightBarButtonItem" title="Check In" id="1dl-kg-yXk">
                             <connections>
                                 <action selector="checkInButtonPressed:" destination="KKb-8d-8Ye" id="Izd-fi-dSu"/>
                             </connections>
@@ -818,11 +829,86 @@
                         <outlet property="checkInButton" destination="1dl-kg-yXk" id="QFy-BL-RGw"/>
                         <outlet property="checkedInLabel" destination="TYE-T9-9NP" id="owA-4y-s7i"/>
                         <outlet property="lessThan30MinLabel" destination="4Ti-ZD-BL1" id="IxO-A1-VJs"/>
+                        <segue destination="3Hb-S5-5vp" kind="presentation" identifier="goToListOfCheckIns" id="hp6-R1-BJG"/>
+                        <segue destination="sx8-ga-SNW" kind="presentation" id="7xO-06-B2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ee-Ul-bEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6989.6000000000004" y="-5314.2857142857147"/>
+        </scene>
+        <!--Current Check Ins Table View Controller-->
+        <scene sceneID="Vya-Wo-eeG">
+            <objects>
+                <tableViewController id="vgT-1Z-ihe" customClass="CurrentCheckInsTableViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3zS-UR-hoo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkedDogCell" textLabel="OAY-3B-lcr" detailTextLabel="3o6-tc-fwa" imageView="5JW-eq-xx1" style="IBUITableViewCellStyleValue1" id="CMA-tZ-0Tm" customClass="DogCell" customModule="Pawsy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CMA-tZ-0Tm" id="5bH-Ox-4y0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OAY-3B-lcr">
+                                            <rect key="frame" x="71" y="20" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3o6-tc-fwa">
+                                            <rect key="frame" x="315" y="20" width="44" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="button_compass_night.png" id="5JW-eq-xx1">
+                                            <rect key="frame" x="16" y="9" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myimageView" destination="5JW-eq-xx1" id="pVQ-kl-2cn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vgT-1Z-ihe" id="DKA-bx-twf"/>
+                            <outlet property="delegate" destination="vgT-1Z-ihe" id="Mrt-MP-h7g"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="1Ce-p1-g2Z">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="XV2-x3-10i">
+                            <connections>
+                                <action selector="dismissPage:" destination="vgT-1Z-ihe" id="8pW-7u-Lff"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmr-WA-1Dy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8714" y="-5560"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="0Wa-YB-vCh">
+            <objects>
+                <viewController id="sx8-ga-SNW" customClass="MessageViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N59-te-adu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="PYW-re-xcl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGp-dR-vnz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7892" y="-4823"/>
         </scene>
         <!--My Friends-->
         <scene sceneID="BX5-AF-wOi">
@@ -1025,9 +1111,28 @@
             </objects>
             <point key="canvasLocation" x="1615" y="-5554"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w8p-7C-Uwn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Hb-S5-5vp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PCo-Dy-Q3G">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vgT-1Z-ihe" kind="relationship" relationship="rootViewController" id="puh-p8-xOm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEY-CQ-RCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8011.1999999999998" y="-5563.3004926108379"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Location" width="375" height="812"/>
+        <image name="button_compass_night.png" width="40" height="40"/>
         <image name="icons8-forest-blue" width="25" height="25"/>
         <image name="icons8-forest-gray" width="25" height="25"/>
         <image name="intro" width="375" height="812"/>

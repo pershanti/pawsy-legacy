@@ -13,7 +13,10 @@ class DogParkViewController: UIViewController, MessageViewControllerDelegate {
 
     //info to show: # dogs checked in for less than 30 min, link to list of dogs, link to group chat
 
-    @IBOutlet weak var chatFrame: UIView!
+    @IBAction func goToCheckIns(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToListOfCheckIns", sender: self)
+    }
+
     @IBOutlet weak var checkInButton: UIBarButtonItem!
     var park: Park?
     var checkInReferenceDocs =  [DocumentSnapshot]()
@@ -24,6 +27,21 @@ class DogParkViewController: UIViewController, MessageViewControllerDelegate {
     @IBOutlet weak var lessThan30MinLabel: UILabel!
     @IBOutlet weak var checkedInLabel: UILabel!
     @IBAction func checkInButtonPressed(_ sender: UIBarButtonItem) {
+        let park = CheckedInPark.sharedInstance.park
+        if park.name != nil{
+            self.checkedIn = false
+            print("checkedOut")
+            self.checkInButton.title = "Check In"
+            self.delegate!.checkOut()
+
+        }
+        else{
+            self.checkedIn = true
+            print("checkedIn")
+            self.checkInButton.title = "Check Out"
+            self.delegate!.checkIn(clickedPark: park)
+        }
+
     }
     @IBAction func dismissButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -83,8 +101,11 @@ class DogParkViewController: UIViewController, MessageViewControllerDelegate {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "goToListOfCheckIns"{
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.viewControllers[0] as! CurrentCheckInsTableViewController
+            vc.currentCheckInDocs = self.checkInReferenceDocs
+        }
     }
 
     //MessageViewController Delegate Functions
@@ -94,6 +115,8 @@ class DogParkViewController: UIViewController, MessageViewControllerDelegate {
         popup.park = self.park!
     }
 }
+
+
 
 protocol DogParkViewControllerDelegate {
     func checkIn(clickedPark: Park?)
