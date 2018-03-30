@@ -18,56 +18,33 @@ extension MessageViewController{
         let currentUser = SBDMain.getCurrentUser()
         self.userNickname = currentDog.sharedInstance.name!
         self.username = currentDog.sharedInstance.documentID!
-        self.userImage = UIImageJPEGRepresentation(currentDog.sharedInstance.image!, 1) 
-
+        self.userImage = currentDog.sharedInstance.image!
         // SLKTVC's configuration
         self.bounces = true
         self.shakeToClearEnabled = true
         self.isKeyboardPanningEnabled = true
         self.shouldScrollToBottomAfterKeyboardShows = false
         self.isInverted = true
-
         self.leftButton.setImage(UIImage(named: "icn_upload"), for: UIControlState())
         self.leftButton.tintColor = UIColor.gray
-
         self.rightButton.setTitle(NSLocalizedString("Send", comment: ""), for: UIControlState())
-
         self.textInputbar.autoHideRightButton = true
         self.textInputbar.maxCharCount = 256
         self.textInputbar.counterStyle = .split
         self.textInputbar.counterPosition = .top
-
         self.textInputbar.editorTitle.textColor = UIColor.darkGray
         self.textInputbar.editorLeftButton.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         self.textInputbar.editorRightButton.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
-
         if DEBUG_CUSTOM_TYPING_INDICATOR == false {
             self.typingIndicatorView!.canResignByTouch = true
         }
-
         self.tableView.separatorStyle = .none
         self.tableView.register(MessageTableViewCell.classForCoder(), forCellReuseIdentifier: MessengerCellIdentifier)
-
         self.textView.placeholder = "Message";
-
     }
 
     //SLKViewController delegate functions
-    override func didCommitTextEditing(_ sender: Any) {
-        let message: Message = Message()
-        message.text =  self.textView.text
-        message.username = self.userNickname!
-        message.userID = self.username!
-        message.profileImage = self.userImage!
-
-
-        self.messages.insert(message, at: 0)
-
-        self.tableView.reloadData()
-        self.textView.slk_clearText(false)
-
-        super.didCommitTextEditing(sender)
-    }
+    
     override func didCancelTextEditing(_ sender: Any) {
         super.didCancelTextEditing(sender)
     }

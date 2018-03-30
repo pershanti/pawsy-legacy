@@ -13,6 +13,7 @@ import SwiftHTTP
 import SwiftyJSON
 
 extension GMSMapView {
+    ///these functions calculate a radius in which to search for parks, based on the current map view.
     func getCenterCoordinate() -> CLLocationCoordinate2D {
         let centerPoint = self.center
         let centerCoordinate = self.projection.coordinate(for: centerPoint)
@@ -60,18 +61,15 @@ extension MapViewController{
                     let place = json["results"][number]
                     let placeName = place["name"].string
                     let placeID = place["place_id"].string
-                    let hasChat = place["hasChatRoom"].bool
                     let lat  = place["geometry"]["location"]["lat"].double
                     let lng  = place["geometry"]["location"]["lng"].double
                     if lat != nil && lng != nil{
                         DispatchQueue.main.async {
-                            self.list_of_parks.removeAll()
                             let coordinate = CLLocationCoordinate2D(latitude: lat!,longitude: lng!)
                             let marker = GMSMarker(position: coordinate)
                             marker.snippet = placeName!
                             marker.map = self.gmsmapView
                             let newPark = Park(placename: placeName!, id: placeID!, coordinate: coordinate)
-                            newPark.hasChatRoom = hasChat!
                             self.list_of_parks[placeName!] = newPark
                         }
                     }
@@ -92,7 +90,7 @@ extension MapViewController: MapPopupViewControllerDelegate, DogParkViewControll
                 print("creating new check ins")
                 //add the check in to a list specific to this dog park
                 self.dogParkReference = self.db.collection("dogParks").document(self.clickedPark.placeID!)
-                self.dogParkReference?.setData(["placeName": self.newCheckIn!.placeName!, "placeID":self.newCheckIn!.placeID!])
+                self.dogParkReference?.setData(["placeName": self.newCheckIn!.placeName!, "placeID":self.newCheckIn!.placeID!, "hasChatRoom": false])
                 self.dogParkCheckInReference =  self.dogParkReference!.collection("currentCheckIns").addDocument(data: ["checkInReferenceID":self.checkInReference!.documentID])
 
                 //add the check in ID to the dog's checkIn collection
@@ -100,12 +98,12 @@ extension MapViewController: MapPopupViewControllerDelegate, DogParkViewControll
 
                 //add the check in ID to the dog's current check ins
                 self.dogCurrentCheckInsReference = self.dogReference!.collection("currentCheckIns").addDocument(data: ["checkInReferenceID":self.checkInReference!.documentID])
-
+                //segue into the park view controller
+                self.performSegue(withIdentifier: "goToParkPage", sender: self)
             }
         }
         else{
-            print("check in else initiated")
-            //add the check in to a list specific to this dog park
+            //if already checked in, get the details of it and add the check in to a list specific to this dog park
             self.checkInReference!.getDocument(completion: { (snapshot, error) in
                 if error == nil{
                     print("got check in document")
@@ -123,6 +121,8 @@ extension MapViewController: MapPopupViewControllerDelegate, DogParkViewControll
                                 if vc.checkedIn == false{
                                     vc.checkedIn = true
                                     vc.checkInButton.setTitle("Check Out", for: .normal)
+                                    //segue into the park view controller
+                                    self.performSegue(withIdentifier: "goToParkPage", sender: self)
                                 }
                             }
                         }
@@ -164,6 +164,7 @@ extension MapViewController: MapPopupViewControllerDelegate, DogParkViewControll
                 print (checkInID)
                 self.checkInReference = self.db.collection("allCheckIns").document(checkInID)
                 self.checkIn()
+
             }
             else{
                 print("no current checkIns")

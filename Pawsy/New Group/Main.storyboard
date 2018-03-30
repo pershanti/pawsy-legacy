@@ -771,10 +771,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ka0-pQ-2sU" firstAttribute="trailing" secondItem="7xL-hF-NlQ" secondAttribute="trailing" id="3VW-2r-qHK"/>
                             <constraint firstItem="pq0-Iw-eNj" firstAttribute="leading" secondItem="7xL-hF-NlQ" secondAttribute="leading" constant="16" id="5sd-Pr-ASH"/>
+                            <constraint firstItem="7xL-hF-NlQ" firstAttribute="bottom" secondItem="ka0-pQ-2sU" secondAttribute="bottom" constant="8" id="CuQ-Oc-tXv"/>
                             <constraint firstItem="ka0-pQ-2sU" firstAttribute="leading" secondItem="7xL-hF-NlQ" secondAttribute="leading" id="Qzh-7J-eW8"/>
                             <constraint firstItem="7xL-hF-NlQ" firstAttribute="bottom" secondItem="ka0-pQ-2sU" secondAttribute="bottom" constant="8" id="T2Y-0s-zTc"/>
                             <constraint firstItem="7xL-hF-NlQ" firstAttribute="trailing" secondItem="pq0-Iw-eNj" secondAttribute="trailing" constant="16" id="Vid-QX-PJS"/>
+                            <constraint firstItem="ka0-pQ-2sU" firstAttribute="leading" secondItem="7xL-hF-NlQ" secondAttribute="leading" id="qzd-nG-KC4"/>
                             <constraint firstItem="pq0-Iw-eNj" firstAttribute="top" secondItem="7xL-hF-NlQ" secondAttribute="top" constant="36" id="sb9-05-ZpK"/>
                             <constraint firstItem="ka0-pQ-2sU" firstAttribute="trailing" secondItem="7xL-hF-NlQ" secondAttribute="trailing" id="uGT-r9-1kP"/>
                         </constraints>

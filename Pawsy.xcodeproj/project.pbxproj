@@ -25,7 +25,6 @@
 		5681CE1720526499009856E8 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681CE1620526499009856E8 /* FriendsTableViewController.swift */; };
 		5681CE1920528619009856E8 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5681CE1820528618009856E8 /* loading.json */; };
 		56854493206A3396001DEF81 /* MessageViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56854492206A3396001DEF81 /* MessageViewControllerExtensions.swift */; };
-		5685449F206A9BA8001DEF81 /* SBD Delegate Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5685449E206A9BA8001DEF81 /* SBD Delegate Functions.swift */; };
 		5689BFC520673E44006738B0 /* currentDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689BFC420673E44006738B0 /* currentDog.swift */; };
 		568BEC80203E73CE006DB9EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568BEC7F203E73CE006DB9EB /* HomeViewController.swift */; };
 		569A71E52000AF4700B74517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569A71E42000AF4700B74517 /* Main.storyboard */; };
@@ -101,7 +100,6 @@
 		5681CE1620526499009856E8 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewController.swift; path = "/Users/shantini/pawsy/Pawsy/View Controllers/Friend Finding View Controllers/FriendsTableViewController.swift"; sourceTree = "<absolute>"; };
 		5681CE1820528618009856E8 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		56854492206A3396001DEF81 /* MessageViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewControllerExtensions.swift; sourceTree = "<group>"; };
-		5685449E206A9BA8001DEF81 /* SBD Delegate Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SBD Delegate Functions.swift"; sourceTree = "<group>"; };
 		5689BFC420673E44006738B0 /* currentDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentDog.swift; sourceTree = "<group>"; };
 		568BEC7F203E73CE006DB9EB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		568BEC83203E7F7A006DB9EB /* BebasNeue Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Book.ttf"; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 				56A0C66D203BE6620006B1BE /* MapViewController.swift */,
 				560E2E35206225CA00C0CA6C /* MapViewController Extensions.swift */,
 				5680A617206887540061B72F /* MessageViewController.swift */,
-				5685449E206A9BA8001DEF81 /* SBD Delegate Functions.swift */,
 				56854492206A3396001DEF81 /* MessageViewControllerExtensions.swift */,
 				560E2E372062260600C0CA6C /* Park.swift */,
 			);
@@ -595,7 +592,6 @@
 				56D2DD3A2068B61B007D7DED /* SLKTextInputbar.m in Sources */,
 				56D2DD3B2068B61B007D7DED /* TypingIndicatorView.m in Sources */,
 				56D2DD3C2068B61B007D7DED /* UIResponder+SLKAdditions.m in Sources */,
-				5685449F206A9BA8001DEF81 /* SBD Delegate Functions.swift in Sources */,
 				56D2DD3D2068B61B007D7DED /* MessageTextView.m in Sources */,
 				56D2DD3E2068B61B007D7DED /* MessageViewController.m in Sources */,
 				56D2DD3F2068B61B007D7DED /* UIScrollView+SLKAdditions.m in Sources */,
