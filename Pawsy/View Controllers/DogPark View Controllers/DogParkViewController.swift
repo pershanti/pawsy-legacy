@@ -33,7 +33,7 @@ class DogParkViewController: UIViewController, MessageViewControllerDelegate {
         super.viewDidLoad()
         self.navigationItem.title = self.park!.name
         self.getCurrentCheckIns()
-
+        self.delegate!.checkIfCheckedIn()
 
         // Do any additional setup after loading the view.
     }
@@ -62,6 +62,7 @@ class DogParkViewController: UIViewController, MessageViewControllerDelegate {
         }
     }
 
+    //checks how many users have been around for less than 30 minutes
     func updateCheckInStatus(){
         self.checkedInLabel.text = String(describing: self.checkInReferenceDocs.count)
         self.lessThan30 = 0
@@ -90,12 +91,12 @@ class DogParkViewController: UIViewController, MessageViewControllerDelegate {
     func setUpMessageViewController() {
         let popup = self.childViewControllers[0] as! MessageViewController
         popup.delegate = self
-        popup.park = self.park
+        popup.park = self.park!
     }
 }
 
 protocol DogParkViewControllerDelegate {
-    func checkIn()
+    func checkIn(clickedPark: Park?)
     func checkOut()
     func checkIfCheckedIn()
 }

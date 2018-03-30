@@ -20,7 +20,7 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
     var userNickname: String?
     var userImage: UIImage?
     var sbdUser: SBDUser = SBDMain.getCurrentUser()! 
-    var park: Park?
+    var park = CheckedInPark.sharedInstance.park
     var delegate: MessageViewControllerDelegate?
     var chatRoomURL: String?
     var hasChatRoom: Bool?
@@ -40,15 +40,16 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
     }
 
     override func viewDidLoad() {
-        SBDMain.add(self as SBDChannelDelegate, identifier: self.chatRoomURL! + "delegateidentifier")
+
         self.delegate!.setUpMessageViewController()
-        self.checkForChatRoom(park: self.park!)
+        self.checkForChatRoom(park: self.park)
         super.viewDidLoad()
-        let parkDocID = self.park!.placeID!
+        let parkDocID = self.park.placeID!
 
         //creates a unique url identifier for the chat
         self.chatRoomURL = firestorePrefix + parkDocID
         self.setUpChatView()
+         SBDMain.add(self as SBDChannelDelegate, identifier: self.chatRoomURL! + "delegateidentifier")
         self.getSendBirdPublicChannel()
     }
 
@@ -109,13 +110,14 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
     //check if the channel exists: if not, create it
     func getSendBirdPublicChannel(){
         //create new channel
-        if self.park?.hasChatRoom == false {
-            SBDOpenChannel.createChannel(withName: self.park!.name!, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
+        if self.park.hasChatRoom == false {
+            SBDOpenChannel.createChannel(withName: self.park.name!, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
                 if error != nil {
                     NSLog("Error: %@", error!)
                     return
                 }
                 self.loadSendbirdPublicChannel(channel: channel!)
+
             })
         }
 
@@ -132,7 +134,7 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
     }
 
     func checkForChatRoom(park: Park) -> Bool{
-        let parkDocID = self.park!.placeID!
+        let parkDocID = self.park.placeID!
         Firestore.firestore().collection("parks").document(parkDocID).getDocument { (snapshot, error) in
             if snapshot != nil{
                 self.hasChatRoom = snapshot!.data()!["hasChatRoom"] as! Bool

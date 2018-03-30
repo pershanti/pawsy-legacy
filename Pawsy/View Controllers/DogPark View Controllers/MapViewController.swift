@@ -13,67 +13,94 @@ import GooglePlaces
 import SwiftHTTP
 import SwiftyJSON
 
-class MapViewController: UIViewController, GMSMapViewDelegate  {
+class MapViewController: UIViewController, GMSMapViewDelegate, DogParkViewControllerDelegate  {
 
+    //current dog singleton
+    var dogReference =  currentDog.sharedInstance.currentReference
 
+    //firebase user
+    var db = Firestore.firestore()
+    var currentUser = Auth.auth().currentUser
+
+    //check in variables
+    var checkedIn = false
     var checkInTime: Date?
     var checkedInParkPlaceID: String?
     var checkInDocument: DocumentSnapshot?
     var checkInReference: DocumentReference?
-    var clickedPark = Park(placename: "Select a Dog Park", id: "", coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0))
-    var currentLocation: CLLocation?
-    var currentUser = Auth.auth().currentUser
-    var db = Firestore.firestore()
     var dogCheckInReference: DocumentReference?
     var dogCurrentCheckInsReference: DocumentReference?
     var dogParkCheckInReference: DocumentReference?
-    var dogParkReference: DocumentReference?
-    var dogReference =  currentDog.sharedInstance.currentReference
-    var list_of_parks = [String : Park]()
-    var locationManager = CLLocationManager()
     var newCheckIn: CheckIn?
-    var placesClient: GMSPlacesClient!
     var placeDoc: DocumentReference?
+
+    //currentpark singleton
+     var dogParkReference: DocumentReference?
+
+    //map variables
+    var clickedPark = Park(placename: "Select a Dog Park", id: "")
+
+    var list_of_parks = [String : Park]()
+    var currentLocation: CLLocation?
+    var locationManager = CLLocationManager()
+    var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
-    @IBOutlet weak var containerView: UIView!
+
     @IBOutlet weak var gmsmapView: GMSMapView!
+    @IBOutlet weak var parkPageButton: UIButton!
+    @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var parkNameLabel: UILabel!
+    @IBOutlet weak var checkInButton: UIButton!
+
     @IBAction func homeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
-    //Map Popup View Controller Delegate Functions
-    func goToParkPage() {
-        self.performSegue(withIdentifier: "goToParkPage", sender: self)
+    @IBAction func checkInButtonPressed(_ sender: UIButton) {
+        if self.checkedIn == false{
+            self.checkedIn = true
+            print("checkedIn")
+            self.checkInButton.setTitle("Check Out", for: .normal)
+            self.checkIn(clickedPark: self.clickedPark)
+        }
+        else if self.checkedIn == true {
+            self.checkedIn = false
+            print("checkedOut")
+            self.checkInButton.setTitle("Check In", for: .normal)
+            self.checkOut()
+        }
+    }
+
+    @IBAction func goToParkPageButton(_ sender: UIButton) {
+              self.performSegue(withIdentifier: "goToParkPage", sender: self)
+    }
+
+    @IBAction func dismissButtonPressed(_ sender: UIButton) {
+        self.parkNameLabel.text = "Select a Dog Park"
+        self.parkPageButton.setTitleColor(UIColor.white, for: .normal)
+        self.dismissButton.setTitleColor(UIColor.white, for: .normal)
+        self.checkInButton.setTitleColor(UIColor.white, for: .normal)
     }
 
     //Map Delegate functions
-
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.clickedPark = list_of_parks[marker.snippet!]!
-        let vc = self.childViewControllers[0] as! MapPopupViewController
-        vc.delegate = self
-        vc.checkIfCheckedIn()
-        vc.park = self.clickedPark
-        vc.parkPageButton.setTitleColor(UIColor.blue, for: .normal)
-        vc.dismissButton.setTitleColor(UIColor.blue, for: .normal)
-        vc.checkInButton.setTitleColor(UIColor.blue, for: .normal)
-        vc.viewDidLoad()
+        self.parkNameLabel.text = marker.snippet
+        self.parkPageButton.setTitleColor(UIColor.blue, for: .normal)
+        self.dismissButton.setTitleColor(UIColor.blue, for: .normal)
+        self.checkInButton.setTitleColor(UIColor.blue, for: .normal)
         return true
     }
 
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        //updates the parks when the view changes
         getParks()
     }
 
     //Functions to set up the view
     override func viewDidLoad() {
         self.getLocation()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        let popup = self.childViewControllers[0] as! MapPopupViewController
-        popup.delegate = self
-        popup.park = self.clickedPark
+        self.checkIfCheckedIn()
     }
 
     //Sets up location Manager
