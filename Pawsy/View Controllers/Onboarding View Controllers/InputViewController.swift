@@ -232,7 +232,8 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             "photo": photoURL,
             "gender": dogGender!,
             "fixed": dogFixed!,
-            "breed": self.breed!
+            "breed": self.breed!,
+            "checkedInParkID": "0"
         ])
         if self.locationManager.location != nil {
             dogDoc?.updateData(["longitude":self.locationManager.location!.coordinate.longitude, "latitude":self.locationManager.location!.coordinate.latitude])

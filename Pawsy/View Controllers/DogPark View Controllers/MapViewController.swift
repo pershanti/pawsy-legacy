@@ -47,15 +47,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
     }
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         self.parkNameLabel.text = "Select a Dog Park"
-        self.parkPageButton.setTitleColor(UIColor.white, for: .normal)
-        self.dismissButton.setTitleColor(UIColor.white, for: .normal)
+        self.parkPageButton.isEnabled = false
+        self.dismissButton.isEnabled = false
     }
     //Map Delegate functions
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.clickedPark = list_of_parks[marker.snippet!]!
         self.parkNameLabel.text = marker.snippet
-        self.parkPageButton.setTitleColor(UIColor.blue, for: .normal)
-        self.dismissButton.setTitleColor(UIColor.blue, for: .normal)
+        self.parkPageButton.isEnabled = true
+        self.dismissButton.isEnabled = true
         return true
     }
 
@@ -100,23 +100,40 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToParkPage"{
-            let nav = segue.destination as! UINavigationController
-            let vc = nav.viewControllers[0] as! DogParkViewController
-            vc.thisParkID = self.clickedPark!.placeID!
+        if segue.identifier == "goToParkPage" {
+            if self.checkedInPark.parkID == nil{
+                let nav = segue.destination as! UINavigationController
+                let vc = nav.viewControllers[0] as! DogParkViewController
+                vc.thisParkID = self.clickedPark!.name!
+                vc.parkName = self.clickedPark!.name!
+            }
+            else {
+                let nav = segue.destination as! UINavigationController
+                let vc = nav.viewControllers[0] as! DogParkViewController
+                vc.thisParkID = self.checkedInPark.parkID
+                vc.restoreCheckInSession()
+
+            }
         }
+
     }
-    func checkIfCheckedIn() {
+    func checkIfCheckedIn() { ///This is not working
         self.dogCollection.document(signedInDog.documentID!).getDocument { (DocSnapshot, Error) in
             if DocSnapshot != nil{
                 //check if this dog is checked in
-                let checkInParkID = DocSnapshot!.data()!["checkedInParkID"] as! Int
-                if checkInParkID == 0{
+                let checkInParkID = DocSnapshot!.data()!["checkedInParkID"] as! String
+                if checkInParkID == "0" {
                     return
                 }
                 else{
-                    self.checkedInPark.parkReference = self.parkCollection.document(String(describing: checkInParkID))
-                    self.clickedPark = self.list_of_parks[String(describing: checkInParkID)]
+                    self.checkedInPark.parkReference = self.parkCollection.document(checkInParkID)
+                    self.checkedInPark.parkID = checkInParkID
+                    self.checkedInPark.parkReference?.getDocument(completion: { (snapshot2, error2) in
+                        if snapshot2 != nil{
+                            let parkName = snapshot2!.data()!["name"] as! String
+                            self.clickedPark = self.list_of_parks[parkName]
+                        }
+                    })
                     DispatchQueue.main.async {
                         //go to the park's page view controller. map is inaccessible while checked in.
                         self.performSegue(withIdentifier: "goToParkPage", sender: self)

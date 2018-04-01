@@ -686,14 +686,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yOj-R5-cty">
                                         <rect key="frame" x="0.0" y="54" width="327" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc6-jZ-JC6" userLabel="Park Page">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc6-jZ-JC6" userLabel="Park Page">
                                                 <rect key="frame" x="0.0" y="0.0" width="163.66666666666666" height="30"/>
                                                 <state key="normal" title="Park Page"/>
                                                 <connections>
                                                     <action selector="goToParkPageButton:" destination="61a-G1-LA4" eventType="touchUpInside" id="1sA-Jd-1kr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvf-hq-UmH" userLabel="Dismiss">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvf-hq-UmH" userLabel="Dismiss">
                                                 <rect key="frame" x="163.66666666666663" y="0.0" width="163.33333333333337" height="30"/>
                                                 <state key="normal" title="Dismiss"/>
                                                 <connections>
@@ -780,14 +780,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6W-DD-qeF" userLabel="See who's checked in">
+                                    <button contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6W-DD-qeF" userLabel="See who's checked in">
                                         <rect key="frame" x="0.0" y="108" width="149" height="30"/>
                                         <state key="normal" title="See who's checked in"/>
                                         <connections>
                                             <action selector="goToCheckIns:" destination="KKb-8d-8Ye" eventType="touchUpInside" id="z2f-Us-tlJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D54-30-WDs">
+                                    <button contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D54-30-WDs">
                                         <rect key="frame" x="0.0" y="162" width="119" height="30"/>
                                         <state key="normal" title="Discussion Board"/>
                                         <connections>
@@ -820,8 +820,9 @@
                     <connections>
                         <outlet property="checkInButton" destination="1dl-kg-yXk" id="QFy-BL-RGw"/>
                         <outlet property="checkedInLabel" destination="TYE-T9-9NP" id="owA-4y-s7i"/>
+                        <outlet property="goToCheckInsButton" destination="U6W-DD-qeF" id="cbY-go-600"/>
+                        <outlet property="goToDiscussionBoardButton" destination="D54-30-WDs" id="POm-zp-BZh"/>
                         <outlet property="howLongYouveBeenHere" destination="4Ti-ZD-BL1" id="l0c-hh-N0i"/>
-                        <outlet property="lessThan30MinLabel" destination="4Ti-ZD-BL1" id="IxO-A1-VJs"/>
                         <segue destination="3Hb-S5-5vp" kind="presentation" identifier="goToListOfCheckIns" id="hp6-R1-BJG"/>
                         <segue destination="sx8-ga-SNW" kind="presentation" identifier="goToMessageBoard" id="7xO-06-B2Y"/>
                     </connections>

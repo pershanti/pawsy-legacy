@@ -12,7 +12,18 @@ import Cloudinary
 
 class CurrentCheckInsTableViewController: UITableViewController {
 
+    //current dog singleton
+    var signedInDog =  currentDog.sharedInstance
+    //checked in park singleton
+    var checkedInPark = CheckedInPark.sharedInstance
+    var thisParkID: String?
+    //firebase user
+    var dogCollection = Firestore.firestore().collection("dogs")
+    var parkCollection = Firestore.firestore().collection("dogParks")
+    var currentUser = Auth.auth().currentUser
+    var listOfDogs = [DocumentSnapshot]()
 
+    var cloudinary = CLDCloudinary(configuration: CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")!)
 
     @IBAction func dismissPage(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -21,11 +32,28 @@ class CurrentCheckInsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getListOfDogs()
-        
     }
 
     func getListOfDogs(){
-
+        self.checkedInPark.parkReference!.collection("currentCheckIns").getDocuments(completion: { (Snapshot, Error) in
+            if Snapshot != nil{
+                self.listOfDogs = [DocumentSnapshot]()
+                print(Snapshot?.documents.count)
+                for document in Snapshot!.documents{
+                    let dogID = document.data()["dogID"] as! String
+                    self.dogCollection.document(dogID).getDocument(completion: { (DogDoc, Error2) in
+                        if Error2 != nil{
+                            print(Error2!.localizedDescription)
+                            return
+                        }
+                        self.listOfDogs.append(DogDoc!)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    })
+                }
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,15 +70,26 @@ class CurrentCheckInsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return listOfDogs.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "checkedDogCell") as! DogCell
+        cell.textLabel?.text = self.listOfDogs[indexPath.row].data()!["name"] as! String
+        cell.detailTextLabel?.text = String(describing: self.listOfDogs[indexPath.row].data()!["checkInTime"] as! Date)
+        let photoURL = self.listOfDogs[indexPath.row].data()!["photo"] as! String
+        self.cloudinary.createDownloader().fetchImage(photoURL, nil) { (image, Error) in
+            if image != nil{
+                DispatchQueue.main.async {
+                    cell.myimageView.image = image!
+                }
+            }
+        }
         return cell
     }
 
 }
+
 class DogCell: UITableViewCell {
 
     @IBOutlet weak var myimageView: UIImageView!
