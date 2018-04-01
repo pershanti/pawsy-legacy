@@ -33,6 +33,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
 
+    var checkedInParkName: String?
+
     @IBOutlet weak var gmsmapView: GMSMapView!
     @IBOutlet weak var parkPageButton: UIButton!
     @IBOutlet weak var dismissButton: UIButton!
@@ -104,15 +106,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
             if self.checkedInPark.parkID == nil{
                 let nav = segue.destination as! UINavigationController
                 let vc = nav.viewControllers[0] as! DogParkViewController
-                vc.thisParkID = self.clickedPark!.name!
+                vc.thisParkID = self.clickedPark!.placeID!
                 vc.parkName = self.clickedPark!.name!
             }
             else {
                 let nav = segue.destination as! UINavigationController
                 let vc = nav.viewControllers[0] as! DogParkViewController
                 vc.thisParkID = self.checkedInPark.parkID
-                vc.restoreCheckInSession()
-
+                vc.parkName = self.checkedInParkName!
             }
         }
 
@@ -130,14 +131,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
                     self.checkedInPark.parkID = checkInParkID
                     self.checkedInPark.parkReference?.getDocument(completion: { (snapshot2, error2) in
                         if snapshot2 != nil{
-                            let parkName = snapshot2!.data()!["name"] as! String
-                            self.clickedPark = self.list_of_parks[parkName]
+                            self.checkedInParkName = snapshot2!.data()!["name"] as! String
+                            self.clickedPark = self.list_of_parks[self.checkedInParkName!]
+                            DispatchQueue.main.async {
+                                //go to the park's page view controller. map is inaccessible while checked in.
+                                self.performSegue(withIdentifier: "goToParkPage", sender: self)
+                            }
                         }
                     })
-                    DispatchQueue.main.async {
-                        //go to the park's page view controller. map is inaccessible while checked in.
-                        self.performSegue(withIdentifier: "goToParkPage", sender: self)
-                    }
+
                 }
             }
         }

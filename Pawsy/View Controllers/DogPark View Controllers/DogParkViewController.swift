@@ -69,11 +69,13 @@ class DogParkViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = self.parkName!
         if self.thisParkID == self.checkedInPark.parkID{
+            self.restoreCheckInSession()
             //change the check in button to say "checked out"
             //update how long you've been there
             //send notifications on how long you've been checked in
 
         }
+        self.getNumberOfCheckIns()
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,8 +105,9 @@ class DogParkViewController: UIViewController {
                 self.checkedInPark.parkReference = self.parkCollection.document(self.thisParkID!)
                 DispatchQueue.main.async {
                     self.checkInButton.title = "Check Out"
-                    self.goToCheckInsButton.isHidden = false
-                    self.goToDiscussionBoardButton.isHidden = false
+                    self.goToCheckInsButton.isEnabled = true
+                    self.goToDiscussionBoardButton.isEnabled = true
+                    self.update()
                 }
             }
         }
@@ -117,17 +120,15 @@ class DogParkViewController: UIViewController {
         self.howLongYouveBeenHere.text = "0 minutes"
         self.checkInTime = Date()
         let parkDoc = self.parkCollection.document(self.thisParkID!)
-        parkDoc.getDocument { (snap, err) in
-            if snap == nil{
-                snap!.reference.setData(["name":self.parkName!])
-            }
-            self.checkInDoc = self.parkCollection.document(self.thisParkID!).collection("currentCheckIns").addDocument(data: ["checkInTime": self.checkInTime!, "dogID":self.signedInDog.documentID, "dogParkID":self.thisParkID])
-            self.signedInDog.currentReference!.updateData(["checkedInParkID": self.signedInDog.documentID, "checkInTime": self.checkInTime])
-            self.checkedInPark.parkID = self.thisParkID
-            self.checkedInPark.parkReference = self.parkCollection.document(self.thisParkID!)
-            self.getNumberOfCheckIns()
-        }
+        parkDoc.setData(["name":self.parkName!])
+        self.checkInDoc = self.parkCollection.document(self.thisParkID!).collection("currentCheckIns").addDocument(data: ["checkInTime": self.checkInTime!, "dogID":self.signedInDog.documentID, "dogParkID":self.thisParkID])
+        self.signedInDog.currentReference!.updateData(["checkedInParkID": self.thisParkID!, "checkInTime": self.checkInTime])
+        self.checkedInPark.parkID = self.thisParkID
+        self.checkedInPark.parkReference = self.parkCollection.document(self.thisParkID!)
+        self.getNumberOfCheckIns()
+        self.update()
     }
+
 
     func checkOut(){
         self.checkInDoc!.setData(["checkOutTime" : Date()])
@@ -152,17 +153,17 @@ class DogParkViewController: UIViewController {
     }
 
     func getNumberOfCheckIns(){
-        if self.checkInTime != nil{
-            self.checkedInPark.parkReference!.collection("currentCheckIns").getDocuments(completion: { (Snapshot, Error) in
+        self.parkCollection.document(self.thisParkID!).collection("currentCheckIns").getDocuments(completion: { (Snapshot, Error) in
+            if Snapshot != nil{
                 self.checkedInLabel.text = String(describing: Snapshot!.documents.count)
-            })
-        }
+            }
+        })
     }
 
     func update() {
         if self.checkInTime != nil{
             let timeDifference = self.checkInTime!.timeIntervalSinceNow
-            let timeMinutes = Int(timeDifference/60)
+            let timeMinutes = Int(-timeDifference/60)
             self.howLongYouveBeenHere.text = String(describing: timeMinutes) + " minutes"
             self.getNumberOfCheckIns()
         }
