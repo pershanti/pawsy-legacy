@@ -21,7 +21,6 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
     var userImage: UIImage?
     var sbdUser: SBDUser = SBDMain.getCurrentUser()! 
     var park = CheckedInPark.sharedInstance.park
-    var delegate: MessageViewControllerDelegate?
     var chatRoomURL: String?
     var hasChatRoom: Bool?
     let firestorePrefix = "https://pawsy-c0063.firebaseio.combase/firestore/dogParks/"
@@ -41,7 +40,6 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
 
     override func viewDidLoad() {
 
-        self.delegate!.setUpMessageViewController()
         self.checkForChatRoom(park: self.park)
         super.viewDidLoad()
         let parkDocID = self.park.placeID!
@@ -117,7 +115,8 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
                     return
                 }
                 self.loadSendbirdPublicChannel(channel: channel!)
-
+                self.hasChatRoom = true
+                Firestore.firestore().collection("parks").document(self.park.placeID!).updateData(["hasChatRoom" : true])
             })
         }
 
@@ -135,9 +134,10 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
 
     func checkForChatRoom(park: Park) -> Bool{
         let parkDocID = self.park.placeID!
-        Firestore.firestore().collection("parks").document(parkDocID).getDocument { (snapshot, error) in
+        Firestore.firestore().collection("dogParks").document(parkDocID).getDocument { (snapshot, error) in
             if snapshot != nil{
                 self.hasChatRoom = snapshot!.data()!["hasChatRoom"] as! Bool
+
             }
         }
         return false
@@ -183,9 +183,3 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
         return cell
     }
 }
-
-protocol MessageViewControllerDelegate {
-    func setUpMessageViewController()
-}
-
-

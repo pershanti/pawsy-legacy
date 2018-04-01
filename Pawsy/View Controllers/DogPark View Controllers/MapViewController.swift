@@ -13,33 +13,20 @@ import GooglePlaces
 import SwiftHTTP
 import SwiftyJSON
 
-class MapViewController: UIViewController, GMSMapViewDelegate, DogParkViewControllerDelegate  {
+class MapViewController: UIViewController, GMSMapViewDelegate  {
 
     //current dog singleton
-    var dogReference =  currentDog.sharedInstance.currentReference
+    var signedInDog =  currentDog.sharedInstance
+    //checked in park singleton
+    var checkedInPark = CheckedInPark.sharedInstance
 
     //firebase user
-    var db = Firestore.firestore()
+    var dogCollection = Firestore.firestore().collection("dogs")
+    var parkCollection = Firestore.firestore().collection("dogParks")
     var currentUser = Auth.auth().currentUser
 
-    //check in variables
-    var checkedIn = false
-    var checkInTime: Date?
-    var checkedInParkPlaceID: String?
-    var checkInDocument: DocumentSnapshot?
-    var checkInReference: DocumentReference?
-    var dogCheckInReference: DocumentReference?
-    var dogCurrentCheckInsReference: DocumentReference?
-    var dogParkCheckInReference: DocumentReference?
-    var newCheckIn: CheckIn?
-    var placeDoc: DocumentReference?
-
-    //currentpark singleton
-     var dogParkReference: DocumentReference?
-
     //map variables
-    var clickedPark = Park(placename: "Select a Dog Park", id: "")
-
+    var clickedPark: Park?
     var list_of_parks = [String : Park]()
     var currentLocation: CLLocation?
     var locationManager = CLLocationManager()
@@ -50,45 +37,25 @@ class MapViewController: UIViewController, GMSMapViewDelegate, DogParkViewContro
     @IBOutlet weak var parkPageButton: UIButton!
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var parkNameLabel: UILabel!
-    @IBOutlet weak var checkInButton: UIButton!
 
     @IBAction func homeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func checkInButtonPressed(_ sender: UIButton) {
-        if self.checkedIn == false{
-            self.checkedIn = true
-            print("checkedIn")
-            self.checkInButton.setTitle("Check Out", for: .normal)
-            self.checkIn(clickedPark: self.clickedPark)
-        }
-        else if self.checkedIn == true {
-            self.checkedIn = false
-            print("checkedOut")
-            self.checkInButton.setTitle("Check In", for: .normal)
-            self.checkOut()
-        }
-    }
-
     @IBAction func goToParkPageButton(_ sender: UIButton) {
-              self.performSegue(withIdentifier: "goToParkPage", sender: self)
+        self.performSegue(withIdentifier: "goToParkPage", sender: self)
     }
-
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
         self.parkNameLabel.text = "Select a Dog Park"
         self.parkPageButton.setTitleColor(UIColor.white, for: .normal)
         self.dismissButton.setTitleColor(UIColor.white, for: .normal)
-        self.checkInButton.setTitleColor(UIColor.white, for: .normal)
     }
-
     //Map Delegate functions
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.clickedPark = list_of_parks[marker.snippet!]!
         self.parkNameLabel.text = marker.snippet
         self.parkPageButton.setTitleColor(UIColor.blue, for: .normal)
         self.dismissButton.setTitleColor(UIColor.blue, for: .normal)
-        self.checkInButton.setTitleColor(UIColor.blue, for: .normal)
         return true
     }
 
@@ -136,8 +103,26 @@ class MapViewController: UIViewController, GMSMapViewDelegate, DogParkViewContro
         if segue.identifier == "goToParkPage"{
             let nav = segue.destination as! UINavigationController
             let vc = nav.viewControllers[0] as! DogParkViewController
-            vc.park = self.clickedPark
-            vc.delegate = self
+            vc.thisParkID = self.clickedPark!.placeID!
+        }
+    }
+    func checkIfCheckedIn() {
+        self.dogCollection.document(signedInDog.documentID!).getDocument { (DocSnapshot, Error) in
+            if DocSnapshot != nil{
+                //check if this dog is checked in
+                let checkInParkID = DocSnapshot!.data()!["checkedInParkID"] as! Int
+                if checkInParkID == 0{
+                    return
+                }
+                else{
+                    self.checkedInPark.parkReference = self.parkCollection.document(String(describing: checkInParkID))
+                    self.clickedPark = self.list_of_parks[String(describing: checkInParkID)]
+                    DispatchQueue.main.async {
+                        //go to the park's page view controller. map is inaccessible while checked in.
+                        self.performSegue(withIdentifier: "goToParkPage", sender: self)
+                    }
+                }
+            }
         }
     }
 }

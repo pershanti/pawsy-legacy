@@ -8,19 +8,16 @@
 
 import Foundation
 import CoreLocation
+import Firebase
 
 
 struct CheckIn {
     var checkInTime: Date?
     var checkOutTime: Date?
-    var placeID: String?
-    var placeName: String?
     var dogID: String?
-    init(cin: Date, place: String, dog: String, name: String) {
+    init(cin: Date, dog: String) {
         self.checkInTime = cin
-        self.placeID = place
         self.dogID = dog
-        self.placeName = name
     }
 }
 
@@ -38,7 +35,8 @@ class Park {
 }
 
 class CheckedInPark {
-    var park: Park = Park()
+    var parkID: String?
+    var parkReference: DocumentReference?
     static var sharedInstance = CheckedInPark()
 }
 

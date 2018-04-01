@@ -29,7 +29,6 @@
 		56A044E42066355E00E11AC3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A044E32066355D00E11AC3 /* Default-568h@2x.png */; };
 		56A0C66E203BE6620006B1BE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0C66D203BE6620006B1BE /* MapViewController.swift */; };
 		56A0C670203BF90F0006B1BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */; };
-		56BC0D29206E200B00DDED0C /* CheckInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC0D28206E200B00DDED0C /* CheckInManager.swift */; };
 		56BC0D2B206E213500DDED0C /* Data Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC0D2A206E213500DDED0C /* Data Structs.swift */; };
 		56BC0D2D206E39FA00DDED0C /* CurrentCheckInsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC0D2C206E39FA00DDED0C /* CurrentCheckInsTableViewController.swift */; };
 		56BFCBA52034237300DFD47C /* CustomFUIAuthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */; };
@@ -112,7 +111,6 @@
 		56A044E32066355D00E11AC3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		56A0C66D203BE6620006B1BE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		56A0C66F203BF90F0006B1BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		56BC0D28206E200B00DDED0C /* CheckInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInManager.swift; sourceTree = "<group>"; };
 		56BC0D2A206E213500DDED0C /* Data Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Structs.swift"; sourceTree = "<group>"; };
 		56BC0D2C206E39FA00DDED0C /* CurrentCheckInsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrentCheckInsTableViewController.swift; path = "Pawsy/View Controllers/DogPark View Controllers/CurrentCheckInsTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		56BFCBA42034237300DFD47C /* CustomFUIAuthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFUIAuthPicker.swift; sourceTree = "<group>"; };
@@ -282,7 +280,6 @@
 		56854498206A341D001DEF81 /* DogPark View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				56BC0D28206E200B00DDED0C /* CheckInManager.swift */,
 				56BC0D2C206E39FA00DDED0C /* CurrentCheckInsTableViewController.swift */,
 				56BC0D2A206E213500DDED0C /* Data Structs.swift */,
 				5607213A20572C03009DE3DA /* DogParkViewController.swift */,
@@ -605,7 +602,6 @@
 				5681CE1720526499009856E8 /* FriendsTableViewController.swift in Sources */,
 				56275DA220368AD700C544BC /* BreedViewControllerDelegate.swift in Sources */,
 				562E257920382A48008C7204 /* NearbyTableViewController.swift in Sources */,
-				56BC0D29206E200B00DDED0C /* CheckInManager.swift in Sources */,
 				564872CB1FE25E9A00D292FA /* AppDelegate.swift in Sources */,
 				56D5FEE82032CAFB0023C18A /* InputViewController.swift in Sources */,
 				5689BFC520673E44006738B0 /* currentDog.swift in Sources */,
