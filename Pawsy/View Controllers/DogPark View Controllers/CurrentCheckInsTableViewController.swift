@@ -76,7 +76,10 @@ class CurrentCheckInsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "checkedDogCell") as! DogCell
         cell.textLabel?.text = self.listOfDogs[indexPath.row].data()!["name"] as! String
-        cell.detailTextLabel?.text = String(describing: self.listOfDogs[indexPath.row].data()!["checkInTime"] as! Date)
+        let checkInTime = self.listOfDogs[indexPath.row].data()!["checkInTime"] as! Date
+        let timeDifference = checkInTime.timeIntervalSinceNow
+        let timeMinutes = Int(-timeDifference/60)
+        cell.detailTextLabel?.text = String(describing: timeMinutes) + " minutes"
         let photoURL = self.listOfDogs[indexPath.row].data()!["photo"] as! String
         self.cloudinary.createDownloader().fetchImage(photoURL, nil) { (image, Error) in
             if image != nil{
