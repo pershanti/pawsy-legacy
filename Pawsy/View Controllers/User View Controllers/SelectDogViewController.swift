@@ -93,6 +93,8 @@ class SelectDogViewController: UICollectionViewController {
         currentDog.sharedInstance.documentID = dogs[indexPath.row].documentID
         currentDog.sharedInstance.imageURL = dogs[indexPath.row].data()!["photo"] as! String
         currentDog.sharedInstance.name = dogs[indexPath.row].data()!["name"] as! String
+        CheckedInPark.sharedInstance.parkID = nil
+        CheckedInPark.sharedInstance.parkReference = nil
         self.loginToSendBird()
         self.performSegue(withIdentifier: "dogSelected", sender: self)
     }

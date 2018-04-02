@@ -112,9 +112,6 @@ class LaunchViewController: UIViewController, FUIAuthDelegate, UINavigationContr
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
-    
 }
 
 

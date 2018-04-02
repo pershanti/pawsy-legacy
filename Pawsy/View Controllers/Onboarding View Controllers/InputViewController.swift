@@ -23,7 +23,8 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     @IBOutlet weak var inputImageView: UIImageView!
     @IBOutlet weak var selectPhoto: UIButton!
     @IBOutlet weak var profilePhoto: UIImageView!
-   
+    @IBOutlet weak var nextButton: UIButton!
+
     
     var currentInput: Int = 0
     var inputImages = [UIImage]()
@@ -130,6 +131,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         }
         
         else {
+            self.nextButton.isHidden = true
             self.inputImageView.image = UIImage(named:"purpleScreen")
             self.profilePhoto.isHidden = true
             let newFrame = CGRect(x: view.frame.width/2-100, y: view.frame.height/2-100, width: 200, height: 200)
@@ -139,6 +141,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             self.view.addSubview(lottieView)
             lottieView.play()
             self.uploadToCloudinary(photo: self.photo!)
+            
         }
     }
     
@@ -229,7 +232,8 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             "photo": photoURL,
             "gender": dogGender!,
             "fixed": dogFixed!,
-            "breed": self.breed!
+            "breed": self.breed!,
+            "checkedInParkID": "0"
         ])
         if self.locationManager.location != nil {
             dogDoc?.updateData(["longitude":self.locationManager.location!.coordinate.longitude, "latitude":self.locationManager.location!.coordinate.latitude])
