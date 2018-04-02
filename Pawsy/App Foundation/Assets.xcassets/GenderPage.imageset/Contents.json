@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "GenderPage.pdf",
+      "filename" : "GenderPage.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "GenderPage@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "GenderPage@3x.png",
       "scale" : "3x"
     }
   ],

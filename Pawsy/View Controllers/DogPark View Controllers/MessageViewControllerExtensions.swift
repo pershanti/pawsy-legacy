@@ -16,6 +16,7 @@ import SendBirdSDK
 extension MessageViewController{
     func setUpChatView(){
         let currentUser = SBDMain.getCurrentUser()
+        self.tableView.keyboardDismissMode = .onDrag
         self.userNickname = currentDog.sharedInstance.name!
         self.username = currentDog.sharedInstance.documentID!
         self.userImage = currentDog.sharedInstance.image!
@@ -23,7 +24,7 @@ extension MessageViewController{
         self.bounces = true
         self.shakeToClearEnabled = true
         self.isKeyboardPanningEnabled = true
-        self.shouldScrollToBottomAfterKeyboardShows = false
+        self.shouldScrollToBottomAfterKeyboardShows = true
         self.isInverted = true
         self.leftButton.setImage(UIImage(named: "icn_upload"), for: UIControlState())
         self.leftButton.tintColor = UIColor.gray

@@ -11,8 +11,9 @@ import Firebase
 import Cloudinary
 import CoreLocation
 import Lottie
+import DLRadioButton
 
-class InputViewController: UIViewController, BreedViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class InputViewController: UIViewController, BreedViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var Gender: UIStackView!
     @IBOutlet weak var Fixed: UIStackView!
@@ -24,8 +25,13 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     @IBOutlet weak var selectPhoto: UIButton!
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var breedLabel: UILabel!
+    @IBOutlet weak var neutralButton: DLRadioButton!
+    @IBOutlet weak var boyButton: DLRadioButton!
+    @IBOutlet weak var girlButton: DLRadioButton!
+    @IBOutlet weak var noButton: DLRadioButton!
+    @IBOutlet weak var yesButton: DLRadioButton!
 
-    
     var currentInput: Int = 0
     var inputImages = [UIImage]()
     var itemList: [UIView]?
@@ -40,30 +46,26 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     var dogFixed: String?
     var dogDoc: DocumentReference?
     let user = Auth.auth().currentUser!
-    
+
     @IBAction func boy(_ sender: UIButton) {
         self.dogGender = "Male"
     }
-    
     @IBAction func girl(_ sender: UIButton) {
         self.dogGender = "Female"
     }
-    
     @IBAction func genderNeutral(_ sender: UIButton) {
         self.dogGender = "No Gender"
     }
-    
     @IBAction func fixedYes(_ sender: UIButton) {
         self.dogFixed = "Yes"
     }
-    
     @IBAction func fixedNo(_ sender: UIButton) {
         self.dogFixed = "No"
     }
-    
-    
-    
-    
+    @IBAction func cancelButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     @IBAction func photoButton(_ sender: UIButton) {
         self.present(alertController, animated: true, completion: nil)
     }
@@ -73,8 +75,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         breedsVC.delegate = self
         present(breedsVC, animated: true, completion: nil)
     }
-    
-    
+
     //cycle through screen images until last screen reached
     @IBAction func next(_ sender: Any) {
         if  selectPhoto.isHidden == false {
@@ -126,13 +127,13 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
                 }))
                 self.present(alert, animated: true, completion: nil)
         }
-        else if currentInput < inputImages.count-1 {
+        else if currentInput < inputImages.count {
             self.cycleImages()
         }
         
         else {
             self.nextButton.isHidden = true
-            self.inputImageView.image = UIImage(named:"purpleScreen")
+            self.inputImageView.isHidden = true
             self.profilePhoto.isHidden = true
             let newFrame = CGRect(x: view.frame.width/2-100, y: view.frame.height/2-100, width: 200, height: 200)
             let lottieView = LOTAnimationView(name: "loading")
@@ -148,18 +149,41 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     //delegate method for breed selector
     func goBack(breed: String) {
         self.breed = breed
+        self.breedLabel.text = breed
+        self.breedLabel.isHidden = false
     }
     
     func cycleImages(){
         print ("cycling")
-        itemList![currentInput].isHidden = true
+        self.breedLabel.isHidden = true
+        if self.selectBreed.isHidden == false{
+            self.selectBreed.isHidden = true
+        }
+        if self.Name.isHidden == false{
+            self.Name.isHidden = true
+        }
+        if self.Weight.isHidden == false{
+            self.Weight.isHidden = true
+        }
+        if self.Fixed.isHidden == false{
+            self.Fixed.isHidden = true
+        }
+        if self.Gender.isHidden == false{
+            self.Gender.isHidden = true
+        }
+        if self.agePicker.isHidden == false{
+            self.agePicker.isHidden = true
+        }
+        if self.selectPhoto.isHidden == false{
+            self.selectPhoto.isHidden = true
+        }
+        if self.profilePhoto.isHidden == false{
+            self.profilePhoto.isHidden = true
+        }
         currentInput += 1
         inputImageView.image = inputImages[currentInput]
         itemList![currentInput].isHidden = false
         itemList![currentInput].center.x = view.center.x
-        if self.profilePhoto.isHidden == false{
-            self.profilePhoto.isHidden = true
-        }
     }
     
     
@@ -167,7 +191,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         picker.dismiss(animated: true, completion: nil)
         let image = info["UIImagePickerControllerOriginalImage"] as! UIImage
         self.photo = UIImageJPEGRepresentation(image, 1)!
-        self.selectPhoto.isHidden = true
+        self.profilePhoto.isHidden = false
         self.profilePhoto.image = image
         self.profilePhoto.layer.masksToBounds = true
         self.profilePhoto.frame = CGRect(x: 87, y: 200, width: 200, height: 200)
@@ -260,17 +284,21 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         setUpAlertController()
         photoPicker.delegate = self
         self.cloudinary = CLDCloudinary(configuration: self.config!)
+        self.boyButton.otherButtons = [self.girlButton, self.neutralButton]
+        self.boyButton.isMultipleSelectionEnabled = false
+        self.yesButton.otherButtons = [self.noButton]
+        self.yesButton.isMultipleSelectionEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
     }
-    
-    
+
+
 }
 
 extension UIViewController

@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "purpleScreen.pdf",
+      "filename" : "pinkButton.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "pinkButton@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "pinkButton@3x.png",
       "scale" : "3x"
     }
   ],

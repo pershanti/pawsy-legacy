@@ -328,31 +328,40 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09o-7L-Scy">
-                                <rect key="frame" x="106" y="387" width="164" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Select Breed">
+                                <rect key="frame" x="109.66666666666669" y="385.66666666666669" width="157" height="51"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                <state key="normal" title="Select Breed" backgroundImage="pinkButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="breedButton:" destination="Rns-9V-jrd" eventType="touchUpInside" id="fAN-1t-Adh"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="14" background="textbox" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l1Q-kK-ZOR">
-                                <rect key="frame" x="100" y="401.66666666666669" width="175" height="19"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" adjustsFontSizeToFit="NO" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l1Q-kK-ZOR">
+                                <rect key="frame" x="100" y="393.66666666666669" width="175" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-Jd-efk">
+                                <rect key="frame" x="155.66666666666666" y="300" width="63.666666666666657" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wb-6W-b0H">
                                 <rect key="frame" x="125" y="480" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS3-BA-2HD">
-                                <rect key="frame" x="87" y="722" width="201" height="40"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <rect key="frame" x="109" y="711" width="157" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="Fmh-tj-fLL"/>
+                                    <constraint firstAttribute="width" constant="157" id="rq7-7C-kms"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                 <color key="tintColor" red="0.16078431369999999" green="0.90588235289999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="next">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="next" backgroundImage="pinkButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="next:" destination="Rns-9V-jrd" eventType="touchUpInside" id="GNF-QR-Tcb"/>
@@ -360,23 +369,23 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzu-R4-qvE">
-                                <rect key="frame" x="108" y="387" width="159" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="select photo">
+                                <rect key="frame" x="109.66666666666669" y="386.33333333333331" width="157" height="51"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                <state key="normal" title="select photo" backgroundImage="pinkButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="photoButton:" destination="Rns-9V-jrd" eventType="touchUpInside" id="Ob3-xd-Elp"/>
                                 </connections>
                             </button>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hIB-GF-68Z">
-                                <rect key="frame" x="100" y="240" width="175" height="90"/>
+                            <stackView hidden="YES" autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hIB-GF-68Z">
+                                <rect key="frame" x="304" y="240" width="31" height="84"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hf-9Z-zKI" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hf-9Z-zKI" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                         <state key="normal" title="Yes">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
@@ -387,11 +396,11 @@
                                             <action selector="fixedYes:" destination="Rns-9V-jrd" eventType="touchUpInside" id="UsS-Wk-sdE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgI-yJ-tAA" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="49" width="175" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgI-yJ-tAA" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="48" width="31" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                         <state key="normal" title="No">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
@@ -404,13 +413,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lF3-LT-CMX">
-                                <rect key="frame" x="100" y="240" width="175" height="139"/>
+                            <stackView hidden="YES" autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lF3-LT-CMX">
+                                <rect key="frame" x="24" y="240" width="88" height="124"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBo-kB-qve" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="Good Girl"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBo-kB-qve" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                        <state key="normal" title="Good Girl">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
                                                 <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -420,10 +431,12 @@
                                             <action selector="girl:" destination="Rns-9V-jrd" eventType="touchUpInside" id="TAP-0J-V1S"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-S3-yYT" userLabel="Good Dog" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="49" width="175" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="Good Boy"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-S3-yYT" userLabel="Good Dog" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="44" width="88" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                        <state key="normal" title="Good Boy">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
                                                 <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -433,10 +446,12 @@
                                             <action selector="boy:" destination="Rns-9V-jrd" eventType="touchUpInside" id="d7I-vq-327"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fma-Wv-6A3" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="98" width="175" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
-                                        <state key="normal" title="Good Dog"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fma-Wv-6A3" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="88" width="88" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                        <state key="normal" title="Good Dog">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
                                                 <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -448,10 +463,9 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="lbs." adjustsFontSizeToFit="NO" minimumFontSize="14" background="textbox" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-o7-qEy">
-                                <rect key="frame" x="100" y="401.66666666666669" width="175" height="19"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lbs." adjustsFontSizeToFit="NO" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-o7-qEy">
+                                <rect key="frame" x="100" y="396" width="175" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <datePicker hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bQg-rI-cBR">
@@ -465,32 +479,38 @@
                                     <!--2018-02-15 22:03:32 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldg-m8-jOm">
+                                <rect key="frame" x="32" y="68" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="Rns-9V-jrd" eventType="touchUpInside" id="fFA-cH-PK8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="09o-7L-Scy" firstAttribute="centerY" secondItem="i6X-ho-vmr" secondAttribute="centerY" id="1tC-zN-1dJ"/>
-                            <constraint firstItem="hS3-BA-2HD" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" constant="87" id="3xE-3x-4z5"/>
+                            <constraint firstItem="Pp9-Jd-efk" firstAttribute="top" secondItem="i6X-ho-vmr" secondAttribute="top" constant="256" id="56g-MQ-v9t"/>
                             <constraint firstItem="zEj-7r-TVT" firstAttribute="trailing" secondItem="i6X-ho-vmr" secondAttribute="trailing" id="7eT-UV-Vn0"/>
                             <constraint firstItem="zEj-7r-TVT" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" id="AS3-KO-3uV"/>
-                            <constraint firstItem="hIB-GF-68Z" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" constant="100" id="BHB-ch-1fU"/>
                             <constraint firstItem="l1Q-kK-ZOR" firstAttribute="centerY" secondItem="i6X-ho-vmr" secondAttribute="centerY" id="BHC-CV-qm1"/>
                             <constraint firstItem="i6X-ho-vmr" firstAttribute="trailing" secondItem="JDw-o7-qEy" secondAttribute="trailing" constant="100" id="CQb-FX-w5H"/>
-                            <constraint firstItem="i6X-ho-vmr" firstAttribute="trailing" secondItem="lF3-LT-CMX" secondAttribute="trailing" constant="100" id="CXE-KV-u0W"/>
                             <constraint firstItem="bQg-rI-cBR" firstAttribute="centerX" secondItem="i6X-ho-vmr" secondAttribute="centerX" id="GZ8-MT-Ymq"/>
-                            <constraint firstItem="i6X-ho-vmr" firstAttribute="trailing" secondItem="hS3-BA-2HD" secondAttribute="trailing" constant="87" id="Gsn-U2-ClG"/>
                             <constraint firstItem="i6X-ho-vmr" firstAttribute="bottom" secondItem="hS3-BA-2HD" secondAttribute="bottom" constant="16" id="HgJ-6Y-COA"/>
                             <constraint firstItem="hzu-R4-qvE" firstAttribute="centerX" secondItem="i6X-ho-vmr" secondAttribute="centerX" id="OFF-mZ-Cyv"/>
                             <constraint firstItem="l1Q-kK-ZOR" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" constant="100" id="SpM-J4-jLT"/>
+                            <constraint firstItem="ldg-m8-jOm" firstAttribute="top" secondItem="i6X-ho-vmr" secondAttribute="top" constant="24" id="T0X-a2-YWg"/>
                             <constraint firstItem="hzu-R4-qvE" firstAttribute="centerY" secondItem="i6X-ho-vmr" secondAttribute="centerY" id="UCh-g0-4hi"/>
                             <constraint firstAttribute="bottom" secondItem="zEj-7r-TVT" secondAttribute="bottom" id="XCz-La-Jnd"/>
-                            <constraint firstItem="lF3-LT-CMX" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" constant="100" id="XQr-WB-tZl"/>
                             <constraint firstItem="JDw-o7-qEy" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" constant="100" id="a8u-8P-AYs"/>
+                            <constraint firstItem="Pp9-Jd-efk" firstAttribute="centerX" secondItem="i6X-ho-vmr" secondAttribute="centerX" id="asg-De-a1H"/>
                             <constraint firstItem="JDw-o7-qEy" firstAttribute="centerY" secondItem="i6X-ho-vmr" secondAttribute="centerY" id="bk3-BG-CCc"/>
-                            <constraint firstItem="i6X-ho-vmr" firstAttribute="trailing" secondItem="hIB-GF-68Z" secondAttribute="trailing" constant="100" id="eli-42-iB4"/>
                             <constraint firstItem="bQg-rI-cBR" firstAttribute="top" secondItem="i6X-ho-vmr" secondAttribute="top" constant="60" id="ihA-Z7-U0B"/>
                             <constraint firstItem="hIB-GF-68Z" firstAttribute="top" secondItem="i6X-ho-vmr" secondAttribute="top" constant="196" id="ilT-FA-c1D"/>
+                            <constraint firstItem="hS3-BA-2HD" firstAttribute="centerX" secondItem="i6X-ho-vmr" secondAttribute="centerX" id="lzQ-c7-4PT"/>
                             <constraint firstItem="zEj-7r-TVT" firstAttribute="top" secondItem="OCB-qb-C0q" secondAttribute="top" id="nrR-KJ-3z0"/>
                             <constraint firstItem="09o-7L-Scy" firstAttribute="centerX" secondItem="i6X-ho-vmr" secondAttribute="centerX" id="ufV-mq-PBB"/>
+                            <constraint firstItem="ldg-m8-jOm" firstAttribute="leading" secondItem="i6X-ho-vmr" secondAttribute="leading" constant="32" id="urc-zp-Its"/>
                             <constraint firstItem="lF3-LT-CMX" firstAttribute="top" secondItem="i6X-ho-vmr" secondAttribute="top" constant="196" id="yUP-pe-Kst"/>
                             <constraint firstItem="i6X-ho-vmr" firstAttribute="trailing" secondItem="l1Q-kK-ZOR" secondAttribute="trailing" constant="100" id="ytZ-af-aRW"/>
                         </constraints>
@@ -502,11 +522,17 @@
                         <outlet property="Name" destination="l1Q-kK-ZOR" id="ZXf-3p-4pj"/>
                         <outlet property="Weight" destination="JDw-o7-qEy" id="EJY-ur-PFu"/>
                         <outlet property="agePicker" destination="bQg-rI-cBR" id="Las-w1-A25"/>
+                        <outlet property="boyButton" destination="0K2-S3-yYT" id="d7s-bY-Daa"/>
+                        <outlet property="breedLabel" destination="Pp9-Jd-efk" id="wFX-bX-MaC"/>
+                        <outlet property="girlButton" destination="rBo-kB-qve" id="oef-IP-TEf"/>
                         <outlet property="inputImageView" destination="zEj-7r-TVT" id="z5e-5f-i0a"/>
+                        <outlet property="neutralButton" destination="Fma-Wv-6A3" id="kzf-Pe-vvo"/>
                         <outlet property="nextButton" destination="hS3-BA-2HD" id="9py-zT-dI9"/>
+                        <outlet property="noButton" destination="YgI-yJ-tAA" id="65l-CV-piQ"/>
                         <outlet property="profilePhoto" destination="2wb-6W-b0H" id="y2x-qV-ji5"/>
                         <outlet property="selectBreed" destination="09o-7L-Scy" id="Qa2-Wj-HQq"/>
                         <outlet property="selectPhoto" destination="hzu-R4-qvE" id="sMg-tZ-ShS"/>
+                        <outlet property="yesButton" destination="8Hf-9Z-zKI" id="aYl-ZV-0xY"/>
                         <segue destination="GlJ-ts-OFL" kind="presentation" identifier="loadHome" id="y7x-YU-iYT"/>
                     </connections>
                 </viewController>
@@ -1186,7 +1212,7 @@
         <image name="icons8-forest-gray" width="25" height="25"/>
         <image name="intro" width="375" height="812"/>
         <image name="launch" width="375" height="812"/>
-        <image name="textbox" width="278" height="32"/>
+        <image name="pinkButton" width="157" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="y7x-YU-iYT"/>
