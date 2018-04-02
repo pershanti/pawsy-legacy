@@ -824,14 +824,14 @@
                         <outlet property="goToDiscussionBoardButton" destination="D54-30-WDs" id="POm-zp-BZh"/>
                         <outlet property="howLongYouveBeenHere" destination="4Ti-ZD-BL1" id="l0c-hh-N0i"/>
                         <segue destination="3Hb-S5-5vp" kind="presentation" identifier="goToListOfCheckIns" id="hp6-R1-BJG"/>
-                        <segue destination="sx8-ga-SNW" kind="presentation" identifier="goToMessageBoard" id="7xO-06-B2Y"/>
+                        <segue destination="GPk-CO-KtP" kind="presentation" identifier="goToMessageBoard" id="7xO-06-B2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ee-Ul-bEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6989.6000000000004" y="-5314.2857142857147"/>
         </scene>
-        <!--Current Check Ins Table View Controller-->
+        <!--Who's at the Park-->
         <scene sceneID="Vya-Wo-eeG">
             <objects>
                 <tableViewController id="vgT-1Z-ihe" customClass="CurrentCheckInsTableViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
@@ -839,9 +839,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="dv8-Qq-chB">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pLN-tp-OeS">
+                                    <rect key="frame" x="24" y="0.0" width="327" height="44"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dog" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmM-AU-tap">
+                                            <rect key="frame" x="0.0" y="14.333333333333336" width="212.66666666666666" height="15.666666666666664"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Length of Check In" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4Z-C5-P08">
+                                            <rect key="frame" x="212.66666666666666" y="14.333333333333336" width="114.33333333333334" height="15.666666666666664"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="pLN-tp-OeS" firstAttribute="top" secondItem="dv8-Qq-chB" secondAttribute="top" id="G9G-iy-uua"/>
+                                <constraint firstAttribute="bottom" secondItem="pLN-tp-OeS" secondAttribute="bottom" id="O0J-gf-bT6"/>
+                                <constraint firstAttribute="trailing" secondItem="pLN-tp-OeS" secondAttribute="trailing" constant="24" id="XST-Yw-WXT" userLabel="trailing = Stack View.trailing + 16"/>
+                                <constraint firstItem="pLN-tp-OeS" firstAttribute="leading" secondItem="dv8-Qq-chB" secondAttribute="leading" constant="24" id="aep-Cw-ENy" userLabel="Stack View.leading = leading + 16"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkedDogCell" textLabel="OAY-3B-lcr" detailTextLabel="3o6-tc-fwa" imageView="5JW-eq-xx1" style="IBUITableViewCellStyleValue1" id="CMA-tZ-0Tm" customClass="DogCell" customModule="Pawsy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CMA-tZ-0Tm" id="5bH-Ox-4y0">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
@@ -861,7 +891,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="icon" id="5JW-eq-xx1">
+                                        <imageView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="icon" id="5JW-eq-xx1">
                                             <rect key="frame" x="16" y="0.0" width="60" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -877,7 +907,7 @@
                             <outlet property="delegate" destination="vgT-1Z-ihe" id="Mrt-MP-h7g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1Ce-p1-g2Z">
+                    <navigationItem key="navigationItem" title="Who's at the Park" largeTitleDisplayMode="always" id="1Ce-p1-g2Z">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="XV2-x3-10i">
                             <connections>
                                 <action selector="dismissPage:" destination="vgT-1Z-ihe" id="8pW-7u-Lff"/>
@@ -889,7 +919,7 @@
             </objects>
             <point key="canvasLocation" x="8714" y="-5560"/>
         </scene>
-        <!--Message View Controller-->
+        <!--Park Chat-->
         <scene sceneID="0Wa-YB-vCh">
             <objects>
                 <viewController id="sx8-ga-SNW" customClass="MessageViewController" customModule="Pawsy" customModuleProvider="target" sceneMemberID="viewController">
@@ -899,10 +929,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PYW-re-xcl"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Park Chat" id="6Mc-vG-XPR">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="IgO-qh-zBE">
+                            <connections>
+                                <action selector="goBack:" destination="sx8-ga-SNW" id="Agt-7a-cpX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGp-dR-vnz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7892" y="-4823"/>
+            <point key="canvasLocation" x="8834.3999999999996" y="-4823.6453201970444"/>
         </scene>
         <!--My Friends-->
         <scene sceneID="BX5-AF-wOi">
@@ -1110,8 +1147,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Hb-S5-5vp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PCo-Dy-Q3G">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="PCo-Dy-Q3G">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1122,6 +1159,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEY-CQ-RCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8011.1999999999998" y="-5563.3004926108379"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Ud-wd-GPi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GPk-CO-KtP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="3al-jD-flK">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sx8-ga-SNW" kind="relationship" relationship="rootViewController" id="Kzu-m4-6B8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDK-pZ-Mko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7892" y="-4823.6453201970444"/>
         </scene>
     </scenes>
     <resources>

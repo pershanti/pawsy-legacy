@@ -24,9 +24,12 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
     var parkName: String?
     var chatRoomURL: String?
     var hasChatRoom: Bool?
-    let firestorePrefix = "https://pawsy-c0063.firebaseio.combase/firestore/dogParks/"
     var SBDChannel: SBDOpenChannel?
+    var delegateIdentifier: String?
 
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     //Set up SLKTextViewController as TableView Controller
     override var tableView: UITableView {
@@ -40,15 +43,9 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
     }
 
     override func viewDidLoad() {
-
-
         super.viewDidLoad()
         self.checkForChatRoom()
-        //creates a unique url identifier for the chat
-        self.chatRoomURL = firestorePrefix + park.parkID!
         self.setUpChatView()
-        SBDMain.add(self as SBDChannelDelegate, identifier: self.chatRoomURL! + "delegateidentifier")
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,51 +54,60 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
 
     func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage) {
         if sender == self.SBDChannel{
-            let newMessage = Message()
-            let messageAsDict = message._toDictionary()
-            newMessage.profileImage = messageAsDict!["profileImage"]! as! UIImage
-            newMessage.text = messageAsDict!["text"]! as! String
-            newMessage.userID = messageAsDict!["userID"]! as! String
-            newMessage.username = messageAsDict!["userName"]! as! String
-            self.messages.insert(newMessage, at: 0)
-            self.tableView.reloadData()
+            let receivedMessage = Message()
+            let userMessage = message as! SBDUserMessage
+            receivedMessage.text = userMessage.message!
+            receivedMessage.userID = userMessage.sender!.userId
+            receivedMessage.username = userMessage.sender!.nickname!
+            let profileURL = URL(string: userMessage.sender!.profileUrl!)!
+            self.getDataFromUrl(url: profileURL, completion: { (imageData, response, httpError) in
+                if httpError != nil{
+                    print(httpError!.localizedDescription)
+                }
+                receivedMessage.profileImage = UIImage(data: imageData!)
+                DispatchQueue.main.async {
+                    self.messages.append(receivedMessage)
+                    self.tableView.reloadData()
+                }
+            })
         }
     }
+
 
     func loadSendbirdPublicChannel(channel: SBDOpenChannel){
         //save the channel
         self.SBDChannel = channel
-        //get existing messages
-        let previousMessageQuery = channel.createPreviousMessageListQuery()
-        previousMessageQuery?.loadPreviousMessages(withLimit: 50, reverse: false, completionHandler: { (messageList, messageError) in
-            if messageError != nil {
-                NSLog("Error: %@", messageError!)
-                return
-            }
-            //create new Message from each message
-            if messageList != nil{
-                for msg in messageList!{
-                    let newMsg = msg._toDictionary()!
-                    let msgnickname =  newMsg["username"]! as! String
-                    let msguserID =  newMsg["userID"]! as! String
-                    let msgText = newMsg["text"]! as! String
-                    let msgImage = newMsg["profileImage"]! as! UIImage
-                    let newMessage = Message()
-                    newMessage.profileImage = msgImage
-                    newMessage.text = msgText
-                    newMessage.username = msgnickname
-                    newMessage.userID = msguserID
-                    self.messages.insert(newMessage, at: 0)
-                    self.tableView.reloadData()
-                }
-            }
-        })
         //enter the channel
         channel.enter(completionHandler: { (enterError) in
             if enterError != nil {
                 NSLog("Error: %@", enterError!)
                 return
             }
+            print("entered channel")
+            print(channel.name)
+            self.delegateIdentifier = channel.channelUrl + "delegateID"
+            SBDMain.add(self as SBDChannelDelegate, identifier: self.delegateIdentifier!)
+            let query = channel.createPreviousMessageListQuery()!
+            query.loadPreviousMessages(withLimit: 50, reverse: false, completionHandler: { (baseMessageList, error) in
+                for message in baseMessageList!{
+                    let userMessage = message as! SBDUserMessage
+                    let receivedMessage = Message()
+                    receivedMessage.text = userMessage.message!
+                    receivedMessage.userID = userMessage.sender!.userId
+                    receivedMessage.username = userMessage.sender!.nickname!
+                    let profileURL = URL(string: userMessage.sender!.profileUrl!)!
+                    self.getDataFromUrl(url: profileURL, completion: { (imageData, response, httpError) in
+                        if httpError != nil{
+                            print(httpError!.localizedDescription)
+                        }
+                        receivedMessage.profileImage = UIImage(data: imageData!)
+                        DispatchQueue.main.async {
+                            self.messages.append(receivedMessage)
+                            self.tableView.reloadData()
+                        }
+                    })
+                }
+            })
         })
     }
 
@@ -115,31 +121,44 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
                     return
                 }
                 self.loadSendbirdPublicChannel(channel: channel!)
+                self.chatRoomURL = channel!.channelUrl
                 self.hasChatRoom = true
-                Firestore.firestore().collection("parks").document(self.parkName!).updateData(["hasChatRoom" : true])
+                Firestore.firestore().collection("dogParks").document(self.park.parkID!).updateData(["hasChatRoom" : true, "chatRoomURL" : self.chatRoomURL!])
             })
         }
 
         else{
-            //get existing channel
-            SBDOpenChannel.getWithUrl(self.chatRoomURL!, completionHandler: { (channel, error) in
-                if error != nil {
-                    NSLog("Error: %@", error!)
-                    return
+            print("getting existing channel")
+            //this isn't working
+            Firestore.firestore().collection("dogParks").document(self.park.parkID!).getDocument(completion: { (snapshot, fireError) in
+                if fireError != nil{
+                    print(fireError!.localizedDescription)
                 }
-                 self.loadSendbirdPublicChannel(channel: channel!)
+                self.chatRoomURL = snapshot!.data()!["chatRoomURL"] as! String
+                SBDOpenChannel.getWithUrl(self.chatRoomURL!, completionHandler: { (channel, error) in
+                    if error != nil {
+                        NSLog("Error: %@", error!)
+                        return
+                    }
+                    self.loadSendbirdPublicChannel(channel: channel!)
+                })
             })
         }
     }
 
-    func checkForChatRoom() -> Bool{
+    func checkForChatRoom() {
         Firestore.firestore().collection("dogParks").document(self.park.parkID!).getDocument { (snapshot, error) in
             if snapshot != nil{
                 self.hasChatRoom = snapshot!.data()!["hasChatRoom"] as! Bool
                 self.getSendBirdPublicChannel()
             }
         }
-        return false
+    }
+
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
     }
 
     override func didCommitTextEditing(_ sender: Any) {
@@ -149,20 +168,21 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
                 return
             }
             let newMessage = Message()
-            let messageAsDict = userMessage!._toDictionary()
-            newMessage.profileImage = messageAsDict!["profileImage"]! as! UIImage
-            newMessage.text = messageAsDict!["text"]! as! String
-            newMessage.userID = messageAsDict!["userID"]! as! String
-            newMessage.username = messageAsDict!["userName"]! as! String
-            self.messages.insert(newMessage, at: 0)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            newMessage.text = userMessage!.message!
+            newMessage.userID = userMessage!.sender!.userId
+            newMessage.username = userMessage!.sender!.nickname!
+            let imageURL = URL(string: userMessage!.sender!.profileUrl!)
+            let dataTask =  self.getDataFromUrl(url: imageURL!, completion: { (data, response, error) in
+                guard let data = data, error == nil else { return }
+                DispatchQueue.main.async {
+                    newMessage.profileImage = UIImage(data: data)
+                    self.messages.insert(newMessage, at: 0)
+                    self.tableView.reloadData()
+                }
+            })
+            self.textView.slk_clearText(false)
+            super.didCommitTextEditing(sender)
         }
-        self.tableView.reloadData()
-        self.textView.slk_clearText(false)
-
-        super.didCommitTextEditing(sender)
     }
 
     //Message Cell setup

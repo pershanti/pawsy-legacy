@@ -116,7 +116,7 @@ class DogCell: UITableViewCell {
     }
 
     func setCircularImageView() {
-        self.myimageView.frame = CGRect(x: 15, y: 15, width: 50, height: 50)
+        self.myimageView.frame = CGRect(x: 15, y: 15, width: 40, height: 40)
         self.myimageView.layer.cornerRadius = CGFloat(roundf(Float(self.myimageView.frame.size.width / 2.0)))
     }
 }
