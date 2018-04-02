@@ -66,7 +66,7 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
                 }
                 receivedMessage.profileImage = UIImage(data: imageData!)
                 DispatchQueue.main.async {
-                    self.messages.append(receivedMessage)
+                    self.messages.insert(receivedMessage, at: 0)
                     self.tableView.reloadData()
                 }
             })
@@ -102,7 +102,7 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
                         }
                         receivedMessage.profileImage = UIImage(data: imageData!)
                         DispatchQueue.main.async {
-                            self.messages.append(receivedMessage)
+                            self.messages.insert(receivedMessage, at: 0)
                             self.tableView.reloadData()
                         }
                     })

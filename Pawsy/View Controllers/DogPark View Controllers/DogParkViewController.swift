@@ -124,19 +124,13 @@ class DogParkViewController: UIViewController {
         //update singleton
         self.howLongYouveBeenHere.text = "0 minutes"
         self.checkInTime = Date()
-        let parkDoc = self.parkCollection.document(self.thisParkID!)
-        parkDoc.getDocument { (Snapshot, Error) in
-            if Snapshot == nil{
-                parkDoc.setData(["name":self.parkName!, "hasChatRoom": false])
-            }
-            self.checkInDoc = self.parkCollection.document(self.thisParkID!).collection("currentCheckIns").addDocument(data: ["checkInTime": self.checkInTime!, "dogID":self.signedInDog.documentID, "dogParkID":self.thisParkID])
-            self.signedInDog.currentReference!.updateData(["checkedInParkID": self.thisParkID!, "checkInTime": self.checkInTime])
-            self.checkedInPark.parkID = self.thisParkID
-            self.checkedInPark.parkReference = self.parkCollection.document(self.thisParkID!)
-            DispatchQueue.main.async {
-                self.getNumberOfCheckIns()
-                self.update()
-            }
+        self.checkInDoc = self.parkCollection.document(self.thisParkID!).collection("currentCheckIns").addDocument(data: ["checkInTime": self.checkInTime!, "dogID":self.signedInDog.documentID, "dogParkID":self.thisParkID])
+        self.signedInDog.currentReference!.updateData(["checkedInParkID": self.thisParkID!, "checkInTime": self.checkInTime])
+        self.checkedInPark.parkID = self.thisParkID
+        self.checkedInPark.parkReference = self.parkCollection.document(self.thisParkID!)
+        DispatchQueue.main.async {
+            self.getNumberOfCheckIns()
+            self.update()
         }
     }
 

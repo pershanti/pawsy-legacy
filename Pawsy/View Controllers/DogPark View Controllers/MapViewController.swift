@@ -54,7 +54,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
     }
     //Map Delegate functions
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+
         self.clickedPark = list_of_parks[marker.snippet!]!
+        //check if there is a park page for this park
+        self.parkCollection.document(self.clickedPark!.placeID!).updateData([:]) { (error) in
+            if error != nil{
+                self.parkCollection.document(self.clickedPark!.placeID!).setData(["placeID": self.clickedPark!.placeID!, "name": self.clickedPark!.name!, "hasChatRoom" : false])
+            }
+        }
         self.parkNameLabel.text = marker.snippet
         self.parkPageButton.isEnabled = true
         self.dismissButton.isEnabled = true
