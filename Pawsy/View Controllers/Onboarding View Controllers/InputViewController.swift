@@ -26,7 +26,6 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var breedLabel: UILabel!
-    @IBOutlet weak var neutralButton: DLRadioButton!
     @IBOutlet weak var boyButton: DLRadioButton!
     @IBOutlet weak var girlButton: DLRadioButton!
     @IBOutlet weak var noButton: DLRadioButton!
@@ -50,9 +49,6 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     }
     @IBAction func girl(_ sender: UIButton) {
         self.dogGender = "Female"
-    }
-    @IBAction func genderNeutral(_ sender: UIButton) {
-        self.dogGender = "No Gender"
     }
     @IBAction func fixedYes(_ sender: UIButton) {
         self.dogFixed = "Yes"
@@ -89,7 +85,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         setUpAlertController()
         photoPicker.delegate = self
         self.cloudinary = CLDCloudinary(configuration: self.config!)
-        self.boyButton.otherButtons = [self.girlButton, self.neutralButton]
+        self.boyButton.otherButtons = [self.girlButton]
         self.boyButton.isMultipleSelectionEnabled = false
         self.yesButton.otherButtons = [self.noButton]
         self.yesButton.isMultipleSelectionEnabled = false
