@@ -40,10 +40,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var parkNameLabel: UILabel!
 
-    @IBAction func homeButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-
     @IBAction func goToParkPageButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToParkPage", sender: self)
     }

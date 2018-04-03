@@ -25,15 +25,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var gender: UILabel!
     @IBOutlet weak var fixed: UILabel!
-    
-    @IBOutlet weak var addFriendButton: UIBarButtonItem!
-    
-    @IBAction func addFriend(_ sender: Any) {
-      
-    }
+    @IBOutlet weak var nameLabel: UILabel!
+
     
     func setLabels(){
-        self.navigationItem.title = self.dog?.data()!["name"] as? String
+        self.nameLabel.text = self.dog?.data()!["name"] as? String
         self.breed.text = self.dog?.data()!["breed"] as? String
         
         if let string = self.dog!.data()!["weight"] as? NSString {

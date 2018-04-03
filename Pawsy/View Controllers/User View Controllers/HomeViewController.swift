@@ -13,15 +13,11 @@ import SendBirdSDK
 
 class HomeViewController: UIViewController {
     
-    @IBAction func parkButton(_ sender: UIButton) {
 
-        self.performSegue(withIdentifier: "goToMap", sender: self)
-    }
-    
-    @IBAction func profileButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToProfile", sender: self)
-    }
-    @IBAction func logoutButton(_ sender: UIBarButtonItem) {
+    @IBOutlet weak var dogLabel: UILabel!
+
+
+    @IBAction func logoutButton(_ sender: UIButton) {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -36,22 +32,16 @@ class HomeViewController: UIViewController {
         self.performSegue(withIdentifier: "goToLaunchAfterSignOut", sender: self)
     }
     
-    @IBAction func switchDogs(_ sender: UIBarButtonItem) {
+    @IBAction func switchDogs(_ sender: UIButton) {
         self.performSegue(withIdentifier: "selectDogFromHome", sender: self)
     }
 
-    func signIntoChat(){
-
-    }
-
-
-    
     override func viewDidLoad() {
         currentDog.sharedInstance.currentReference!.getDocument(completion: { (snapshot, error) in
             if snapshot != nil{
                 let name = snapshot?.data()!["name"] as? String
                 DispatchQueue.main.async {
-                    self.navigationItem.title = name!
+                    self.dogLabel.text = name! + "!"
                 }
             }
         })
