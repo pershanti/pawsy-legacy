@@ -48,7 +48,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
         self.performSegue(withIdentifier: "goToParkPage", sender: self)
     }
     @IBAction func dismissButtonPressed(_ sender: UIButton) {
-        self.parkNameLabel.text = "Select a Dog Park"
+        self.parkNameLabel.text = ""
         self.parkPageButton.isEnabled = false
         self.dismissButton.isEnabled = false
     }

@@ -103,6 +103,9 @@ class ProfileViewController: UIViewController {
         else{
             self.setLabels()
         }
+        self.profilePhoto.clipsToBounds = true
+        self.profilePhoto.layer.cornerRadius = self.profilePhoto.frame.size.width/2
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,18 +13,9 @@ import SendBirdSDK
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var nameLabel: UILabel!
     @IBAction func parkButton(_ sender: UIButton) {
 
         self.performSegue(withIdentifier: "goToMap", sender: self)
-    }
-    
-    @IBAction func inboxButton(_ sender: UIButton) {
-       
-        performSegue(withIdentifier: "goToInbox", sender: self)
-    }
-    @IBAction func friendsButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToFriends", sender: self)
     }
     
     @IBAction func profileButton(_ sender: UIButton) {
@@ -60,7 +51,7 @@ class HomeViewController: UIViewController {
             if snapshot != nil{
                 let name = snapshot?.data()!["name"] as? String
                 DispatchQueue.main.async {
-                    self.nameLabel.text = name
+                    self.navigationItem.title = name!
                 }
             }
         })
