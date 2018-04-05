@@ -22,7 +22,7 @@ class CurrentCheckInsTableViewController: UITableViewController {
     var parkCollection = Firestore.firestore().collection("dogParks")
     var currentUser = Auth.auth().currentUser
     var listOfDogs = [DocumentSnapshot]()
-
+    var selectedDog: DocumentSnapshot?
     var cloudinary = CLDCloudinary(configuration: CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")!)
 
     @IBAction func dismissPage(_ sender: UIBarButtonItem) {
@@ -89,6 +89,18 @@ class CurrentCheckInsTableViewController: UITableViewController {
             }
         }
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedDog = self.listOfDogs[indexPath.row]
+        self.performSegue(withIdentifier: "showDogProfile", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDogProfile" {
+            let destination = segue.destination as! ProfileViewController
+            destination.dog = self.selectedDog
+        }
     }
 
 }

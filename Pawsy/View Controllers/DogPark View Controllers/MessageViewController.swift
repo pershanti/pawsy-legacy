@@ -185,6 +185,7 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
         }
     }
 
+
     //Message Cell setup
     func messageCellForRowAtIndexPath(_ indexPath: IndexPath) -> MessageTableViewCell {
 

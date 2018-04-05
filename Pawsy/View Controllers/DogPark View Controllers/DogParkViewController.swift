@@ -37,7 +37,7 @@ class DogParkViewController: UIViewController {
     @IBAction func goToCheckIns(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToListOfCheckIns", sender: self)
     }
-    @IBOutlet weak var checkInButton: UIBarButtonItem!
+    @IBOutlet weak var checkInButton: UIButton!
     @IBOutlet weak var howLongYouveBeenHere: UILabel!
     @IBOutlet weak var checkedInLabel: UILabel!
 
@@ -46,15 +46,15 @@ class DogParkViewController: UIViewController {
 
 
 
-    @IBAction func checkInButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func checkInButtonPressed(_ sender: UIButton) {
         if self.checkedInPark.parkID == nil{
-            self.checkInButton.title = "Check Out"
+            self.checkInButton.setTitle("CheckOut", for: .normal) 
             self.goToCheckInsButton.isEnabled = true
             self.goToDiscussionBoardButton.isEnabled = true
             self.checkIn()
         }
         else{
-            self.checkInButton.title = "Check In"
+             self.checkInButton.setTitle("CheckOut", for: .normal)
             self.checkOut()
             self.goToCheckInsButton.isEnabled = false
             self.goToDiscussionBoardButton.isEnabled = false
@@ -109,7 +109,7 @@ class DogParkViewController: UIViewController {
                 self.checkedInPark.parkID = self.thisParkID
                 self.checkedInPark.parkReference = self.parkCollection.document(self.thisParkID!)
                 DispatchQueue.main.async {
-                    self.checkInButton.title = "Check Out"
+                    self.checkInButton.setTitle("CheckOut", for: .normal)
                     self.goToCheckInsButton.isEnabled = true
                     self.goToDiscussionBoardButton.isEnabled = true
                     self.update()
