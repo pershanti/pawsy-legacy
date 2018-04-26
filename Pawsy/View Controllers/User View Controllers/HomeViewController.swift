@@ -12,11 +12,15 @@ import Cloudinary
 import SendBirdSDK
 
 class HomeViewController: UIViewController {
+
+    var cloudinary: CLDCloudinary?
+    let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     
 
     @IBOutlet weak var dogLabel: UILabel!
 
-
+    @IBOutlet weak var profPhoto: UIImageView!
+    
     @IBAction func logoutButton(_ sender: UIButton) {
         let firebaseAuth = Auth.auth()
         do {
@@ -37,12 +41,27 @@ class HomeViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        self.cloudinary = CLDCloudinary(configuration: self.config!)
+        self.profPhoto.clipsToBounds = true
+        self.profPhoto.layer.cornerRadius = self.profPhoto.frame.size.width/2
         currentDog.sharedInstance.currentReference!.getDocument(completion: { (snapshot, error) in
             if snapshot != nil{
                 let name = snapshot?.data()!["name"] as? String
+                let photoURL = snapshot?.data()!["photo"] as? String
                 DispatchQueue.main.async {
                     self.dogLabel.text = name! + "!"
-                }
+            }
+
+                self.cloudinary?.createDownloader().fetchImage(photoURL!, nil, completionHandler: { (image, error) in
+                    if error != nil {
+                        print(error!.description)
+                    }
+                    if image != nil{
+                        DispatchQueue.main.async {
+                            self.profPhoto.image = image
+                        }
+                    }
+                })
             }
         })
         print(currentDog.sharedInstance.currentReference?.documentID)

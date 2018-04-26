@@ -30,8 +30,10 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     @IBOutlet weak var girlButton: DLRadioButton!
     @IBOutlet weak var noButton: DLRadioButton!
     @IBOutlet weak var yesButton: DLRadioButton!
-    @IBOutlet weak var backButton: UIButton!
 
+    @IBAction func cancel(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     var currentInput: Int = 0
     var breed: String?
     var alertController: UIAlertController = UIAlertController()
@@ -57,15 +59,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
     @IBAction func fixedNo(_ sender: UIButton) {
         self.dogFixed = "No"
     }
-    @IBAction func cancelButton(_ sender: UIButton) {
-        if self.currentInput > 0 {
-            currentInput = currentInput - 1
-            self.manageViews()
-        }
-        else{
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
+
 
     @IBAction func photoButton(_ sender: UIButton) {
         self.present(alertController, animated: true, completion: nil)
@@ -125,8 +119,8 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
         switch self.currentInput {
         case 0:
             self.Name.isHidden = false
-            self.Weight.isHidden = true
             self.inputImageView.image = UIImage(named:"NamePage")!
+            self.currentInput += 1
             return
         case 1:
             if (Name.text?.count)! < 1 {
@@ -136,11 +130,11 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 self.present(alert, animated: true, completion: nil)
+                self.currentInput += 1
                 return
             }
             else{
                 self.Weight.isHidden = false
-                self.agePicker.isHidden = true
                 self.Name.isHidden = true
                 self.inputImageView.image = UIImage(named:"WeightPage")!
                 self.currentInput += 1
@@ -153,26 +147,25 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 self.present(alert, animated: true, completion: nil)
+                self.currentInput += 1
+
                 return
             }
             else{
                 self.agePicker.isHidden = false
-
-                self.Gender.isHidden = true
                 self.Weight.isHidden = true
-
                 agePicker.setValue(UIColor.black, forKeyPath: "textColor")
-                agePicker.backgroundColor = UIColor.white
+                agePicker.backgroundColor = UIColor.clear
                 self.inputImageView.image = UIImage(named:"BirthdatePage")!
                 self.currentInput += 1
+
                 return
             }
         case 3:
             self.Gender.isHidden = false
-            self.Fixed.isHidden = true
             self.agePicker.isHidden = true
             self.inputImageView.image = UIImage(named:"GenderPage")!
-
+            self.currentInput += 1
             return
         case 4:
             if  self.dogGender == nil{
@@ -186,9 +179,6 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             else{
                 self.Gender.isHidden = true
                 self.Fixed.isHidden = false
-
-                self.breedLabel.isHidden = true
-                self.selectBreed.isHidden = true
 
                 self.inputImageView.image = UIImage(named:"FixPage")!
                 self.currentInput += 1
@@ -205,8 +195,6 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
                 return
             }
             else{
-                self.selectPhoto.isHidden = true
-
                 self.Fixed.isHidden = true
                 self.breedLabel.isHidden = false
                 self.selectBreed.isHidden = false
@@ -225,9 +213,7 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
                 return
             }
             else{
-                self.nextButton.isHidden = false
                 self.selectPhoto.isHidden = false
-                self.backButton.isHidden = false
 
                 self.selectBreed.isHidden = true
                 self.breedLabel.isHidden = true
@@ -249,9 +235,8 @@ class InputViewController: UIViewController, BreedViewControllerDelegate, UIImag
             else{
                 self.selectPhoto.isHidden = true
                 self.profilePhoto.isHidden = true
-                self.inputImageView.isHidden = true
+                self.inputImageView.image = UIImage(named: "coral")
                 self.nextButton.isHidden = true
-                self.backButton.isHidden = true
 
                 let newFrame = CGRect(x: view.frame.width/2-100, y: view.frame.height/2-100, width: 200, height: 200)
                 let lottieView = LOTAnimationView(name: "loading")

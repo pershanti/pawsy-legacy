@@ -24,6 +24,7 @@ class DogParkViewController: UIViewController {
     var checkInDoc: DocumentReference?
     var checkInTime: Date?
     var numberCheckedIn: Int?
+    var timer: Timer!
 
     var parkName: String?
 
@@ -72,6 +73,9 @@ class DogParkViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         self.navigationItem.title = self.parkName!
         if self.thisParkID == self.checkedInPark.parkID{
             self.restoreCheckInSession()
@@ -81,6 +85,13 @@ class DogParkViewController: UIViewController {
 
         }
         self.getNumberOfCheckIns()
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.timer.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -166,7 +177,8 @@ class DogParkViewController: UIViewController {
         })
     }
 
-    func update() {
+    @objc func update() {
+        print("updating")
         if self.checkInTime != nil{
             let timeDifference = self.checkInTime!.timeIntervalSinceNow
             let timeMinutes = Int(-timeDifference/60)

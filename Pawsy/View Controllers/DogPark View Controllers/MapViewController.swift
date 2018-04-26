@@ -116,7 +116,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
                 let nav = segue.destination as! UINavigationController
                 let vc = nav.viewControllers[0] as! DogParkViewController
                 vc.thisParkID = self.checkedInPark.parkID
-                vc.parkName = self.checkedInParkName!
+                vc.parkName = self.clickedPark?.name!
             }
         }
 

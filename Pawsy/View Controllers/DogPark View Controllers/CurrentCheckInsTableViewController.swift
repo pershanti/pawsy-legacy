@@ -24,17 +24,29 @@ class CurrentCheckInsTableViewController: UITableViewController {
     var listOfDogs = [DocumentSnapshot]()
     var selectedDog: DocumentSnapshot?
     var cloudinary = CLDCloudinary(configuration: CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")!)
+    var timer = Timer()
 
     @IBAction func dismissPage(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         super.viewDidLoad()
         self.getListOfDogs()
+        
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.getListOfDogs), userInfo: nil, repeats: true)
+        }
     }
 
-    func getListOfDogs(){
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
+    }
+
+    @objc func getListOfDogs(){
         self.checkedInPark.parkReference!.collection("currentCheckIns").getDocuments(completion: { (Snapshot, Error) in
             if Snapshot != nil{
                 self.listOfDogs = [DocumentSnapshot]()

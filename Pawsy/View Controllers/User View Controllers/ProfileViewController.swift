@@ -26,8 +26,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var gender: UILabel!
     @IBOutlet weak var fixed: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var messageButton: UIButton!
 
-    
+    @IBAction func addFriend(_ sender: UIButton) {
+    }
+
+    @IBAction func sendMessage(_ sender: UIButton) {
+    }
     func setLabels(){
         self.nameLabel.text = self.dog?.data()!["name"] as? String
         self.breed.text = self.dog?.data()!["breed"] as? String
