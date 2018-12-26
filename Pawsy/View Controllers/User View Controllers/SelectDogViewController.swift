@@ -29,7 +29,9 @@ class SelectDogViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         self.cloudinary = CLDCloudinary(configuration: self.config!)
         let currentUserID = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("users").document(currentUserID).collection("dogs").getDocuments { (snap, err) in
@@ -80,6 +82,8 @@ class SelectDogViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dogSelectCell", for: indexPath) as! DogPhotoCollectionViewCell
+        cell.dogPhoto.clipsToBounds = true
+        cell.dogPhoto.layer.cornerRadius = cell.dogPhoto.frame.width/2
         let doc = self.dogs[indexPath.row]
         let image = self.dogImages[indexPath.row]
         cell.dogLabel.text = doc.data()!["name"] as? String
@@ -97,6 +101,7 @@ class SelectDogViewController: UICollectionViewController {
         CheckedInPark.sharedInstance.parkReference = nil
         self.loginToSendBird()
         self.performSegue(withIdentifier: "dogSelected", sender: self)
+
     }
 
     func loginToSendBird(){

@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>FacebookAppID</key>
 	<string>185112482070863</string>
 	<key>FacebookDisplayName</key>
@@ -54,6 +54,8 @@
 	<string>Upload a photo of the dog.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>uses location to find dogs in your area.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location is used to provide accurate data on local dog parks.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>uses location to find dogs in your area.</string>
 	<key>NSPhotoLibraryUsageDescription</key>

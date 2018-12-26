@@ -43,6 +43,9 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
     }
 
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         super.viewDidLoad()
         self.checkForChatRoom()
         self.setUpChatView()
@@ -184,6 +187,7 @@ class MessageViewController: SLKTextViewController, SBDChannelDelegate, SBDConne
             super.didCommitTextEditing(sender)
         }
     }
+
 
     //Message Cell setup
     func messageCellForRowAtIndexPath(_ indexPath: IndexPath) -> MessageTableViewCell {

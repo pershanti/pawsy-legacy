@@ -40,10 +40,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var parkNameLabel: UILabel!
 
-    @IBAction func homeButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-
     @IBAction func goToParkPageButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToParkPage", sender: self)
     }
@@ -120,7 +116,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate  {
                 let nav = segue.destination as! UINavigationController
                 let vc = nav.viewControllers[0] as! DogParkViewController
                 vc.thisParkID = self.checkedInPark.parkID
-                vc.parkName = self.checkedInParkName!
+                vc.parkName = self.clickedPark?.name!
             }
         }
 

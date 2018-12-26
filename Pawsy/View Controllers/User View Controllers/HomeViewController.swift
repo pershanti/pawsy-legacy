@@ -12,16 +12,16 @@ import Cloudinary
 import SendBirdSDK
 
 class HomeViewController: UIViewController {
-    
-    @IBAction func parkButton(_ sender: UIButton) {
 
-        self.performSegue(withIdentifier: "goToMap", sender: self)
-    }
+    var cloudinary: CLDCloudinary?
+    let config = CLDConfiguration(cloudinaryUrl: "cloudinary://748252232564561:bPdJ9BFNE4oSFYDVlZi5pEfn-Qk@pawsy")
     
-    @IBAction func profileButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToProfile", sender: self)
-    }
-    @IBAction func logoutButton(_ sender: UIBarButtonItem) {
+
+    @IBOutlet weak var dogLabel: UILabel!
+
+    @IBOutlet weak var profPhoto: UIImageView!
+    
+    @IBAction func logoutButton(_ sender: UIButton) {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -36,23 +36,32 @@ class HomeViewController: UIViewController {
         self.performSegue(withIdentifier: "goToLaunchAfterSignOut", sender: self)
     }
     
-    @IBAction func switchDogs(_ sender: UIBarButtonItem) {
+    @IBAction func switchDogs(_ sender: UIButton) {
         self.performSegue(withIdentifier: "selectDogFromHome", sender: self)
     }
 
-    func signIntoChat(){
-
-    }
-
-
-    
     override func viewDidLoad() {
+        self.cloudinary = CLDCloudinary(configuration: self.config!)
+        self.profPhoto.clipsToBounds = true
+        self.profPhoto.layer.cornerRadius = self.profPhoto.frame.size.width/2
         currentDog.sharedInstance.currentReference!.getDocument(completion: { (snapshot, error) in
             if snapshot != nil{
                 let name = snapshot?.data()!["name"] as? String
+                let photoURL = snapshot?.data()!["photo"] as? String
                 DispatchQueue.main.async {
-                    self.navigationItem.title = name!
-                }
+                    self.dogLabel.text = name! + "!"
+            }
+
+                self.cloudinary?.createDownloader().fetchImage(photoURL!, nil, completionHandler: { (image, error) in
+                    if error != nil {
+                        print(error!.description)
+                    }
+                    if image != nil{
+                        DispatchQueue.main.async {
+                            self.profPhoto.image = image
+                        }
+                    }
+                })
             }
         })
         print(currentDog.sharedInstance.currentReference?.documentID)

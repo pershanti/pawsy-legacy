@@ -24,6 +24,7 @@ class DogParkViewController: UIViewController {
     var checkInDoc: DocumentReference?
     var checkInTime: Date?
     var numberCheckedIn: Int?
+    var timer: Timer!
 
     var parkName: String?
 
@@ -37,7 +38,7 @@ class DogParkViewController: UIViewController {
     @IBAction func goToCheckIns(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToListOfCheckIns", sender: self)
     }
-    @IBOutlet weak var checkInButton: UIBarButtonItem!
+    @IBOutlet weak var checkInButton: UIButton!
     @IBOutlet weak var howLongYouveBeenHere: UILabel!
     @IBOutlet weak var checkedInLabel: UILabel!
 
@@ -46,15 +47,15 @@ class DogParkViewController: UIViewController {
 
 
 
-    @IBAction func checkInButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func checkInButtonPressed(_ sender: UIButton) {
         if self.checkedInPark.parkID == nil{
-            self.checkInButton.title = "Check Out"
+            self.checkInButton.setTitle("CheckOut", for: .normal) 
             self.goToCheckInsButton.isEnabled = true
             self.goToDiscussionBoardButton.isEnabled = true
             self.checkIn()
         }
         else{
-            self.checkInButton.title = "Check In"
+             self.checkInButton.setTitle("CheckOut", for: .normal)
             self.checkOut()
             self.goToCheckInsButton.isEnabled = false
             self.goToDiscussionBoardButton.isEnabled = false
@@ -72,6 +73,9 @@ class DogParkViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         self.navigationItem.title = self.parkName!
         if self.thisParkID == self.checkedInPark.parkID{
             self.restoreCheckInSession()
@@ -81,6 +85,13 @@ class DogParkViewController: UIViewController {
 
         }
         self.getNumberOfCheckIns()
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.timer.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,7 +120,7 @@ class DogParkViewController: UIViewController {
                 self.checkedInPark.parkID = self.thisParkID
                 self.checkedInPark.parkReference = self.parkCollection.document(self.thisParkID!)
                 DispatchQueue.main.async {
-                    self.checkInButton.title = "Check Out"
+                    self.checkInButton.setTitle("CheckOut", for: .normal)
                     self.goToCheckInsButton.isEnabled = true
                     self.goToDiscussionBoardButton.isEnabled = true
                     self.update()
@@ -166,7 +177,8 @@ class DogParkViewController: UIViewController {
         })
     }
 
-    func update() {
+    @objc func update() {
+        print("updating")
         if self.checkInTime != nil{
             let timeDifference = self.checkInTime!.timeIntervalSinceNow
             let timeMinutes = Int(-timeDifference/60)
