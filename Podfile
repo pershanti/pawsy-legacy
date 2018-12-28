@@ -23,4 +23,5 @@ pod 'Firebase/Messaging'
 pod 'Firebase/Storage'
 pod 'SendBirdSDK'
 pod 'SlackTextViewController'
+pod 'iCarousel'
 end

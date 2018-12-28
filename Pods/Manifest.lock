@@ -133,6 +133,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.14)
   - GTMSessionFetcher/Full (1.1.14):
     - GTMSessionFetcher/Core (= 1.1.14)
+  - iCarousel (1.8.3)
   - leveldb-library (1.20)
   - lottie-ios (2.5.0)
   - nanopb (0.3.8):
@@ -161,6 +162,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - iCarousel
   - lottie-ios
   - SendBirdSDK
   - SlackTextViewController
@@ -197,6 +199,7 @@ SPEC REPOS:
     - gRPC-RxLibrary
     - GTMOAuth2
     - GTMSessionFetcher
+    - iCarousel
     - leveldb-library
     - lottie-ios
     - nanopb
@@ -235,6 +238,7 @@ SPEC CHECKSUMS:
   gRPC-RxLibrary: a41a4652d220f230ba1c0491a94ce2ee04c6180a
   GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
@@ -244,6 +248,6 @@ SPEC CHECKSUMS:
   SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: ae706d244cd9ac0715626480f3a283e965ede405
+PODFILE CHECKSUM: cad5f1f3af299d317090a62b9eaaa530558e8807
 
 COCOAPODS: 1.5.3

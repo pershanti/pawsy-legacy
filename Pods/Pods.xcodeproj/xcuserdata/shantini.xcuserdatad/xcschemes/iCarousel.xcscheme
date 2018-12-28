@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A539B3C268FB965D8567C3F2A1BFCA1"
-               BlueprintName = "SwiftHTTP"
+               BlueprintIdentifier = "AF838A0B37B24EEAE208B36E664527B2"
+               BlueprintName = "iCarousel"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SwiftHTTP.framework">
+               BuildableName = "iCarousel.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
